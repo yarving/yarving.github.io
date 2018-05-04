@@ -382,14 +382,14 @@
       
         <h1 id="How-to-deploy-application-on-heroku"><a href="#How-to-deploy-application-on-heroku" class="headerlink" title="How to deploy application on heroku"></a>How to deploy application on heroku</h1><p>This article introduces how to deploy web applications onto heroku.</p>
 <a id="more"></a>
-<h2 id="reference-links"><a href="#reference-links" class="headerlink" title="reference links"></a>reference links</h2><p><a href="http://www.jianshu.com/p/08fab8d4ee35" target="_blank" rel="external">vue2+Flask网站，轻松部署到免费主机Heroku</a><br><a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction" target="_blank" rel="external">Getting Started on Heroku with Python</a></p>
+<h2 id="reference-links"><a href="#reference-links" class="headerlink" title="reference links"></a>reference links</h2><p><a href="http://www.jianshu.com/p/08fab8d4ee35" target="_blank" rel="noopener">vue2+Flask网站，轻松部署到免费主机Heroku</a><br><a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction" target="_blank" rel="noopener">Getting Started on Heroku with Python</a></p>
 <h2 id="how-to-check-log"><a href="#how-to-check-log" class="headerlink" title="how to check log"></a>how to check log</h2><p><code>heroku logs --tail</code></p>
 <h2 id="define-starter"><a href="#define-starter" class="headerlink" title="define starter"></a>define starter</h2><p>the command to start the web application is contained in file: <code>Procfile</code>, format like below:<br><code>web: gunicorn settingstarted.wsgi --log-file -</code></p>
 <h2 id="run-on-local"><a href="#run-on-local" class="headerlink" title="run on local"></a>run on local</h2><ol>
 <li>Collect static resources: <code>python manage.py collectstatic</code></li>
 <li>Run by command: <code>heroku local web</code></li>
 </ol>
-<h2 id="submit-local-changes"><a href="#submit-local-changes" class="headerlink" title="submit local changes"></a>submit local changes</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">heroku <span class="built_in">local</span></div><div class="line">git push heroku master</div><div class="line">heroku open</div></pre></td></tr></table></figure>
+<h2 id="submit-local-changes"><a href="#submit-local-changes" class="headerlink" title="submit local changes"></a>submit local changes</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">heroku <span class="built_in">local</span></span><br><span class="line">git push heroku master</span><br><span class="line">heroku open</span><br></pre></td></tr></table></figure>
 
       
     </div>

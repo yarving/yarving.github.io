@@ -385,10 +385,10 @@
           
             <p>refer to:</p>
 <ol>
-<li><a href="http://os.51cto.com/art/201302/382255.htm" target="_blank" rel="external">http://os.51cto.com/art/201302/382255.htm</a></li>
+<li><a href="http://os.51cto.com/art/201302/382255.htm" target="_blank" rel="noopener">http://os.51cto.com/art/201302/382255.htm</a></li>
 </ol>
 <h1 id="查看系统内所有安装的内存"><a href="#查看系统内所有安装的内存" class="headerlink" title="查看系统内所有安装的内存"></a>查看系统内所有安装的内存</h1><p><code>free -h</code></p>
-<h1 id="禁用系统bug报告弹窗"><a href="#禁用系统bug报告弹窗" class="headerlink" title="禁用系统bug报告弹窗"></a>禁用系统bug报告弹窗</h1><p><code>sudo vi /etc/default/apport</code><br>修改内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># set this to 0 to disable apport, or to 1 to enable it</div><div class="line"># you can temporarily override this with</div><div class="line"># sudo service apport start force_start=1</div><div class="line">enabled=0</div></pre></td></tr></table></figure></p>
+<h1 id="禁用系统bug报告弹窗"><a href="#禁用系统bug报告弹窗" class="headerlink" title="禁用系统bug报告弹窗"></a>禁用系统bug报告弹窗</h1><p><code>sudo vi /etc/default/apport</code><br>修改内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># set this to 0 to disable apport, or to 1 to enable it</span><br><span class="line"># you can temporarily override this with</span><br><span class="line"># sudo service apport start force_start=1</span><br><span class="line">enabled=0</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -724,10 +724,10 @@
 <li>让营地比你来时更干净</li>
 </ol>
 <h1 id="有意义的命名"><a href="#有意义的命名" class="headerlink" title="有意义的命名"></a>有意义的命名</h1><h2 id="名副其实"><a href="#名副其实" class="headerlink" title="名副其实"></a>名副其实</h2><ol>
-<li>需要用注释来补充的变量名不算名副其实<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int d; // 消逝的时间，以日计</div></pre></td></tr></table></figure>
+<li>需要用注释来补充的变量名不算名副其实<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int d; // 消逝的时间，以日计</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>可以更改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int elapsedTimeInDays;</div></pre></td></tr></table></figure></p>
+<p>可以更改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int elapsedTimeInDays;</span><br></pre></td></tr></table></figure></p>
 <h2 id="做有意义的区分"><a href="#做有意义的区分" class="headerlink" title="做有意义的区分"></a>做有意义的区分</h2><ol>
 <li>a1, a2等命名方式没有提供正确或导向作者意图的线索</li>
 <li>Product/ProductInfo/ProductData等名称虽然不同，但是意思却无分别</li>
@@ -766,7 +766,7 @@
 <li>别传入null值（除非函数要求），但是，检查null值的责任应该由调用者负责还是函数负责呢？</li>
 </ul>
 <h1 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h1><p>学习性测试的好处不止是免费，还在投资上有正面的回报；<br>依靠能控制的东西好过依靠不能控制的东西；</p>
-<h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><p><a href="http://www.cnblogs.com/wangyh/archive/2009/03/04/1402815.html" target="_blank" rel="external">TDD三定律</a></p>
+<h1 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h1><p><a href="http://www.cnblogs.com/wangyh/archive/2009/03/04/1402815.html" target="_blank" rel="noopener">TDD三定律</a></p>
 <ol>
 <li>没有测试之前不要写任何功能代码</li>
 <li>只编写恰好能够体现一个失败情况的测试代码</li>
@@ -1128,7 +1128,7 @@
 
       
         
-          <p>Based on: <a href="http://blog.ihipop.info/2010/10/1736.html">http://blog.ihipop.info/2010/10/1736.html</a></p>
+          <p>Based on: <a href="http://blog.ihipop.info/2010/10/1736.html" target="_blank" rel="noopener">http://blog.ihipop.info/2010/10/1736.html</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/11/22/Python-Process-Bar/#更多" rel="contents">
@@ -1462,7 +1462,7 @@
 
       
         
-          <h1 id="Goals-and-design"><a href="#Goals-and-design" class="headerlink" title="Goals and design"></a>Goals and design</h1><h2 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h2><p>I found a website: <a href="http://bestcbooks.com/">http://bestcbooks.com/</a> offers plenty PDF books about computer science.<br>The Web site looks like below:<br><img src="http://p1.bpimg.com/567571/2b84c1a6d755e0bd.png" alt="bestcbooks.com"><br>I want to get all the books download link and password(As it stored on pan.baidu.com)</p>
+          <h1 id="Goals-and-design"><a href="#Goals-and-design" class="headerlink" title="Goals and design"></a>Goals and design</h1><h2 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h2><p>I found a website: <a href="http://bestcbooks.com/" target="_blank" rel="noopener">http://bestcbooks.com/</a> offers plenty PDF books about computer science.<br>The Web site looks like below:<br><img src="http://p1.bpimg.com/567571/2b84c1a6d755e0bd.png" alt="bestcbooks.com"><br>I want to get all the books download link and password(As it stored on pan.baidu.com)</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/11/20/scrapy-crawl-bestcbooks-com/#更多" rel="contents">
