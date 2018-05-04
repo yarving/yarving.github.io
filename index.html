@@ -1,15 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
+
+
+
 
 
 
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
 
 
 
@@ -27,36 +40,10 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -65,31 +52,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
 
 
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="MX space">
-<meta property="og:url" content="yarving.historytale.com/index.html">
-<meta property="og:site_name" content="MX space">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MX space">
+
+
+
 
 
 
@@ -97,14 +78,14 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -116,18 +97,35 @@
 </script>
 
 
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="MX space">
+<meta property="og:url" content="yarving.historytale.com/index.html">
+<meta property="og:site_name" content="MX space">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MX space">
+
+
+
+
+
 
   <link rel="canonical" href="yarving.historytale.com/"/>
 
 
 
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
-
-  <title> MX space </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>MX space</title>
   
 
 
@@ -138,78 +136,104 @@
 
 
 
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">MX space</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MX space</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+
+
 
 <nav class="site-nav">
-  
-
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -217,12 +241,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -235,21 +267,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/02/新时代-面对面/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/04/Cordora/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -257,9 +292,515 @@
         
         
           <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/Cordora/" itemprop="url">
+                  Cordora
+                </a>
+              
             
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-04 11:08:10 / 修改时间：14:07:07" itemprop="dateCreated datePublished" datetime="2018-05-04T11:08:10+08:00">2018-05-04</time>
+            
+
             
               
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/04/Cordora/" class="leancloud_visitors" data-flag-title="Cordora">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>根据 <a href="http://cordova.axuer.com/docs/zh-cn/6.x/guide/cli/index.html">创建你的第一个App</a> 整理</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/04/Cordora/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/03/看了这些才知道什么是新时代的好标题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/看了这些才知道什么是新时代的好标题/" itemprop="url">
+                  看了这些才知道什么是新时代的好标题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-03 16:53:23" itemprop="dateCreated datePublished" datetime="2018-05-03T16:53:23+08:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-04 14:25:15" itemprop="dateModified" datetime="2018-05-04T14:25:15+08:00">2018-05-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/03/看了这些才知道什么是新时代的好标题/" class="leancloud_visitors" data-flag-title="看了这些才知道什么是新时代的好标题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本文根据 <a href="https://mp.weixin.qq.com/s/4akTkVVYWtmZcJDL1tOU3A" target="_blank" rel="noopener">新闻与写作</a> 整理完成。</p>
+<p>俗话说：“题好一半文”。“人要衣装，文要题装”。可见题目的重要性。本文为《人民日报》2017年的好标题，供你我参考。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/03/看了这些才知道什么是新时代的好标题/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/03/hexo-cheetsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/hexo-cheetsheet/" itemprop="url">
+                  hexo cheetsheet
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-03 11:35:56" itemprop="dateCreated datePublished" datetime="2018-05-03T11:35:56+08:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-04 14:07:07" itemprop="dateModified" datetime="2018-05-04T14:07:07+08:00">2018-05-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/03/hexo-cheetsheet/" class="leancloud_visitors" data-flag-title="hexo cheetsheet">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h1><ol>
+<li>Node.js</li>
+<li>Git</li>
+</ol>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>最好使用NVM进行安装</p>
+<ul>
+<li>curl安装NVM： <code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></li>
+<li>wget安装NVM： <code>wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code></li>
+<li>NVM安装Node.js： <code>nvm install stable</code></li>
+<li>安装cnpm： <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
+</ul>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>cnpm install -g hexo-cli</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><ul>
+<li>初始化： `hexo init <folder>; cd <folder>; cnpm install</folder></folder></li>
+<li>新建文章： <code>hexo new [layout] &lt;article&gt;</code></li>
+<li>生成静态文件： <code>hexo generate</code> 或 <code>hexo g</code></li>
+<li>发布草稿： <code>hexo publish [layout] &lt;filename&gt;</code></li>
+<li>启动预览服务器： <code>hexo server</code>,  默认情况下，访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></li>
+<li>部署网站： <code>hexo deploy</code> 或 <code>hexo d</code></li>
+</ul>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul>
+<li>学习layout的三种布局：post，page，draft</li>
+<li>写草稿文章，发布草稿（<code>hexo new draft &lt;title&gt;; hexo publish &lt;title&gt;</code>）</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/02/新时代-面对面/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2018/05/02/新时代-面对面/" itemprop="url">
                   新时代 面对面
@@ -271,18 +812,30 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T23:00:26+08:00">
-                2018-05-02
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-02 23:00:26 / 修改时间：23:36:08" itemprop="dateCreated datePublished" datetime="2018-05-02T23:00:26+08:00">2018-05-02</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -290,18 +843,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2018/05/02/新时代-面对面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/02/新时代-面对面/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2018/05/02/新时代-面对面/" class="leancloud_visitors" data-flag-title="新时代 面对面">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -312,7 +869,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -336,8 +895,8 @@
 <li>只留清气满乾坤</li>
 </ul>
           <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2018/05/02/新时代-面对面/#more" rel="contents">
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/02/新时代-面对面/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -346,16 +905,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -365,6 +929,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -377,21 +945,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/01/曾国藩家书/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2018/05/01/曾国藩家书/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -399,9 +970,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2018/05/01/曾国藩家书/" itemprop="url">
                   曾国藩家书
@@ -413,18 +981,42 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T22:08:19+08:00">
-                2018-05-01
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-01 22:08:19" itemprop="dateCreated datePublished" datetime="2018-05-01T22:08:19+08:00">2018-05-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-04 14:07:07" itemprop="dateModified" datetime="2018-05-04T14:07:07+08:00">2018-05-04</time>
+              
             
           </span>
 
@@ -432,18 +1024,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2018/05/01/曾国藩家书/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/01/曾国藩家书/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2018/05/01/曾国藩家书/" class="leancloud_visitors" data-flag-title="曾国藩家书">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -454,7 +1050,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -462,105 +1060,36 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>这是我阅读《唐浩明评点曾国藩家书（上）》的一些笔记，此次是第二次阅读，上一次阅读还是大四的时候了，两次阅读都有良多收获。</p>
 </blockquote>
-<p><img src="https://img3.doubanio.com/view/subject/l/public/s5636410.jpg" alt="唐浩明评点曾国藩家书"></p>
-<blockquote>
-<p>艺多不养身，掘井多而无可饮之水。</p>
-</blockquote>
-<p>这句话和我们常见的“艺多不压身”的意思有点相反，但其实只是两句话的重点不一致罢了。</p>
-<ul>
-<li>“艺多不压身”的重点在于要多学习一些技能；</li>
-<li>“艺多不养身”的重点则在于每学一种都要学精，弥补了杂而不精的缺陷。</li>
-</ul>
-<p>学习编程的时候，有一种观点————一通百通。<br>所以，成熟的“过来人”给新人的建议都是先学通一门语言，只要一门语言通了，则学习其他语言则是水到渠成的事。</p>
-<p>我本人从C语言入手，花了很大的精力阅读英文原版教程、《C与指针》、《C Primer》等书籍。到现在，不论是后端的C++，Java，Python，Ruty等，还是前端的Vue，JS都只要学习基本语法，逻辑上的东西都有C语言打下的基础。</p>
-<p>后来，工作中因为给领导制作PPT，买了一本书、看了3套教程、阅读了很多篇文章、模拟了大量PPT。待到入门了之后，发现PPT这个东西不仅仅可以用来制作幻灯片，还能运用到日常工作中，如微信编辑、图片制作、网站原型设计、PS等。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/29237-02a9fe692b394cf5.png" alt="学习受益边际效应"><br>上图是学习受益边际效应图，可以看到，大致分为3个阶段：</p>
-<ol>
-<li>起步期：受益较快；</li>
-<li>稳扎稳打：投入的时间较多，受益却较少；</li>
-<li>成熟期：经过长时间的投入，终于修成正果。</li>
-</ol>
-<p>在专心掘一井的过程中，最难的是稳扎稳打的阶段，起步期和成熟期都能带来很大的成就感，成就感的反馈激励着我们继续学习。在稳扎稳打期，最容易产生放弃，在这个黎明之前的黑暗期，更加要耐得住“昨夜西风凋碧树“的清冷和”独上高楼“的寂寞。</p>
-<blockquote>
-<p>研几，认真对待细微念头、细微小事。</p>
-</blockquote>
-<p>古人说“慎独”，讲究独处时要注意自己的言行，保持谨慎。</p>
-<p>可是，我们的生活中哪有那么多独处的机会？更多的是要和自己的细微念头、纤维小事做斗争。</p>
-<p>“大风起于青萍之末”、“宰相必起于州部，猛将必发于卒伍“，小事会经过“蝴蝶效应”等复杂行为放大；关键时刻的小事也会对全局产生至关重要的影响。</p>
-<blockquote>
-<p>苟能奋发自立，则家塾可读书；苟不能奋发自立，则清静之地、神仙之境皆不能读书。</p>
-</blockquote>
-<p>读书是不需要预设环境的。通过这句话，我发现了自己的一个缺点，总是通过预设条件来为自己寻找借口。</p>
-<p>比如说健身，最开始说等住进新房子再办卡；现在住进来了又告诉自己等还完分期付的家电钱先；……</p>
-<p>如此往复，其实以前住的地方和新房离不了多远；去健身房的钱自己绝对出得起；……</p>
-<blockquote>
-<p>每日有课册，一日之中一念之差、一事之失、一言一默皆笔之于书。</p>
-</blockquote>
-<p>人的记忆力是有限的，在编程的时候有很多原则，如”代码是写给别人看的，不是写给机器看的“，其实也是写给自己看的，为了防止自己一个月后再来看看不懂。通过”笔之于书“，可以让自己可以通过分析以前的”一念之差、一事之失”，来避免自己在现实中再“二过”。</p>
-<p>写下来，和头脑风暴、绘制脑图一样，有利于深入分析，自己和自己讨论。通过探讨，透过现象看本质，挖掘隐藏着的问题本质。</p>
-<p>自己的日志里，要加入【一念之间j】【一事之失】【一言之失】等内容。</p>
-<blockquote>
-<p>盖士人读书，第一要有志，第二要有识、第三要有恒。<br>有志则断不甘为下流；有识则知学问无穷，不敢一得而足；有恒则断无不成之事。</p>
-</blockquote>
-<p>志向最重要，有志向则不断不会一点成功、一点进步就沾沾自喜、自满自溢；<br>见识仅次于志向，见识宽广，也不会让自己沉迷于一些小事无法自拔，也明白要进取的方向；<br>有恒心，才能坚持不断投入。这世间，投入了大量时间，不成功的事可能很多；但是没有投入时间和精力就能够成功的事，则断然没有。</p>
-<blockquote>
-<p>主敬：整齐严肃，无时不惧；<br>静坐：每日不拘何时，静坐一会；<br>早起：黎明即起，醒后勿沾念；<br>读书不二：一书未看完，断不看他书。</p>
-</blockquote>
-<p>早起是曾国藩最推崇的，也是我想要也不可得的，先做到在来谈感悟吧。<br>主敬，整齐严肃，是作为一个成熟的人应该有的负责人的态度。对待小事一丝不苟，对待他人负责认真、对待现状感恩珍惜，利己利人利众。<br>静坐，我采用的是冥想，不仅可以让自己高效的休息，还能在这期间安静的思考一些问题，收益很大。<br>读书不二，一方面也是逼着自己耐心看完一本书，我尝试过太多次的多本书翻几页就去翻另一本。俗话说，买书如山倒，看书如抽丝。看完一本再看另一本，至少还能抽丝抽完；如果不这样做，抽丝都看不完。</p>
-<blockquote>
-<p>兄弟和，虽穷氓小户必兴；兄弟不和，虽世家宦族必败。</p>
-<p>威仪可测，淳实宏通，师之可也；若仅博文能雅，友之可也。<br>或师或友，皆宜常存敬畏之心，不宜视为等夷，渐至慢亵，则不能复受其益矣。</p>
-</blockquote>
-<p>人是不可能向自己觉得可以慢亵的人学习的。</p>
-<blockquote>
-<p>无故而怨天，天必不许；无故而尤人，人必不服。</p>
-</blockquote>
-<p>这是少抱怨的分析，抱怨别人，别人肯定不满。</p>
-<blockquote>
-<p>强毅与刚愎有别，古语自胜谓之强，如不惯早起而强之未明即起。不惯有恒，而强之贞恒，即毅也。</p>
-</blockquote>
-<p>战胜自己。</p>
-<blockquote>
-<p>是非皎然于心而一言不发，劲气常抱于胸而纤毫不露。</p>
-</blockquote>
-<p>城府是怎样修炼的。</p>
-<blockquote>
-<p>读书之法，看、读、写、作，四者每日不可缺一。<br>读者，非高声朗诵则不能得其雄伟之概。写：写字；作：作文。</p>
-</blockquote>
-<p>实践是检验真理的唯一标准，也是训练自己脑回路的唯一有效途径。要真正把学到的东西运用起来，加深理解，独立思考、学用结合、学有所悟、用有所得。</p>
-<blockquote>
-<p>凡作一事，无论大小难易，皆宜有始有终。</p>
-</blockquote>
-<p>每做一件事，都尽量做到最好，让自己得到正反馈。</p>
-<blockquote>
-<p>勤做札记</p>
-</blockquote>
-<p>遇心有疑者，将所疑提出来，随着学问提高，对疑问的认识也在提高，这个过程也可记录下来；遇有心领神会者，则记下此时阅读心得。</p>
-<blockquote>
-<p>尔作文时，宜先将辞藻；欲求辞藻富丽，不得不分类抄撮体面话头（写好文章的关键）</p>
-</blockquote>
-<p>提高写作水平的窍门</p>
-<p>文章写作的一个点：构造还原历史场景，交由读者判定。</p>
-
-          
+<p><img src="http://d.ifengimg.com/w600/p0.ifengimg.com/pmop/2018/0311/D8CAD646E4CAEA9B9AFDFB3DAB7C0E83F7F7C49D_size46_w720_h469.jpeg" alt="唐浩明评点曾国藩家书"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/01/曾国藩家书/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -570,6 +1099,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -582,21 +1115,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/09/23/VIM中为什么不能按CTRL-S/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/09/23/VIM中为什么不能按CTRL-S/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -604,9 +1140,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2017/09/23/VIM中为什么不能按CTRL-S/" itemprop="url">
                   VIM中为什么不能按CTRL-S
@@ -618,18 +1151,42 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-23T11:45:03+08:00">
-                2017-09-23
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-23 11:45:03" itemprop="dateCreated datePublished" datetime="2017-09-23T11:45:03+08:00">2017-09-23</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-01 10:45:17" itemprop="dateModified" datetime="2018-05-01T10:45:17+08:00">2018-05-01</time>
+              
             
           </span>
 
@@ -637,18 +1194,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/09/23/VIM中为什么不能按CTRL-S/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/23/VIM中为什么不能按CTRL-S/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2017/09/23/VIM中为什么不能按CTRL-S/" class="leancloud_visitors" data-flag-title="VIM中为什么不能按CTRL-S">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -659,7 +1220,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -694,16 +1257,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -713,6 +1281,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -725,21 +1297,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/08/28/django-cheat-sheet/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/08/28/django-cheat-sheet/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -747,9 +1322,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2017/08/28/django-cheat-sheet/" itemprop="url">
                   django cheat sheet
@@ -761,18 +1333,42 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-28T20:03:42+08:00">
-                2017-08-28
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-28 20:03:42" itemprop="dateCreated datePublished" datetime="2017-08-28T20:03:42+08:00">2017-08-28</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-01 10:45:17" itemprop="dateModified" datetime="2018-05-01T10:45:17+08:00">2018-05-01</time>
+              
             
           </span>
 
@@ -780,18 +1376,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/08/28/django-cheat-sheet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/28/django-cheat-sheet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2017/08/28/django-cheat-sheet/" class="leancloud_visitors" data-flag-title="django cheat sheet">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -802,7 +1402,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -812,8 +1414,8 @@
         
           <p>This is a cheat sheet or minimal tutorial of django.<br>
           <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/08/28/django-cheat-sheet/#more" rel="contents">
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/28/django-cheat-sheet/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -822,16 +1424,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -841,6 +1448,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -853,21 +1464,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/27/为什么越花钱越有钱/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/27/为什么越花钱越有钱/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -875,9 +1489,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2017/06/27/为什么越花钱越有钱/" itemprop="url">
                   为什么越花钱越有钱
@@ -889,18 +1500,30 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-27T00:36:41+08:00">
-                2017-06-27
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-27 00:36:41 / 修改时间：00:37:41" itemprop="dateCreated datePublished" datetime="2017-06-27T00:36:41+08:00">2017-06-27</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -908,18 +1531,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/06/27/为什么越花钱越有钱/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/27/为什么越花钱越有钱/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2017/06/27/为什么越花钱越有钱/" class="leancloud_visitors" data-flag-title="为什么越花钱越有钱">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -930,7 +1557,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -942,8 +1571,8 @@
 <li>从小就花钱大手大脚的人，长大了依旧大手大脚</li>
 <li>付钱往后躲的人，长大后生活依旧拮据
           <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/06/27/为什么越花钱越有钱/#more" rel="contents">
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/27/为什么越花钱越有钱/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -952,16 +1581,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -971,6 +1605,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -983,21 +1621,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/17/django-set-language-to-chinese/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/17/django-set-language-to-chinese/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -1005,9 +1646,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2017/06/17/django-set-language-to-chinese/" itemprop="url">
                   django set language to chinese
@@ -1019,18 +1657,30 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-17T10:23:48+08:00">
-                2017-06-17
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-17 10:23:48 / 修改时间：10:25:55" itemprop="dateCreated datePublished" datetime="2017-06-17T10:23:48+08:00">2017-06-17</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1038,18 +1688,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/06/17/django-set-language-to-chinese/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/17/django-set-language-to-chinese/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2017/06/17/django-set-language-to-chinese/" class="leancloud_visitors" data-flag-title="django set language to chinese">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -1060,7 +1714,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1070,8 +1726,8 @@
         
           <p>Django生成的框架默认为英文的，如何更改语言为中文。<br>
           <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/06/17/django-set-language-to-chinese/#more" rel="contents">
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/17/django-set-language-to-chinese/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1080,16 +1736,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1099,6 +1760,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1111,21 +1776,24 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/17/sublime-convert-tab-to-4-spaces/">
+  
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/17/sublime-convert-tab-to-4-spaces/">
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
 
     
       <header class="post-header">
@@ -1133,9 +1801,6 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
                 <a class="post-title-link" href="/2017/06/17/sublime-convert-tab-to-4-spaces/" itemprop="url">
                   sublime convert tab to 4 spaces
@@ -1147,18 +1812,30 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-17T10:21:54+08:00">
-                2017-06-17
-              </time>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-06-17 10:21:54 / 修改时间：10:23:26" itemprop="dateCreated datePublished" datetime="2017-06-17T10:21:54+08:00">2017-06-17</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -1166,18 +1843,22 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/06/17/sublime-convert-tab-to-4-spaces/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/17/sublime-convert-tab-to-4-spaces/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-
           
+             <span id="/2017/06/17/sublime-convert-tab-to-4-spaces/" class="leancloud_visitors" data-flag-title="sublime convert tab to 4 spaces">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
           
 
           
@@ -1188,7 +1869,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1198,8 +1881,8 @@
         
           <p>sublime默认缩紧会使用tab进行缩紧，但是大部分编程语言规范都不允许tab的出现。<br>
           <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/06/17/sublime-convert-tab-to-4-spaces/#more" rel="contents">
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/17/sublime-convert-tab-to-4-spaces/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1208,16 +1891,21 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1227,385 +1915,10 @@
         <div class="post-eof"></div>
       
     </footer>
-  </article>
-
-
-    
-      
-
-  
-
+  </div>
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/06/17/Git-proxy/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/17/Git-proxy/" itemprop="url">
-                  Git proxy
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-17T10:15:44+08:00">
-                2017-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/06/17/Git-proxy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/17/Git-proxy/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>当我在Linux下设置shadowsocket代理时，用Git进行联网操作时总提示没有设置正确的proxy。<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/06/17/Git-proxy/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/05/25/疯狂人类进化史-女人为什么比男人漂亮/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/25/疯狂人类进化史-女人为什么比男人漂亮/" itemprop="url">
-                  疯狂人类进化史:女人为什么比男人漂亮
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-25T00:09:14+08:00">
-                2017-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/05/25/疯狂人类进化史-女人为什么比男人漂亮/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/25/疯狂人类进化史-女人为什么比男人漂亮/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>动物界中，雄性的外表往往远比雌性华丽醒目。如公鸡、孔雀，然而人类是个例外。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/25/疯狂人类进化史-女人为什么比男人漂亮/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="yarving.historytale.com/2017/05/23/疯狂人类进化史：大脑袋不一定有大智慧/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Yarving Liu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="MX space">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="MX space" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/23/疯狂人类进化史：大脑袋不一定有大智慧/" itemprop="url">
-                  疯狂人类进化史：大脑袋不一定有大智慧
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T23:41:59+08:00">
-                2017-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/05/23/疯狂人类进化史：大脑袋不一定有大智慧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/23/疯狂人类进化史：大脑袋不一定有大智慧/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </article>
 
 
@@ -1614,15 +1927,12 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1638,57 +1948,104 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Yarving Liu" />
-          <p class="site-author-name" itemprop="name">Yarving Liu</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">55</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Yarving Liu" />
+            
+              <p class="site-author-name" itemprop="name">Yarving Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
 
           
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
+
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
+
+      
 
       
 
@@ -1702,38 +2059,55 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Yarving Liu</span>
+
+  
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
+
+
 
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -1752,82 +2126,212 @@
 
 
 
-  
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+
+
+
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
 
 
   
 
   
-    
-  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("C7TURJJ9MzJz4LgFlfki9JgC-gzGzoHsz", "KjmedhPH78qYNquptzbt1me0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"yarving"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
   </script>
 
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+
   
 
+  
 
-
-
-
-
-
+  
 
   
   
@@ -1840,6 +2344,7 @@
 
   
 
+  
 
 </body>
 </html>
