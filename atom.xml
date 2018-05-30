@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yarving.historytale.com/"/>
-  <updated>2018-05-24T03:18:05.913Z</updated>
+  <updated>2018-05-30T15:39:14.778Z</updated>
   <id>yarving.historytale.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django 测试远程数据库是否可连接</title>
+    <link href="yarving.historytale.com/2018/05/30/Django-Test-Remote-Database-Connection/"/>
+    <id>yarving.historytale.com/2018/05/30/Django-Test-Remote-Database-Connection/</id>
+    <published>2018-05-30T03:19:04.000Z</published>
+    <updated>2018-05-30T15:39:14.778Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://www.djangoproject.com/m/img/logos/django-logo-negative.png&quot; alt=&quot;django&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在一个项目中需要配置远程数据库，我配置好了settings.py后，想要验证下django是否能连接上该远程数据库。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Django" scheme="yarving.historytale.com/categories/Django/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>后出师表</title>
@@ -460,49 +481,6 @@
               title: &quot;大事讲原则，小事讲风格&quot;,
               author: &quot;之江新语&quot;,
               url: &quot;http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437099147739.mp3&quot;,
-              pic: &quot;&quot;,
-              lrc: &quot;&quot;
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        &lt;/script&gt;
-    
-    </summary>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/categories/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/tags/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理论学习要有三种境界</title>
-    <link href="yarving.historytale.com/2018/05/06/%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E8%A6%81%E6%9C%89%E4%B8%89%E7%A7%8D%E5%A2%83%E7%95%8C/"/>
-    <id>yarving.historytale.com/2018/05/06/理论学习要有三种境界/</id>
-    <published>2018-05-06T07:16:33.000Z</published>
-    <updated>2018-05-08T14:55:41.926Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg&quot; alt=&quot;之江新语&quot;&gt;&lt;/p&gt;
-
-        &lt;div id=&quot;aplayer-fhWYPXqA&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-            &lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-          var ap = new APlayer({
-            element: document.getElementById(&quot;aplayer-fhWYPXqA&quot;),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: &quot;理论学习要有三种境界&quot;,
-              author: &quot;之江新语&quot;,
-              url: &quot;http://183.214.1.65/flv1.gmw.cn/gmw/videoroot/2015-07-20/1437374119412.mp3&quot;,
               pic: &quot;&quot;,
               lrc: &quot;&quot;
             }
