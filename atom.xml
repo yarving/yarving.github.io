@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="yarving.historytale.com/"/>
-  <updated>2018-05-30T15:39:14.778Z</updated>
+  <updated>2018-05-30T16:32:58.346Z</updated>
   <id>yarving.historytale.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>习近平在正定</title>
+    <link href="yarving.historytale.com/2018/05/31/xjpdzd/"/>
+    <id>yarving.historytale.com/2018/05/31/xjpdzd/</id>
+    <published>2018-05-30T16:23:43.000Z</published>
+    <updated>2018-05-30T16:32:58.346Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文摘自”红星云”，总结了习近平同志在正定任职时的各方面工作。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django管理已存在的数据库</title>
+    <link href="yarving.historytale.com/2018/05/30/Django-integrate-with-legacy-database/"/>
+    <id>yarving.historytale.com/2018/05/30/Django-integrate-with-legacy-database/</id>
+    <published>2018-05-30T15:59:05.000Z</published>
+    <updated>2018-05-30T16:32:58.345Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;当我们使用Django时，一般都是根据定义的模型来生成数据库，也就是先创建Django项目，再创建的数据库。当反过来，先有数据库，后才有Django项目时，该如何处理呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Django" scheme="yarving.historytale.com/categories/Django/"/>
+    
+    
+      <category term="python" scheme="yarving.historytale.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Django 测试远程数据库是否可连接</title>
@@ -395,92 +433,6 @@
               title: &quot;搞试点要“大胆设想小心求证”&quot;,
               author: &quot;之江新语&quot;,
               url: &quot;http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437102329342.mp3&quot;,
-              pic: &quot;&quot;,
-              lrc: &quot;&quot;
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        &lt;/script&gt;
-    
-    </summary>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/categories/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/tags/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树立五种崇高情感</title>
-    <link href="yarving.historytale.com/2018/05/06/%E6%A0%91%E7%AB%8B%E4%BA%94%E7%A7%8D%E5%B4%87%E9%AB%98%E6%83%85%E6%84%9F/"/>
-    <id>yarving.historytale.com/2018/05/06/树立五种崇高情感/</id>
-    <published>2018-05-06T07:22:55.000Z</published>
-    <updated>2018-05-08T14:55:41.925Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg&quot; alt=&quot;之江新语&quot;&gt;&lt;/p&gt;
-
-        &lt;div id=&quot;aplayer-toycSLLw&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-            &lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-          var ap = new APlayer({
-            element: document.getElementById(&quot;aplayer-toycSLLw&quot;),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: &quot;大事讲原则，小事讲风格&quot;,
-              author: &quot;之江新语&quot;,
-              url: &quot;http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437098897623.mp3&quot;,
-              pic: &quot;&quot;,
-              lrc: &quot;&quot;
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        &lt;/script&gt;
-    
-    </summary>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/categories/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/tags/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大事讲原则，小事讲风格</title>
-    <link href="yarving.historytale.com/2018/05/06/%E5%A4%A7%E4%BA%8B%E8%AE%B2%E5%8E%9F%E5%88%99%EF%BC%8C%E5%B0%8F%E4%BA%8B%E8%AE%B2%E9%A3%8E%E6%A0%BC/"/>
-    <id>yarving.historytale.com/2018/05/06/大事讲原则，小事讲风格/</id>
-    <published>2018-05-06T07:19:55.000Z</published>
-    <updated>2018-05-08T14:55:41.922Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg&quot; alt=&quot;之江新语&quot;&gt;&lt;/p&gt;
-
-        &lt;div id=&quot;aplayer-KGzMXCph&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-            &lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-          var ap = new APlayer({
-            element: document.getElementById(&quot;aplayer-KGzMXCph&quot;),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: &quot;大事讲原则，小事讲风格&quot;,
-              author: &quot;之江新语&quot;,
-              url: &quot;http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437099147739.mp3&quot;,
               pic: &quot;&quot;,
               lrc: &quot;&quot;
             }

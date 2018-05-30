@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[习近平在正定]]></title>
+    <url>%2F2018%2F05%2F31%2Fxjpdzd%2F</url>
+    <content type="text"><![CDATA[本文摘自”红星云”，总结了习近平同志在正定任职时的各方面工作。 人才战略内用，外招，上请，下挖，近补，远育。 提拔优秀青年充实基层领导班子 把专家型学者充实到县级领导班子 提拔有专长的干部 支持民间办学（专业技术学校、电大、函大办学），选拔优秀人才入高校深造 自己执笔给全国知名专家、学者写信，聘请担任顾问 经济发展 明确定位，将正定经济模式定位于“半城郊”型 全面规划发展商品经济 党建和干部建设 政治思想教育，端正作风教育 总览全局抓大事，反对衙门作风，注重工作实效；搞好团结，以身作则，不搞不正之风；加强学习，提高领导水平 ；树立雄心壮志 注重当前和长远的关系、优势与劣势、积极性和科学性、内部条件和外部条件、内涵和外延、生产和服务 家庭的影响 热爱人民，注重走群众路线 注重调查研究 尊重老同志]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Django管理已存在的数据库]]></title>
+    <url>%2F2018%2F05%2F30%2FDjango-integrate-with-legacy-database%2F</url>
+    <content type="text"><![CDATA[当我们使用Django时，一般都是根据定义的模型来生成数据库，也就是先创建Django项目，再创建的数据库。当反过来，先有数据库，后才有Django项目时，该如何处理呢？ 直觉反应是，根据数据库中每个表，自己去定义模型。 其实，django提供了了python manage.py inspect命令，可以根据模型来生成model。这样即可以保证比人工定义准确，也能够节省巨量时间（我平常连定义model都觉得费劲）。 详细内容可参见 Integrating Django with a legacy database 另外要提及的是，我需要根据远程POSTGRE SQL数据库来生成model。可能需要指定schema文件，在settings.py中的DATABASES中添加OPTIONS选项即可，具体配置如下图所示：]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Django 测试远程数据库是否可连接]]></title>
     <url>%2F2018%2F05%2F30%2FDjango-Test-Remote-Database-Connection%2F</url>
     <content type="text"><![CDATA[在一个项目中需要配置远程数据库，我配置好了settings.py后，想要验证下django是否能连接上该远程数据库。 答案很简单，运行python manage.py runserver即可验证。 如果远程数据库配置不正确的话，会报错（如下图所示）]]></content>
