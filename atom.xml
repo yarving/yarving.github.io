@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="yarving.historytale.com/"/>
-  <updated>2018-05-30T16:32:58.346Z</updated>
-  <id>yarving.historytale.com/</id>
+  <link href="http://yarving.historytale.com/"/>
+  <updated>2018-07-14T03:25:25.472Z</updated>
+  <id>http://yarving.historytale.com/</id>
   
   <author>
     <name>Yarving Liu</name>
@@ -17,438 +17,414 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>习近平在正定</title>
-    <link href="yarving.historytale.com/2018/05/31/xjpdzd/"/>
-    <id>yarving.historytale.com/2018/05/31/xjpdzd/</id>
-    <published>2018-05-30T16:23:43.000Z</published>
-    <updated>2018-05-30T16:32:58.346Z</updated>
+    <title>长短经——序</title>
+    <link href="http://yarving.historytale.com/2018/07/14/long-short-article-preface/"/>
+    <id>http://yarving.historytale.com/2018/07/14/long-short-article-preface/</id>
+    <published>2018-07-14T02:29:01.000Z</published>
+    <updated>2018-07-14T03:25:25.472Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;本文摘自”红星云”，总结了习近平同志在正定任职时的各方面工作。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1531437437183-996b415eee3a?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=f012c3627e5a22721d60ba9f8827b7b0&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1700&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="长短经" scheme="http://yarving.historytale.com/categories/%E9%95%BF%E7%9F%AD%E7%BB%8F/"/>
     
     
   </entry>
   
   <entry>
-    <title>Django管理已存在的数据库</title>
-    <link href="yarving.historytale.com/2018/05/30/Django-integrate-with-legacy-database/"/>
-    <id>yarving.historytale.com/2018/05/30/Django-integrate-with-legacy-database/</id>
-    <published>2018-05-30T15:59:05.000Z</published>
-    <updated>2018-05-30T16:32:58.345Z</updated>
+    <title>Django的ListView添加login_required修饰符</title>
+    <link href="http://yarving.historytale.com/2018/07/12/django-list-view-login-required/"/>
+    <id>http://yarving.historytale.com/2018/07/12/django-list-view-login-required/</id>
+    <published>2018-07-12T06:32:09.000Z</published>
+    <updated>2018-07-14T02:28:01.068Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Django里，提供了ListView、DetailView内置类方便的编写视图函数，在我的项目中，有一个展示列表的函数，必须要登录后才能操作，即要添加&lt;code&gt;login_required&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux开机启动shadowsocks</title>
+    <link href="http://yarving.historytale.com/2018/07/12/shadow-socks-as-startups/"/>
+    <id>http://yarving.historytale.com/2018/07/12/shadow-socks-as-startups/</id>
+    <published>2018-07-12T02:11:23.000Z</published>
+    <updated>2018-07-14T02:28:01.073Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;shadowsocks已经成为我上Google查阅资料不可或缺的一个东西了。它在Windows上比较好搞，勾选开启启动，以后就不用操心了。&lt;/p&gt;
+&lt;p&gt;但是在Linux下，我以前没有找到很好的办法。用的是shadowsocks-qt——一个图形化的shadowsocks工具。缺点是不能设置开机自启动。&lt;/p&gt;
+&lt;p&gt;因此，花了点时间研究了下如何设置&lt;strong&gt;Linux开机启动shadowsocks&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Trics" scheme="http://yarving.historytale.com/tags/Trics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django 自定义管理后台界面</title>
+    <link href="http://yarving.historytale.com/2018/07/11/django-custome-administration/"/>
+    <id>http://yarving.historytale.com/2018/07/11/django-custome-administration/</id>
+    <published>2018-07-11T15:55:30.000Z</published>
+    <updated>2018-07-14T02:28:01.068Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天尝试了下对Django默认的管理后台进行修改，是个新挑战。&lt;/p&gt;
+&lt;h1 id=&quot;学习到的新知识点&quot;&gt;&lt;a href=&quot;#学习到的新知识点&quot; class=&quot;headerlink&quot; title=&quot;学习到的新知识点&quot;&gt;&lt;/a&gt;学习到的新知识点&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;配置 django suit&lt;/li&gt;
+&lt;li&gt;模拟 django suit 的页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;login_required&lt;/code&gt; 修饰符的用法&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django 命名Admin界面logo字段</title>
+    <link href="http://yarving.historytale.com/2018/07/10/django-rename-admin-logo/"/>
+    <id>http://yarving.historytale.com/2018/07/10/django-rename-admin-logo/</id>
+    <published>2018-07-10T13:08:42.000Z</published>
+    <updated>2018-07-14T02:28:01.069Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Django后台的默认界面中显示的LOGO为&lt;strong&gt;Django Administration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oo746vdmm.bkt.clouddn.com/18-7-10/20283149.jpg&quot; alt=&quot;Django administration&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如何修改这个文字呢？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Namedtuple 介绍</title>
+    <link href="http://yarving.historytale.com/2018/07/08/python-namedtuple/"/>
+    <id>http://yarving.historytale.com/2018/07/08/python-namedtuple/</id>
+    <published>2018-07-08T08:46:00.000Z</published>
+    <updated>2018-07-14T02:28:01.071Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1529101091764-c3526daf38fe&quot; alt=&quot;python&quot;&gt;&lt;br&gt;本文介绍了python的namedtuple数据类型。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+    
+      <category term="namedtuple" scheme="http://yarving.historytale.com/categories/python/namedtuple/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>A Complete Beginner&#39;s Guide to Django - Getting Started（二）</title>
+    <link href="http://yarving.historytale.com/2018/07/01/A-Complete-Beginner-s-Guide-to-Django-Getting-Started-2/"/>
+    <id>http://yarving.historytale.com/2018/07/01/A-Complete-Beginner-s-Guide-to-Django-Getting-Started-2/</id>
+    <published>2018-07-01T14:18:36.000Z</published>
+    <updated>2018-07-14T02:28:01.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《A Complete Beginner’s Guide to Django》&lt;/a&gt; 是由 &lt;a href=&quot;https://simpleisbetterthancomplex.com/about/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vitor Freitas&lt;/a&gt; 写作的 Django 入门教程。&lt;/p&gt;
+&lt;p&gt;本文是根据第二章 &lt;a href=&quot;https://simpleisbetterthancomplex.com/series/2017/09/11/a-complete-beginners-guide-to-django-part-2.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Part 2 - Fundamentals&lt;/a&gt; 精简而来。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="A Complete Beginner&#39;s Guide to Django" scheme="http://yarving.historytale.com/categories/A-Complete-Beginner-s-Guide-to-Django/"/>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Complete Beginner&#39;s Guide to Django - Getting Started（一）</title>
+    <link href="http://yarving.historytale.com/2018/07/01/A-Complete-Beginner-s-Guide-to-Django-Getting-Started-1/"/>
+    <id>http://yarving.historytale.com/2018/07/01/A-Complete-Beginner-s-Guide-to-Django-Getting-Started-1/</id>
+    <published>2018-07-01T14:18:36.000Z</published>
+    <updated>2018-07-14T02:28:01.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《A Complete Beginner’s Guide to Django》&lt;/a&gt; 是由 &lt;a href=&quot;https://simpleisbetterthancomplex.com/about/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vitor Freitas&lt;/a&gt; 写作的 Django 入门教程。&lt;/p&gt;
+&lt;p&gt;本文是根据第一章 &lt;a href=&quot;https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Part 1 - Getting Started&lt;/a&gt; 精简而来。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="A Complete Beginner&#39;s Guide to Django" scheme="http://yarving.historytale.com/categories/A-Complete-Beginner-s-Guide-to-Django/"/>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>World Cup Sms Robot</title>
+    <link href="http://yarving.historytale.com/2018/06/30/world-cup-sms-robot/"/>
+    <id>http://yarving.historytale.com/2018/06/30/world-cup-sms-robot/</id>
+    <published>2018-06-30T08:50:54.000Z</published>
+    <updated>2018-07-14T02:28:01.074Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看到一篇教程是关于发送短信获取世界杯战况：&lt;a href=&quot;https://pythontips.com/2018/06/25/a-fifa-world-cup-sms-bot-using-twilio-heroku-and-flask/comment-page-1/#comment-18560&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;A FIFA 2018 World Cup SMS bot using Twilio, Heroku and Flask&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这个项目很简单，可以跟着练习一遍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+    
+    
+      <category term="sms" scheme="http://yarving.historytale.com/tags/sms/"/>
+    
+      <category term="robot" scheme="http://yarving.historytale.com/tags/robot/"/>
+    
+      <category term="world cup" scheme="http://yarving.historytale.com/tags/world-cup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python Decouple</title>
+    <link href="http://yarving.historytale.com/2018/06/29/python-decouple/"/>
+    <id>http://yarving.historytale.com/2018/06/29/python-decouple/</id>
+    <published>2018-06-29T14:21:28.000Z</published>
+    <updated>2018-07-14T02:28:01.070Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在python项目中，有很多配置型的东西，不应该放到python源代码中。&lt;/p&gt;
+&lt;p&gt;比如配置数据库的URL、邮件服务器地址和端口等。&lt;/p&gt;
+&lt;p&gt;同样的项目，运行在不同环境配置环境不应相同。如测试环境下应该是一套配置、生产环境是另一套配置。&lt;/p&gt;
+&lt;p&gt;Decouple可将配置从代码中分离。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+    
+      <category term="package" scheme="http://yarving.historytale.com/categories/python/package/"/>
+    
+    
+      <category term="python" scheme="http://yarving.historytale.com/tags/python/"/>
+    
+      <category term="decouple" scheme="http://yarving.historytale.com/tags/decouple/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阮一峰 《未来世界的幸存者》</title>
+    <link href="http://yarving.historytale.com/2018/06/29/survivor/"/>
+    <id>http://yarving.historytale.com/2018/06/29/survivor/</id>
+    <published>2018-06-29T09:28:15.000Z</published>
+    <updated>2018-07-14T02:28:01.073Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;当我们使用Django时，一般都是根据定义的模型来生成数据库，也就是先创建Django项目，再创建的数据库。当反过来，先有数据库，后才有Django项目时，该如何处理呢？&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Django" scheme="yarving.historytale.com/categories/Django/"/>
-    
-    
-      <category term="python" scheme="yarving.historytale.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django 测试远程数据库是否可连接</title>
-    <link href="yarving.historytale.com/2018/05/30/Django-Test-Remote-Database-Connection/"/>
-    <id>yarving.historytale.com/2018/05/30/Django-Test-Remote-Database-Connection/</id>
-    <published>2018-05-30T03:19:04.000Z</published>
-    <updated>2018-05-30T15:39:14.778Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://www.djangoproject.com/m/img/logos/django-logo-negative.png&quot; alt=&quot;django&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在一个项目中需要配置远程数据库，我配置好了settings.py后，想要验证下django是否能连接上该远程数据库。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Django" scheme="yarving.historytale.com/categories/Django/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>后出师表</title>
-    <link href="yarving.historytale.com/2018/05/24/hcsb-zgl/"/>
-    <id>yarving.historytale.com/2018/05/24/hcsb-zgl/</id>
-    <published>2018-05-24T03:17:22.000Z</published>
-    <updated>2018-05-24T03:18:05.913Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;先帝深虑汉、贼不两立，王业不偏安，故托臣以讨贼也。以先帝之明，量臣之才，固知臣伐贼，才弱敌强也。然不伐贼，王业亦亡。惟坐而待亡，孰与伐之？是故托臣而弗疑也。臣受命之日，寝不安席，食不甘味。思惟北征。宜先入南。故五月渡泸，深入不毛，并日而食；臣非不自惜也，顾王业不可得偏安于蜀都，故冒危难，以奉先帝之遗意也，而议者谓为非计。今贼适疲于西，又务于东，兵法乘劳，此进趋之时也。谨陈其事如左：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前出师表</title>
-    <link href="yarving.historytale.com/2018/05/24/qcsb-zgl/"/>
-    <id>yarving.historytale.com/2018/05/24/qcsb-zgl/</id>
-    <published>2018-05-24T03:09:49.000Z</published>
-    <updated>2018-05-24T03:17:16.387Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新闻联播-20180520</title>
-    <link href="yarving.historytale.com/2018/05/21/xwlb-20180520/"/>
-    <id>yarving.historytale.com/2018/05/21/xwlb-20180520/</id>
-    <published>2018-05-21T15:13:44.000Z</published>
-    <updated>2018-05-21T15:25:19.076Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;生态文明&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="新闻联播" scheme="yarving.historytale.com/categories/%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《资治通鉴》11句</title>
-    <link href="yarving.historytale.com/2018/05/21/%E3%80%8A%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4%E3%80%8B11%E5%8F%A5/"/>
-    <id>yarving.historytale.com/2018/05/21/《资治通鉴》11句/</id>
-    <published>2018-05-21T15:00:16.000Z</published>
-    <updated>2018-05-21T15:25:19.076Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;木心不直，则脉理皆斜，弓虽劲而发矢不直&lt;br&gt;——《资治通鉴 唐纪》&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="资治通鉴" scheme="yarving.historytale.com/categories/%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4/"/>
-    
-    
-      <category term="笔记" scheme="yarving.historytale.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>唐浩明点评曾国藩家书（下）二</title>
-    <link href="yarving.historytale.com/2018/05/21/%E5%94%90%E6%B5%A9%E6%98%8E%E7%82%B9%E8%AF%84%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%EF%BC%88%E4%B8%8B%EF%BC%89%E4%BA%8C/"/>
-    <id>yarving.historytale.com/2018/05/21/唐浩明点评曾国藩家书（下）二/</id>
-    <published>2018-05-21T14:50:42.000Z</published>
-    <updated>2018-05-21T15:25:19.077Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;P75：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人生惟有常为第一美德；常常临摹，久不间断，月异而岁不同；进之以猛，持之以恒。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="曾国藩" scheme="yarving.historytale.com/categories/%E6%9B%BE%E5%9B%BD%E8%97%A9/"/>
-    
-    
-      <category term="笔记" scheme="yarving.historytale.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>唐浩明点评曾国藩家书（下）一</title>
-    <link href="yarving.historytale.com/2018/05/20/%E5%94%90%E6%B5%A9%E6%98%8E%E7%82%B9%E8%AF%84%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%EF%BC%88%E4%B8%8B%EF%BC%89%E4%B8%80/"/>
-    <id>yarving.historytale.com/2018/05/20/唐浩明点评曾国藩家书（下）一/</id>
-    <published>2018-05-19T16:05:05.000Z</published>
-    <updated>2018-05-19T16:24:24.851Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;天下古今之庸人，介意一惰字致败；天下古今之才人，皆以一傲字致败。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="曾国藩" scheme="yarving.historytale.com/categories/%E6%9B%BE%E5%9B%BD%E8%97%A9/"/>
-    
-    
-      <category term="笔记" scheme="yarving.historytale.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular: Heroes</title>
-    <link href="yarving.historytale.com/2018/05/14/Angular-Heroes/"/>
-    <id>yarving.historytale.com/2018/05/14/Angular-Heroes/</id>
-    <published>2018-05-14T06:02:10.000Z</published>
-    <updated>2018-05-19T16:24:24.850Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是 &lt;a href=&quot;https://angular.cn/tutorial&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Angular官网&lt;/a&gt; 提供的一个项目教程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Angular" scheme="yarving.historytale.com/categories/Angular/"/>
-    
-    
-      <category term="Angular" scheme="yarving.historytale.com/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular: First glance</title>
-    <link href="yarving.historytale.com/2018/05/13/Angular-First-glance/"/>
-    <id>yarving.historytale.com/2018/05/13/Angular-First-glance/</id>
-    <published>2018-05-13T13:31:47.000Z</published>
-    <updated>2018-05-19T16:24:24.850Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天决定学习下Angular，根据&lt;a href=&quot;https://angular.cn/guide/quickstart&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;进行学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Angular" scheme="yarving.historytale.com/categories/Angular/"/>
-    
-    
-      <category term="Angular" scheme="yarving.historytale.com/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tracking User Login Activity in Django Rest Framework</title>
-    <link href="yarving.historytale.com/2018/05/12/Tracking-User-Login-Activity-in-Django-Rest-Framework/"/>
-    <id>yarving.historytale.com/2018/05/12/Tracking-User-Login-Activity-in-Django-Rest-Framework/</id>
-    <published>2018-05-12T15:16:45.000Z</published>
-    <updated>2018-05-19T16:24:24.851Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;django如何记录登录事件？&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="django" scheme="yarving.historytale.com/tags/django/"/>
-    
-      <category term="DRF" scheme="yarving.historytale.com/tags/DRF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>金一南：不忘初心，方得始终</title>
-    <link href="yarving.historytale.com/2018/05/11/%E9%87%91%E4%B8%80%E5%8D%97%EF%BC%9A%E4%B8%8D%E5%BF%98%E5%88%9D%E5%BF%83%EF%BC%8C%E6%96%B9%E5%BE%97%E5%A7%8B%E7%BB%88/"/>
-    <id>yarving.historytale.com/2018/05/11/金一南：不忘初心，方得始终/</id>
-    <published>2018-05-11T02:29:46.000Z</published>
-    <updated>2018-05-21T15:25:19.079Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://www.xinfajia.net/upload/2018/1/11/1515595109806052373_65523933.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>dairy: 2018-05-09</title>
-    <link href="yarving.historytale.com/2018/05/10/dairy-2018-05-09/"/>
-    <id>yarving.historytale.com/2018/05/10/dairy-2018-05-09/</id>
-    <published>2018-05-10T01:57:14.000Z</published>
-    <updated>2018-05-11T16:14:28.705Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1522198428577-adf2d374b05b?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=c8c7a9980900ca8adf70b1d9ad7487a4&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1650&amp;amp;q=80&quot; alt=&quot;Andrew Neel&quot;&gt;&lt;br&gt;photo by &lt;em&gt;&lt;a href=&quot;https://unsplash.com/photos/ggZuL3BTSJU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Andrew Neel&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="yarving.historytale.com/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开会的方法</title>
-    <link href="yarving.historytale.com/2018/05/09/%E5%BC%80%E4%BC%9A%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>yarving.historytale.com/2018/05/09/开会的方法/</id>
-    <published>2018-05-09T02:53:33.000Z</published>
-    <updated>2018-05-19T16:24:24.852Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1480435712328-a8dc543d1d80?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=abfd534a3561f5dd74fbd0ba1454bbf9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1950&amp;amp;q=80&quot; alt=&quot;meeting&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>dairy: 2018-05-08</title>
-    <link href="yarving.historytale.com/2018/05/08/dairy-2018-05-08/"/>
-    <id>yarving.historytale.com/2018/05/08/dairy-2018-05-08/</id>
-    <published>2018-05-08T14:57:14.000Z</published>
-    <updated>2018-05-11T16:14:28.704Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1522198428577-adf2d374b05b?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=c8c7a9980900ca8adf70b1d9ad7487a4&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1650&amp;amp;q=80&quot; alt=&quot;Andrew Neel&quot;&gt;&lt;br&gt;photo by &lt;em&gt;&lt;a href=&quot;https://unsplash.com/photos/ggZuL3BTSJU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Andrew Neel&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="yarving.historytale.com/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 攻略</title>
-    <link href="yarving.historytale.com/2018/05/07/Hexo-practice/"/>
-    <id>yarving.historytale.com/2018/05/07/Hexo-practice/</id>
-    <published>2018-05-07T08:15:20.000Z</published>
-    <updated>2018-05-08T14:55:41.922Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本文是我在使用hexo的过程中为了解决具体问题而找到的解决方式，如果别人已经有现成的解决方案，我会直接放链接，如果没有现成而我又找到了优雅的解决方案，会贴上我的。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://survivor.ruanyifeng.com/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阅读地址&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="hexo" scheme="yarving.historytale.com/tags/hexo/"/>
+      <category term="读书笔记" scheme="http://yarving.historytale.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>dairy: 2018-05-06</title>
-    <link href="yarving.historytale.com/2018/05/06/dairy-2018-05-06/"/>
-    <id>yarving.historytale.com/2018/05/06/dairy-2018-05-06/</id>
-    <published>2018-05-06T14:57:14.000Z</published>
-    <updated>2018-05-08T14:55:41.922Z</updated>
+    <title>阮一峰《前方的路》</title>
+    <link href="http://yarving.historytale.com/2018/06/29/ryfqfdl/"/>
+    <id>http://yarving.historytale.com/2018/06/29/ryfqfdl/</id>
+    <published>2018-06-29T07:01:32.000Z</published>
+    <updated>2018-07-14T02:28:01.071Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1497161884053-1d0d43fe3c61?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=a4e20223d039dc6c598bfd6dbf1cb66d&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=2089&amp;amp;q=80&quot; alt=&quot;SHTTEFAN&quot;&gt;&lt;br&gt;photo by &lt;em&gt;&lt;a href=&quot;https://unsplash.com/photos/ggZuL3BTSJU&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shttefan&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;《前方的路》是著名博主阮一峰多年来博客写作的整理合辑，挑选了从2004年到2014年这段时间的文章。&lt;/p&gt;
+&lt;p&gt;他这本书已经交出版社出版了，但同时也在自己的个人网站上发布了所有的文章内容。&lt;/p&gt;
+&lt;p&gt;也就是，可以买书，也可以通过非盗版的形式阅读。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="日记" scheme="yarving.historytale.com/tags/%E6%97%A5%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://yarving.historytale.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>要讲究领导艺术</title>
-    <link href="yarving.historytale.com/2018/05/06/%E8%A6%81%E8%AE%B2%E7%A9%B6%E9%A2%86%E5%AF%BC%E8%89%BA%E6%9C%AF/"/>
-    <id>yarving.historytale.com/2018/05/06/要讲究领导艺术/</id>
-    <published>2018-05-06T07:29:24.000Z</published>
-    <updated>2018-05-11T16:14:28.706Z</updated>
+    <title>Python的and和or的返回值</title>
+    <link href="http://yarving.historytale.com/2018/06/27/python-and-or/"/>
+    <id>http://yarving.historytale.com/2018/06/27/python-and-or/</id>
+    <published>2018-06-27T15:34:32.000Z</published>
+    <updated>2018-07-14T02:28:01.070Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg&quot; alt=&quot;之江新语&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;一直以来，我以为python中&lt;code&gt;and&lt;/code&gt;和&lt;code&gt;or&lt;/code&gt;的返回值是&lt;code&gt;True&lt;/code&gt;或&lt;code&gt;False&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;看 《Dive into Python》这本书时，发现他们并不返回布尔值，而是返回他们实际进行比较的值之一。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yarving.historytale.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MeisterTask介绍</title>
+    <link href="http://yarving.historytale.com/2018/06/13/meister-task/"/>
+    <id>http://yarving.historytale.com/2018/06/13/meister-task/</id>
+    <published>2018-06-13T03:11:38.000Z</published>
+    <updated>2018-06-14T16:08:33.714Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前总在 &lt;a href=&quot;https://www.iplaysoft.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;异次元软件世界&lt;/a&gt; 里看一些新奇的软件，因此也萌发了将自己平常使用的一些比较高效的工具整理下。工欲善其事必先利其器。&lt;/p&gt;
+&lt;p&gt;本次就从我几乎每天都在用的项目管理工具——MeisterTask。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oo746vdmm.bkt.clouddn.com/18-6-13/13651547.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yarving.historytale.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="meistertask" scheme="http://yarving.historytale.com/tags/meistertask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django Coding Style</title>
+    <link href="http://yarving.historytale.com/2018/06/12/django-coding-style/"/>
+    <id>http://yarving.historytale.com/2018/06/12/django-coding-style/</id>
+    <published>2018-06-12T11:26:34.000Z</published>
+    <updated>2018-06-14T16:08:33.712Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;编写Django中的代码时，请遵循下列编码风格&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Django使用bcrypt生成密码</title>
+    <link href="http://yarving.historytale.com/2018/06/12/django-use-bcrypt-to-generate-password/"/>
+    <id>http://yarving.historytale.com/2018/06/12/django-use-bcrypt-to-generate-password/</id>
+    <published>2018-06-12T09:13:53.000Z</published>
+    <updated>2018-06-14T16:08:33.712Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h1&gt;&lt;p&gt;需要设计一个系统（采用Django），专门管理另一个系统的用户。用户登录在另一个系统中进行，那边的密码采用bcrypt进行校验，所以Django系统中密码保存也要用bcrypt加密保存。&lt;/p&gt;
+&lt;p&gt;而Django虽然自带的User中提供了Password功能（输入明文、自动生成加密字符串），但是model中却并不提供一个所谓的PasswordField。&lt;/p&gt;
+&lt;p&gt;因此，需求就是&lt;strong&gt;如何在自己实现的注册功能中，将明文密码用bcrypt加密保存&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="django" scheme="http://yarving.historytale.com/categories/django/"/>
+    
+    
+      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+    
+      <category term="bcrypt" scheme="http://yarving.historytale.com/tags/bcrypt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learn Python the Hard Way</title>
+    <link href="http://yarving.historytale.com/2018/06/12/learn-python-the-hard-way/"/>
+    <id>http://yarving.historytale.com/2018/06/12/learn-python-the-hard-way/</id>
+    <published>2018-06-12T01:18:18.000Z</published>
+    <updated>2018-06-14T16:08:33.713Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cfvod.kaltura.com/p/1926081/sp/192608100/thumbnail/entry_id/0_n64gjymf/version/100002/width/560/height/400&quot; alt=&quot;Learn Python The Hard Way&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yarving.historytale.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>诗词（一）李清照七首</title>
+    <link href="http://yarving.historytale.com/2018/06/07/poem20180607/"/>
+    <id>http://yarving.historytale.com/2018/06/07/poem20180607/</id>
+    <published>2018-06-07T07:36:29.000Z</published>
+    <updated>2018-06-14T16:08:33.715Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://www.zc532.com/info/uploads/allimg/160417/1409495461-0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="诗词" scheme="http://yarving.historytale.com/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+      <category term="李清照" scheme="http://yarving.historytale.com/tags/%E6%9D%8E%E6%B8%85%E7%85%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unbroken</title>
+    <link href="http://yarving.historytale.com/2018/06/07/unbroken/"/>
+    <id>http://yarving.historytale.com/2018/06/07/unbroken/</id>
+    <published>2018-06-07T01:28:46.000Z</published>
+    <updated>2018-06-14T16:08:33.717Z</updated>
+    
+    <summary type="html">
+    
+      &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/watch?v=26U_seo0a1g&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
-        &lt;div id=&quot;aplayer-ojEQgjtW&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-            &lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-          var ap = new APlayer({
-            element: document.getElementById(&quot;aplayer-ojEQgjtW&quot;),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: &quot;要讲究领导艺术&quot;,
-              author: &quot;之江新语&quot;,
-              url: &quot;http://222.245.77.82/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437106406439.mp3&quot;,
-              pic: &quot;&quot;,
-              lrc: &quot;&quot;
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        &lt;/script&gt;
+&lt;p&gt;&lt;a href=&quot;https://v.qq.com/x/page/a0346ctbk24.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;腾讯视频&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="之江新语" scheme="yarving.historytale.com/categories/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
     
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/tags/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
+      <category term="vedio" scheme="http://yarving.historytale.com/tags/vedio/"/>
     
   </entry>
   
   <entry>
-    <title>搞试点要“大胆设想小心求证”</title>
-    <link href="yarving.historytale.com/2018/05/06/%E6%90%9E%E8%AF%95%E7%82%B9%E8%A6%81%E2%80%9C%E5%A4%A7%E8%83%86%E8%AE%BE%E6%83%B3%E5%B0%8F%E5%BF%83%E6%B1%82%E8%AF%81%E2%80%9D/"/>
-    <id>yarving.historytale.com/2018/05/06/搞试点要“大胆设想小心求证”/</id>
-    <published>2018-05-06T07:26:19.000Z</published>
-    <updated>2018-05-08T14:55:41.924Z</updated>
+    <title>Django Verify Password</title>
+    <link href="http://yarving.historytale.com/2018/06/06/django-verify-password/"/>
+    <id>http://yarving.historytale.com/2018/06/06/django-verify-password/</id>
+    <published>2018-06-06T09:10:09.000Z</published>
+    <updated>2018-06-14T16:08:33.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg&quot; alt=&quot;之江新语&quot;&gt;&lt;/p&gt;
-
-        &lt;div id=&quot;aplayer-oVjCgUnT&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-            &lt;pre class=&quot;aplayer-lrc-content&quot;&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-          var ap = new APlayer({
-            element: document.getElementById(&quot;aplayer-oVjCgUnT&quot;),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: &quot;搞试点要“大胆设想小心求证”&quot;,
-              author: &quot;之江新语&quot;,
-              url: &quot;http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437102329342.mp3&quot;,
-              pic: &quot;&quot;,
-              lrc: &quot;&quot;
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        &lt;/script&gt;
+      &lt;p&gt;I’ve make a design about user register, need to verify user’s password and confirm password are equal.&lt;br&gt;When reading this &lt;a href=&quot;https://github.com/luhuisicnu/The-Flask-Mega-Tutorial-zh/blob/master/docs/%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%9A%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The-Flask-Mega-Tutorial-zh&lt;/a&gt;, I found a better way to handle this situation.&lt;/p&gt;
     
     </summary>
     
-      <category term="之江新语" scheme="yarving.historytale.com/categories/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
+      <category term="django" scheme="http://yarving.historytale.com/categories/django/"/>
     
-    
-      <category term="背诵" scheme="yarving.historytale.com/tags/%E8%83%8C%E8%AF%B5/"/>
-    
-      <category term="之江新语" scheme="yarving.historytale.com/tags/%E4%B9%8B%E6%B1%9F%E6%96%B0%E8%AF%AD/"/>
     
   </entry>
   
