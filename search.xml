@@ -1,10 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[诗歌（一）]]></title>
+    <url>%2F2019%2F05%2F29%2F%E8%AF%97%E6%AD%8C%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[唐诗绝句 鹿柴 王维 空山不见人，但闻人语响。返景入深林，复照青苔上。 寻隐者不遇 贾岛 松下问童子，言师采药去。只在此山中，云深不知处。 乐游原 李商隐 向晚意不适，驱车登古原。夕阳无限好，只是近黄昏。 凉州词 王之涣 黄河远上白云间，一片孤城万仞山。羌笛何须怨杨柳，春风不度玉门关。 出塞 王昌龄 秦时明月汉时关，万里长征人未还。但使龙城飞将在，不教胡马度阴山。 早发白帝城 李白 朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。 凉州词 王翰 葡萄美酒夜光杯，欲饮琵琶马上催。醉卧沙场君莫笑，古来征战几人回。 江南逢李龟年 杜甫 岐王宅里寻常见，崔九堂前几度闻。正是江南好风景，落花时节又逢君。 登鹳雀楼 王之涣 白日依山尽，黄河入海流。欲求千里目，更上一层楼。 山居秋暝 王维 空山新雨后，天气晚来秋。明月松间照，清泉石上流。竹喧归浣女，莲动下渔舟。随意春芳歇，王孙自可留。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Enhancing Your Blog With Advanced Features]]></title>
+    <url>%2F2018%2F12%2F10%2FEnhancing-Your-Blog-with-Advanced-Features%2F</url>
+    <content type="text"><![CDATA[FormDjango 提供了两种不同的Form： ModelForm: 可以直接根据Model生成Form Form: 自定义Form ModelForm示例：123456from .models import Commentclass CommentForm(forms.ModelForm): class Meta: model = Comment fields = ('name', 'email', 'body') ModelForm在View中可以直接保存，不用经过转化为Model的步骤。1234567def post_detail(request): if request.method == 'POST': form = CommentForm(request.POST) if form.is_valid(): form.save() # comment = form.save(commit=False) # comment.save() Form示例：1234567from django import formsclass EmailPostForm(forms.Form): name = forms.CharField(max_length=25) email = forms.EmailField() to = forms.EmailField() comments = forms.CharField(required=False, widget=forms.Textarea) 每个Field都有一个默认的widget，CharField默认的render为&lt;input type=&quot;text&quot;&gt;，comment制定了Textarea，则会被render为textarea。 在view中用form接收post或get方法如下：123456789101112def post_share(request, post_id): post = get_object_or_404(Post, id=post_id) if request.method == 'POST': form = EmailPostForm(request.POST) if form.is_valid(): cd = form.cleaned_data # ... else: form = EmailPostForm() return render(request, 'blog/post/share.html', &#123;'post': post, 'form': form&#125;) 发送邮件发送邮件需要现在项目的settings.py里定义email的设置，以QQ邮箱的配置为例：123456# EmailEMAIL_HOST = 'smtp.qq.com'EMAIL_HOST_USER = 'yarving@qq.com'EMAIL_HOST_PASSWORD = 'secret-key'EMAIL_PORT = 465EMAIL_USE_SSL = True 发送邮件的代码：123from django.core.mail import send_mailsend_mail('subject', 'email body', 'sender@email.com', ['reciver-address@email.com'], fail_silently=False) 拼凑完整URLDjango的request.build_absolute_uri()方法可以拼凑出完整的url，包含http schema和hostname。 示例：123def post_share(request, post_id): # ... psot_url = request.build_absolute_uri(post.get_absolute_url()) 在model中reverse url的示例：1234567from django.core.urlresolvers import reversefrom django.db import modelsclass Post(models.Model): # ... def get_absolute_url(self): return reverse('blog:post_detail', args=[self.publish.year, self.publish.slug]) Template filterspluralize用法如下，在模板文件中：1&#123;&#123; total | pluralize &#125;&#125; 当total为1时，后面不加任何东西 当total为0或者比1大时，后面加一个s forloopforloop要放在模板的for语句中，有下列函数可以使用 counter和empty用法如下，在模板文件中：12345&#123;% for comment in comments %&#125;&#123;&#123; forloop.counter &#125;&#125; by &#123;&#123; comment.name &#125;&#125;&#123;% empty %&#125;&lt;p&gt;Display some content when no content in for loop&lt;/p&gt;&#123;% endfor %&#125; forloop.counter会显示循环的序号，从1开始 empty表示如果for语句中的comments为空的时候，显示下面的内容 last如：123&#123;% for tag in post.tags.all %&#125;&#123;% if not forloop.last %&#125;, &#123;% endif %&#125;&#123;% endfor %&#125; join示例1&#123;&#123; post.tags.all | join: ", "&#125;&#125; 将post的所有tag都用,连接成字符串 Taggit当要为django搭建的博客的博文创建tag时，可以用django-taggit来实现 安装：pip install django-taggit 添加到settings.py的INSTALLED_APPS里 添加进model12345from taggit.managers import TaggableManagerclass Post(models.Model): # ... tags = TaggableManager() 可以进行如下操作：123post.tags.add('music', 'jazz', 'django')post.tags.all()post.tags.remove('music') Querysetvalues_list()函数原型：values_list(*fields, flat=False, named=False) API链接 可以将值传递为列表，示例用法如下：12psot_tags_ids = post.tags.values_list('id', flat=True)# return flat list like [1, 2, 3, 4] annotate示例1posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4] 用QuerySet查询集的方式一直比较低端，只会使用filter/Q函数/exclude等方式来查询，数据量比较小的时候还可以，但是如果数据量很大，而且查询比较复杂，那么如果还是使用多个filter进行查询效率就会很低。 提高查询数据库效率的方案有两种： 第一种，是使用原生的SQL语句来进行查询，这样的优点在于能够完全按照开发者的意图来执行，效率会很高，但是缺点也很明显： 开发者需要非常熟悉SQL语句，加大开发者的工作量，同时，夹杂着SQL的项目也不利于以后程序的维护，增大程序的耦合度。 若查询条件是动态变化的，则会使开发变得更加困难。 django为了解决这一难题，提供了aggregate(聚合函数)和annotate(在aggregate的基础上进行GROUP BY操作)。 参考资料]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Django by Example</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[《水浒传》略读]]></title>
+    <url>%2F2018%2F12%2F09%2F%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B%E7%95%A5%E8%AF%BB%2F</url>
+    <content type="text"><![CDATA[宋仁宗年间瘟疫横行，仁宗派太尉洪信前往江西信州龙虎山，请嗣汉天师做法禳灾。天师调戏了一番洪太尉径自前往京城，洪太尉在道馆游玩发现一处镇妖殿，强行开门后发现一块石碑，上书“遇洪而开”四字，于是派人推到石碑，放出了三十六员天罡星，七十二座地煞星。 仁宗后，又经英宗。神宗，再到哲宗。哲宗年间，东京开封府的一个浮浪破落子弟高二，因擅长踢球，京师人叫他高毬，后来发迹，将毬改为俅。高俅因作奸犯科被迭配发放出界，后因哲宗大赦天下，高俅得以赦宥，回乡时得人推荐到董将士处，因高俅放荡，董将士又推荐到小苏学士处，小苏学士又推荐到驸马王晋卿府里做了亲随。驸马小王太尉有次派高俅送礼给端王，不小心露了一手球技，于是被端王收留并作为亲信。哲宗死后，端王继位，把高俅安排做了殿帅府太尉。 高俅就任时，找以前的老仇人的儿子王进的麻烦，王进害怕报复就带着母亲投奔延安府的老种经略相公去。路上，王进母亲得病，投奔在史家庄得老太公照料，于是王进教老太公儿子九纹龙史进武艺以报恩。半年之后，见史进武艺有所长进，王进于是继续前往延安府。 王进走了没到半年，史老太公因病去世，史进当家做主。这时少华山附近来了一伙强人：老大神机军师朱武，老二跳涧虎陈达，老三白花蛇杨春。因史家庄在少华山和华阴县中间，陈达想先打下史家庄。可是史进有所准备，把陈达活捉了。朱武、杨春为救陈达，使苦肉计，前往史家庄请求同死，史进见他们义气，于是放了陈达，并因互相敬重，双方互有礼品往来。 中秋节临近，史进派人前往少华山邀请各头领到家做客，门人因醉酒露宿，一个猎户偷了丢了朱武他们给史进的信，向官府告发。中秋时，管军前往史家庄清剿。史进烧了史家庄，和三位头领拼死回到了少华山，因不愿落草为寇，想去延安府找师父王进。 史进一路来到渭州，偶遇鲁提辖鲁达，两人相约喝酒，路上遇见史进启蒙教师打虎将李忠，李忠很多小气的行为。三人在酒楼喝得正欢，被旁边哭哭啼啼声扰了兴致，鲁提辖过问后发现是对可怜的父女，于是为二人伸冤，三拳打死镇关西。鲁达杀人后便出逃，来到代州雁门县正在看到通缉自己的告示，此时被救了的老头揪住带到自己的庄上。 老头的女婿赵员外留了鲁达一段时间后，怕邻居告发于是将鲁达送往五台山文殊寺，取法名智深。鲁智深在五台山耐不住清规戒律，不断犯戒，两次醉酒闹事之后，长老知他将来佛缘很深，荐他前往东京大相国寺，并送十六字：“遇林而起，遇山而富，遇水而兴，遇江而止”。 鲁智深前往东京路上，一日借宿在桃花村，收容他的老太公正在被桃花山的老二小霸王周通强迫嫁女，于是鲁智深替代了太公女儿睡在闺房待周通来时将他打跑了。周通逃回把打虎将李忠叫来帮忙，李忠和鲁智深相认，原来桃花山本是周通占着，周通抢劫李忠被打输了，遍把一把手让给李忠去做。李忠带鲁智深回到山上，解决了老太的事，并邀请鲁智深住一段时间。鲁智深见他们小气，住了几天抢了些财物便不告而辞了。 过了几天，鲁智深来到瓦罐寺，这间寺被生铁佛崔道成和飞天夜叉丘小乙强占了。鲁智深在寺边的赤松林遇到了盘缠用尽的史进，两人将崔道成和丘小乙杀了。史进因寻不到师父王进，便回少华山入伙朱武三人去了，鲁智深继续王东京行去。入相国寺后，鲁智深被安排去看菜园子，收复了菜园子附近的流氓们，在一日倒拔垂杨柳时，引得路过的八十万禁军教头——豹子头林冲一阵叫好，两人遂结识。攀谈一阵，林冲娘子被高俅的儿子高衙内调戏，林冲跑去救场。高衙内见了林冲娘子一直念念不忘，高俅于是设计陷害林冲，林冲持刀误入白虎堂，被判流放沧州。 林冲流放沧州路上，高俅派人设计于野猪林杀害林冲，被鲁智深解救。鲁智深一路护送，临近沧州告辞而去。林冲入沧州前夕去了一趟小旋风柴进家。柴进很是欣赏林冲。沧州牢城看柴进面子，对林冲很好，要林冲看守天王堂。林冲在天王堂偶遇以前救济过的李小二。李小二在附近开了酒店，遇到了从京城来要杀林冲的陆虞和富安，并告知林冲。陆虞要牢城把他安排看守大军草场，设计烧死林冲。没想到林冲因为风雪压垮了住处，于是夜宿山神庙，遇到了防火烧林冲的陆虞和管带，林冲手刃仇人并逃跑。 逃跑过程中，林冲再得柴进帮助，并修书要林冲前往水泊梁山。此时水泊梁山头领四人：白衣秀士王伦，摸着天杜迁，云里金刚宋万，还有个山下开酒楼的旱地忽律朱贵。王伦因担心林冲能力强大自己位置不保，不想留他，但是杜迁、宋万、朱贵三人劝说，于是王伦要林冲三天之内杀一个人作为投名状。林冲连等三天，最后遇到青面兽杨志，两人搏杀良久不分胜负。此时王伦等人下山观战，王伦见杨志武艺出众，想同时把杨志也纳入山寨以平衡林冲。 杨志此时并不想落草，于是告辞王伦回到东京，高俅因杨志失陷花石纲免其职。贫困潦倒的杨志不得已在街上出售祖传宝刀，被流氓牛二强买，争执见误杀牛二，官府杀死牛二实为得民心之举，于是从轻发落流放北京大名府。杨志在大名府得到太师蔡京的女婿梁中书的赏识，为提拔杨志，梁中书安排了一场比武，杨志轻松战胜对手，后又被急先锋索超挑战，两人达成平手，都得到梁中书提拔。没过多久，岳父蔡京寿辰将近，梁中书精心准备了生辰纲，安排杨志护送入京。 梁中书要送十万生辰纲给岳父的消息在江湖上悄悄地流传开了，此时，山东郓城新任县令为加强治下治安，安排手下两个都头加强巡逻，这两个都头分别是马兵都头美髯公朱仝和步兵都头插翅虎雷横。雷横一个破庙里发现了个不认识的醉汉酣睡，于是就缉拿下这个醉汉，这个醉汉是赤发鬼刘唐，正是想给托塔天王晁盖送消息抢劫梁中书的十万生辰纲。雷横嫌夜色已晚刚好去晁盖家中过夜，晁盖席间见了一次刘唐，便谎称刘唐是离家多年的外甥，把刘唐从雷横救了出来，并送了些礼给雷横。 刘唐告诉晁盖原委后，晁盖先去琢磨去了，刘唐便去追雷横想抢回来晁盖给他的银子，两人半斤八两打了半天，路过的智多星吴用把争斗的二人拦下来，并与一并赶来的晁盖将刘唐带会庄里。吴用知道要抢生辰纲后，制定计划，去一百里外的碣石村叫上了立地太岁阮小二、短命二郎阮小五、活阎王阮小七三人，后入云龙公孙胜又赶来主动要求入伙并带来了杨志的路线图，并叫上了当地人白日鼠白胜一起。 杨志带着十多个人扮作客商打扮护送着生辰纲，来到黄泥岗，因天气热手下的军官死活不肯走，晁盖一行七人扮做枣商早早等在此处，此时白胜扮做小贩挑着一担酒路过，晁盖等人先买下了一桶，刘唐又故意从用瓢另一桶中舀一勺出来喝了，以示无毒，却不料吴用将蒙汗药放在瓢里混进酒里。杨志等人耐不住天热便把另一桶酒买下来喝了，于是晁盖等人用吴用计谋只去了生辰纲。 杨志因生辰纲被劫，愤怒的离开了，其他人为免责告发杨志与贼人串通。杨志本想去梁山泊，在路上因吃霸王餐和林冲的徒弟操刀鬼曹正打了起来，曹正认出了杨志，建议不要到心眼小的王伦那去，改而投奔附近二龙山上的金眼虎邓龙。杨志来到山下碰到了花和尚鲁智深，原来鲁智深鲁智深因护送林冲得罪了高俅，于是行走江湖差点被开黑店的母夜叉孙二娘给害了，幸亏孙二娘的老公菜园子张青认出鲁智深了，后来也是得知二龙山前来入伙，没被同意被打伤了邓龙，此时一直在山下挑战。二人回到曹正家，曹正出了个主意，假装逮住鲁智深送到二龙山上，上了山后，鲁智深杀了邓龙，和杨志一起把二龙山占了。 那边梁中书得知生辰纲被抢了，一边要官府羁押，一边报告岳父蔡京。蔡京派人督促办案，当地府尹给部下下了死命令，一定要找到劫匪，不然就要把部下流放边疆。刚好部下的一个亲戚在事发前看到过晁盖并认识他，也知道白胜和他们一伙的。]]></content>
+      <categories>
+        <category>Book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Building a Blog Application]]></title>
+    <url>%2F2018%2F12%2F09%2FBuilding-a-Blog-Application%2F</url>
+    <content type="text"><![CDATA[运行django服务器最简洁的运行方式：python manage.py runserver这种方式会在http://127.0.0.1:8000上运行django服务器 指定主机、端口和settings文件的方式：python manage.py runserver 0.0.0.0:8080 --settings=mysite.settings 进阶：wsgi配置 设计blog数据结构在定义model时，如下两个语句的不同点：123publish = models.DatetimeField(default=timezone.now)created = models.DatetimeField(auto_now_add=True)updated = models.DatetimeField(auto_now=True) 三者初始时都为当前时间 publish和created,updated的区别在于publish可修改，而后二者不可修改 created为添加时的当前时间，updated为每次调用save()方法时都会自动更新 model的SlugField用法：slug = models.SlugField(max_length=250, unique_for_date=&#39;publish&#39;) slug是用于URL中的字符串，仅包含字母，数字，_，- unique_for_date参数的意思是当我们用post的日期和slug生成URL时，Django会防止同样的日期生产两条一样的slug model的Meta属性12345class Post(models.Model): pass class Meta: ordering = ('-publish', ) 当我们从数据库中取出查询结果时，Django会按照publish字段降序对结果进行排序。 进阶：model fields Admin将mode添加到Administration界面修改应用的admin.py文件，简单的方式为：1234from django.contrib import adminfrom .models import Postadmin.site.register(Post) 通过这种方式添加，Django会自动生成一个界面友好的管理界面，根据field的类型，生成相应的输入框进行增删改查。 自定义models的显示方式1234567from django.contrib import adminfrom .models import Postclass PostAdmin(admin.ModelAdmin): list_display = ('title', 'slug', 'author', 'publish', 'status')admin.site.register(Post, PostAdmin) list_display中定义了在管理界面中以列表显示的列，和list_dispplay一样，还有其他属性可以设置： 属性 示例 说明 list_filter list_filter = (&#39;status&#39;, &#39;created&#39;) 定义筛选项 search_fields search_fields = (&#39;title&#39;, &#39;body&#39;) 定义搜索项 prepopulated_fields prepopulated_fields = {&#39;slug&#39;: (&#39;title&#39;, )} 根据title自动生成slug raw_id_fields raw_id_fields = (&#39;author&#39;) 显示原始ID date_hierarchy date_hierarchy = &#39;publish&#39; 日期结构的显示框架 ordering ordering = [&#39;status&#39;, &#39;publish&#39;] 显示排序 Working with QuerySet 使用python manage.py shell可以进入有Django运行环境的shell，方便调试 使用python manage.py shell -i ipython可以制定shell为ipython，毕竟ipython比python还是好用多了 QuerySet有create, update, retrieve, filter, exclude, order_by, delete等方法 create object创建object有两种写法，一种是先保存在内存，然后保存进数据库：1234from .models improt Postpost = Post(title="demo", body="hello world")post.save() 另一种是使用Manager直接保存进数据库：123from .models improt Postpost = Post.objects.create(title="demo", body="hello world") retrieve objectuser = User.objects.get(username=&#39;yarving&#39;) 当用户’yarving’不存在时，报DoesNotExist 当多个用户存在时，报MultipleObjectsReturned QuerySet被查询后，不会被马上执行，而是在使用的时候才真正去数据库里执行。 model managersobjects是每个model默认的manager，自定义manager的方法如下：123456789class PublishedManager(models.Manager): def get_queryset(self): return super(PublishedManager, self).get_queryset().filter(status='published')class Post(models.Model): # ... objects = models.Manager() # default manager published = PublishedManager() # custome manager 使用demo：Post.published.filter(title__startswith=&#39;Yarving&#39;) 分页功能12345678910111213141516from django.core.paginator import Paginator, EmptyPage, PageNotAnIntegerdef post_list(request): object_list = Post.published.all() paginator = Paginator(object_list, 3) # 3 posts each in ieach post page = request.GET.get('page') try: posts = paginator.page(page) except PageNotAnInteger: # deliver the first page if page is not an interger posts = paginator.page(1) except EmptyPage: # deliver last page if page out of range posts = paginator.page(paginator.num_pages) return render(request, 'blog/post/list.html', &#123;'page', page, 'posts', posts&#125;) class-based views版本的代码：1234567from django.views.generic import ListsViewclass PostListView(ListsView): queryset = Post.published.all() context_object_name = 'posts' paginate_by = 3 template_name = 'blog/post/list.html' template的嵌入定义了某个页面之后，在另一个页面中嵌入该template的方法：1&#123;% include "pagination.html" with page=page_obj %&#125; with语句实现的效果为将两个不同的页面的变量赋值。]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Django by Example</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[知乎周刊——我，一个人生活]]></title>
+    <url>%2F2018%2F12%2F08%2F%E7%9F%A5%E4%B9%8E%E5%91%A8%E5%88%8A%E2%80%94%E2%80%94%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB%2F</url>
+    <content type="text"><![CDATA[《知乎周刊》是知乎将分散在各处的文章进行重新呈现，与阅读者分享使用技能的一套书。这篇文章是我阅读《知乎周刊——我，一个人生活》的笔记。 我的独居故事 把所有重要的东西都重新整理一遍，每个东西我都编了号，什么放在哪里，然后用EXCEL管理起来 我的独门整理秘笈 尽量维持桌面没有任何东西，各种台面没有任何东西 立即做，无论什么（关于整理的）事，（一旦想起，）立刻去做 厨房和洗手间的整洁非常重要 沙发上不要放任何东西，床上不要放除了床上用品以外的任何东西，椅背上不要搭衣服，不要让事物原本的功能被遮蔽 如果有余力的话，照亮所有被弄得很整洁的地方：餐桌，台面，沙发，床，还包括：厨房水槽、操作台、灶台上安装橱柜灯。在被照亮的台面上切菜、水槽中洗碗。 整理术的五大名著 佐藤可士和——《佐藤可士和的超整理术》 《怦然心动的人生整理魔法》 《断舍离》 《家居收纳1000例》 《脏乱房间大作战》 又好种，又能吃的香草植物 薄荷、薰衣草、迷迭香、鼠尾草、百里香、香菜、旱金莲、洋甘菊、紫苏、罗勒、茴香、葱、蒜……]]></content>
+      <categories>
+        <category>Book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[每日分享（三）]]></title>
+    <url>%2F2018%2F10%2F19%2Fdaily-sharing-3%2F</url>
+    <content type="text"><![CDATA[本期内容有 【好文记录】【python】 【酷站分享】 好文记录1. 习惯监督，聚光灯下显担当《 人民日报 》（ 2018年10月19日05版） 正确对待来自组织、来自社会、来自群众的监督，习惯在“放大镜”和“聚光灯”下工作和生活，是对党员干部党性修养和组织观念的检验，也是新时代党员干部干事创业的内在要求。 聚焦如何主动接受监督、正确对待监督。 接受监督是常态，善用监督是一项基本功。 看到群众拿着手机就害怕，甚至消极应付、为官不为。凡此种种，实质上是底气不足、不敢担当的表现。 监督的目的，是为了规范用权、推动工作、服务于民。 欢迎监督是姿态，善用监督是智慧。 监督问责是督促干部干事创业的手段，为何会变成这位干部口中的“包袱”？除了思想认识不到位的因素，没能科学运用好监督问责也是重要原因。 手握监督问责权，应该要监督什么？监督不意味着事无巨细，也不是越俎代庖，而要看准、管好、抓紧推动工作的“牛鼻子”。 。哪些情形应该被问责？对干部在干事创业中先行先试所犯的错，要多一点宽容。即便是被问责处分的干部，表现突出的也应大胆使用。 督查检查考核工作，是推动决策部署贯彻落实的重要手段，是激励广大干部担当作为的重要举措，必须坚持不懈地抓下去。 2. 习近平讲故事——半条棉被什么是中国共产党？80多年前，3名女红军用“半条棉被”作出了回答。一条棉被，剪成两半，永远相连，记录着红军与百姓间的亲密情感，也象征着共产党和人民群众须臾不可分离的鱼水深情。 Python1. 还原已撤回的微信消息用无所不能的 Python 就可以将这些撤回的消息发给你的微信。项目环境 语言：Python3 包：itchat 2. python 的switch case实现方式python中没有switch, case等关键字，要实现类似C语言的switch功能有几种方式： 多重if-elif-else嵌套； 用dict实现 本文让我知道了第三种方式: 用装饰器实现。 3. python连接数据库的几种方式以前没有深入查找资料，以为Python链接MySQL数据库只有通过MySQL-Python，而这个包现在仅支持python2，所以我有个要连接mysql的项目就采用了python2进行开发，没想到还有这么多中方式： MySQL-python mysqlclient PyMySQL peewee SQLAlchemy 文中简短介绍了这几种包。 4. Testing sys.exit() with pytest最近在用Pytest对项目做UT（正在做TDD），在对argparse的解析中，如果解析失败就会报sys.exit()错误，需要用Pytest对这方面进行验证。找到了这篇资料。 5. Python项目的ignore文件模板在某个教程里看到了这个网页，很有用。这个项目下面还有其他语言的gitignore文件的模板。 趣站分享Icon Finder查找图标文件，在开发网页的时候可以寻找一些用户头像图之类的。有免费资源可下载。 这个链接是我以前寻找用户头像的查询结果。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[每日分享（二）]]></title>
+    <url>%2F2018%2F10%2F13%2Fdaily-sharing-2%2F</url>
+    <content type="text"><![CDATA[Python1. 测试argparse 你如何写一个python模块的argparse部分的测试？ 将解析的代码拆分成： parse_args() 调用采用这种方式： parser = parse_args(sys.argv[1:])` 2. argparse — 解析命令参数和选项 这个网站翻译python args的用法比较好。我在这里学到了sub-command方面的东西。 3. Introduction to Python for Data Science一个简单的 python 入门教程，含有丰富的练习题。第四节介绍的NumPy让我安心看进去了。 Django1. Djanog Class-Based Views有很全的Django的classs-based view函数的解释说明。 杂记1. 匠人精神 内涵：不为外界所动，专心致志把一件事做到极致。 在封建时代，一个家族、一个地区只能从事一项工作，中国的小农产品比欧洲的工业产品肯定更具有工匠精神，但是在与西方工业品的竞争中被淘汰了。 现在的匠人精神是日本人的一个神话，得益于上世纪日本经济腾飞下的特殊的经济制度。日本经济的终身雇佣制以及互相持股的情况下，导致中小企业和雇员相对比较稳定，可以把创造力放在打磨很小的细节上面。 诗词歌赋《七步诗》曹植 煮豆持作羹，漉菽以為汁。 萁在釜下然，豆在釜中泣。 本自同根生，相煎何太急？ 《归园田居》陶渊明 其一 少无适俗韵，性本爱丘山。 误落尘网中，一去三十年。 羁鸟恋旧林，池鱼思故渊。 开荒南野际，守拙归园田。 方宅十余亩，草屋八九间。 榆柳荫后檐，桃李罗堂前。 暧暧远人村，依依墟里烟。 狗吠深巷中，鸡鸣桑树颠。 户庭无尘杂，虚室有余闲。 久在樊笼里，复得返自然。 其三 种豆南山下，草盛豆苗稀。 晨兴理荒秽，带月荷锄归。 道狭草木长，夕露沾我衣。 衣沾不足惜， 但使愿无违。 《桃花源记》陶渊明 晋太元中，武陵人捕鱼为业，缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。林尽水源，便得一山，山有小口，仿佛若有光，便舍船从口入。初极狭，才通人，复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣著，悉如外人。黄发垂髫，并怡然自乐。 见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。 此中人语云，不足为外人道也。既出，得其船，便扶向路，处处志之。及郡下，诣太守说如此。太守即遣人随其往，寻向所志，遂迷不复得路。南阳刘子骥，高尚士也，闻之，欣然规往，未果。寻病终。后遂无问津者。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[每日分享（一）]]></title>
+    <url>%2F2018%2F10%2F09%2Fdaily-sharing-1%2F</url>
+    <content type="text"><![CDATA[PythonData Visualization Data visualization is quite fun. Perhaps when you think of data visualization, you think of ugly Microsoft Excel spreadsheets with half-a$$ed graphs. 内容： 将csv文件的数据转换为json对象 绘制折线图 绘制柱状图 绘制地理数据 其他： setup 介绍了virtualenv warpper的用法，以及如何安装matplotlib等（很多情况下，这都是个坑）。 Extra 介绍了更多有关数据分析的资料 APIs使用request等库实现爬虫功能。 使用的库： request: making interactions with HTTP much more easier matplotlib: generating graphs and charts of various kinds tablib: for easily generating CSV datasets Web Scraping使用scrapy实现爬虫，并存储在Postgres数据库中。 Networks使用Twisted实现一个聊天机器人。 GUI实现数独游戏 得到引流品和利润品典型的为超市提供几乎不赚钱的产品，但会引入巨大的人流量，然后再售出正常利润的产品。 脑科学 放空大脑的方法：散步，休息，冥想 先做费劲的活，然后再做有想象力和创造力的工作，因为大脑在累的时候更充满创意。 OthersChoose License如何为自己的开源项目挑选一个合适的license？ 这个网站有介绍。 An open source license protects contributors and users. Businesses and savvy developers won’t touch a project without this protection. Special Method NamesPython class里一些特殊的方法名的含义]]></content>
+      <categories>
+        <category>sharing</category>
+      </categories>
+      <tags>
+        <tag>request</tag>
+        <tag>matplotlib</tag>
+        <tag>scrapy</tag>
+        <tag>twisted</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Movie: Qi Yue Yu an Sheng]]></title>
+    <url>%2F2018%2F10%2F06%2Fmovie-qi-yue-yu-an-sheng%2F</url>
+    <content type="text"><![CDATA[最开始知道《七月与安生》这不电影是金马奖上的双黄蛋。冯导戏剧性的念出周冬雨和马思纯的名字，为当天的颁奖制造了一些小高潮。 然后在《我是演员》里看到了两个演员重现了其中的一个场景。所以在今天没事的时候就看了下。 其实我对这种青春电影并不怎么感兴趣，看了之后也证明内容确实不是我感兴趣的（虽然有泪点）。 不过还是有些点可以说道说道。 其一：关于说谎的技巧整个电影对七月与安生的友情进行了三次叙述（或一次叙述，两次补充）。分别是： “七月”写的网络小说 + 记忆版本的“真相” 安生对家明说的版本，和第一个版本的主要差别是家明逃婚的理由，以及两人见面后七月最终的去向 真实的真相：七月因产后大出血，早已离开人世，但是安生宁愿相信两人互换人生了。安生内心希望的也是这个版本。 从这里可以看出来，如果要对一件事说话，首先要构建一个让大部分人（不知道细节的人）相信的故事，然后针对少部分人（知道细节的人）构建一个故事，通过第二个故事基本能掩盖掉最核心的“真相”了。 其二：电影的主题——友情电影对七月与安生的友情也有几次不断的递进，每次的递进都是一次催泪。 电影里是对友情的展现，其实真正和别人建立友情也是一个逐渐递进的类似的过程。 只要对对方深入的足够多，不管那个人曾经有多招人讨厌，你们也会建立友情。因为每个人都有自己的缺点和不足，而且可怜之人必有可恨之处。就是看优点和缺点的展现程度和展现顺序了。]]></content>
+      <categories>
+        <category>电影</category>
+      </categories>
+      <tags>
+        <tag>七月与安生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PEP 440 Summary]]></title>
+    <url>%2F2018%2F10%2F06%2FPEP-440-summary%2F</url>
+    <content type="text"><![CDATA[PEP 440 规范了如何定义python程序版本号。 格式(正则表达式) 示例 说明 含义 N[.N]+devN 1.2dev1 开发版本 开发中的版本 N[.N]+aN 1.2a1 alpha版本 版本不稳定或缺少某些功能 N[.N]+bN 1.2b2 beta版本 版本功能已经完整，但可能有bug N[.N]+rcN 0.4rc1 候选版本 除非有重大bug，否则为最终版本]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>PEP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Release Python Package to PyPI]]></title>
+    <url>%2F2018%2F10%2F04%2Frelease-python-package-to-PyPI%2F</url>
+    <content type="text"><![CDATA[平常用pip安装各种python包或应用程序，近期也把自己开发的一个工具发布到了PyPI（Python Package Index）上了。 准备工作.pypirc文件在用户目录下创建一个.pypirc文件（路径为~/.pypirc），其内容如下： 12345678[distutils]index-servers = pypi[pypi]repository: https://upload.pypi.org/legacy/username: your user namepassword: your password 项目的setup文件在项目里创建一个setup.py文件，然后通过这个文件来上传，文件内容如下：12345678910111213141516171819202122232425import setuptoolswith open("README.md", "r") as fh: long_description = fh.read()setuptools.setup( name="ndip_checker", version="1.0.0", author="Yarving Liu", author_email="yarving@gmail.com", description="check and fix errors in NDIP", long_description=long_description, long_description_content_type="text/markdown", url="https://gitee.com/yarving/NdipChecker", packages=setuptools.find_packages(), entry_points=&#123;'console_scripts': [ 'ncheck=ndip_checker:execute_from_command_line', ]&#125;, install_requires=['MySQL-python'], classifiers=[ "Programming Language :: Python :: 2.7", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", ],) 其中entry_points定义了一个ncheck命令，可以通过这条命令执行。 上传至PyPI 生成文件: python setup.py sdist bdist_wheel 上传： twine upload dist/*]]></content>
+      <categories>
+        <category>Python</category>
+        <category>PyPI</category>
+      </categories>
+      <tags>
+        <tag>PyPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[阅读笔记（一）]]></title>
+    <url>%2F2018%2F09%2F22%2Freading-log-1%2F</url>
+    <content type="text"><![CDATA[《Vista看中国 2018.25》 美剧《新闻工作室》：遇到公关危机，是因为你本身就有问题。可有的公司出了问题，第一反应不是整改，而是删帖，避免负面传播 最近遇到支付宝和永安行共享单车关于一笔押金的问题，支付宝上查不到去处，永安行说消费记录已经不见了。由于我是在支付宝上消费的，于是要求支付宝去协调，一个星期过去了，也没见有回信。现在的客服的官僚主义越来越严重了。 《三联生活周刊 2018.35》 中国经济将走向L型，经济若放缓，对于个人而言：收入下降，开支上升，就业难度增大。 L型经济是什么 pass 经济放缓，该如何配置资产 pass 《Unix网络编程 上》 UDP 不保证： 数据会到达最终目的地 跨网络后，各个数据包的顺序保持不变 每个数据报只到达一次 如何找出本地主机的IP netstat -ni: 提供网络的接口信息，如lo环回接口，eth0以太网接口 ifconfig etho0： 获得接口的具体信息，如广播信息broadcast ping -b &lt;broadcast&gt;： 查询本地局域网上存活的主机IP地址]]></content>
+      <categories>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[韭菜的自我修养]]></title>
+    <url>%2F2018%2F09%2F18%2Fjiucaideziwoxiuyang%2F</url>
+    <content type="text"><![CDATA[这是我买的李笑来的书。我没关注过他的录音事件，不做评论。就事论事的说，他的书和思考方式是我一直向往并且试图学习的。 这本书是我第二次阅读后觉得有用的摘录。 韭菜 定义：在交易市场中没有赚到钱甚至赔钱的势单力薄的散户 经过一本书的探讨，更精准的定义：那些在本质上并不是零和游戏的交易市场里以为自己玩零和游戏的交易者 特征：严重缺乏基本的阅读能力，无论拿到什么都不会自己尝试弄懂解决，都要问别人怎么用 极少数成功者的特质：喜欢探究表象之下的本质 投机与投资的区别人们常用短期和长期来区分投机和投资，其实很肤浅。李笑来是这样对二者进行区分的： 投机者拒绝学习，投资者善于学习。 交易之前认真研究；交易之后总结归纳。聪明人太缺反省了。而反省过程中如果对自己的遭遇做出错误的解释，会扭曲自己的价值观，并且会扭曲后续对现存解释冲突之处。 交易并不是零和游戏经济周期（熊牛交替）决定了，投资失败的最合理理由是买入的时机——这是最本质、最合理，最具指导性，甚至应该是唯一解释。 时机！等待下一个正确的时机，通过学习研究寻找下一个时机。 亡羊补牢韭菜一进场就买买买，连八竿子都打不着的人都开始进场的时候，涨幅逐渐达到尽头。 一旦受挫，只有亡羊补牢才有前途，如果亏了： 还有钱就慢慢补仓 钱不够就在场外拼命赚钱 实力强了就耐心就会变强。交易市场里，实力就是长期稳定的现金流，能在场外源源不断赚钱是一个很大的优势。 孤独且正确听大多数人的话，参考少数人的意见，自己做决定。在任何领域，想把手中的事做到极致，都要学会独处。 享受孤独的同时，要认真生活，无论是现金、生活、时间，都不能ALL-IN。 自己最需要的，除了现金，还要有成长。 把一件事当做全职或者领薪水的工作，会影响自己的成长，也会影响自己的思考方式。 止损线不要贪心是设置止损线或止盈线的一个标准，但是真正有用的都是可执行的。 参照日常波动幅度，若幅度为25%，那么止损线可以设置为40%。 做最坏的打算比盲目乐观更重要。 降低交易频次，避免手续费的损失 涨到10倍以前就当他不存在。 永远不要参与零和游戏。 能不冒险就不冒险。即使要冒险，也让别人去冒险，自己观察从而获取经验。 提高回报风险比回报风险比 = 可能的回报 / 可能的风险 加大分母 选择更优质的交易标的 交易时机（数次暴跌之后） 延长持有时间（穿越一次或多次熊市） 买入后就不动，提高变现阀值 降低分子 调整止损线，降低风险 调整每次交易在总资金中的占比 提高场外赚钱能力 周期和趋势一涨一跌构成一个周期，多个周期显现真正的趋势。趋势也可以在交易者的情绪中得以体现： FOMO（Fear Of Missing Out/Fear Of Missing Opporturnity)达到极致，各种投资者ALL-IN，上升趋势逐渐达到尽头 韭菜谩骂、失望归于平静，下跌趋势逐渐到头 利用市场智商只买交易量最大的那么几个，上海涨停敢死队：第一天买入快涨停的，第二天若涨停则第三天开盘马上卖出，否则于第二天休市前卖出。 涨的越快的会涨的越来越快；跌的越猛的会跌的越来越猛。]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>投资</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Django Cheat Sheet]]></title>
     <url>%2F2018%2F09%2F04%2Fdjango-settings-and-requirements-best-practice%2F</url>
     <content type="text"><![CDATA[摘录自《Two Scopes of Django》一书。 Settings的最佳实践三个比较high-level的原则是： 所有的settings都应该被VCS管理 settings应该有继承关系，而非在不同项目或文件之间的C/V 隐私数据（如secret_key，密码等数据）不应该被VCS管理 settings之间的继承要用settings目录取代settings.py单文件，该目录下包含： base.py： 所有settings都继承自这个配置 dev.py 或 local.py： 本地开发环境的设置 test.py： 测试用的设置 staging.py： 演示用的设置 production.py： 正式上线的产品端的设置 隐私数据的保存因此数据有两种保存方式，第一种是用环境变量保存，第二种是用json，xml，config等方式保存在文件中（该文件不可放入VCS）。 使用环境变量保存隐私数据有多种方式： 放入bashrc等环境中； 如果使用virtualenv，可以放入venv/bin/activate文件中； 若在某个环境中没有对所需的环境变量进行设置，应该给予适当的错误提醒，具体做法为定义一个函数去取代直接从环境变量中取出数据（sec_xxx = os.environ[&#39;xxx&#39;]）123456def get_env_virable(var_name): try: return os.environ['xxx'] except KeyError: error_msg = "Set the &#123;&#125; environment variable".format(var_name) raise ImproperlyConfigured(error_msg) requirements的最佳实践在前文中提到过，settings采用继承关系而设置了不同的配置（dev，test，production等），根据不同的情形，应该也有不同的requirements文件。 最佳实践是讲requirements.txt单文件拆成requirements目录，在该目录下放置诸如： base.txt dev.txt 或 local.txt staging.txt production.txt 其中，base.txt是基础配置，其他的首行添加一句-r base.txt。]]></content>
       <categories>
+        <category>Python</category>
         <category>Django</category>
       </categories>
       <tags>
@@ -25,7 +151,7 @@
     <url>%2F2018%2F08%2F29%2Fafternerd-python-3%2F</url>
     <content type="text"><![CDATA[This article is about python programming skills from afternerd Check a tree is balanced in python Python: Check if a Tree is Balanced (with explanation) advanced stuff Analysis of Algorithm | Set 4 (Solving Recurrences) Master theorem (analysis of algorithms)) A Complete Guide to Getting Hired How to get an Interview get reference from LinkIn or Facebook, Google+ ,etc. take part in open source contribution to gain experiences. advanced stuff Data structures algorithm Cracking the Coding Interview: 189 Programming Questions and Solutions leetcode]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>algorithm</tag>
@@ -38,7 +164,7 @@
     <url>%2F2018%2F08%2F28%2Fafternerd-python-2%2F</url>
     <content type="text"><![CDATA[This article is about python programming skills from afternerd Check a python string contains another string How to Check if a Python String Contains Another String?View Larger Image in operator find method advanced stuff Dive deeper into string searching algorithms String-searching algorithm Rabin-Karp and Knuth-Morris-Pratt Algorithms CPython Github Boyer–Moore string-search algorithm Boyer-Moore-Horspool algorithm Difference between a List and a Tuple?Python: What is the Difference between a List and a Tuple? The key difference between List and Tuple is: list is mutable tuple is immutable advanced topics programming language concept that you will encounter in various programming languages String interning The internals of Python string interning iterator Use timeit in PythonPython: How to use the ‘timeit’ module for multiple lines? timeit module is a handy python module that allows you to debug the performance bottlenecks between different ways to perform a task. 3 Ways to Copy a List in Python 3 ways to copy a list in python Copying a python list means creating a new python object whose contents are identical. a = b is not copy, there’re just both refer to the same python object. copy by slicing: a = b[:] use list function: a = list(b) use copy method: a = b.copy()]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>string</tag>
@@ -53,7 +179,7 @@
     <url>%2F2018%2F08%2F25%2Fafternerd-python%2F</url>
     <content type="text"><![CDATA[This article is about python programming skills from afternerd Python Lambdas Python Lambdas Explained (With Examples) Why we need lambdas (difference between traditional functions) lambdas are only useful when you want to define a one-off function.In other words, a function that will be used only once in your program. These functions are called anonymous functions. Python Enumerate Python Enumerate Explained (With Examples) How do I get the index of an element while I am iterating over a list? The pythonic way is to use built-in enumerate function enumerate list123L = ['apples', 'bananas', 'oranges']for idx, val in enumerate(L): print("index is %d and value is %s" % (idx, val)) other enumerate enumerate tuple enumerate list of tuples enumerate a string Enumerate with a Different Starting Index Python: How to Sort a List?Python: How to Sort a List? (The Right Way) Two ways: sort: object method sorted: built-in function Contents: Sorting a list of numbers Sorting a list of strings Sorting a list of strings in a case insensitive manner Sorting a list of tuples Sorting a list of tuples by the second element Sorting a list of objects Useful parameters: reverse key Python Lists: Append vs ExtendPython Lists: Append vs Extend (With Examples) appendThe append method is used to add an object to a list. This object can be of any data type, a string, an integer, a boolean, or even another list. extendextend is another very common list method. Unlike append that can take an object of any type as an argument, extend can only take an iterable object as an argument.]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>lambda</tag>
@@ -67,6 +193,11 @@
     <title><![CDATA[Django Views]]></title>
     <url>%2F2018%2F08%2F16%2Fdjango-views%2F</url>
     <content type="text"><![CDATA[In django, there’re three terms about views. They’re: Function-Based Views (FBV) Class-Based Views (CBV) Generic Class-Based Views (GCBV) FBVA FBV is the simplest representation of a Django view: it’s just a function that receives an HttpRequest object and returns an HttpResponse. views.py:123456789def new_post(request): if request.method == 'POST': form = PostForm(request.POST) if form.is_valid(): form.save() return redirect('post_list') else: form = PostForm() return render(request, 'new_post.html', &#123;'form': form&#125;) urls.py123urlpatterns = [ url(r'^new_post/$', views.new_post, name='new_post'),] CBVA CBV is every Django view defined as a Python class that extends the django.views.generic.View abstract class. A CBV essentially is a class that wraps a FBV. CBVs are great to extend and reuse code. A CBV is a view that extends the View class. The main difference here is that the requests are handled inside class methods named after the HTTP methods, such as get, post, put, head, etc. So, here we don’t need to do a conditional to check if the request is a POST or if it’s a GET. The code goes straight to the right method. This logic is handled internally in the View class. views.py12345678910111213from django.views.generic import Viewclass NewPostView(View): def post(self, request): form = PostForm(request.POST) if form.is_valid(): form.save() return redirect('post_list') return render(request, 'new_post.html', &#123;'form': form&#125;) def get(self, request): form = PostForm() return render(request, 'new_post.html', &#123;'form': form&#125;) or make views.py like below:12345678910111213141516from django.views.generic import Viewclass NewPostView(View): def render(self, request): return render(request, 'new_post.html', &#123;'form': self.form&#125;) def post(self, request): self.form = PostForm(request.POST) if self.form.is_valid(): self.form.save() return redirect('post_list') return self.render(request) def get(self, request): self.form = PostForm() return self.render(request) urls.py123urlpatterns = [ url(r'^new_post/$', views.NewPostView.as_view(), name='new_post'),] GCBVGCBVs are built-in CBVs that solve specific problems such as listing views, create, update, and delete views. When working with GCBV, it’s always good to have the ccbv.co.uk opened for quick reference. views.py (CreateView)1234567from django.views.generic import CreateViewclass NewPostView(CreateView): model = Post form_class = PostForm success_url = reverse_lazy('post_list') template_name = 'new_post.html' urls.py123urlpatterns = [ url(r'^new_post/$', views.NewPostView.as_view(), name='new_post'),] Update View1234567891011121314151617from django.shortcuts import redirectfrom django.views.generic import UpdateViewfrom django.utils import timezoneclass PostUpdateView(UpdateView): model = Post fields = ('message', ) template_name = 'edit_post.html' pk_url_kwarg = 'post_pk' context_object_name = 'post' def form_valid(self, form): post = form.save(commit=False) post.updated_by = self.request.user post.updated_at = timezone.now() post.save() return redirect('topic_posts', pk=post.topic.board.pk, topic_pk=post.topic.pk) referenceBeginner for Django]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>View</category>
+      </categories>
       <tags>
         <tag>django</tag>
         <tag>view</tag>
@@ -79,6 +210,11 @@
     <title><![CDATA[Django Unit Test]]></title>
     <url>%2F2018%2F08%2F15%2Fdjango-unit-test%2F</url>
     <content type="text"><![CDATA[Below is a collection of django unit test cases. Test URL can be visited with status code 20012345678910from django.core.urlresolvers import reversefrom django.test import TestCaseclass HomeTests(TestCase): def test_home_view_status_code(self): url = reverse('home') response = self.client.get(url) self.assertEquals(response.status_code, 200) Test URL response with status code 4041234567891011class BoardTopicsTests(TestCase): def setUp(self): Board.objects.create(name='Django', description='Django board.') def test_board_topics_view_not_found_status_code(self): url = reverse('board_topics', kwargs=&#123;'pk': 99&#125;) response = self.client.get(url) self.assertEquals(response.status_code, 404) Test URL and view function123456class HomeTests(TestCase): def test_home_url_resolves_home_view(self): view = resolve('/') self.assertEquals(view.func, home) Test HTML contains the correct URL1234567class HomeTests(TestCase): def test_home_view_contains_link_to_topics_page(self): board_topics_url = reverse('board_topics', kwargs=&#123;'pk': self.board.pk&#125;) self.assertContains(self.response, 'href="&#123;0&#125;"'.format(board_topics_url)) Test HTML contains CSRF token1234567class NewTopicTests(TestCase): def test_csrf(self): url = reverse('new_topic', kwargs=&#123;'pk': 1&#125;) response = self.client.get(url) self.assertContains(response, 'csrfmiddlewaretoken') Test HTML contains form123456def test_contains_form(self): # &lt;- new test url = reverse('new_topic', kwargs=&#123;'pk': 1&#125;) response = self.client.get(url) form = response.context.get('form') self.assertIsInstance(form, NewTopicForm) Test form validation errors1234567891011121314151617181920def test_new_topic_invalid_post_data(self): # &lt;- updated this one ''' Invalid post data should not redirect The expected behavior is to show the form again with validation errors ''' url = reverse('new_topic', kwargs=&#123;'pk': 1&#125;) response = self.client.post(url, &#123;&#125;) form = response.context.get('form') self.assertEquals(response.status_code, 200) self.assertTrue(form.errors) Test redirection123def test_redirection(self): self.assertRedirects(self.response, self.home_url) Test whether user is login12345678910def test_user_authentication(self): ''' Create a new request to an arbitrary page. The resulting response should now have a `user` to its context, after a successful sign up. ''' response = self.client.get(self.home_url) user = response.context.get('user') self.assertTrue(user.is_authenticated) Test form fields1234567891011from django.test import TestCasefrom ..forms import SignUpFormclass SignUpFormTest(TestCase): def test_form_has_fields(self): form = SignUpForm() expected = ['username', 'email', 'password1', 'password2',] actual = list(form.fields) self.assertSequenceEqual(expected, actual)]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Test</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[守住舌尖上的幸福]]></title>
@@ -109,12 +245,13 @@
     <url>%2F2018%2F08%2F14%2FFlake8-with-Django%2F</url>
     <content type="text"><![CDATA[I’m working on an Django project. I want to add flake8 to check my django codes today, and make code changes must be checked before commit. Here’s what I did. IntroductionI found all my needed from the official Flake8 document, and below is what I did: must check before Git commit custome flake8 config file, due to django allow line length longer than 80 characters. InstallationUse pip can install flake8 quickly by: pip install flake8 Config Flake8Create a file named .flake8 in Django’s root directory, the .flake8 will be used when call flake8 to check. My custome config file is like below: 123456789101112[flake8]ignore = D203exclude = .git, __pycache__, docs/source/conf.py, old, build, dist, *migrations*max-complexity = 10max-line-length = 119 My intention is: ignore D203 exclude files include .git, pycache, old, build, and migrations. All the exclude is not python files, or files not need to be checked set max-complexity to 10 expand man line lengh to 119, PEP8 only allow 80 length Call Flake8Flake8 can be called by flake8 &lt;path&gt; Must pass Flake8 before git commitI want to ask git check all my code changes to satisfy Flake8 standards, below command is ask git to do so: 12flake8 --install-hook git # install git hookgit config --bool flake8.strict true # config git hook references Flake8 document]]></content>
       <categories>
+        <category>Python</category>
         <category>Flake8</category>
       </categories>
       <tags>
-        <tag>Git</tag>
         <tag>Flake8</tag>
         <tag>Django</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -122,7 +259,7 @@
     <url>%2F2018%2F08%2F14%2Fhexo-deploy-without-password%2F</url>
     <content type="text"><![CDATA[This articles talks about how to deploy hexo blog to hexo page services without enter username and password. The key process is to config hexo _config.yml, and change the deploy segement.1234deploy: type: git repo: git@github.com:username/repository-name.github.io.git branch: master For more details, step below: PrefaceI assume all the readers have a well configured hexo, and can deploy to Github with typing username and passwords. Then the below 2 steps for how to deploy without username/passwords. Generate a ssh keyCommands to generate a ssh key is through ssh-keygen, like below: 123456789101112131415161718192021ssh-keygenGenerating public/private rsa key pair.Enter file in which to save the key (/home/ylo/.ssh/id_rsa):Enter passphrase (empty for no passphrase):Enter same passphrase again:Your identification has been saved in /home/ylo/.ssh/id_rsa.Your public key has been saved in /home/ylo/.ssh/id_rsa.pub.The key fingerprint is:SHA256:Up6KjbnEV4Hgfo75YM393QdQsK3Z0aTNBz0DoirrW+c ylo@klarThe key's randomart image is:+---[RSA 2048]----+| . ..oo..|| . . . . .o.X.|| . . o. ..+ B|| . o.o .+ ..|| ..o.S o.. || . %o= . || @.B... . || o.=. o. . . .|| .oo E. . .. |+----[SHA256]-----+ Then copy content from the generated file ~/.ssh/id_rsa.pub to GitHub. Config HexoAfter config ssh key to Github, need to change the deploy part in _config.yml like below: 1234deploy: type: git repo: git@github.com:username/repository-name.github.io.git branch: master while the original content is: 1234deploy: type: git repo: https://github.com/username/repository-name.github.io.git branch: master]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>hexo</tag>
@@ -133,6 +270,11 @@
     <title><![CDATA[Django Form Api]]></title>
     <url>%2F2018%2F08%2F11%2Fdjango-form-api%2F</url>
     <content type="text"><![CDATA[Form.is_bound检查某个form是否关联了数据。 123456&gt;&gt;&gt; f = ContactForm()&gt;&gt;&gt; f.is_boundFalse&gt;&gt;&gt; f = ContactForm(&#123;'subject': 'hello'&#125;)&gt;&gt;&gt; f.is_boundTrue 即使传入空字典，也会bound：123&gt;&gt;&gt; f = ContactForm(&#123;&#125;)&gt;&gt;&gt; f.is_boundTrue 此外： 若已bound：form可以validating和rendering 如果unbound：form不可validation，但任可以rendering Form instance应当视为immutable Form.clean()参考 Cleaning and validating fields that depend on each other Form.is_valid()Form对象的一个重要用途就是检查数据是否准备。对bound的Form对象，可以使用is_valid()方法去判定数据是否有效。 Form.errors12&gt;&gt;&gt; f.errors&#123;'sender': ['Enter a valid email address.'], 'subject': ['This field is required.']&#125; 即使没有先使用is_valid()方法，也可以访问errors。 form的数据在访问errors属性或调用is_valid()方法时，都会被验证。 fomr的validation仅会被调用一次。 Fomr.errors.as_data()123&gt;&gt;&gt; f.errors.as_data()&#123;'sender': [ValidationError(['Enter a valid email address.'])],'subject': [ValidationError(['This field is required 同理还有as_json()依赖于as_data() Form.errors.as_json(escape_html=False)123&gt;&gt;&gt; f.errors.as_json()&#123;"sender": [&#123;"message": "Enter a valid email address.", "code": "invalid"&#125;],"subject": [&#123;"message": "This field is required.", "code": "required"&#125;]&#125; Form.errors.get_json_data(escape_html=False)Returns the errors as a dictionary suitable for serializing to JSON. Form.errors.as_json() returns serialized JSON, while this returns the error data before it’s serialized. Form.add_error(field, error) 在Form.clean()里面或外面，为特定的field添加错误信息 field是要被添加错误信息的域的名字，如果没有填写，则会存进Form.non_field_errors() error通常是一个字符串，或者最好是ValidationError，参见 Raising ValidationError 获取最佳实践 Note that Form.add_error() automatically removes the relevant field from cleaned_data. (这句话什么意思) Form.has_error(field, code=None)This method returns a boolean designating whether a field has an error with a specific error code. If code is None, it will return True if the field contains any errors at all. To check for non-field errors use NON_FIELD_ERRORS as the field parameter. Form.non_field_errors()返回Form.errors里没有跟任何field关联的错误，包括Form.clean()里raise的错误和，Form.add_error(None, &quot;...&quot;)添加的错误。 unbound form的行为12345&gt;&gt;&gt; f = ContactForm()&gt;&gt;&gt; f.is_valid()False&gt;&gt;&gt; f.errors&#123;&#125; 参考链接 Django form api]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Form</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[斐波拉契O(1)算法]]></title>
@@ -152,8 +294,9 @@
     <url>%2F2018%2F08%2F10%2Frender-template-in-django%2F</url>
     <content type="text"><![CDATA[在网页设计中，要为元素制定class，id等元素，方便css做呈现。使用django forms去生成表单时，如何为form表单的每个field设置相应的元素呢？ 在form里添加attrs参考 1234class CommentForm(forms.Form): name = forms.CharField(widget=forms.TextInput(attrs=&#123;'class': 'special'&#125;)) url = forms.URLField() comment = forms.CharField(widget=forms.TextInput(attrs=&#123;'size': '40'&#125;)) 使用django-widget-tweaksDjango-widget-tweaks 安装安装命令：1pip install django-widget-tweaks 并添加到settings文件里：12345INSTALLED_APPS = [ ... 'widget_tweaks', ...] 用法12345678910111213&#123;% load widget_tweaks %&#125;&lt;!-- change input type (e.g. to HTML5) --&gt;&#123;% render_field form.search_query type="search" %&#125;&lt;!-- add/change several attributes --&gt;&#123;% render_field form.text rows="20" cols="20" title="Hello, world!" %&#125;&lt;!-- append to an attribute --&gt;&#123;% render_field form.title class+="css_class_1 css_class_2" %&#125;&lt;!-- template variables can be used as attribute values --&gt;&#123;% render_field form.text placeholder=form.text.label %&#125; 实例参照 123456789101112131415161718192021222324252627282930313233&#123;% extends 'base.html' %&#125;&#123;% load widget_tweaks %&#125;&#123;% block title %&#125;Start a New Topic&#123;% endblock %&#125;&#123;% block breadcrumb %&#125; &lt;li class="breadcrumb-item"&gt;&lt;a href="&#123;% url 'home' %&#125;"&gt;Boards&lt;/a&gt;&lt;/li&gt; &lt;li class="breadcrumb-item"&gt;&lt;a href="&#123;% url 'board_topics' board.pk %&#125;"&gt;&#123;&#123; board.name &#125;&#125;&lt;/a&gt;&lt;/li&gt; &lt;li class="breadcrumb-item active"&gt;New topic&lt;/li&gt;&#123;% endblock %&#125;&#123;% block content %&#125; &lt;form method="post" novalidate&gt; &#123;% csrf_token %&#125; &#123;% for field in form %&#125; &lt;div class="form-group"&gt; &#123;&#123; field.label_tag &#125;&#125; &#123;% render_field field class="form-control" %&#125; &#123;% if field.help_text %&#125; &lt;small class="form-text text-muted"&gt; &#123;&#123; field.help_text &#125;&#125; &lt;/small&gt; &#123;% endif %&#125; &lt;/div&gt; &#123;% endfor %&#125; &lt;button type="submit" class="btn btn-success"&gt;Post&lt;/button&gt; &lt;/form&gt;&#123;% endblock %&#125; 集成Bootstrap4的validation12345678910111213141516171819202122232425262728293031323334&lt;form method="post" novalidate&gt; &#123;% csrf_token %&#125; &#123;% for field in form %&#125; &lt;div class="form-group"&gt; &#123;&#123; field.label_tag &#125;&#125; &#123;% if form.is_bound %&#125; &#123;% if field.errors %&#125; &#123;% render_field field class="form-control is-invalid" %&#125; &#123;% for error in field.errors %&#125; &lt;div class="invalid-feedback"&gt; &#123;&#123; error &#125;&#125; &lt;/div&gt; &#123;% endfor %&#125; &#123;% else %&#125; &#123;% render_field field class="form-control is-valid" %&#125; &#123;% endif %&#125; &#123;% else %&#125; &#123;% render_field field class="form-control" %&#125; &#123;% endif %&#125; &#123;% if field.help_text %&#125; &lt;small class="form-text text-muted"&gt; &#123;&#123; field.help_text &#125;&#125; &lt;/small&gt; &#123;% endif %&#125; &lt;/div&gt; &#123;% endfor %&#125; &lt;button type="submit" class="btn btn-success"&gt;Post&lt;/button&gt;&lt;/form&gt; 可复用的form表单 基于bootstrap样式的可复用表单 将下列代表保存在template的includes/form.html 使用时使用{% include 'includes/form.html' %} 123456789101112131415161718192021222324252627282930313233343536&#123;% load widget_tweaks %&#125;&#123;% if form.non_field_errors %&#125; &lt;div class="alert alert-danger" role="alert"&gt; &#123;% for error in form.non_field_errors %&#125; &lt;p&#123;% if forloop.last %&#125; class="mb-0"&#123;% endif %&#125;&gt;&#123;&#123; error &#125;&#125;&lt;/p&gt; &#123;% endfor %&#125; &lt;/div&gt;&#123;% endif %&#125;&#123;% for field in form %&#125; &lt;div class="form-group"&gt; &#123;&#123; field.label_tag &#125;&#125; &#123;% if form.is_bound %&#125; &#123;% if field.errors %&#125; &#123;% render_field field class="form-control is-invalid" %&#125; &#123;% for error in field.errors %&#125; &lt;div class="invalid-feedback"&gt; &#123;&#123; error &#125;&#125; &lt;/div&gt; &#123;% endfor %&#125; &#123;% else %&#125; &#123;% render_field field class="form-control is-valid" %&#125; &#123;% endif %&#125; &#123;% else %&#125; &#123;% render_field field class="form-control" %&#125; &#123;% endif %&#125; &#123;% if field.help_text %&#125; &lt;small class="form-text text-muted"&gt; &#123;&#123; field.help_text &#125;&#125; &lt;/small&gt; &#123;% endif %&#125; &lt;/div&gt;&#123;% endfor %&#125;]]></content>
       <categories>
-        <category>django</category>
-        <category>template</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Template</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -166,7 +309,7 @@
     <url>%2F2018%2F08%2F08%2Fpython-csv-module%2F</url>
     <content type="text"><![CDATA[python csv module的用法。 读取csv文件的代码123456789101112import csvdef csv_reader(file_obj): """Read a csv file""" reader = csv.reader(file_obj) for row in reader: print(" ".join(row))if __name__ == '__main__': csv_path = 'filename.csv' with open(csv_path, 'r') as file_obj: csv_reader(file_obj) 使用DictReader读取csv文件1234567891011import csvdef csv_dict_reader(file_obj): """Read a CSV file using csv.DictReader""" reader = csv_DictReader(file_obj, delimeter=',') for line in reader: print(line['colume-name'])if __name__ == '__main__': with open('filename.csv') as file_obj: csv_dict_reader(file_obj) 写入CSV文件1234567891011import csvdef csv_writer(data, path): with open(path, 'w', newline='') as csv_file: for line in data: writer.writerow(line)if __name__ == '__main__': data = ['first_name', 'last_name', 'city'.split(','), ...] path = 'output.csv' csv_writer(data, path) 用DictWriter写入CSV文件1234567891011121314151617181920import csvdef csv_dict_writer(path, field_names, data): """Write a CSV file using DictWriter""" with open(paht, 'w', newline='') as out_file: writer = csv.DictWriter(out_file, delimeter=',', field_names=filenames) writer.writeheader() for row in data: writer.writerow(row)if __name__ == '__main__': data = ['first_name', 'last_name', 'city'.split(','), ...] my_list = [] field_names = data[0] for values in data[1:]: inner_dict = dict(zip(field_names, values)) my_list.append(inner_dict) path = 'dict_output.csv' csv_dict_writer(path, field_names, my_list)]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>csv</category>
       </categories>
       <tags>
@@ -179,7 +322,8 @@
     <url>%2F2018%2F08%2F07%2Fdjango-tips-2%2F</url>
     <content type="text"><![CDATA[本文内容： 在model里使用PK或ID Django模板里设置默认值 debug技巧 PK or ID?PK(Primary Key)，表示一个model的主键。model的主键一般为id，但是如果主键设置的是其他的字段，比如email作为主键，那么要访问主键仍然可以使用obj.pk，或者使用obj.email 根模板里设置默认值在Django的模板里经常复用base模板，在base模板里可以通过这种方式设置默认值：1&lt;title&gt;&#123;% block title %&#125;Django Boards&#123;% endblock %&#125;&lt;/title&gt; 如果子页面里没有设置title，就会使用默认的Django Boards。 子页面使用了某个标签后，也可以通过如下方式使用父模板的默认值：123&#123;% block title %&#125; &#123;&#123; board.name &#125;&#125; - &#123;&#123; block.super &#125;&#125;&#123;% endblock %&#125; debug技巧在代码中加入pdb可以在shell界面中调试Django程序。加入如下两句代码即可：1import pdb; pdb.set_trace()]]></content>
       <categories>
-        <category>django</category>
+        <category>Python</category>
+        <category>Django</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -193,7 +337,8 @@
     <url>%2F2018%2F08%2F06%2Fdjango-tips%2F</url>
     <content type="text"><![CDATA[本文内容： 在数据库中保存一条记录 在shell中查看django settings的配置 配置template目录 配置static目录 在template文件中使用static文件 在数据库中保存一条记录以前采用的方式是：12board = Board()board.save() 也通过这样创建并保存：1Board.objects.create(name='...', description='...') 在shell中查看django settings的配置输入python manage.py shell进入shell环境，并通过下列语句可查看django的settings： 123456789from django.conf import settingssettings.BASE_DIR'/Users/vitorfs/Development/myproject'import osos.path.join(settings.BASE_DIR, 'templates')'/Users/vitorfs/Development/myproject/templates' 配置template目录一般来说，django会在各个app目录下的template目录寻找模板文件，但有一些模板文件是整个项目通用的，需要在项目级别创建template文件。方法是修改settings.py文件。找到TEMPLATES这一段，将DIRS的值修改为os.path.join(BASE_DIR, &#39;templates&#39;)。 1234567891011121314151617TEMPLATES = [ &#123; 'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': [ os.path.join(BASE_DIR, 'templates') # This line ], 'APP_DIRS': True, 'OPTIONS': &#123; 'context_processors': [ 'django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages', ], &#125;, &#125;,] 配置static目录打开项目的settings.py文件，并在STATIC_URL后加上STATICFILES_DIRS，然后在项目根目录创建static目录即可。 12345STATIC_URL = '/static/'STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'),] 在template文件中使用static文件首先，要在template文件中加入{% static %}。 然后，&lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'css/bootstrap.min.css' %}&quot;&gt;]]></content>
       <categories>
-        <category>django</category>
+        <category>Python</category>
+        <category>Django</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -246,7 +391,7 @@
     <url>%2F2018%2F07%2F30%2Fpython-builtin-str%2F</url>
     <content type="text"><![CDATA[整理了python的str的各种methods. str.capitalize() Return a copy of the string with its first character capitalized and the rest lowercased. 将入参的第一个字符大写，但是不修改入参。 1234567In [15]: s = 'hello, world'In [16]: s.capitalize()Out[16]: 'Hello, world'In [17]: sOut[17]: 'hello, world' str.center(width[, fillchar]) Return centered in a string of length width. Padding is done using the specified fillchar (default is an ASCII space). The original string is returned if width is less than or equal to len(s). 返回一个给定长度的字符串，将原始字符串居中 如果width小于原始字符的长度，那么返回原始字符 默认用ASCII的空格填充，也可以设置填充字符 1234567891011In [19]: s.center(3)Out[19]: 'hello, world'In [20]: s.center(10)Out[20]: 'hello, world'In [21]: s.center(70)Out[21]: ' hello, world 'In [22]: s.center(70, 'a')Out[22]: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaahello, worldaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' str.count(sub[, start[, end]]) Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation. 返回子字符串sub在[start, end]中出现的次数（不重叠） 为什么下面那个例子sc.count(&#39;&#39;)会返回71呢 1234567891011121314151617In [26]: scOut[26]: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaahello, worldaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'In [27]: sc.count('a')Out[27]: 58In [28]: sc.count('a', 0, 10)Out[28]: 10In [29]: sc.count('')Out[29]: 71In [30]: sc.count('b')Out[30]: 0In [31]: sc.count('aa')Out[31]: 28 str.encode(encoding=”utf-8”, errors=”strict”) Return an encoded version of the string as a bytes object. Default encoding is ‘utf-8’. errors may be given to set a different error handling scheme. The default for errors is ‘strict’, meaning that encoding errors raise a UnicodeError. Other possible values are ‘ignore’, ‘replace’, ‘xmlcharrefreplace’, ‘backslashreplace’ and any other name registered via codecs.register_error(), see section Error Handlers. For a list of possible encodings, see section Standard Encodings. str.endswith(suffix[, start[, end]]) Return True if the string ends with the specified suffix, otherwise return False. suffix can also be a tuple of suffixes to look for. With optional start, test beginning at that position. With optional end, stop comparing at that position. 若str以suffix结尾返回True，否则返回False suffix可以是一个元组（list） 可选开始、结尾位置 1234567891011121314151617In [32]: sOut[32]: 'hello, world'In [33]: s.endswith('d')Out[33]: TrueIn [34]: s.endswith('d', 0, 10)Out[34]: FalseIn [35]: s.endswith('d', 0, 100)Out[35]: TrueIn [36]: s.endswith('ld')Out[36]: TrueIn [38]: s.endswith(('d', 'l'))Out[38]: True str.expandtabs(tabsize=8) Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size. Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16 and so on). To expand the string, the current column is set to zero and the string is examined character by character. If the character is a tab (\t), one or more space characters are inserted in the result until the current column is equal to the next tab position. (The tab character itself is not copied.) If the character is a newline (\n) or return (\r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the current column is incremented by one regardless of how the character is represented when printed. 将str中的tab用空格替换 str.find(sub[, start[, end]]) Return the lowest index in the string where substring sub is found within the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found. 返回str中首次出现sub的位置 start和end可选 如果sub没有出现则返回-1 12345678In [41]: sOut[41]: 'hello, world'In [42]: s.find('d')Out[42]: 11In [43]: s.find('x')Out[43]: -1 该函数应当仅用于寻找sub在str中的位置，如果想要确定sub是否是str的子串，应该用in 12In [44]: 'ld' in sOut[44]: True str.format() Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument. 更多信息 12&gt;&gt;&gt; "The sum of 1 + 2 is &#123;0&#125;".format(1+2)'The sum of 1 + 2 is 3' str.index(sub[, start[, end]]) Like find(), but raise ValueError when the substring is not found. 像find，但是sub不存在时，会raise ValueError str.isalnum() Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise. A character c is alphanumeric if one of the following returns True: c.isalpha(), c.isdecimal(), c.isdigit(), or c.isnumeric(). 返回True的情形：str仅包含字母或数字，且至少要有一个 否则返回False 123456789101112131415In [45]: sOut[45]: 'hello, world'In [46]: s.isalnum()Out[46]: FalseIn [47]: s=''In [48]: s.isalnum()Out[48]: FalseIn [49]: s='a1'In [50]: s.isalnum()Out[50]: True str.isalpha() Return true if all characters in the string are alphabetic and there is at least one character, false otherwise. Alphabetic characters are those characters defined in the Unicode character database as “Letter”, i.e., those with general category property being one of “Lm”, “Lt”, “Lu”, “Ll”, or “Lo”. Note that this is different from the “Alphabetic” property defined in the Unicode Standard. 至少一个字符，且所有的字符为字母，则返回True 否则返回False str.isascii() Return true if the string is empty or all characters in the string are ASCII, false otherwise. ASCII characters have code points in the range U+0000-U+007F. 至少一个字符，且所有的字符为ASCII字母，则返回True 否则返回False str.isdecimal() Return true if all characters in the string are decimal characters and there is at least one character, false otherwise. Decimal characters are those that can be used to form numbers in base 10, e.g. U+0660, ARABIC-INDIC DIGIT ZERO. Formally a decimal character is a character in the Unicode General Category “Nd”. ‘count’, ‘decode’, ‘encode’, ‘endswith’, ‘expandtabs’, ‘find’, ‘format’, ‘index’, ‘isalnum’, ‘isalpha’, ‘isdigit’, ‘islower’, ‘isspace’, ‘istitle’, ‘isupper’, ‘join’, ‘ljust’, ‘lower’, ‘lstrip’, ‘partition’, ‘replace’, ‘rfind’, ‘rindex’, ‘rjust’, ‘rpartition’, ‘rsplit’, ‘rstrip’, ‘split’, ‘splitlines’, ‘startswith’, ‘strip’, ‘swapcase’, ‘title’, ‘translate’, ‘upper’, ‘zfill’ 参考资料 Python Built-in Types]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>builtin</category>
       </categories>
       <tags>
@@ -259,8 +404,8 @@
     <url>%2F2018%2F07%2F29%2Fhow-to-writing-docstring%2F</url>
     <content type="text"><![CDATA[在python中，如何写好docstring也是个值得学习的东西。 单行示例：1"""This is a quick summary line used as a description of the object.""" 多行多行docstring包含如下几个部分： 一行概要描述 概要描述后跟一个空行 更详细的描述 docstring后跟一个空行 示例：123456789"""This is the summary lineThis is the further elaboration of the docstring. Within this section,you can elaborate further on details as appropriate for the situation.Notice that the summary and the elaboration is separated by a blank newline."""# Notice the blank line above. Code should continue on this line. docstring的种类 Class Docstring Package and Module Docstring Scrip Docstring Class Docstring12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364class Animal: """ A class used to represent an Animal ... Attributes ---------- says_str : str a formatted string to print out what the animal says name : str the name of the animal sound : str the sound that the animal makes num_legs : int the number of legs the animal has (default 4) Methods ------- says(sound=None) Prints the animals name and what sound it makes """ says_str = "A &#123;name&#125; says &#123;sound&#125;" def __init__(self, name, sound, num_legs): """ Parameters ---------- name : str The name of the animal sound : str The sound the animal makes num_legs : int, optional The number of legs the animal (default is 4) """ self.name = name self.sound = sound self.num_legs = num_legs def says(self, sound=None): """Prints what the animals name is and what sound it makes. If the argument `sound` isn't passed in, the default Animal sound is used. Parameters ---------- sound : str, optional The sound the animal makes (default is None) Raises ------ NotImplementedError If no sound is set for the animal or passed in as a parameter. """ if self.sound is None and sound is None: raise NotImplementedError("Silent Animals are not supported!") out_sound = self.sound if sound is None else sound print(self.says_str.format(name=self.name, sound=out_sound)) 应包含如下信息： 简短描述类的目的和行为 公共方法，配上一个简短描述 类属性 给子类的接口 参考文档 Documenting Your Python Code Base Using Docstrings Google docstrings reStructured Text NumPy/SciPy docstrings Epytext]]></content>
       <categories>
-        <category>python</category>
-        <category>docstring</category>
+        <category>Python</category>
+        <category>Docstring</category>
       </categories>
       <tags>
         <tag>注释</tag>
@@ -270,6 +415,9 @@
     <title><![CDATA[注释的目的]]></title>
     <url>%2F2018%2F07%2F29%2Fcommenting-serves-what%2F</url>
     <content type="text"><![CDATA[编程语言中的注释有许多用途。 Planning &amp; Reviewing在开始实现一个功能之前，在最开始的时候，可以利用注释规划要实现的功能的大致轮廓，就像陈述这部分功能应该怎么实现一样。 这部分的注释是比较注重细节的描述了，比如要实现一个从EXCEL文件中读取数据的过程，注释可以这样写： 12345678# 打开文件pass# 读取文件pass# 整理数据pass 代码编写完毕，这种比较繁琐的注释有助于review和测试。正式提交前，这些注释要么删除，要么转化为正式的注释。 我以前写代码的时候习惯用笔在纸上描绘出要实现的功能的具体细节，这么做的话要依赖纸和笔。了解到这种方法后，经过实践，发现完全可以取代我以前的开发习惯。 Code Description用于解释代码的特定目的 Algorithm Description当用到某种算法时，特别是比较复杂的算法，注释就非常重要了。 Tagging用于标注某一块代码有待提升等，常见的tag如BUG, FIX, TODO 参考资料 Documenting Python Code: A Complete Guide Comment (computer programming)#Uses)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>注释</tag>
       </tags>
@@ -284,8 +432,9 @@
     <url>%2F2018%2F07%2F26%2Fhow-to-use-django-builtin-login-system%2F</url>
     <content type="text"><![CDATA[使用Django内置的Login和Logout。 前置条件 确保django.contrib.auth在INSTALLED_APPS里，如果使用django-admin startproject生成的项目，则会自动配置好。 创建一个超级管理员用户：python manage.py createsuperuser 配置URL路由 主要使用django.contrib.auth.views模板，配置url如下： 123456789from django.conf.urls import urlfrom django.contrib import adminfrom django.contrib.auth import views as auth_viewsurlpatterns = [ url(r'^login/$', auth_views.login, name='login'), url(r'^logout/$', auth_views.logout, name='logout'), url(r'^admin/', admin.site.urls),] 创建login模板文件默认情况下，django.contrib.auth.views.login会寻找registration/login.html作为自己的模板文件（也可以配置，后面会提及）。 在manage.py的同级目录下创建templates/registration/两级目录，并在该目录下创建login.html文件，内容如下： 123456789101112&#123;% extends &apos;base.html&apos; %&#125;&#123;% block title %&#125;Login&#123;% endblock %&#125;&#123;% block content %&#125; &lt;h2&gt;Login&lt;/h2&gt; &lt;form method=&quot;post&quot;&gt; &#123;% csrf_token %&#125; &#123;&#123; form.as_p &#125;&#125; &lt;button type=&quot;submit&quot;&gt;Login&lt;/button&gt; &lt;/form&gt;&#123;% endblock %&#125; base.html应该放在templates/下，可以从django的系统复制一个，或者复制这个文件 然后在settings.py里设置TEMPLATES如下： 123456789101112131415TEMPLATES = [ &#123; 'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': [os.path.join(BASE_DIR, 'templates')], # modify this line 'APP_DIRS': True, 'OPTIONS': &#123; 'context_processors': [ 'django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages', ], &#125;, &#125;,] 运行起来后会看到如下效果： 这个简单的页面已经可以做好登陆了： 输入正确的用户名和密码会跳转到/accounts/profile/（默认登陆后跳转页面） 输入错误会给出提示 配置Login为了适应实际项目，有一些参数需要配置。 使用自定义的模板文件，如果想要用core/login.html替换默认的registration/login.html模板文件，可以这样做： 1url(r'^login/$', auth_views.login, &#123;'template_name': 'core/login.html'&#125;, name='login'), 或者传入一个自定义表单： 1url(r'^login/$', auth_views.login, &#123;'authentication_form': 'cform'&#125;, name='login'), 前面提到登陆后的默认跳转页面为/accounts/profile/，可以在settings.py里添加LOGIN_REDIRECT_URL = &#39;home&#39;设置登陆后跳转URL。 如果login参数中有next的话，会优先跳转到该地址。 Logout同理，logout也可以进行配置。 自定义模板文件： 1url(r'^logout/$', auth_views.logout, &#123;'template_name': 'logged_out.html'&#125;, name='logout'), 或者更简单的，通过next_page参数返回主页： 1url(r'^logout/$', auth_views.logout, &#123;'next_page': '/'&#125;, name='logout'), 参考信息 How to Use Django’s Built-in Login System simple-django-login Using the Django authentication system]]></content>
       <categories>
-        <category>django</category>
-        <category>login</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Login</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -298,6 +447,7 @@
     <url>%2F2018%2F07%2F26%2Finstall-pychary-by-ppa%2F</url>
     <content type="text"><![CDATA[通过PPA安装PyCharm 添加PPA12sudo add-apt-repository ppa:mystic-mirage/pycharmsudo apt-get update 安装PyCharm community1sudo apt-get install pycharm-community PyCharm Professional1sudo apt-get install pycharm 卸载123sudo apt-get remove pycharm-communitysudo apt-get remove pycharmsudo add-apt-repository --remove ppa:mystic-mirage/pycharm 相关资料 How To Install PyCharm In Ubuntu 14.04 and 16.04]]></content>
       <categories>
+        <category>Python</category>
         <category>PyCharm</category>
       </categories>
       <tags>
@@ -323,8 +473,9 @@
     <url>%2F2018%2F07%2F24%2Fdjango-view-class%2F</url>
     <content type="text"><![CDATA[以前写django项目时，只知道函数方式的写法，在Django官网的tutorial里介绍了ListView和DetailView两个类。其实普通的视图函数也可以用类的方法写。 用类的方法写视图函数，可以更好的减少代码量。 用类去写视图函数123456from django.shortcuts import renderfrom django.views.generic.base import Viewclass HomePage(View): def get(self, request): return render(request, 'index.html') GET接口这个类里为HomePage定义了一个get接口 带参数的GET接口我们的路由定义如下：123urlpatterns = [ url(r'^post/(?P&lt;postID&gt;[a-zA-Z0-9_.-]+)', PostPage.as_view())] 带接口的GET接口这样定义：123456class PostPage(View): def get(self, request, postID): context = &#123;&#125; post = Post.objects.get(id=postID) context["post"] = post return render(request, 'post.html', context) POST接口123class CreatePost(View): def post(self, request): pass 其他的方法： [ ] 同时接受get，post等多种方法的接口 [ ] 其他可用参数 视图类函数生成url123456789from django.conf.urls import urlfrom django.contrib import adminfrom instaclone.views import HomePageurlpatterns = [ url(r'^admin/', admin.site.urls), url(r'^$', HomePage.as_view())] 用了as_view()方法去自动生成urlHandler。 参考资料 Views (views.py)]]></content>
       <categories>
-        <category>django</category>
-        <category>view</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>View</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -337,8 +488,9 @@
     <url>%2F2018%2F07%2F24%2Fdjango-urlpattern-wondering%2F</url>
     <content type="text"><![CDATA[在阅读Real Django时，看了对url匹配的说明，自己去验证了一下，并且发现了/符号的作用。 两者区别1url(r'panda', ...) 不仅会匹配”/panda”，同时也会匹配诸如 “/panda3d”， “/3dpanda” 为了仅仅匹配 “/panda”，必须要用这种方式 1url(r'^panda', ...) 具体表现看完了上面的描述，很自然的也想验证下$字符在路由用法时的作用，作用应该类似。 具体的验证包括： url(r&#39;panda&#39;, ...)是否同时匹配&quot;/panda&quot;， &quot;/panda3d&quot;和 “/3dpanda&quot; url(r&#39;^panda&#39;, ...)这种写法只匹配&quot;/panda&quot; url(r&#39;^panda$&#39;, ...)的作用 ^和$在不同级的路由中的作用 环境准备使用了基于django 1.11.14进行验证。 项目和应用路由都不带^应用路由123urlpatterns = [ url(r&apos;home&apos;, views.index, name=&apos;index&apos;),] 项目路由123urlpatterns = [ url(r&apos;polls&apos;, include(&apos;poll.urls&apos;)),] 发现如下几种情况都能正常匹配 http://127.0.0.1:8000/polls/home http://127.0.0.1:8000/apolls/home http://127.0.0.1:8000/apollsb/home 甚至如下情形都能匹配到： http://127.0.0.1:8000/apollsb/asdfasdfhome http://127.0.0.1:8000/apollsb/asdfasdfhomeasdf 可以看到，如果没有^约束前部的话，只要路由中出现了该字符，django就能匹配到 仅应用路由不带^应用路由123urlpatterns = [ url(r&apos;home&apos;, views.index, name=&apos;index&apos;),] 项目路由123urlpatterns = [ url(r&apos;^polls&apos;, include(&apos;poll.urls&apos;)),] 发现如下几种情况都能正常匹配 http://127.0.0.1:8000/polls/home http://127.0.0.1:8000/polls/asdfasdfhome http://127.0.0.1:8000/polls/asdfasdfhomeasdf 而如下情形不能匹配了： http://127.0.0.1:8000/apolls/home http://127.0.0.1:8000/apollsb/home 但是如下路由还是可以匹配 http://127.0.0.1:8000/pollsb/home 对$的验证^约束开头，而$约束结尾，因此表现和如上两种情况相同。 对项目路由结尾的约束通过$和^能很好的路由的每个段的开头和结尾，但是仅用这两个字符无法约束中间url的匹配。 也就是，当路由这么设置时 项目路由: url(r&#39;^polls&#39;, include(&#39;poll.urls&#39;)) 应用路由：url(r&#39;home$&#39;, views.index, name=&#39;index&#39;), http://127.0.0.1:8000/pollsb/home/仍然可以正常访问 而当这样设置时： 项目路由: url(r&#39;^polls$&#39;, include(&#39;poll.urls&#39;)) 应用路由：url(r&#39;home$&#39;, views.index, name=&#39;index&#39;), 正常的路由也无法访问 如果要做到 http://127.0.0.1:8000/pollsb/home/不可访问 http://127.0.0.1:8000/polls/home/可访问 要这样写： 项目路由: url(r&#39;^polls/&#39;, include(&#39;poll.urls&#39;)) 应用路由：url(r&#39;home$&#39;, views.index, name=&#39;index&#39;), 相关资料 URL Patterns (urls.py)]]></content>
       <categories>
-        <category>django</category>
-        <category>url</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>URL</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -351,6 +503,7 @@
     <url>%2F2018%2F07%2F22%2Fdjango-jquery-post-data-with-csrf%2F</url>
     <content type="text"><![CDATA[Django默认发送请求是需要附带CSRF token的，因此如果用JQuery在前段发送请求时不附带CSRF会返回403 Forbidden错误。 解决方案一种可行的方法是接口不要求接受CSRF，但是不推荐。 推荐的方法是从页面里获取CSRF值。可以通过document.getElementsByName(&#39;csrfmiddlewaretoken&#39;)[0].value来获取CSRF值。 以Axios举例：12345678910$.ajax(&#123; url : url, type: "POST", data : &#123; csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value&#125;, dataType : "json", success: function( data )&#123; // do something &#125;&#125;); 参考资料 Jquery and Django CSRF Token]]></content>
       <categories>
+        <category>Python</category>
         <category>Django</category>
       </categories>
       <tags>
@@ -363,8 +516,9 @@
     <url>%2F2018%2F07%2F22%2Fdjango-disable-add-for-model%2F</url>
     <content type="text"><![CDATA[Django默认为每个model增加了增删该查方面的功能，但是由于一些安全或管理上的原因，我想要禁用“添加”功能。 所有用户都禁用其实重写has_add_permission函数就可以了。 123class MyAdmin(admin.ModelAdmin): def has_add_permission(self, request): return False 仅超级管理员可添加12345class MyAdmin(admin.ModelAdmin): def has_add_permission(self, request): if request.user.is_superuser(): return True return False 相关资料 Django Admin - Disable the ‘Add’ action for a specific model]]></content>
       <categories>
-        <category>django</category>
-        <category>admin</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Admin</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -376,8 +530,9 @@
     <url>%2F2018%2F07%2F22%2Fdjango-two-ways-register-apps-in-admin%2F</url>
     <content type="text"><![CDATA[Apps想要要Django的Admin里显示，需要注册至admin里。Django提供了两种方法 通用注册方法123456789from django.contrib import admin # import adminfrom blog.models import Blog # import a model# Define model administrationclass BlogAdmin(admin.ModelAdmin): list_display=('id', 'caption', 'author', 'publish_time')# register it in adminadmin.site.register(Blog, BlogAdmin) Django &gt;= 1.7当模型很多时，上述方法的代码就会显得不是很整齐了，Django 1.7开始提供了装饰器进行注册。 1234567from django.contrib import admin # import adminfrom blog.models import Blog # import a model# Define model administration and register it by decorator@admin.register(Blog)class BlogAdmin(admin.ModelAdmin): list_display=('id', 'caption', 'author', 'publish_time') 参考资料 DJANGO ADMIN 一些有用的设置]]></content>
       <categories>
-        <category>django</category>
-        <category>admin</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Admin</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -388,6 +543,11 @@
     <title><![CDATA[Django模板系统中显示`None`为空白字符]]></title>
     <url>%2F2018%2F07%2F21%2Fdjango-template-display-None-as-blank%2F</url>
     <content type="text"><![CDATA[在Django的模板中，如果碰到值为None的变量，在前端页面渲染时，会显示None。我们的期望是不显示任何字符。网上有很多资料都是关于Jinja2的，而Django默认使用DjangoTemplate，虽然两者语法相差不大，但是直接使用还是有问题。 通过查找Django提供的base_site.html，我找到了如何设置默认值的方法。 需求如在模板中有 ，当user的值为None，前段页面就会显示None。我们希望对这个区域不显示。 Django使用的默认模板系统为DjangoTemplate，当然也可以很方便的切换为Jinjia2（文档 解决方案一种解决方案是先判断其值是否存在：123&#123;% if user %&#125;&#123;&#123; user &#125;&#125;&#123;% endif %&#125; 但如果内容多的话，这样写就很麻烦。更好的办法是利用default过滤器。1&#123;&#123; user|default:_(&apos;&apos;) &#125;&#125; 参考资料 Django template backends]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Template</category>
+      </categories>
       <tags>
         <tag>Django</tag>
       </tags>
@@ -405,7 +565,7 @@
     <url>%2F2018%2F07%2F18%2FTest-Driven-developmenet-with-python-templates%2F</url>
     <content type="text"><![CDATA[新知识 Selenium检查页面元素 Selenium模拟提交 Django Test Client 检查使用模板文件名 编程犹如井中提水 若井不深，桶不满，提上来会很轻松 若井很深，桶也满，开始提也会很轻松，但是提的久了就累了 TDD就像是一个卡子，可以在半途休息下，而确保桶子不下落 关于简单测试 如果测试用例很简单，用犹豫的时间马上去做好 简单的测试用例其实是个placeholder，在变复杂之前就开始起步 利用FT测试To-Do lists完整访问流程完整的访问流程为： 打开浏览器，输入地址打开页面（此时，title和Header应该包含To-Do lists文字） 输入一个To-Do item，并按回车进行提交 提交结果在页面能刷新出来 修改functional_test.py如下 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051from selenium import webdriverfrom selenium.webdriver.common.keys import Keysimport timeimport unittestclass NewVisitorTest(unittest.TestCase): def setUp(self): self.browser = webdriver.Firefox() def tearDown(self): self.browser.quit() def test_can_start_a_list_and_retrieve_it_later(self): # Edith has heard about a cool new online to-do app. She goes # to check out its homepage self.browser.get('http://localhost:8000') # She notices the page title and header mention to-do lists self.assertIn('To-Do', self.browser.title) header_text = self.browser.find_element_by_tag_name('h1').text self.assertIn('To-Do', header_text) # She is invited to enter a to-do item straight away inputbox = self.browser.find_element_by_id('id_new_item') self.assertEqual( inputbox.get_attribute('placeholder'), 'Enter a to-do item' ) # She types "Buy peacock feathers" into a text box (Edith's hobby # is tying fly-fishing lures) inputbox.send_keys('Buy peacock feathers') # When she hits enter, the page updates, and now the page lists # "1: Buy peacock feathers" as an item in a to-do list table inputbox.send_keys(Keys.ENTER) time.sleep(1) table = self.browser.find_element_by_id('id_list_table') rows = table.find_elements_by_tag_name('tr') self.assertTrue( any(row.text == '1: Buy peacock feathers' for row in rows) ) # There is still a text box inviting her to add another item. She # enters "Use peacock feathers to make a fly" (Edith is very # methodical) self.fail('Finish the test!') # The page updates again, and now shows both items on her list 使用模板文件创建lists/templates/home.html并且输入如下内容123&lt;html&gt; &lt;title&gt;To-Do lists&lt;/title&gt;&lt;/html&gt; 修改lists/views.py修改函数返回值 1234from django.shortcuts import renderdef home_page(request): return render(request, 'home.html') 在superlists/settings.py里注册应用1234567891011# Application definitionINSTALLED_APPS = [ 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'lists',] 使用Django Test Client修改lists/tests.py并修改相应函数123456789def test_home_page_returns_correct_html(self): response = self.client.get('/') html = response.content.decode('utf8') self.assertTrue(html.startswith('&lt;html&gt;')) self.assertIn('&lt;title&gt;To-Do lists&lt;/title&gt;', html) self.assertTrue(html.strip().endswith('&lt;/html&gt;')) self.assertTemplateUsed(response, 'home.html') TDD开发流程概览 参考资料 What Are We Doing with All These Tests? (And, Refactoring)]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>Test-Driven developmenet with python</category>
       </categories>
   </entry>
@@ -422,7 +582,7 @@
     <url>%2F2018%2F07%2F17%2FTest-Driven-developmenet-with-python-unittest-simple-homepage%2F</url>
     <content type="text"><![CDATA[如何进行单元测试 创建Django应用并编写第一个测试用例执行命令 python manage.py startapp lists 创建一个叫lists的应用。 在lists/tests.py 里输入第一个测试用例： 123456from django.test import TestCaseclass SmokeTest(TestCase): def test_bad_maths(self): self.assertEqual(1 + 1, 3) 在命令行里执行python manage.py test，可能的结果如下：1234567891011121314151617$ python manage.py testCreating test database for alias 'default'...F======================================================================FAIL: test_bad_maths (lists.tests.SmokeTest) ---------------------------------------------------------------------Traceback (most recent call last): File "...python-tdd-book/lists/tests.py", line 6, in test_bad_maths self.assertEqual(1 + 1, 3)AssertionError: 2 != 3 ---------------------------------------------------------------------Ran 1 test in 0.001sFAILED (failures=1)System check identified no issues (0 silenced).Destroying test database for alias 'default'... 创建测试用例接下来，考虑书写正式的测试用例。 测试视图函数和路由相匹配修改lists/tests.py内容如下，以测试跟路由/是否和函数home_page对应（虽然该函数现在还没写）123456789from django.urls import resolvefrom django.test import TestCasefrom lists.views import home_page class HomePageTest(TestCase): def test_root_url_resolves_to_home_page_view(self): found = resolve('/') self.assertEqual(found.func, home_page) 此时执行单元测试一定会失败，报错home_page未定义。 在lists/views.py里添加如下内容 1234from django.shortcuts import render# Create your views here.home_page = None 再次运行，报错为路由/未找到。 在superlists/urls.py添加如下代码： 12345678from django.contrib import adminfrom django.conf.urls import urlfrom lists import viewsurlpatterns = [ url(r'^$', views.home_page, name='home'), url(r'^admin/', admin.site.urls),] 此时单元测试结果如下，视图函数必须是callable。12[...]TypeError: view must be a callable or a list/tuple in the case of include(). 修改lists/views.py内容如下12345from django.shortcuts import render# Create your views here.def home_page(): pass 运行单元测试，可以看到已经能通过了：123456789$ python manage.py testCreating test database for alias &apos;default&apos;.... ---------------------------------------------------------------------Ran 1 test in 0.003sOKSystem check identified no issues (0 silenced).Destroying test database for alias &apos;default&apos;... 测试路由的返回值可以通过： 测试返回值是否以&lt;html&gt;标记开头 测试返回值是否以&lt;/html&gt;标记结尾 测试返回值的&lt;title&gt;标记内容 在lists/tests.py的HomePageTest类里添加第二个单元测试：123456789101112131415161718192021from django.urls import resolvefrom django.test import TestCasefrom django.http import HttpRequestfrom lists.views import home_pageclass HomePageTest(TestCase): def test_root_url_resolves_to_home_page_view(self): found = resolve('/') self.assertEqual(found.func, home_page) def test_home_page_returns_correct_html(self): request = HttpRequest() response = home_page(request) html = response.content.decode('utf8') self.assertTrue(html.startswith('&lt;html&gt;')) self.assertIn('&lt;title&gt;To-Do lists&lt;/title&gt;', html) self.assertTrue(html.endswith('&lt;/html&gt;')) 执行单元测试报错：TypeError: home_page() takes 0 positional arguments but 1 was given 将lists/views.py的home_page函数修改如下：12def home_page(request): return HttpResponse() 再次测试，报错：12self.assertTrue(html.startswith(&apos;&lt;html&gt;&apos;))AssertionError: False is not true 修改lists/views.py的home_page函数：12def home_page(request): return HttpResponse('&lt;html&gt;') 再次测试，报错：1AssertionError: &apos;&lt;title&gt;To-Do lists&lt;/title&gt;&apos; not found in &apos;&lt;html&gt;&apos; 修改lists/views.py的home_page函数：12def home_page(request): return HttpResponse('&lt;html&gt;&lt;title&gt;To-Do lists&lt;/title&gt;') 再次测试，报错：12self.assertTrue(html.endswith(&apos;&lt;/html&gt;&apos;))AssertionError: False is not true 修改lists/views.py的home_page函数：12def home_page(request): return HttpResponse('&lt;html&gt;&lt;title&gt;To-Do lists&lt;/title&gt;&lt;/html&gt;') 再次测试，就OK了： 123456789$ python manage.py testCreating test database for alias &apos;default&apos;..... ---------------------------------------------------------------------Ran 2 tests in 0.001sOKSystem check identified no issues (0 silenced).Destroying test database for alias &apos;default&apos;... 快速命令介绍启动Django服务Rpython manage.py runserver 进行功能测试python functional_tests.py Django运行单元测试python manage.py test 单元测试流程（TDD） 运行单元测试 修改/编写代码 回到第一步 参考资料 Testing a Simple Home Page with Unit Tests]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>Test-Driven developmenet with python</category>
       </categories>
   </entry>
@@ -447,7 +607,7 @@
     <url>%2F2018%2F07%2F14%2FTest-Driven-developmenet-with-python-unittest-module%2F</url>
     <content type="text"><![CDATA[TDD在编写测试用例之前，似乎还要先准备文档（注释） 讲故事在测试中，也要讲好故事。一个好的故事，涵盖了一个使用场景。在测试中利用注释可以很好的讲故事。 修改 测试Django的启动 里 functional_tests.py 文件： 123456789101112131415161718192021222324252627282930313233from selenium import webdriverbrowser = webdriver.Firefox()# Edith has heard about a cool new online to-do app. She goes# to check out its homepagebrowser.get('http://localhost:8000')# She notices the page title and header mention to-do listsassert 'To-Do' in browser.title# She is invited to enter a to-do item straight away# She types "Buy peacock feathers" into a text box (Edith's hobby# is tying fly-fishing lures)# When she hits enter, the page updates, and now the page lists# "1: Buy peacock feathers" as an item in a to-do list# There is still a text box inviting her to add another item. She# enters "Use peacock feathers to make a fly" (Edith is very methodical)# The page updates again, and now shows both items on her list# Edith wonders whether the site will remember her list. Then she sees# that the site has generated a unique URL for her -- there is some# explanatory text to that effect.# She visits that URL - her to-do list is still there.# Satisfied, she goes back to sleepbrowser.quit() 通过注释，讲好了如何使用的故事。 Unittest 模块继续修改 functional_tests.py， 这次使用 unittest 来写测试用例： 123456789101112131415161718192021222324from selenium import webdriverimport unittestclass NewVisitorTest(unittest.TestCase): def setUp(self): self.browser = webdriver.Firefox() def tearDown(self): self.browser.quit() def test_can_start_a_list_and_retrieve_it_later(self): # Edith has heard about a cool new online to-do app. She goes # to check out its homepage self.browser.get('http://localhost:8000') # She notices the page title and header mention to-do lists self.assertIn('To-Do', self.browser.title) # She is invited to enter a to-do item straight away [...rest of comments as before]if __name__ == '__main__': unittest.main(warnings='ignore') 然后在运行该文件进行测试。 参考资料 Extending Our Functional Test Using the unittest Module unittest document]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>Test-Driven developmenet with python</category>
       </categories>
   </entry>
@@ -456,7 +616,7 @@
     <url>%2F2018%2F07%2F14%2FTest-Driven-developmenet-with-python-django-set-up%2F</url>
     <content type="text"><![CDATA[TDD很重要的一条要求：写代码之前先写测试用例 本文就是介绍对Django的启动的测试用例 编写测试用例在 前文 中提到了如何准备学习环境，在此基础上，先编写一个针对Django正常启动的测试用例。 使用selenium打开Firefox，并访问地址，通过查看Title上是否包含“Django”来确定Django服务是否正常创建。 创建functional_tests.py文件文件创建好后，写入如下代码： 123456from selenium import webdriverbrowser = webdriver.Firefox()browser.get('http://localhost:8000')assert 'Django' in browser.title 测试运行测试： python functional_tests.py 过一会Firefox会被打开，并且打开http://localhost:8000。此时，很理所当然的，console和Firefox都会报错。 创建Django服务测试用例写好了后，就是创建Django服务了。 生成django项目在bash下输入如下命令django-admin.py startproject superlists . 该命令生成目录了结构如下：12345678910├── functional_tests.py├── geckodriver.log├── manage.py├── superlists│ ├── __init__.py│ ├── settings.py│ ├── urls.py│ └── wsgi.py└── venv ├── [...] 然后启动django：python manage.py runserver。启动了之后不要停止，再执行一次测试。 这一次测试，Firefox会访问成功，且console中，测试命令执行完毕之后不会输入任何错误信息。]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>Test-Driven developmenet with python</category>
       </categories>
   </entry>
@@ -465,7 +625,7 @@
     <url>%2F2018%2F07%2F14%2FTest-Driven-developmenet-with-python-prequire%2F</url>
     <content type="text"><![CDATA[本文为在Ubuntu环境下为 《Test-Driven development with Python》这本书所需学习环境，详情可点击 原文 依赖 Git Firefox 一个包含Python3.6，Django 1.11， Selenium 3的虚拟环境 GeckoDriver Gitsudo apt-get install git 浏览器根据不同的对象选择浏览器，一般用Firefox和Chrome。其中Firefox一般在Linux操作系统中都默认安装了。Chrome还需要特殊手段才能安装。 Virtualenv环境安装virtualenv： pip install virtualenv 然后创建venv并激活：12virtualenv venv -p python3.6source venv/bin/activate 通过pip安装其他所需：12pip install django==1.11pip install selenium==3.13.0 浏览器驱动Firefox： GeckoDriverCeckoDriver是用来开启Firefox的驱动，去 Github 下载jar包。 解压缩之后，将geckodriver复制到/usr/local/bin 目录下（需要sudo权限） 然后执行命令 geckodriver --version 检查。 Chrome： ChromeDriverChromeDriver需要的Chrome版本号如果和本机的版本号不符，在测试的时候会给出提示。 ChromeDriver的: 下载地址 下载之后解压缩，然后复制到/usr/local/bin目录下即可]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>Test-Driven developmenet with python</category>
       </categories>
       <tags>
@@ -486,6 +646,10 @@
     <title><![CDATA[Django的ListView添加login_required修饰符]]></title>
     <url>%2F2018%2F07%2F12%2Fdjango-list-view-login-required%2F</url>
     <content type="text"><![CDATA[在Django里，提供了ListView、DetailView内置类方便的编写视图函数，在我的项目中，有一个展示列表的函数，必须要登录后才能操作，即要添加login_required。 原始代码123456from django.contrib.auth.decorators import login_required@login_required def management(request): """Privilege management url""" return render(request, 'management.html') 采用login_required修饰过页面，必须要登录后才可访问。 由于该页面展示的是某个model的list，所以采用DetailView才是更专业的做法。但是login_required明显不能对类进行修饰。 对类进行修饰使用from django.utils.decorators import method_decorator可对类进行修饰。 有两种修饰方法： 其一：对类中的方法进行修饰：12345678910from django.contrib.auth.decorators import login_requiredfrom django.utils.decorators import method_decoratorfrom django.views.generic import TemplateViewclass ProtectedView(TemplateView): template_name = &apos;secret.html&apos; @method_decorator(login_required) def dispatch(self, *args, **kwargs): return super().dispatch(*args, **kwargs) 其二：对整个类进行修饰：123@method_decorator(login_required, name='dispatch')class ProtectedView(TemplateView): template_name = 'secret.html' 修改后的代码如下123456789from django.contrib.auth.decorators import login_requiredfrom django.utils.decorators import method_decoratorfrom django.views import generic@method_decorator(login_required, name='dispatch')class ProtectedView(generic.ListView) def dispatch(self, request, *args, **kwargs): return super(PrivilegeManagement, self).dispatch(request, *args, **kwargs) 参考资料 Django Generic Views using decorator login_required Decorating class-based views]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+      </categories>
       <tags>
         <tag>django</tag>
       </tags>
@@ -494,6 +658,9 @@
     <title><![CDATA[Linux开机启动shadowsocks]]></title>
     <url>%2F2018%2F07%2F12%2Fshadow-socks-as-startups%2F</url>
     <content type="text"><![CDATA[shadowsocks已经成为我上Google查阅资料不可或缺的一个东西了。它在Windows上比较好搞，勾选开启启动，以后就不用操心了。 但是在Linux下，我以前没有找到很好的办法。用的是shadowsocks-qt——一个图形化的shadowsocks工具。缺点是不能设置开机自启动。 因此，花了点时间研究了下如何设置Linux开机启动shadowsocks 目录 安装shadowsocks 配置shadowsocks 设置开机启动 为软件设置代理 安装shadowsocks直接用pip可以安装shadowsocks： pip install shadowsocks 在某些Linux里也可以这么安装： sudo apt-get install shadowsocks 安装完成后可以测试安装是否成功： sslocal --help 配置shadowsocks通过如下命令可以启动shadowsocks： sslocal -s &lt;server&gt; -p &lt;server-port&gt; -k &lt;password&gt; -l &lt;local-port&gt; -t &lt;time-out&gt; -m &lt;encryption-method 启动了之后可以打开浏览器，看是否可以正常访问Google或YouTube，测试连接是否正常。 为了方便，可以将配置放在一个配置文件（json）中。内容如下： 12345678&#123; "server":"8.8.8.8", "server_port":9000, "local_port":1080, "password":"123456", "timeout":600, "method":"rc4-md5"&#125; 通过配置文件连接： sslocal -c /home/yarving/.shadowsocks/shadowsocks.json 设置开机启动采用supuervisor管理开启启动软件的方式。 首先，安装supervisor： sudo apt-get install supervisor 然后编辑 /etc/supervisor/supervisor.conf 文件，在文件最后添加如下内容 1234567[program:shadowsocks]command=/usr/local/bin/sslocal -c /home/yarving/.shadowsocks/shadowsocks.jsonautostart=trueautorestart=trueuser=rootlog_stderr=truelogfile=/home/yarving/.shadowsocks/shadowsocks.log 可以通过重启再打开浏览器的方式确认连接是否正常。 为软件设置代理在shadowsocks连接正常后，可能有很多软件需要设置代理。我发现在使用git pull的时候就有这个问题。 需要为Git设置proxy代理，编辑 vim ~/.gitconfig，添加如下几行内容： 1234[http] proxy=socks5://127.0.0.1:1080[https] proxy=socks5://127.0.0.1:1080 Git即可正常使用。 参考资料 linux-ubuntu使用shadowsocks客户端配置 Git config proxy 设置]]></content>
+      <categories>
+        <category>Shadowsocks</category>
+      </categories>
       <tags>
         <tag>Trics</tag>
       </tags>
@@ -503,8 +670,9 @@
     <url>%2F2018%2F07%2F11%2Fdjango-custome-administration%2F</url>
     <content type="text"><![CDATA[今天尝试了下对Django默认的管理后台进行修改，是个新挑战。 学习到的新知识点 配置 django suit 模拟 django suit 的页面 login_required 修饰符的用法 配置 django suitdjango后台的主题为suit，需要在左侧sidebar里添加一个链接，由于django后台满足不了一些特殊需求，需要设计一个页面实现对模型的个性化管理。 第一个就是django项目名字的更改，是在settings.py 中添加如下代码：12345678910111213141516171819202122232425262728SUIT_CONFIG = &#123; # header # 'ADMIN_NAME': 'Django Suit', # 此处定义django管理后台显示的名字 # 'HEADER_DATE_FORMAT': 'l, j. F Y', # 'HEADER_TIME_FORMAT': 'H:i', # forms # 'SHOW_REQUIRED_ASTERISK': True, # Default True # 'CONFIRM_UNSAVED_CHANGES': True, # Default True # menu # 'SEARCH_URL': '/admin/auth/user/', # 'MENU_ICONS': &#123; # 'sites': 'icon-leaf', # 'auth': 'icon-lock', # &#125;, # 'MENU_OPEN_FIRST_CHILD': True, # Default True # 'MENU_EXCLUDE': ('auth.group',), # 'MENU': ( # menu定义了左侧siderbar的项目 # 'sites', # &#123;'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')&#125;, # &#123;'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')&#125;, # &#123;'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'&#125;, # ), # misc # 'LIST_PER_PAGE': 15&#125; 修改 SUIT_CONFIG[&#39;ADMIN_NAME&#39;] 可以修改django后台登录时显示的名字 修改 SUIT_CONFIG[&#39;MENU&#39;] 可以修改左侧sidebar的内容 模拟 django suit 的页面在昨天的文章 Django 命名Admin界面logo字段 中提到了，如何将django默认的模板文件复制到项目下，以成为项目模板文件，并进行修改。即将模板文件放置于templates/admin目录下。 通过同样的方法，找到了suit的模板文件是位于 pythonx.x/site-packages/suit/templates/admin文件夹下，复制相应的文件到templates/admin文件夹下即可。 为了风格相同的界面，我复制了pythonx.x/site-packages/suit/templates/admin/index.html文件，并进行了相应的修改，该页面和django的suit主题后台管理界面一样。 login_required修饰符的用法在为上一步准备好views、url之后，由于我要实现的页面必须要登录后才能查看，因此很理所当然的，使用了django提供的login_required修饰符。如下为其用法 123456from django.contrib.auth.decorators import login_required@login_requireddef the_view_function(request): """This is yourself-defined view funciton.""" pass 看似已经完成，但是还是要修改一处。官方文档中提到： If the user isn’t logged in, redirect to settings.LOGIN_URL, passing the current absolute path in the query string. Example: /accounts/login/?next=/polls/3/. 也就是说，要在settings.py中定义LOGIN_URL，否则默认跳转登录的url为/accounts/login，这里我们需要在settings.py中添加如下一行代码： 1LOGIN_URL = '/admin/login/' 这样就能使用django默认的登录路由了。 参考信息 django suit configuration Using the Django authentication system]]></content>
       <categories>
-        <category>django</category>
-        <category>admin</category>
+        <category>Python</category>
+        <category>Django</category>
+        <category>Admin</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -516,6 +684,10 @@
     <title><![CDATA[Django 命名Admin界面logo字段]]></title>
     <url>%2F2018%2F07%2F10%2Fdjango-rename-admin-logo%2F</url>
     <content type="text"><![CDATA[Django后台的默认界面中显示的LOGO为Django Administration 如何修改这个文字呢？ 流程 Django的后台页面使用的是默认的页面布局，放置在Django的安装目录下； 因此需要从Django的安装目录下将默认布局页面找到，复制到项目目录下； 再修改项目目录下的默认页面 查找django文件目录通过如下命令可以找到django的安装目录：1python -c "import django; print(django.__path__)" 该目录即为django的安装目录 复制文件在项目目录下（和manage.py同层目录）下创建templates/admin这两层文件夹； 从上一步找到的django安装目录复制文件，即将&lt;django-path&gt;/contrib/admin/templates/admin/base_site.html复制到templates/admin目录下 修改settings.py文件修改settings.py文件中的TEMPLATES的值如下：123456789101112131415TEMPLATES = [ &#123; 'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': [os.path.join(BASE_DIR, 'templates')], # Modify this line 'APP_DIRS': True, 'OPTIONS': &#123; 'context_processors': [ 'django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages', ], &#125;, &#125;,] 修改base_site.html将文件内容修改如下：123456789&#123;% extends "admin/base.html" %&#125;&#123;% block title %&#125;&#123;&#123; title &#125;&#125; | &#123;&#123; site_title|default:_('Django site admin') &#125;&#125;&#123;% endblock %&#125;&#123;% block branding %&#125;&lt;h1 id="site-name"&gt;&lt;a href="&#123;% url 'admin:index' %&#125;"&gt;Yarving's admin site&lt;/a&gt;&lt;/h1&gt;&#123;% endblock %&#125;&#123;% block nav-global %&#125;&#123;% endblock %&#125; 最终结果重新登录后台就可以看到已经修改了。Django administration已经修改为Yarving’s admin site]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+      </categories>
       <tags>
         <tag>django</tag>
       </tags>
@@ -525,15 +697,17 @@
     <url>%2F2018%2F07%2F08%2Fpython-namedtuple%2F</url>
     <content type="text"><![CDATA[本文介绍了python的namedtuple数据类型。 tuple的不足Python的tuple类型可通过下标访问，但存在两个不足： 可通过下标访问，但是不能通过有意义的名字访问 tuple为特设（ad-hoc）类型，没有约束条件，特别是在对tuple做比较操作时，没有关于长度、每个值在哪个位置约束 namedtuple的特点namedtuple在保留tuple特性的同时，可弥补以上两个不足。 namedtuple的特点： 不可修改：和tuple一样，值一旦写入就不可修改 每个值都可以通过可读性好的标识符（需要自己定义）去访问，可以不用记忆每个下标是干嘛的，增强代码的可读性。 namedtuple示例这个例子展示了如何定义namedtuple，以及如何访问namedtuple里的元素 123456789from collections import namedtupleCar = namedtuple('Car', 'color, miles')car1 = Car('red', 34)car2 = Car('yellow', 27)print(car1.color, car1.miles) # ('red', 34)print(car2.color, car2.miles) # ('yellow', 27) 下面这个例子展示了namedtuple和tuple的相似性123456789101112131415from collections import namedtupleCar = namedtuple('Car', 'color, miles')car = Car('red', 34)# 赋值color, miles = carprint(color, miles) # ('red', 34)# 通过下标访问print(car[0], car[1]) # ('red', 34)# 转化为tupleprint(tuple(car)) # ('red', 34) 从如上例子可以看出，namedtuple在日常使用中，和tuple最大的变化就是可以如何dict一样，通过有意义的标识符进行访问，其他的操作仍然和tuple保持一致。 namedtuple的妙用namedtuple利用_make方法，在从文件中读取内容，和从数据库中读取内容时，可以巧妙的和列名结合起来。 123456789101112mployeeRecord = namedtuple('EmployeeRecord', 'name, age, title, department, paygrade')import csvfor emp in map(EmployeeRecord._make, csv.reader(open("employees.csv", "rb"))): print emp.name, emp.titleimport sqlite3conn = sqlite3.connect('/companydata')cursor = conn.cursor()cursor.execute('SELECT name, age, title, department, paygrade FROM employees')for emp in map(EmployeeRecord._make, cursor.fetchall()): print emp.name, emp.title 参考资料 python collections 官方文档 Writing Clean Python With Namedtuples]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>namedtuple</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[A Complete Beginner's Guide to Django - Getting Started（一）]]></title>
-    <url>%2F2018%2F07%2F01%2FA-Complete-Beginner-s-Guide-to-Django-Getting-Started-1%2F</url>
-    <content type="text"><![CDATA[《A Complete Beginner’s Guide to Django》 是由 Vitor Freitas 写作的 Django 入门教程。 本文是根据第一章 Part 1 - Getting Started 精简而来。 Installationinstall python3.6 其实用哪个版本的python不要紧，但是推荐python3，文章推荐的是python3.6.2 首先，查看系统的python版本（Linux和Mac下）1234$ python --versionPython 2.7.13+$ python3 --versionPython 3.5.4rc1 升级3.6.2的方式为： sudo apt-get install python3.6 如果不能启动，那么可以这样：123sudo add-apt-repository ppa:deadsnakes/ppa # need to press Enter to add repositorysudo apt-get updatesudo apt-get install python3.6 升级完了后，可以看到python 3.6.2 已经可以使用了。1234$ python3 --versionPython 3.5.4rc1$ python3.6 --versionPython 3.6.2 install virtualenvvirtualenv是可选的，但是强烈推荐安装，可以隔离不同项目的开发环境。 安装：sudo pip3.6 install virtualenv 创建目录： virtualenv venv -p python3.6 激活环境： source venv/bin/activate 退出环境： deactive install Django激活virtualenv后（上一个步骤的第三部），输入pip install django即可。 创建Django项目 创建Django项目： django-admin startproject myproject 运行Django： python manage.py runserver 打开浏览器，访问 http://127.0.0.1:8000 可以看到下图 创建Django App通过命令创建boards应用： django-admin startapp boards 打开myproject/settings.py，添加一行12345678910INSTALLED_APPS = [ 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'boards', # This line is new added] 创建Hello World页面打开boards/views.py，编辑内容如下：1234from django.http import HttpResponsedef home(request): return HttpResponse('Hello, World!') 打开myproject/urls.py，编辑内容如下123456789from django.conf.urls import urlfrom django.contrib import adminfrom boards import viewsurlpatterns = [ url(r'^$', views.home, name='home'), url(r'^admin/', admin.site.urls),] 在通过python manage.py runserver运行项目，打开http://127.0.0.1:8000即可看到如下图所示效果： 更多内容可点击 Part 1 - Getting Started]]></content>
+    <title><![CDATA[A Complete Beginner's Guide to Django - Getting Started（二）]]></title>
+    <url>%2F2018%2F07%2F01%2FA-Complete-Beginner-s-Guide-to-Django-Getting-Started-2%2F</url>
+    <content type="text"><![CDATA[《A Complete Beginner’s Guide to Django》 是由 Vitor Freitas 写作的 Django 入门教程。 本文是根据第二章 Part 2 - Fundamentals 精简而来。 本章介绍了model、view、url、amdin、后台管理界面、static、template方面的内容。 最终效果 定义model编辑boards/views.py，内容如下：123456789101112131415161718192021222324252627# -*- coding: utf-8 -*-from __future__ import unicode_literalsfrom django.db import modelsfrom django.contrib.auth.models import User# Create your models here.class Board(models.Model): name = models.CharField(max_length=30, unique=True) description = models.CharField(max_length=100)class Topic(models.Model): subject = models.CharField(max_length=255) last_updated = models.DateTimeField(auto_now_add=True) board = models.ForeignKey(Board, related_name='topics', on_delete=models.CASCADE) starter = models.ForeignKey(User, related_name='topics', on_delete=models.CASCADE)class Post(models.Model): message = models.TextField(max_length=4000) topic = models.ForeignKey(Topic, related_name='posts', on_delete=models.CASCADE) created_at = models.DateTimeField(auto_now_add=True) updated_at = models.DateTimeField(null=True) created_by = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE) updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete=models.CASCADE) 定义了Board，Topic，Post三个类。 使用了内置的User类 CharField里用了max_length, unique两个属性 DateTimeField使用了auto_now_add ForeignKey有related_name, on_delete 模型定义好了后，通过python manage.py makemigrations和python manage.py migrate可将变更在数据库中生效。 视图方面的更改相对于Chapter 1， 将home函数修改如下： 12345678from boards.models import Boarddef home(request): """Home page""" boards = Board.objects.all() return render(request, 'home.html', &#123;'boards': boards&#125;) 将HttpResponse修改为显示Board里的真实数值 定义了templates，static和css文件夹，不过他这里的方法为直接修改settings.py的设置，不利于不同app之间的文件隔离，所以我自己觉得是不妥的。 介绍了如何将bootstrap的css文件加入到html代码中。 后台在boards/admin.py中添加如下代码：123from boards.models import Boardadmin.site.register(Board) 通过python manage.py createsuperuser可以创建管理员账号 通过访问http://127.0.0.1:8000/admin/可登录后台 测试这是我最感兴趣的内容了，文章提供了两个单元测试用例：123456789101112131415161718# -*- coding: utf-8 -*-from __future__ import unicode_literalsfrom django.urls import reverse, resolvefrom django.test import TestCasefrom .views import home# Create your tests here.class HomeTests(TestCase): def test_home_view_status_code(self): url = reverse('home') response = self.client.get(url) self.assertEqual(response.status_code, 200) def test_home_url_resolves_home_view(self): view = resolve('/') self.assertEqual(view.func, home) 我的收获有： self.client.get(url)可以模拟get操作，我以前都是form django.test import Client response.status_code可以获取http状态码 view.func可以和视图函数做对比 reverse：根据url定义中的name找到url resolve：根据url找到定义的视图函数 python manage.py test --verbosity=2可以查看更详细的测试报告 通过shell获取settings配置信息通过python manage.py shell打开shell，输入如下命令可以查看settings的配置123456789from django.conf import settingssettings.BASE_DIR'/Users/vitorfs/Development/myproject'import osos.path.join(settings.BASE_DIR, 'templates')'/Users/vitorfs/Development/myproject/templates']]></content>
       <categories>
+        <category>Python</category>
+        <category>Django</category>
         <category>A Complete Beginner&#39;s Guide to Django</category>
       </categories>
       <tags>
@@ -541,10 +715,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[A Complete Beginner's Guide to Django - Getting Started（二）]]></title>
-    <url>%2F2018%2F07%2F01%2FA-Complete-Beginner-s-Guide-to-Django-Getting-Started-2%2F</url>
-    <content type="text"><![CDATA[《A Complete Beginner’s Guide to Django》 是由 Vitor Freitas 写作的 Django 入门教程。 本文是根据第二章 Part 2 - Fundamentals 精简而来。 本章介绍了model、view、url、amdin、后台管理界面、static、template方面的内容。 最终效果 定义model编辑boards/views.py，内容如下：123456789101112131415161718192021222324252627# -*- coding: utf-8 -*-from __future__ import unicode_literalsfrom django.db import modelsfrom django.contrib.auth.models import User# Create your models here.class Board(models.Model): name = models.CharField(max_length=30, unique=True) description = models.CharField(max_length=100)class Topic(models.Model): subject = models.CharField(max_length=255) last_updated = models.DateTimeField(auto_now_add=True) board = models.ForeignKey(Board, related_name='topics', on_delete=models.CASCADE) starter = models.ForeignKey(User, related_name='topics', on_delete=models.CASCADE)class Post(models.Model): message = models.TextField(max_length=4000) topic = models.ForeignKey(Topic, related_name='posts', on_delete=models.CASCADE) created_at = models.DateTimeField(auto_now_add=True) updated_at = models.DateTimeField(null=True) created_by = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE) updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete=models.CASCADE) 定义了Board，Topic，Post三个类。 使用了内置的User类 CharField里用了max_length, unique两个属性 DateTimeField使用了auto_now_add ForeignKey有related_name, on_delete 模型定义好了后，通过python manage.py makemigrations和python manage.py migrate可将变更在数据库中生效。 视图方面的更改相对于Chapter 1， 将home函数修改如下： 12345678from boards.models import Boarddef home(request): """Home page""" boards = Board.objects.all() return render(request, 'home.html', &#123;'boards': boards&#125;) 将HttpResponse修改为显示Board里的真实数值 定义了templates，static和css文件夹，不过他这里的方法为直接修改settings.py的设置，不利于不同app之间的文件隔离，所以我自己觉得是不妥的。 介绍了如何将bootstrap的css文件加入到html代码中。 后台在boards/admin.py中添加如下代码：123from boards.models import Boardadmin.site.register(Board) 通过python manage.py createsuperuser可以创建管理员账号 通过访问http://127.0.0.1:8000/admin/可登录后台 测试这是我最感兴趣的内容了，文章提供了两个单元测试用例：123456789101112131415161718# -*- coding: utf-8 -*-from __future__ import unicode_literalsfrom django.urls import reverse, resolvefrom django.test import TestCasefrom .views import home# Create your tests here.class HomeTests(TestCase): def test_home_view_status_code(self): url = reverse('home') response = self.client.get(url) self.assertEqual(response.status_code, 200) def test_home_url_resolves_home_view(self): view = resolve('/') self.assertEqual(view.func, home) 我的收获有： self.client.get(url)可以模拟get操作，我以前都是form django.test import Client response.status_code可以获取http状态码 view.func可以和视图函数做对比 reverse：根据url定义中的name找到url resolve：根据url找到定义的视图函数 python manage.py test --verbosity=2可以查看更详细的测试报告 通过shell获取settings配置信息通过python manage.py shell打开shell，输入如下命令可以查看settings的配置123456789from django.conf import settingssettings.BASE_DIR'/Users/vitorfs/Development/myproject'import osos.path.join(settings.BASE_DIR, 'templates')'/Users/vitorfs/Development/myproject/templates']]></content>
+    <title><![CDATA[A Complete Beginner's Guide to Django - Getting Started（一）]]></title>
+    <url>%2F2018%2F07%2F01%2FA-Complete-Beginner-s-Guide-to-Django-Getting-Started-1%2F</url>
+    <content type="text"><![CDATA[《A Complete Beginner’s Guide to Django》 是由 Vitor Freitas 写作的 Django 入门教程。 本文是根据第一章 Part 1 - Getting Started 精简而来。 Installationinstall python3.6 其实用哪个版本的python不要紧，但是推荐python3，文章推荐的是python3.6.2 首先，查看系统的python版本（Linux和Mac下）1234$ python --versionPython 2.7.13+$ python3 --versionPython 3.5.4rc1 升级3.6.2的方式为： sudo apt-get install python3.6 如果不能启动，那么可以这样：123sudo add-apt-repository ppa:deadsnakes/ppa # need to press Enter to add repositorysudo apt-get updatesudo apt-get install python3.6 升级完了后，可以看到python 3.6.2 已经可以使用了。1234$ python3 --versionPython 3.5.4rc1$ python3.6 --versionPython 3.6.2 install virtualenvvirtualenv是可选的，但是强烈推荐安装，可以隔离不同项目的开发环境。 安装：sudo pip3.6 install virtualenv 创建目录： virtualenv venv -p python3.6 激活环境： source venv/bin/activate 退出环境： deactive install Django激活virtualenv后（上一个步骤的第三部），输入pip install django即可。 创建Django项目 创建Django项目： django-admin startproject myproject 运行Django： python manage.py runserver 打开浏览器，访问 http://127.0.0.1:8000 可以看到下图 创建Django App通过命令创建boards应用： django-admin startapp boards 打开myproject/settings.py，添加一行12345678910INSTALLED_APPS = [ 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'boards', # This line is new added] 创建Hello World页面打开boards/views.py，编辑内容如下：1234from django.http import HttpResponsedef home(request): return HttpResponse('Hello, World!') 打开myproject/urls.py，编辑内容如下123456789from django.conf.urls import urlfrom django.contrib import adminfrom boards import viewsurlpatterns = [ url(r'^$', views.home, name='home'), url(r'^admin/', admin.site.urls),] 在通过python manage.py runserver运行项目，打开http://127.0.0.1:8000即可看到如下图所示效果： 更多内容可点击 Part 1 - Getting Started]]></content>
       <categories>
+        <category>Python</category>
+        <category>Django</category>
         <category>A Complete Beginner&#39;s Guide to Django</category>
       </categories>
       <tags>
@@ -556,7 +732,7 @@
     <url>%2F2018%2F06%2F30%2Fworld-cup-sms-robot%2F</url>
     <content type="text"><![CDATA[看到一篇教程是关于发送短信获取世界杯战况：A FIFA 2018 World Cup SMS bot using Twilio, Heroku and Flask。 这个项目很简单，可以跟着练习一遍。 使用的技术栈及Python包主要为： Flask Twilio Heroku 我照着实现了一遍，实现的时候发现他的代码有部分需要变动的地方，我的代码存放地： Github 具体的做法可以跟着 A FIFA 2018 World Cup SMS bot using Twilio, Heroku and Flask 做一遍。我想说下我做的时候的感悟。 Heroku CLI 的问题Heroku需要翻墙登录，我在Linux下有Shadow socks，所以在命令行输入heroku login和heroku create的时候报错： 12Error: tunneling socket could not be established, cause=Parse Error at ClientRequest.onError (/usr/local/lib/heroku/node_modules/tunnel-agent/index.js:177:17) 由于不熟悉Heroku，所以我就换Mac了。在这上面花费了差不多一个小时，后来找到一个workaround。 那就在Heroku上deploy的时候关联Github，而不使用默认的CLI就行了。如下图： 不要勾选 Wait for CI to pass before deploy Debug的问题前面提到原作者的代码有需要改动的部分地方，是由于通过第三方网站获取FIFA各个小组赛时，其返回的JSON数据结构发生了变化。 在debug这个的过程中，由于我没有本地运行环境，每修复一个bug，我就提交了许多个commit，而每个commit都非常小，按照标准提交来说，这些commit都是可以压缩成一个的。 出现这个情况还是因为我对Heroku不熟悉，印象中Heroku是提供本地运行环境的。我应该在本地运行起来，理论上Github上的应该是生产端。 其他收获的知识点 Twilio 可以提供短信、语音等处理功能，可免费试用。 Python Tips 介绍了一些小Tip，可以一看。]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>sms</tag>
@@ -569,7 +745,7 @@
     <url>%2F2018%2F06%2F29%2Fpython-decouple%2F</url>
     <content type="text"><![CDATA[在python项目中，有很多配置型的东西，不应该放到python源代码中。 比如配置数据库的URL、邮件服务器地址和端口等。 同样的项目，运行在不同环境配置环境不应相同。如测试环境下应该是一套配置、生产环境是另一套配置。 Decouple可将配置从代码中分离。 参考资料 官方网站 SimpleIsBetterThanComplex]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
         <category>package</category>
       </categories>
       <tags>
@@ -597,6 +773,9 @@
     <title><![CDATA[Python的and和or的返回值]]></title>
     <url>%2F2018%2F06%2F27%2Fpython-and-or%2F</url>
     <content type="text"><![CDATA[一直以来，我以为python中and和or的返回值是True或False。 看 《Dive into Python》这本书时，发现他们并不返回布尔值，而是返回他们实际进行比较的值之一。 and根据自己已经掌握的知识，设想下如下代码的运算结果： 123'a' and 'b''' and 'b''a' and 'b' and 'c' 根据python的定义，在没有看这部分内容之前，我认为答案分别为True，False，True。其实运行之后才发现应该是这样的： 12345678910Python 2.7.13+ (default, Jul 19 2017, 18:15:03)[GCC 6.4.0 20170704] on linux2Type "help", "copyright", "credits" or "license" for more information.&gt;&gt;&gt; 'a' and 'b''b'&gt;&gt;&gt; '' and 'b'''&gt;&gt;&gt; 'a' and 'b' and 'c''c'&gt;&gt;&gt; 原因如下： and运算时，从左到右演算表达式的值。0, &#39;&#39;, [], {}, None在布尔表达式环境下为假，其他任何东西都为真 如果and运算中，所有的值都为真，那么and返回最后一个值。如：&#39;a&#39; and &#39;b&#39; 如果某个值为假，那么and立即返回该假值（短路运算），如：&#39;&#39; and &#39;b&#39; or类似的。or的规则如下： 从左到右演算 如果有一个值为真，立即返回该值 所有所有的值都为假，返回最后一个假值 Python 官方文档的表述在Python官方文档中 boolean-operations-and-or-not 中，由如下表述： 这里也充分说明了，and 和 or 以及 not 等三个运算符操作的结果。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>python</tag>
       </tags>
@@ -616,13 +795,18 @@
     <title><![CDATA[Django Coding Style]]></title>
     <url>%2F2018%2F06%2F12%2Fdjango-coding-style%2F</url>
     <content type="text"><![CDATA[编写Django中的代码时，请遵循下列编码风格 Python编码风格 请遵循editorconfig文件中制定的缩进样式，建议使用支持 EditConfig 的编辑器，以避免缩进和空格方面的问题。Python源代码文件使用4个空格的缩进，HTML文件用2个空格的缩进。 除非特别声明，请遵循 PEP 8 使用 flake8 自动检查。请注意我们提供的setup.cfg文件中包含了一些不需要检查的文件（如：弃用的文件、可清理文件和第三方提供的django代码），和一些我们不认为是严重违规的错误。应当记住 PEP 8 只是起指导作用，主要是要遵循代码中已形成的编码风格。 一个不需要遵循 PEP 8的例外为行的长度，如果看起来明显很丑或者难以阅读，请不要限定每一行的长度为79，我们允许想Github 代码评审那样，可以最高每行容纳119个字符，再长就需要水平滚动了，这样会使代码review更费劲。运行flake8时应当包含这个。 文档、注释、docstring应当限定为79个字符，虽然 PEP 8的建议为72个。 使用四个空格作为缩进，勿使用tab 使用四个空格缩进，而非垂直对其，如: 建议：1234raise AttributeError( 'Here is a multine error message ' 'shortened for clarity.') 不建议：12raise AttributeError('Here is a multine error message ' 'shortened for clarity.') 这样可以更好的利用空间，还能避免第一行的长度变化时引起的后续行的变动。 字符串使用单引号包裹，如果字符串包含单引号时采用双引号。但是在写代码时，不要去重构不相关处的代码，有点浪费时间。 不要在注释中写”we”。如”We loop over.”应该改成”Loop over.” 变量名、函数名、方法名使用下划线链接单词，不要使用驼峰。如poll.get_unique_voters()，而非poll.getUniqueVoters() 使用InitalCaps方式去命名类名 docstring遵循现有风格，以及 PEP 257 在测试中，使用 assertRaisesMessage()和assertWarnsMessage()，而非assertRaises()和assertWarns()，这样可以检查exception和warning的信息，当且仅当正确表达式匹配时，使用assertRaises()和assertWarns() 在测试用例的docstring中，描述每个测试的期望行为，不要加上“确保……”和“本测试用例是为了测试……”等字眼。 如果在docstring中很难描述某个ticket，把ticket number添加至句末。如12345def test_foo(): """ A test docstring looks like this (#123456). """ ... Imports 使用 isort 自动调整引用顺序。 使用方法12$ pip install isort$ isort -rc . 无须isort自动调整顺序的引用后添加个标记，用法如下：1import module # isort:skip import按如下顺序归组拜访：future，标准库，第三方库，其他Django组件，本地Django组件，try/excepts语句。每一组的import按字母表顺序。将每组的import module语句放在from module import objects之前。其他django模块的引用用绝对路径，本地模块用相对路径引用。 每一行中，小写字母放在大写字母之后。 使用括号和缩进来分割长行，在最后一个import后加一个逗号，右括号也放在这行上。 不同的import分组之间用一个空行，import语句和函数代码之间用两个空行 示例如下（注释仅做说明）12345678910111213141516171819202122232425262728293031# futurefrom __future__ import unicode_literals# standard libraryimport jsonfrom itertools import chain# third-partyimport bcrypt# Djangofrom django.http import Http404from django.http.response import ( Http404, HttpResponse, HttpResponseNotAllowed, StreamingHttpResponse, cookie,)# local Djangofrom .models import LogEntry# try/excepttry: import yamlexcept ImportError: yaml = NoneCONSTANT = 'foo'class Example: # ... 尽可能使用简单的import 模板文件 在django的模板文件中，花括号和tag中放一个空格。 推荐：1&#123;&#123; foo &#125;&#125; 不推荐：1&#123;&#123;foo&#125;&#125; 视图文件视图函数的第一个参数是request，不要简化为req。 推荐：12def my_view(request, foo): # ... 不推荐：12def my_view(req, foo): # ... 模型风格 feild命名时，全用小写字母，用下划线连接，不要使用驼峰命名法。 推荐：123class Person(models.Model): first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) 不推荐：123class Person(models.Model): FirstName = models.CharField(max_length=20) Last_Name = models.CharField(max_length=40) class Meta应当在所有的field之后，用一个空行分隔。 推荐：123456class Person(models.Model): first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) class Meta: verbose_name_plural = 'people' 不推荐：12345class Person(models.Model): first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) class Meta: verbose_name_plural = 'people' 不推荐：123456class Person(models.Model): class Meta: verbose_name_plural = 'people' first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) model内置class和标准方法的顺序如下： 所有数据库的fields的定义 Custom manager attributes class Meta def __str__() def save() def get_absolute_url() Any custom methods 要为某个域定义choices，使用tuple和大写字母，如下1234567class MyModel(models.Model): DIRECTION_UP = 'U' DIRECTION_DOWN = 'D' DIRECTION_CHOICES = ( (DIRECTION_UP, 'Up'), (DIRECTION_DOWN, 'Down'), ) django.conf.settings的用法Modules should not in general use settings stored in django.conf.settings at the top level (i.e. evaluated when the module is imported). The explanation for this is as follows: Manual configuration of settings (i.e. not relying on the DJANGO_SETTINGS_MODULE environment variable) is allowed and possible as follows: from django.conf import settings settings.configure({}, SOME_SETTING=’foo’)However, if any setting is accessed before the settings.configure line, this will not work. (Internally, settings is a LazyObject which configures itself automatically when the settings are accessed if it has not already been configured). So, if there is a module containing some code as follows: from django.conf import settingsfrom django.urls import get_callable default_foo_view = get_callable(settings.FOO_VIEW)…then importing this module will cause the settings object to be configured. That means that the ability for third parties to import the module at the top level is incompatible with the ability to configure the settings object manually, or makes it very difficult in some circumstances. Instead of the above code, a level of laziness or indirection must be used, such as django.utils.functional.LazyObject, django.utils.functional.lazy() or lambda. MiscellaneousMark all strings for internationalization; see the i18n documentation for details. Remove import statements that are no longer used when you change code. flake8 will identify these imports for you. If an unused import needs to remain for backwards-compatibility, mark the end of with # NOQA to silence the flake8 warning. Systematically remove all trailing whitespaces from your code as those add unnecessary bytes, add visual clutter to the patches and can also occasionally cause unnecessary merge conflicts. Some IDE’s can be configured to automatically remove them and most VCS tools can be set to highlight them in diff outputs. Please don’t put your name in the code you contribute. Our policy is to keep contributors’ names in the AUTHORS file distributed with Django – not scattered throughout the codebase itself. Feel free to include a change to the AUTHORS file in your patch if you make more than a single trivial change. JavaScript 风格见 这里 original]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Django使用bcrypt生成密码]]></title>
     <url>%2F2018%2F06%2F12%2Fdjango-use-bcrypt-to-generate-password%2F</url>
     <content type="text"><![CDATA[需求需要设计一个系统（采用Django），专门管理另一个系统的用户。用户登录在另一个系统中进行，那边的密码采用bcrypt进行校验，所以Django系统中密码保存也要用bcrypt加密保存。 而Django虽然自带的User中提供了Password功能（输入明文、自动生成加密字符串），但是model中却并不提供一个所谓的PasswordField。 因此，需求就是如何在自己实现的注册功能中，将明文密码用bcrypt加密保存 设计以前没有安全方面“专业”知识累积，所以决定自己创建路由、视图、表单等组件，但是在查找资料的过程中发现了许多可用的资料。 但是提前优化是万恶之源，我没有决定中途改换技术方案，而是等待下一版再更改为更专业的方案。 创建路由、视图、表单、模板等过程都比较简单，就不在赘述了，着重讲下如何将明文密码进行加密的过程。 下载bcryptPython 版的 bcrypt 的 网站，安装命令：pip install bcrypt 实现接下来，在form的 clean_password() 函数里，返回加密后的字符串。123456789101112131415161718import bcryptclass SignUpForm(forms.Form): password1 = forms.CharField( required=True, widget=forms.PasswordInput(attrs=&#123;'placeholder': '输入密码', 'class': 'input pass'&#125;) ) password2 = forms.CharField( required=True, widget=forms.PasswordInput(attrs=&#123;'placeholder': '再次输入密码', 'class': 'input pass'&#125;) ) def clean_password2(self): cleaned_data = super(SignUpForm, self).clean() password2 = cleaned_data.get('password2') return bcrypt.hashpw(password2, bcrypt.gensalt()) 在views里取值时用form.cleaned_data[&#39;password2&#39;]即可取到加密后的字符串，验证功能在需求部分已经做过介绍，不需要django这部分负责。 排坑我的django是基于python3的，在python2里测试生成加密字符串的过程没有问题，但是在python3会报如下错误：1Unicode-objects must be encoded before hashing 查找了下原因，是因为python3里，字符串有str和bytes两种形态，所以需要改成1bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt()).decode('utf-8') 另外，bcrypt有多种标准，我们需要的是2a，所以还要改成：1bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt(prefix=b'2a')).decode('utf-8') 这样就得到正确结果了。 结果 可以看到password的值已经是bcrypt加密后的字符串了。 相关资料 2a版本的bcrypt生成和验证 Unicode-objects must be encoded before hashing 排错资料]]></content>
       <categories>
-        <category>django</category>
+        <category>Python</category>
+        <category>Django</category>
       </categories>
       <tags>
         <tag>django</tag>
@@ -634,7 +818,7 @@
     <url>%2F2018%2F06%2F12%2Flearn-python-the-hard-way%2F</url>
     <content type="text"><![CDATA[第一次看到这本书还是初学python的时候了，那时候看完了几本python的基础知识书，在写python代码的时候虽然能够写出来，但是还是磕磕碰碰的。 这本书当时给我的感觉就是，梳理了一些比较重要的知识点，并且布置一些题目去自己做。在做的过程中确实是可以加深理解。 如今，再次翻看这本书的时候，虽然这些知识点我基本已烂熟于心，不过还是可以推荐大家作为学习python的第二本书。 这本书有一个非常明晰的观点：一定要一道一道题做过去。 LPTHW的 官网 ，作为系列书籍，还有学习ruty，ruby， c， sql， javascript， unix， regex， design的。 福利时间LPTHW中文翻译版 如果想要英文原版，可发送邮件至 yarving@qq.com ，邮件标题注明LPTHW]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -664,13 +848,14 @@
     <url>%2F2018%2F06%2F06%2Fdjango-verify-password%2F</url>
     <content type="text"><![CDATA[I’ve make a design about user register, need to verify user’s password and confirm password are equal.When reading this The-Flask-Mega-Tutorial-zh, I found a better way to handle this situation. original solution: ‘’]]></content>
       <categories>
-        <category>django</category>
+        <category>Python</category>
+        <category>Django</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[要有世界眼光和战略思维]]></title>
     <url>%2F2018%2F06%2F06%2Fzjyl-yysjyghzlsw%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-vPzSbWnj"), narrow: false, autoplay: false, showlrc: false, music: { title: "要有世界眼光和战略思维", author: "之江新语", url: "http://flv1.gmw.cn/gmw/videoroot/2015-07-17/1437103443731.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); “一把手”是 “一把手”是党政领导集体的“班长” 是一个地方和部门贯彻中央大政方针、省委省政府重大决策的第一责任人 “一把手”的根本职责把方向、抓大事、谋全局 各级党政“一把手”要站在战略的高度 善于从政治上认识和判断形势，观察和处理问题 善于透过纷繁复杂的表面现象，把握事物的本质和发展的内在规律 要努力增强总揽全局的能力 放眼全局谋一域，把握形势谋大事 以“登东山而小鲁”、“登泰山而小天下”的气度和胸襟 始终把全局作为观察和处理问题的出发点和落脚点 以全局利益为最高价值追求 以世界眼光去认识政治形势 把握经济走势，了解文化态势 用战略思维去观察当今时代，洞悉当代中国，谋划当前浙江 切实把本地、本部门的工作放到国际国内大背景和全党全国全省的工作大局中去思考、去研究、去把握 不断提高领导工作的原则性、系统性、预见性和创造性。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-PvQlvJKJ"), narrow: false, autoplay: false, showlrc: false, music: { title: "要有世界眼光和战略思维", author: "之江新语", url: "http://flv1.gmw.cn/gmw/videoroot/2015-07-17/1437103443731.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); “一把手”是 “一把手”是党政领导集体的“班长” 是一个地方和部门贯彻中央大政方针、省委省政府重大决策的第一责任人 “一把手”的根本职责把方向、抓大事、谋全局 各级党政“一把手”要站在战略的高度 善于从政治上认识和判断形势，观察和处理问题 善于透过纷繁复杂的表面现象，把握事物的本质和发展的内在规律 要努力增强总揽全局的能力 放眼全局谋一域，把握形势谋大事 以“登东山而小鲁”、“登泰山而小天下”的气度和胸襟 始终把全局作为观察和处理问题的出发点和落脚点 以全局利益为最高价值追求 以世界眼光去认识政治形势 把握经济走势，了解文化态势 用战略思维去观察当今时代，洞悉当代中国，谋划当前浙江 切实把本地、本部门的工作放到国际国内大背景和全党全国全省的工作大局中去思考、去研究、去把握 不断提高领导工作的原则性、系统性、预见性和创造性。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -693,7 +878,7 @@
     <url>%2F2018%2F06%2F05%2Fpython-sum-map-filter-reduce%2F</url>
     <content type="text"><![CDATA[最近在看《Think Python》（英文版），看到了讲解map, reduce, filter等函数，觉得讲解的思路特别好。所以，我加上了自己的理解，写了本篇文章。 引子如果要对列表中的数字求和，我们可以这样做：1234567def add_all(t): """t is a list of nums""" total = 0 for x in t: total += x return total 运行结果： 由于python中求和操作太常见了，所以python提供了内置函数sum来进行这项操作 sum将上一版代码修改如下：123if __name__ == '__main__': t = [1, 2, 3, 4] print sum(t) 运行结果： 像这种从一个列表中得出一个结果的操作，也叫reduce，除了求和这一种reduce操作外，python还支持自定义的方式 reduce比如，我不是想对队列求和，而是想得到列表各数字的乘积，可以利用reduce这样实现：123456def multiple_all(x, y): return x * yif __name__ == '__main__': t = [1, 2, 3, 4] print reduce(multiple_all, t) 运行结果： 上面介绍了将一个从一个列表得到一个结果的情形，还有一种情形是：按照某个规律对列表中的元素一一转换，这就要用到map内置函数了 map如果给定一个列表（元素为字符串），要把列表元素首字母大写，可以这样做123if __name__ == '__main__': t = ['hello', 'world', 'yarving'] print map(lambda x: x.capitalize(), t) 运行结果： 还有一种情况，是要将列表里的元素过滤出去，可以用到filter函数 filter给定一个列表（元素为数字），如果要仅保留不大于4的数字，可以这样做：123if __name__ == '__main__': t = [1, 2, 3, 4, 5, 6, 7] print filter(lambda x: x &lt;= 4, t) 运行结果： 获取《Think Python》（英文版）电子书如想要获取《Think Python》（英文书）的PDF版本，可发送邮件到 yarving@qq.com ，并标明主题 “Think Python” 。]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -703,6 +888,9 @@
     <title><![CDATA[14 Most Famous Python Libraries and Framework]]></title>
     <url>%2F2018%2F06%2F04%2F14-most-famous-python-libraries-and-framework%2F</url>
     <content type="text"><![CDATA[This article is from Python Tips I added this to my todo list, and will create a tutorial based on these libraries and frameworks later. Libraries requests tqdm pillow scrapy numpy pandas scapy matplotlib kivy nltk keras SQLAlchemy Django Twisted Frameworks Flask Scipy Pytorch Click Astropy Scikit-learn Opencv PyQt Tensorflow Wagtail]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>python</tag>
         <tag>todo</tag>
@@ -718,6 +906,7 @@
     <url>%2F2018%2F05%2F30%2FDjango-integrate-with-legacy-database%2F</url>
     <content type="text"><![CDATA[当我们使用Django时，一般都是根据定义的模型来生成数据库，也就是先创建Django项目，再创建的数据库。当反过来，先有数据库，后才有Django项目时，该如何处理呢？ 直觉反应是，根据数据库中每个表，自己去定义模型。 其实，django提供了了python manage.py inspect命令，可以根据模型来生成model。这样即可以保证比人工定义准确，也能够节省巨量时间（我平常连定义model都觉得费劲）。 详细内容可参见 Integrating Django with a legacy database 另外要提及的是，我需要根据远程POSTGRE SQL数据库来生成model。可能需要指定schema文件，在settings.py中的DATABASES中添加OPTIONS选项即可，具体配置如下图所示：]]></content>
       <categories>
+        <category>Python</category>
         <category>Django</category>
       </categories>
       <tags>
@@ -729,6 +918,7 @@
     <url>%2F2018%2F05%2F30%2FDjango-Test-Remote-Database-Connection%2F</url>
     <content type="text"><![CDATA[在一个项目中需要配置远程数据库，我配置好了settings.py后，想要验证下django是否能连接上该远程数据库。 答案很简单，运行python manage.py runserver即可验证。 如果远程数据库配置不正确的话，会报错（如下图所示）]]></content>
       <categories>
+        <category>Python</category>
         <category>Django</category>
       </categories>
   </entry>
@@ -816,7 +1006,8 @@
     <url>%2F2018%2F05%2F12%2FTracking-User-Login-Activity-in-Django-Rest-Framework%2F</url>
     <content type="text"><![CDATA[django如何记录登录事件？ 开发REST API首选为Python/Django的Django REST Framework（DRF），DRF提供多种认证机制： Basic Authentication Token Authentication Session Authentication Client-Server模式下常用的为token-based authentication了解详情 Json Web Token(JWT) Authentication是最近兴起的token-based Authentication新标准，JWT不需要在数据库中存储token，了解详情 django-rest-framework-jwt又是在django中实现jwt的非常方便的插件。了解详情 但是，当需要记录login event的时候，jwt本身实现不了，最好的方法是结合Signals来做。 为什么jwt本身实现不了呢？ 需要记录的login event为登录成功和登录失败； 登录成功的signal为user_logged_in，登录失败的signal为user_login_fail； user_loggined_in由django.contrib.auth的login()负责； user_login_fail由django.contrib.auth的authenticate()负责； DRF只调用authentication()函数，因此登录成功的信号无法发出。 所以，需要主动发user_logged_in信号 原因讲清楚了，详细解决方案参照via]]></content>
       <tags>
-        <tag>django</tag>
+        <tag>Django</tag>
+        <tag>Python</tag>
         <tag>DRF</tag>
       </tags>
   </entry>
@@ -856,6 +1047,9 @@
     <title><![CDATA[Hexo 攻略]]></title>
     <url>%2F2018%2F05%2F07%2FHexo-practice%2F</url>
     <content type="text"><![CDATA[本文是我在使用hexo的过程中为了解决具体问题而找到的解决方式，如果别人已经有现成的解决方案，我会直接放链接，如果没有现成而我又找到了优雅的解决方案，会贴上我的。 添加分类及标签链接： 添加分类及标签 插入音乐/视频链接： 插入音乐/视频 TODO [ ] all articles the next theme offers]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>hexo</tag>
       </tags>
@@ -871,7 +1065,7 @@
   <entry>
     <title><![CDATA[要讲究领导艺术]]></title>
     <url>%2F2018%2F05%2F06%2F%E8%A6%81%E8%AE%B2%E7%A9%B6%E9%A2%86%E5%AF%BC%E8%89%BA%E6%9C%AF%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-TIavFtwO"), narrow: false, autoplay: false, showlrc: false, music: { title: "要讲究领导艺术", author: "之江新语", url: "http://222.245.77.82/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437106406439.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 一个高明的领导，讲究领导艺术，知关节，得要领，把握规律，掌握节奏，举重若轻。 在日常工作中，有三类干部： 第一类，眼光敏锐，见微知著，“为之于未有，治之于未乱”，防患于未然，化解于无形，开展工作有板有眼，纵横捭阖，张弛有度，“谈笑间，樯橹灰飞烟灭”，这是领导艺术的最高境界。 第二类，工作勤勤恳恳、忙忙碌碌、夜以继日，天天加班加点，虽然工作的预见性、敏感性不足，但问题暴露后，尚能及时采取措施，妥善加以解决。虽不能举重若轻而显得举轻若重，但“勤能补拙”，仍不失为勤政的干部。 第三类，见事迟，反应慢，发现不了问题，出了问题后，或手足无措，或麻木不仁。 我们每一个领导干部，都要努力学习，加强实践，不断提高领导水平，力求最高境界，力戒第三种情况。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-rcGAmzMO"), narrow: false, autoplay: false, showlrc: false, music: { title: "要讲究领导艺术", author: "之江新语", url: "http://222.245.77.82/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437106406439.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 一个高明的领导，讲究领导艺术，知关节，得要领，把握规律，掌握节奏，举重若轻。 在日常工作中，有三类干部： 第一类，眼光敏锐，见微知著，“为之于未有，治之于未乱”，防患于未然，化解于无形，开展工作有板有眼，纵横捭阖，张弛有度，“谈笑间，樯橹灰飞烟灭”，这是领导艺术的最高境界。 第二类，工作勤勤恳恳、忙忙碌碌、夜以继日，天天加班加点，虽然工作的预见性、敏感性不足，但问题暴露后，尚能及时采取措施，妥善加以解决。虽不能举重若轻而显得举轻若重，但“勤能补拙”，仍不失为勤政的干部。 第三类，见事迟，反应慢，发现不了问题，出了问题后，或手足无措，或麻木不仁。 我们每一个领导干部，都要努力学习，加强实践，不断提高领导水平，力求最高境界，力戒第三种情况。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -883,7 +1077,7 @@
   <entry>
     <title><![CDATA[搞试点要“大胆设想小心求证”]]></title>
     <url>%2F2018%2F05%2F06%2F%E6%90%9E%E8%AF%95%E7%82%B9%E8%A6%81%E2%80%9C%E5%A4%A7%E8%83%86%E8%AE%BE%E6%83%B3%E5%B0%8F%E5%BF%83%E6%B1%82%E8%AF%81%E2%80%9D%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-aLyuzgdx"), narrow: false, autoplay: false, showlrc: false, music: { title: "搞试点要“大胆设想小心求证”", author: "之江新语", url: "http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437102329342.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 我们在各项改革中，经常通过试点的方法，取得若干经验后再推广。 既然是做试点工作，前人没有做过，就要有“敢为天下先”的精神，解放思想，大胆地闯，大胆地试，怎么有利于发展就怎么改革； 就是要超越原有的体制，从根本上冲破束缚发展的桎梏。 做好试点工作，在“大胆设想”的同时，还要“小心求证”。 要讲究策略，注意方法，力求水到渠成。 要坚持点上试验，面上推广，先易后难，先浅后深，因地制宜，不搞一刀切，不求齐步走。 在先行的试点中要鼓励成功，宽容失败，纠正失误，注意保护好干部群众的改革热情； 在全面推进时则要以成熟的经验引路，避免反复，减少失误， 尽可能把改革的风险和代价降到最低限度。 同时，要注意把改革的力度与人民群众可承受的程度结合起来，加强思想政治工作，完善各项配套措施，做到积极稳妥，统筹兼顾，保证改革顺利进行。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-XDTaxXnn"), narrow: false, autoplay: false, showlrc: false, music: { title: "搞试点要“大胆设想小心求证”", author: "之江新语", url: "http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437102329342.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 我们在各项改革中，经常通过试点的方法，取得若干经验后再推广。 既然是做试点工作，前人没有做过，就要有“敢为天下先”的精神，解放思想，大胆地闯，大胆地试，怎么有利于发展就怎么改革； 就是要超越原有的体制，从根本上冲破束缚发展的桎梏。 做好试点工作，在“大胆设想”的同时，还要“小心求证”。 要讲究策略，注意方法，力求水到渠成。 要坚持点上试验，面上推广，先易后难，先浅后深，因地制宜，不搞一刀切，不求齐步走。 在先行的试点中要鼓励成功，宽容失败，纠正失误，注意保护好干部群众的改革热情； 在全面推进时则要以成熟的经验引路，避免反复，减少失误， 尽可能把改革的风险和代价降到最低限度。 同时，要注意把改革的力度与人民群众可承受的程度结合起来，加强思想政治工作，完善各项配套措施，做到积极稳妥，统筹兼顾，保证改革顺利进行。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -895,7 +1089,7 @@
   <entry>
     <title><![CDATA[树立五种崇高情感]]></title>
     <url>%2F2018%2F05%2F06%2F%E6%A0%91%E7%AB%8B%E4%BA%94%E7%A7%8D%E5%B4%87%E9%AB%98%E6%83%85%E6%84%9F%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-qmFDteBG"), narrow: false, autoplay: false, showlrc: false, music: { title: "大事讲原则，小事讲风格", author: "之江新语", url: "http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437098897623.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 胡锦涛同志多次要求广大党员干部做到权为民所用、情为民所系、利为民所谋。情为民所系是基础，不能做到情为民所系，手中的权就难以真正为民所用，也就难以真正做到利为民所谋。 要做到情为民所系，就要以党的先进人物为榜样，培养和增强对人民群众的深厚感情，学习和树立五种崇高的情感。 一要学习邓小平同志的情怀感。他说：“我是中国人民的儿子，我深情地爱着我的祖国和人民。” 二要学习雷锋同志的幸福感。他虽然只活了二十二年，但他说：“什么是幸福？为人民服务是最大的幸福。” 三要学习孔繁森同志的境界感。他有一句名言：“爱的最高境界就是爱人民。” 四要学习郑培民同志的责任感。他始终把“做官先做人，万事民为先”作为自己的行为准则。 五要学习钱学森同志的光荣感。他把群众的口碑当作自己无上的光荣。 只有学习和树立这五种崇高的情感，才能心里装着群众，凡事想着群众，工作依靠群众，一切为了群众，切实解决好“相信谁、依靠谁、为了谁”的根本政治问题，努力为人民掌好权、用好权。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-WXWabmkH"), narrow: false, autoplay: false, showlrc: false, music: { title: "大事讲原则，小事讲风格", author: "之江新语", url: "http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437098897623.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 胡锦涛同志多次要求广大党员干部做到权为民所用、情为民所系、利为民所谋。情为民所系是基础，不能做到情为民所系，手中的权就难以真正为民所用，也就难以真正做到利为民所谋。 要做到情为民所系，就要以党的先进人物为榜样，培养和增强对人民群众的深厚感情，学习和树立五种崇高的情感。 一要学习邓小平同志的情怀感。他说：“我是中国人民的儿子，我深情地爱着我的祖国和人民。” 二要学习雷锋同志的幸福感。他虽然只活了二十二年，但他说：“什么是幸福？为人民服务是最大的幸福。” 三要学习孔繁森同志的境界感。他有一句名言：“爱的最高境界就是爱人民。” 四要学习郑培民同志的责任感。他始终把“做官先做人，万事民为先”作为自己的行为准则。 五要学习钱学森同志的光荣感。他把群众的口碑当作自己无上的光荣。 只有学习和树立这五种崇高的情感，才能心里装着群众，凡事想着群众，工作依靠群众，一切为了群众，切实解决好“相信谁、依靠谁、为了谁”的根本政治问题，努力为人民掌好权、用好权。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -907,7 +1101,7 @@
   <entry>
     <title><![CDATA[大事讲原则，小事讲风格]]></title>
     <url>%2F2018%2F05%2F06%2F%E5%A4%A7%E4%BA%8B%E8%AE%B2%E5%8E%9F%E5%88%99%EF%BC%8C%E5%B0%8F%E4%BA%8B%E8%AE%B2%E9%A3%8E%E6%A0%BC%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-ADmOvMNB"), narrow: false, autoplay: false, showlrc: false, music: { title: "大事讲原则，小事讲风格", author: "之江新语", url: "http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437099147739.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 我们平时常讲团结就是力量，团结出凝聚力、出战斗力、也出干部，这说明团结是何等的重要。 其实，团结是班子建设的重要问题，讲团结是讲政治、顾大局的表现。 加强团结，“一把手”要负主要责任，应以身作则，严格要求， 善于抓方向、议大事、管全局， 善于团结各方面同志包括与不同意见的同志一道工作， 善于充分调动班子成员的积极性、主动性和创造性， 真正做到发扬民主，集思广益，科学决策，防止和克服独断专行、软弱涣散和各行其是。 每个领导干部都要正确对待自己，正确对待同志，正确对待组织，对有些事要拿得起、放得下，豁达一些，做到严于律己，宽以待人，大事讲原则，小事讲风格，在合作共事中加深了解，在相互支持中增进团结，形成领导班子的整体合力。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-NaCsXbOj"), narrow: false, autoplay: false, showlrc: false, music: { title: "大事讲原则，小事讲风格", author: "之江新语", url: "http://183.214.140.171/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437099147739.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 我们平时常讲团结就是力量，团结出凝聚力、出战斗力、也出干部，这说明团结是何等的重要。 其实，团结是班子建设的重要问题，讲团结是讲政治、顾大局的表现。 加强团结，“一把手”要负主要责任，应以身作则，严格要求， 善于抓方向、议大事、管全局， 善于团结各方面同志包括与不同意见的同志一道工作， 善于充分调动班子成员的积极性、主动性和创造性， 真正做到发扬民主，集思广益，科学决策，防止和克服独断专行、软弱涣散和各行其是。 每个领导干部都要正确对待自己，正确对待同志，正确对待组织，对有些事要拿得起、放得下，豁达一些，做到严于律己，宽以待人，大事讲原则，小事讲风格，在合作共事中加深了解，在相互支持中增进团结，形成领导班子的整体合力。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -919,7 +1113,7 @@
   <entry>
     <title><![CDATA[理论学习要有三种境界]]></title>
     <url>%2F2018%2F05%2F06%2F%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E8%A6%81%E6%9C%89%E4%B8%89%E7%A7%8D%E5%A2%83%E7%95%8C%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-iaJclyez"), narrow: false, autoplay: false, showlrc: false, music: { title: "理论学习要有三种境界", author: "之江新语", url: "http://183.214.1.65/flv1.gmw.cn/gmw/videoroot/2015-07-20/1437374119412.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 著名学者王国维论述治学有三种境界： 一是“昨夜西风凋碧树，独上高楼，望尽天涯路”； 二是“衣带渐宽终不悔，为伊消得人憔悴”； 三是“众里寻他千百度，蓦然回首，那人却在灯火阑珊处”。 领导干部学习理论也要有这三种境界。 首先，理论学习上要有“望尽天涯路”那样志存高远的追求，耐得住“昨夜西风凋碧树”的清冷和“独上高褛”的寂寞，静下心来通读苦读； 其次，理论学习上要勤奋努力，刻苦钻研，舍得付出，百折不挠，下真功夫、苦功夫、细功夫，即使是“衣带渐宽”也“终不悔”，“人憔悴”也心甘情愿； 再次，理论学习贵在独立思考，学用结合，学有所悟，用有所得，要在学习和实践中“众里寻他千百度”，最终“蓦然回首”，在“灯火阑珊处”领悟真谛。 只有这样，各级领导干部才能做到带头学、深人学、持久学，成为勤奋学习、善于思考的模范，解放思想、与时倶进的模范，学以致用、用有所成的模范。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-ydZqJQZF"), narrow: false, autoplay: false, showlrc: false, music: { title: "理论学习要有三种境界", author: "之江新语", url: "http://183.214.1.65/flv1.gmw.cn/gmw/videoroot/2015-07-20/1437374119412.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 著名学者王国维论述治学有三种境界： 一是“昨夜西风凋碧树，独上高楼，望尽天涯路”； 二是“衣带渐宽终不悔，为伊消得人憔悴”； 三是“众里寻他千百度，蓦然回首，那人却在灯火阑珊处”。 领导干部学习理论也要有这三种境界。 首先，理论学习上要有“望尽天涯路”那样志存高远的追求，耐得住“昨夜西风凋碧树”的清冷和“独上高褛”的寂寞，静下心来通读苦读； 其次，理论学习上要勤奋努力，刻苦钻研，舍得付出，百折不挠，下真功夫、苦功夫、细功夫，即使是“衣带渐宽”也“终不悔”，“人憔悴”也心甘情愿； 再次，理论学习贵在独立思考，学用结合，学有所悟，用有所得，要在学习和实践中“众里寻他千百度”，最终“蓦然回首”，在“灯火阑珊处”领悟真谛。 只有这样，各级领导干部才能做到带头学、深人学、持久学，成为勤奋学习、善于思考的模范，解放思想、与时倶进的模范，学以致用、用有所成的模范。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -931,7 +1125,7 @@
   <entry>
     <title><![CDATA[把帮扶困难群众放到更突出的位置]]></title>
     <url>%2F2018%2F05%2F06%2F%E6%8A%8A%E5%B8%AE%E6%89%B6%E5%9B%B0%E9%9A%BE%E7%BE%A4%E4%BC%97%E6%94%BE%E5%88%B0%E6%9B%B4%E7%AA%81%E5%87%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-ZiJQsKfL"), narrow: false, autoplay: false, showlrc: false, music: { title: "把帮扶困难群众放到更突出的位置", author: "之江新语", url: "http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437098223920.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 浙江经济社会发展到现阶段，按照全面建设小康社会的要求，我们应该把帮助群众解决实际困难，特别是帮扶城乡困难群众放到更为突出的位置。 坚持执政为民，全心全意为人民服务，是人民公仆的天职。我们要把帮扶工作看做是分内的事。做好帮扶工作，关键是各级领导的心中要时刻装着群众。有的县每年从省里拿到的财政转移支付有几千万元，却拿不出几十万元的低保金。如果对群众有感情的话，这些钱是拿得出来的，也是应该拿出来的。 帮助群众特别是困难群众解决各类实际问题，除了要不断完善面向全社会的各类社会保障制度外，还要建立面对困难群体的长效帮扶机制。在财政支出上，各地一定要突出重点，优先保证农村教师工资、城乡居民最低生活保障、农民大病统筹、“五保”对象集中供养、困难家庭子女就学救助等与群众利益密切相关的支出。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-HHokVHLf"), narrow: false, autoplay: false, showlrc: false, music: { title: "把帮扶困难群众放到更突出的位置", author: "之江新语", url: "http://183.214.1.67/flv1.gmw.cn/gmw/videoroot/2015-07-17/1437098223920.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 浙江经济社会发展到现阶段，按照全面建设小康社会的要求，我们应该把帮助群众解决实际困难，特别是帮扶城乡困难群众放到更为突出的位置。 坚持执政为民，全心全意为人民服务，是人民公仆的天职。我们要把帮扶工作看做是分内的事。做好帮扶工作，关键是各级领导的心中要时刻装着群众。有的县每年从省里拿到的财政转移支付有几千万元，却拿不出几十万元的低保金。如果对群众有感情的话，这些钱是拿得出来的，也是应该拿出来的。 帮助群众特别是困难群众解决各类实际问题，除了要不断完善面向全社会的各类社会保障制度外，还要建立面对困难群体的长效帮扶机制。在财政支出上，各地一定要突出重点，优先保证农村教师工资、城乡居民最低生活保障、农民大病统筹、“五保”对象集中供养、困难家庭子女就学救助等与群众利益密切相关的支出。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -943,7 +1137,7 @@
   <entry>
     <title><![CDATA[调研工作务求“深、实、细、准、效”]]></title>
     <url>%2F2018%2F05%2F06%2F%E8%B0%83%E7%A0%94%E5%B7%A5%E4%BD%9C%E5%8A%A1%E6%B1%82%E2%80%9C%E6%B7%B1%E3%80%81%E5%AE%9E%E3%80%81%E7%BB%86%E3%80%81%E5%87%86%E3%80%81%E6%95%88%E2%80%9D%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-lSnoNlUk"), narrow: false, autoplay: false, showlrc: false, music: { title: "调研工作务求“深、实、细、准、效”", author: "之江新语", url: "http://183.214.140.172/flv1.gmw.cn/gmw/videoroot/2015-07-24/1437710383033.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 现在全省上下大兴调査研究之风，各级领导干部在调研工作中，一定要保持求真务实的作风，努力在求深、求实、求细、求准、求效上下工夫。 “深”，就是要深入群众，深入基层，善于与工人、农民、知识分子和社会各界人士交朋友，到田间、厂矿、群众和社会各层面中去解决问题。 “实”，就是作风要实，做到轻车简从，简化公务接待，真正做到听实话、摸实情、办实事。 “细”，就是要认真听取各方面的意见，深入分析问题，掌握全面情况。 “准”，就是不仅要全面深入细致地了解实际情况，更要善于分析矛盾、发现问题，透过现象看本质，把握规律性的东西。 “效”，就是提出解决问题的办法要切实可行，制定的政策措施要有较强操作性，做到出实招，见实效。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-aEJvDecP"), narrow: false, autoplay: false, showlrc: false, music: { title: "调研工作务求“深、实、细、准、效”", author: "之江新语", url: "http://183.214.140.172/flv1.gmw.cn/gmw/videoroot/2015-07-24/1437710383033.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 现在全省上下大兴调査研究之风，各级领导干部在调研工作中，一定要保持求真务实的作风，努力在求深、求实、求细、求准、求效上下工夫。 “深”，就是要深入群众，深入基层，善于与工人、农民、知识分子和社会各界人士交朋友，到田间、厂矿、群众和社会各层面中去解决问题。 “实”，就是作风要实，做到轻车简从，简化公务接待，真正做到听实话、摸实情、办实事。 “细”，就是要认真听取各方面的意见，深入分析问题，掌握全面情况。 “准”，就是不仅要全面深入细致地了解实际情况，更要善于分析矛盾、发现问题，透过现象看本质，把握规律性的东西。 “效”，就是提出解决问题的办法要切实可行，制定的政策措施要有较强操作性，做到出实招，见实效。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -955,7 +1149,7 @@
   <entry>
     <title><![CDATA[干部不能在“温室”中培养]]></title>
     <url>%2F2018%2F05%2F06%2F%E5%B9%B2%E9%83%A8%E4%B8%8D%E8%83%BD%E5%9C%A8%E2%80%9C%E6%B8%A9%E5%AE%A4%E2%80%9D%E4%B8%AD%E5%9F%B9%E5%85%BB%2F</url>
-    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-TUXJLOrZ"), narrow: false, autoplay: false, showlrc: false, music: { title: "干部不能在“温室”中培养", author: "之江新语", url: "http://183.214.140.173/flv1.gmw.cn/gmw/videoroot/2015-07-24/1437710374474.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 现在在一些地方，有的干部被列为后备干部、成为培养的“苗子”后，组织上就很愿意为他设好“台阶”，铺好“路子”，而恰恰忽略了把他放到艰苦的岗位上去磨炼；如果组织上真的把他放到艰苦的岗位上，他本人往往认为是对他的不信任。这其实是干部培养工作的一大误区。 好钢要用在刀刃上，“千里马”要在大风大浪中经受考验，后备干部不能放在“温室”里去刻意培养。“天将降大任于斯人也”，必先以磨难历练他，这样才能“增益其所不能”。不经历风雨，怎能见彩虹？ 选“千里马”，要在竞赛中挑选。对后备干部要注重在艰苦岗位、复杂的环境中去锻炼、识别。铺“路子”不如压“担子”，这才是培养干部的好办法。 - 音频来源- 文本来源：《之江新语》]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-DPOqqjjZ"), narrow: false, autoplay: false, showlrc: false, music: { title: "干部不能在“温室”中培养", author: "之江新语", url: "http://183.214.140.173/flv1.gmw.cn/gmw/videoroot/2015-07-24/1437710374474.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 现在在一些地方，有的干部被列为后备干部、成为培养的“苗子”后，组织上就很愿意为他设好“台阶”，铺好“路子”，而恰恰忽略了把他放到艰苦的岗位上去磨炼；如果组织上真的把他放到艰苦的岗位上，他本人往往认为是对他的不信任。这其实是干部培养工作的一大误区。 好钢要用在刀刃上，“千里马”要在大风大浪中经受考验，后备干部不能放在“温室”里去刻意培养。“天将降大任于斯人也”，必先以磨难历练他，这样才能“增益其所不能”。不经历风雨，怎能见彩虹？ 选“千里马”，要在竞赛中挑选。对后备干部要注重在艰苦岗位、复杂的环境中去锻炼、识别。铺“路子”不如压“担子”，这才是培养干部的好办法。 - 音频来源- 文本来源：《之江新语》]]></content>
       <categories>
         <category>之江新语</category>
       </categories>
@@ -989,6 +1183,9 @@
     <title><![CDATA[Hexo Cheetsheet]]></title>
     <url>%2F2018%2F05%2F03%2Fhexo-cheetsheet%2F</url>
     <content type="text"><![CDATA[安装前提 Node.js Git 安装Node.js最好使用NVM进行安装 curl安装NVM： curl https://raw.github.com/creationix/nvm/master/install.sh | sh wget安装NVM： wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh NVM安装Node.js： nvm install stable 安装cnpm： npm install -g cnpm --registry=https://registry.npm.taobao.org 安装Hexocnpm install -g hexo-cli 初始化 初始化： `hexo init ; cd ; cnpm install 新建文章： hexo new [layout] &lt;article&gt; 生成静态文件： hexo generate 或 hexo g 发布草稿： hexo publish [layout] &lt;filename&gt; 启动预览服务器： hexo server, 默认情况下，访问 http://localhost:4000/ 部署网站： hexo deploy 或 hexo d TODO 学习layout的三种布局：post，page，draft 写草稿文章，发布草稿（hexo new draft &lt;title&gt;; hexo publish &lt;title&gt;）]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[新时代 面对面]]></title>
@@ -1012,6 +1209,10 @@
     <title><![CDATA[Django Cheat Sheet]]></title>
     <url>%2F2017%2F08%2F28%2Fdjango-cheat-sheet%2F</url>
     <content type="text"><![CDATA[This is a cheat sheet or minimal tutorial of django. Preparingsudo -H pip install django And check django version is: python -m django --version First stepstart a django project by: django-admin startproject mysiterun the project by: python manage.py runserverthe default port is 8000, if want to run on a different port,The command is: python manage.py runserver 8080 the command to create a app is: python manage.py startapps polls Cheat sheet on appspolls/views.py manage the view codes;polls/urls.py manage the router codesmysite/urls.py manage global router. Cheat sheet on databasepython manage.py migrate will apply database changes of apps registerd in INSTALLED_APPS, which defined in mysite/settings.pypython mangage.py makemigrations polls will notify django than the database of this app is changed. Cheat seet on shellpython manage.py shell will preparing a shell environement of the django environment Otherif want apps managed by the django backend, need to register it in apps/admin.py]]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[为什么越花钱越有钱]]></title>
@@ -1022,6 +1223,10 @@
     <title><![CDATA[Django Set Language to Chinese]]></title>
     <url>%2F2017%2F06%2F17%2Fdjango-set-language-to-chinese%2F</url>
     <content type="text"><![CDATA[Django生成的框架默认为英文的，如何更改语言为中文。Django框架支持中文，需要在设置里进行配置，配置如下：找到工程目录下的setting.py，修改LANGUAGE_ZONE和TIME_ZONE如下：12LANGUAGE_CODE = 'zh-hans'TIME_ZONE = 'Asia/Shanghai']]></content>
+      <categories>
+        <category>Python</category>
+        <category>Django</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Sublime Convert Tab to 4 Spaces]]></title>
@@ -1032,6 +1237,9 @@
     <title><![CDATA[Git Proxy]]></title>
     <url>%2F2017%2F06%2F17%2FGit-proxy%2F</url>
     <content type="text"><![CDATA[当我在Linux下设置shadowsocket代理时，用Git进行联网操作时总提示没有设置正确的proxy。解决方式为为Git设置全局代理，配置命令如下：1234git config --global https.proxy http://127.0.0.1:1080git config --global https.proxy https://127.0.0.1:1080git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos;git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos; 取消设置的命令好像如下，先记着：123git config --global --unset http.proxygit config --global --unset https.proxynpm config delete proxy]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[疯狂人类进化史:女人为什么比男人漂亮]]></title>
@@ -1106,6 +1314,9 @@
     <title><![CDATA[How to Deploy Application on Heroku]]></title>
     <url>%2F2017%2F01%2F08%2FHow-to-deploy-application-on-heroku%2F</url>
     <content type="text"><![CDATA[How to deploy application on herokuThis article introduces how to deploy web applications onto heroku. reference linksvue2+Flask网站，轻松部署到免费主机HerokuGetting Started on Heroku with Python how to check logheroku logs --tail define starterthe command to start the web application is contained in file: Procfile, format like below:web: gunicorn settingstarted.wsgi --log-file - run on local Collect static resources: python manage.py collectstatic Run by command: heroku local web submit local changes123heroku localgit push heroku masterheroku open]]></content>
+      <categories>
+        <category>Heroku</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Atom]]></title>
@@ -1117,7 +1328,7 @@
     <url>%2F2017%2F01%2F05%2F%E3%80%8A%E6%8B%94%E8%B5%B7%E9%80%BB%E8%BE%91%E4%B9%8B%E5%89%91%E3%80%8B%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[虚假的真话 现实生活中，大多数错误，都是由这种虚假的真话导致的 虚假的真话是别人真心实意的跟你说的，但是别人自己却不能保证其真实性的“真话” 怀疑的习惯多问一个“为什么” 真正的怀疑，是像一个侦探一般，不放过任何可疑之处，大胆地问：“为什么” 反对的资格 反对的前提，是理解 理解的含义，就是有能力支持 没有支持的能力，就没有反对的资格 知识究竟是什么 演绎逻辑无法导出新知识，归纳逻辑则是新知识产生的途径 你的知识，就是你能为之辩护的真信念，别人能为之辩护的真信念不是你的知识。 不管能不能被辩护，假信念都不是知识。 分析和解决问题的通用方法 拿到一个问题，首先应该怎么办呢？显然是先读一遍，试着理解这个问题理解了某个问题，需要得出一个初步结论：这个问题有没有答案。开放答案的问题都不叫问题，那只不过是伪装成问题的聊天而已。第一步就是为这个问题划分论域 不同论域的解答不一样，比较常见的就是脑筋急转弯就是把数学问题应用在生活等其他领域，所以当然不能用数学领域的知识去解答 决策性的问题该如何回答呢？这个在不同领域里面有不同的具体方法，会得出不同的答案。至于这个方法是什么，建议请教该领域的专家。虽然，很多时候不是他们知道最佳答案，而是他们知道的，被叫做最佳答案。是什恶魔的描述性问题不难回答，因为答案是存在且可知的。难以回答的是“为什么”的问题。“为什么”是什么意思呢？是询问目的吗？还是询问动机？还是询问事情的运作机制？当我们问为什么时，其实是因为我们感到了困惑，源于不理解带来的不安。为了减轻不安，遇到“为什么”的问题时，要设法改成“是什么”问题或者“该怎么样”的问题。简单来说，回答“为什么”的问题，只需要消除提问者的困惑。 科学·宗教·怀疑精神 科学是一种人类的社会活动，独特之处在于试验方法和数学工具的运用宗教也是人类的社会活动，独特之处在于对某个超自然对象之存在的承诺怀疑精神是一种思维方式，反对既定的结论，对抗顽固的教条。是一种方法，而不是既定的立场 如何真正驳倒对手 人们总是以为自己是对的，而不同意自己观点的人，就一定是错的。由于同一段话可以有不同的解释，我们便有意无意地对那些反对自己的言论进行最不合理的解释，只要把对方的观点解释称很愚蠢的那样，这样我们反驳起来，就很轻松了。虽然好用，但在真正内行面前不堪一击真正的强者，是在把对手的观点进行最大合理化之后，依然能成功进行反驳的人 真正优雅的做法： 将对手的观点用最清晰、最合理、最强有力的方式表达出来，并追问对手是否就是他想表达的意思 展开强有力的反驳：暗藏的逻辑谬误、论据中事实性错误、还不知道的新证据 争论时，谁是赢家 当你在和对手争论时“输掉”， 你的收获反而比对手更大，你才是真正的赢家错误想法经过和别人争论变得正确 先问存在不存在，再问是不是 由量变引发质变的东西其实是不存在的东西学者们都是非常热衷于为万事万物分类的，他们乐意于寻找A和B之间的分解标准。但一旦遇到“连续性”问题就极为头疼如果我们想要问什么是真正的XX，那我们应该首先思考，XX与非XX之间是否是连续的？如果是，那就不要再问真正的XX是什么，因为他不存在 雄辩胜于事实 我们记录不到事实，只记录到了我们所以为的事实。我们不需要事实，我们需要的是雄辩。我们需要以雄辩去澄清我们的思想，发现那些谬误。我们不知道什么是真理，但我们能靠雄辩来知道什么不是真理。以雄辩来去伪，这是我们能尽的人事。至于能否存真，那要听天命真实的雄辩，甚于虚伪的事实 我犯过的错误比你做对的事情还要多 我们能取得今天的成就，恰恰是因为那些错误已经被别的东西犯过令人恐惧的，不是错误，而是对错误的恐惧 智力与理性 智力高的人往往拥有更好的记忆力和理解能力，更快的反应速度以及更强的学习能力。他们能在多个领域获得较高的成就。理性这个概念带有更多社会构建的成分。强调的是一个人更加沉着冷静，有自我控制能力，能不受情绪的干扰。 说服的六艺每个人的脑袋里都有大量信念，而说服，就是改变信念的过程。六个问题帮助我们合理的说服他人或自己 究竟相信什么。每个人都有大量的信念，但有些信念是其他信念的基础，找到这些基础信念。 信念是否得到足够的证据支持。 证据的可靠程度是多少。 证据是否真的支持信念。 什么样的证据才会改变信念。 这个信念值得相信吗？ 谁有责任证明措置举证责任是一种推理谬误：将举证的义务强加给不应该承担举证责任的一方 举证责任分配的三大算法： 可信度原则：提出不那么可信论断的一方有责任拿出证据支持那个不太可信的论断 肯定判断原则：提出肯定判断的一方有居正责任 实用原则：当某一方的支持的论断后果很严重时，这一方就有责任提出支持 书籍推荐《学会提问》：https://book.douban.com/subject/20428922/《批判性思维》：https://book.douban.com/subject/7057936/《这才是心理学》：https://book.douban.com/subject/26287453/]]></content>
       <categories>
-        <category>笔记</category>
+        <category>Book</category>
       </categories>
   </entry>
   <entry>
@@ -1161,16 +1372,26 @@
     <title><![CDATA[Use setup.py to Install Python Program]]></title>
     <url>%2F2016%2F12%2F22%2Fuse-setup-py-to-install-python-program%2F</url>
     <content type="text"><![CDATA[https://docs.python.org/2/distutils/setupscript.htmlhttps://docs.python.org/2.7/distutils/setupscript.html#installing-scripts #Solution12345678910111213141516#!/usr/bin/env python# encoding: utf-8from distutils.core import setupsetup( name='foo', version='1.0', description='Yarving foo program', author='Yarving', author_email='yarving@gmail.com', url='https://yarving.github.io', scripts=['scripts/ywrun.py']) Refer to pip(cat /usr/local/bin/pip2.7)1234567891011#!/usr/bin/python# -*- coding: utf-8 -*-import reimport sysfrom pip import mainif __name__ == '__main__': sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0]) sys.exit(main())]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Shadowsocks Server Install and Start]]></title>
     <url>%2F2016%2F12%2F22%2Fshadowsocks-server-install-and-start%2F</url>
     <content type="text"><![CDATA[Home page DescriptionShadowsocks is a VPN software, We can use it to setup our own VPN Installpip install shadowsocks config file123456789101112&#123;"port_password":&#123;"8989":"password0", "9001":"password1","9002":"password2","9003":"password3","9004":"password4" &#125;, "method":"aes-256-cfb","timeout":600 &#125; startssserver -c config.json -d start]]></content>
+      <categories>
+        <category>Shadowsocks</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Flask Login Reminders]]></title>
     <url>%2F2016%2F12%2F22%2Fflask-login-reminders%2F</url>
     <content type="text"><![CDATA[Description修改Flask框架用户登录成功之后的登录成功通知 RequirementAdd login reminders Design Login failed message type Login text Signup Link Placeholder for Login filed ConcludingString Field placeholder12345email = StringField('Email', validators=[Required(), Length(1, 64), Email()], render_kw=&#123; 'placeholder': 'Testlink register Email'&#125; ) Redirecting to other URL when on click12345&lt;script&gt; document.getElementById("sign_up").onclick = function () &#123; location.href = "http://vipr-testlink.lss.emc.com/testlink/firstLogin.php"; &#125;;&lt;/script&gt; Python Login Manager login message123456from flask.ext.login import LoginManagerlogin_manager = LoginManager()login_manager.session_protection = 'Strong'login_manager.login_view = 'auth.login'login_manager.login_message = 'Please use your Testlink account to login']]></content>
+      <categories>
+        <category>Python</category>
+        <category>Flask</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[清朝绝对很有趣书摘]]></title>
@@ -1185,7 +1406,7 @@
     <url>%2F2016%2F12%2F22%2FLeetcode-461-Hamming-Distance%2F</url>
     <content type="text"><![CDATA[题目来源Leetcode 461: Hamming Distance 原题The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance. Note:0 ≤ x, y &lt; 231. Example:12Input: x = 1, y = 4Output: 2 Explanation:1 (0 0 0 1)4 (0 1 0 0) ↑ ↑The above arrows point to positions where the corresponding bits are different. 解析两个整数的海明距离是指其对应二进制不同的位数。如1和4的二进制中有两位不一样，海明距离是2 解答 两个数做异或操作 将操作结果转换为str 遍历str，如果有&#39;1&#39;，则距离加1 测试代码123456789101112131415161718def main(): def hammingDistance(x, y): """ :type x: int :type y: int :rtype: int """ res = 0 for c in str(bin(x ^ y)): if c == '1': res += 1 return res print hammingDistance(1, 4)if __name__ == '__main__': main() 测试结果（领先100%）]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
@@ -1203,7 +1424,7 @@
     <url>%2F2016%2F12%2F06%2FLeetcode-5-Longest-Palindromic-Substring%2F</url>
     <content type="text"><![CDATA[出处源自leetcode 5 原题Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example:123Input: "babad"Output: "bab" Note: “aba” is also a valid answer. Example:123Input: "cbbd"Output: "bb" 解读给定字符串s, 找到最长回文子串，可以假设s的最长长度为1000给定两个例子 babad的最长回文子串为bab（aba也是，给定一个即可） cbbd的最长回文子串为bb 第一个解法思路 遍历s，以当前字符为中心节点，往两边拓展 如果左边字符和右边字符一样，则继续拓展 否则拓展结束，记录下最长子串 缺点由于同时往两边拓展，所以例子2中的情形无法处理（回文子串长度为偶数的无法处理）， 可以加上补丁算法，处理偶数情形，但是比较复杂，不予讨论，引入下一种思路： 第二个解法思路 第一个思路是由中间往两边拓展，处理奇数和偶数长度子串要分别处理，由于回文子串的边界字符肯定相等，如果可以相同字符为边界，往里拓展 找到两个相等的字符，以之为边界(下边界和上边界)，进行步骤2 如果上、下边界相等，则为回文字符，否则上边界减1、下边界加1，继续步骤2 综上所示，可以利用一个记忆数组的方法，s的字符串长度为n，设置一个n*n的记忆数组，记忆(i, j)是否为回文，每次以相等字符为边界，往内部推进，判断(i-1, j+1)是否为回文，并且记忆结果，已备下次查询使用； 统计s中每个单词出现的位置 取出同样的单词出现的位置并设为judge(i, j)， 判断i - 1位置的单词是否和j - 1处的单词一样，是的话，返回judge(i - 1, j + 1)的值，否则非回文 返回任意一长度最大的回文子串]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
@@ -1224,7 +1445,7 @@
     <url>%2F2016%2F12%2F04%2FNumber-of-Segments-in-a-String%2F</url>
     <content type="text"><![CDATA[题目出处源自于leetcode 题目描述Count the number of segments in a string, where a segment is defined to be a contiguous sequence of non-space characters. For example, Input: &quot;Hello, my name is John&quot; Output: 5 解读计算给定字符串的片段数，片段由空白字符分割。如给定:&quot;Hello, my name is John&quot;, 输出5（五个片段，分别为&quot;Hello,&quot;, &quot;my&quot;, &quot;name&quot;, &quot;is&quot;, &quot;John&quot; 解答此题用python做太简单了，split字符串得到list，计算list长度即可。 代码1234567class Solution(object): def countSegments(self, s): """ :type s: str :rtype: int """ return len(s.split()) 第二版思路解析在第一版中，直接使用python的str类提供的函数，效率比较低，下面使用模式计算片段数量： 用space_mode变量表示是否处于空白字符模式（空白字符是片段分割符）； 如果处于空白字符模式（space_mode = True），遇到非空字符时，片段数加一； 如果不处于空白字符模式（space_mode = False），遇到空白字符，则转入空白字符模式 代码如下1234567891011121314151617181920class Solution(object): def countSegments(self, s): """ :type s: str :rtype: int """ count = 0 space_mode = True # is space for c in s: # meet a char if space_mode and c != ' ': count += 1 space_mode = False # meet a space if not space_mode and c == ' ': space_mode = True return count 后续工作此题用C语言做比较能领会split的核心概念： 用C语言解答此题； 研究python的str.split()方法。]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
@@ -1232,20 +1453,23 @@
     <url>%2F2016%2F12%2F03%2FMedian-of-Two-Sorted-Arrays%2F</url>
     <content type="text"><![CDATA[题目出处源自于leetcode 题目描述There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). Example 1:1234nums1 = [1, 3]nums2 = [2]The median is 2.0 12345Example 2:nums1 = [1, 2]nums2 = [3, 4]The median is (2 + 3)/2 = 2.5 解读给定两个有序数组，长度分别为m和n，找到两个数组的中位数。时间复杂度应该为O(log(m+n)) 初步思路什么是中位数当变量值的项数N为奇数时，处于中间位置的变量值即为中位数；当N为偶数时，中位数则为处于中间位置的2个变量值的平均数。中位数的解释参见百度百科 如何获取中位数在python，由于语言特性，可以忽略数组总长度（len）为奇数还是偶数，即取(len/2 + (len - 1)/2)/2的值为中位数。举例如下： 当数组长度为3时,各个数字的下标为[0, 1, 2], 3/2=1， (3-1)/2=1, 计算下标为1的值两次再除以2.0，刚好是自己本身（还可以将整型转化为浮点型）； 当数组长度为4时,各个数字的下标为[0, 1, 2, 3]，4/2=2， (4-1)/2=1，计算下表为1和2的两个值的和再除以2.0即为中位数。 也就是从两个有序数组中取出从小到大排序后下标分别为(m + n - 1)/2和(m + n)/2的两个值，相加后除以2.0即为答案。 解法题目要求算法复杂度为O(log(m + n))，直观想到的解法有两种： 直接在两个数组中采用二分查找法查找两个下标值； 先排序，然后直接获取。]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[Elixir Introduction 2]]></title>
     <url>%2F2016%2F12%2F01%2FElixir-Introduction-2%2F</url>
     <content type="text"><![CDATA[不可变性 Elixir中，所有的值都是不可变的。 基础原子 院子是常量，用于表示某些东西的名字，以冒号（：）开头 元组 元组被创建就无法修改，如：{1, 2}用于模式匹配123456789iex(4)&gt; &#123;status, count, action&#125; = &#123;:ok, 42, "next"&#125;&#123;:ok, 42, "next"&#125;iex(5)&gt; status:okiex(6)&gt; count42iex(7)&gt; action"next"iex(8)&gt; 散列表12345678iex(9)&gt; states = %&#123;&quot;AL&quot; =&gt; &quot;Alabama&quot;, &quot;WI&quot; =&gt; &quot;Wisconsin&quot;&#125;%&#123;&quot;AL&quot; =&gt; &quot;Alabama&quot;, &quot;WI&quot; =&gt; &quot;Wisconsin&quot;&#125;iex(10)&gt; states[&quot;AL&quot;]&quot;Alabama&quot;iex(11)&gt; colors = %&#123; red: 0xff0000 &#125;%&#123;red: 16711680&#125;iex(12)&gt; colors.red16711680 匿名函数函数定义 匿名函数用fn关键字创建； 函数定义中可以省略圆括号； 123456789101112131415161718192021222324252627282930313233iex(1)&gt; sum = fn (a, b) -&gt; a + b end#Function&lt;12.52032458/2 in :erl_eval.expr/5&gt;iex(2)&gt; sum.(1, 2)3iex(3)&gt; greet = fn -&gt; IO.puts &quot;Hello&quot; end#Function&lt;20.52032458/0 in :erl_eval.expr/5&gt;iex(4)&gt; greet.()Hello:okiex(5)&gt; f1 = fn a, b -&gt; a * b end#Function&lt;12.52032458/2 in :erl_eval.expr/5&gt;iex(6)&gt; f1.(5, 6) 30iex(7)&gt; f2 = fn -&gt; 99 end#Function&lt;20.52032458/0 in :erl_eval.expr/5&gt;iex(8)&gt; f2.()99iex(9)&gt; swap = fn &#123;a, b&#125; -&gt; &#123;b, a&#125; end#Function&lt;6.52032458/1 in :erl_eval.expr/5&gt;iex(10)&gt; swap.(&#123;6, 8&#125;)&#123;8, 6&#125;iex(11)&gt; list_concat = fn l1, l2 -&gt; l1 ++ l2 end#Function&lt;12.52032458/2 in :erl_eval.expr/5&gt;iex(12)&gt; list_concat.([:a, :b], [:c, :d])[:a, :b, :c, :d]iex(13)&gt; sum = fn a, b, c -&gt; a + b + c end#Function&lt;18.52032458/3 in :erl_eval.expr/5&gt;iex(14)&gt; sum.(1, 2, 3)6iex(15)&gt; pair_tuple_to_list = fn &#123;a, b&#125; -&gt; [a, b] end#Function&lt;6.52032458/1 in :erl_eval.expr/5&gt;iex(16)&gt; pair_tuple_to_list.(&#123;1234, 5678&#125;)[1234, 5678] 函数重载 函数重载取决于传入的参数类型和内容，通过模式匹配来选择要运行的子句 12345678910iex(1)&gt; handle_open = fn...(1)&gt; &#123;:ok, file&#125; -&gt; "Read data: #&#123;IO.read(file, :line)&#125;"...(1)&gt; &#123;_, error&#125; -&gt; "Error: #&#123;:file.format_error(error)&#125;"...(1)&gt; end#Function&lt;6.52032458/1 in :erl_eval.expr/5&gt;iex(2)&gt; handle_open.(File.open('donotexistfile'))"Error: no such file or directory"iex(3)&gt; handle_open.(File.open('/tmp/test.py')) "Read data: #!/usr/bin/env python\n"iex(4)&gt; handle_open.(File.open('/tmp/test.py'))]]></content>
+      <categories>
+        <category>Elixir</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Longest Substring Without Repeating Characters]]></title>
     <url>%2F2016%2F12%2F01%2FLongest-Substring-Without-Repeating-Characters%2F</url>
     <content type="text"><![CDATA[题目出处源自于leetcode 题目描述Given a string, find the length of the longest substring without repeating characters. Examples:Given &quot;abcabcbb&quot;, the answer is &quot;abc&quot;, which the length is 3.Given &quot;bbbbb&quot;, the answer is &quot;b&quot;, with the length of 1.Given &quot;pwwkew&quot;, the answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring. 解读给定一个字串，返回最长不包含重复字符的子串。如&quot;abcabcbb&quot;的最长不包含重复字符的子串为“abc”,“bca”`等，长度都为3 第一版答案思路 初始最长(max)不包含重复字符的子串为0，统计最长字串起始位置（start）为-1， 用data记录每个字符上一次出现位置； 遍历字符串，如果该字符没有出现（即不在data中），则迄今为止的最长长度为当前index - start; 否则，以当前字符结尾的最长字串肯定要从该字符上一次出现的位置算起。 举例&quot;abcabcbb&quot; 遍历a时，最长子串长度为1(“a”)； 遍历b时，最长子串长度为2(“ab”)； 遍历c时，最长子串长度为3(“abc”)； 遍历a时，由于a已经出现过一次，最长子串长度从第一位算起，则长度为3(“bca”)； .. 代码1234567891011121314151617181920class Solution(object): def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ data = &#123;&#125; start = -1 max = 0 for index, char in enumerate(s): if char in data: start = data[char] data[char] = index len = index - start if max &lt; len: max = len return max 第二版答案缺陷表现：当提交代码时，发现”abba”时错误了。原因： start的值是我们认为统计以当前所遍历的字符结尾的最长字串的起始位置； 由于该题的特殊性质，start位置只能往后挪，不能往前挪，因为往前挪肯定会包含重复字符； 在处理”abba”时，第二个b，我们已经把start标记为第一个b的位置，而在处理第二个b时，我们把start往前挪了，所以正确答案应该为”ab”/“ba”，而我们得到了”bba”。 修改：将if char in data: 修改为 if char in data and start &lt; data[char]: 即可修复此bug。 代码1234567891011121314151617181920class Solution(object): def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ data = &#123;&#125; start = -1 max = 0 for index, char in enumerate(s): if char in data and start &lt; data[char]: start = data[char] data[char] = index len = index - start if max &lt; len: max = len return max 运行结果及效率]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
@@ -1261,13 +1485,16 @@
     <url>%2F2016%2F11%2F28%2FTwo-Sum%2F</url>
     <content type="text"><![CDATA[description题目出处：leetcode Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution. Example:1234Given nums = [2, 7, 11, 15], target = 9,Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1]. 解读 给定一个包含多个数字的数组，返回两个值的下标，这两个值相加恰好等于target 可确定的是，答案有且只有一个 Solution version alpha 创建一个字典，使用nums中的值作为key，下标作为value，这样可以迅速通过nums中的值获取其下标； 遍历nums中的值，如果target - nums中的数存在，则说明配对成功，这样直接通过这些值就能获取到下标作为返回值返回了。 代码如下：123456789101112131415class Solution(object): def twoSum(self, nums, target): """ :type nums: List[int] :type target: int :rtype: List[int] """ num_map = &#123;&#125; for i, value in enumerate(nums): num_map[value] = i for value in nums: index = target - value if index != value and index in num_map: return [num_map[value], num_map[index]] 存在一个bug：当nums中有重复数字时，num_map只会存一个数字的下标，会导致信息丢失。如：nums = [3, 3, 4, 5], target = 6此时是获取不到正确的答案的。 Final solution 由于上一个步骤中，在构建字典过程中会导致同样值的key被覆盖，所以我们在构建字典过程中进行运算； 在构建字典过程中，遍历nums时，如果target-num已经存在于字典中，那么匹配成功，返回其相对应的下标即可； 否则，将当前的值加入到字典中，以备后续查找。 代码如下：1234567891011121314class Solution(object): def twoSum(self, nums, target): """ :type nums: List[int] :type target: int :rtype: List[int] """ num_map = &#123;&#125; for i in range(len(nums)): another = target - nums[i] if another in num_map: return [num_map[another], i] else: num_map[nums[i]] = i]]></content>
       <categories>
-        <category>leetcode</category>
+        <category>Leetcode</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[Autopep8]]></title>
     <url>%2F2016%2F11%2F28%2Fautopep8%2F</url>
     <content type="text"><![CDATA[IntroductionAutopep8是一个将Python代码自动排版为PEP8风格的小工具。它使用pep8工具来决定代码中的哪部分需要被排版。Autopep8可以修复大部分pep8工具中报告的排版问题。 Installationinstall autopep8 by pip:12345678910$ sudo -H pip install autopep8[sudo] password for yarving:Collecting autopep8 Downloading autopep8-1.2.4-py2.py3-none-any.whl (41kB) 100% |████████████████████████████████| 51kB 83kB/sCollecting pep8&gt;=1.5.7 (from autopep8) Downloading pep8-1.7.0-py2.py3-none-any.whl (41kB) 100% |████████████████████████████████| 51kB 29kB/sInstalling collected packages: pep8, autopep8Successfully installed autopep8-1.2.4 pep8-1.7.0 Basic Usage preparing a python file with bad format 12345678#!/usr/bin/env python# encoding: utf-8s1='查看系统's2=u'内所有安装'print s1print s2print s1.decode('utf-8')+s2#print s1 + s2 # this line will raise error use pep8 to check this file 1234pep8 test.pytest.py:3:3: E225 missing whitespace around operatortest.py:4:3: E225 missing whitespace around operatortest.py:8:1: E265 block comment should start with '# ' use autopep8 to fix the fileOverwrite the original file by commmand: autopep8 --in-place test.pyThen found the file is fixed as below: 12345678#!/usr/bin/env python# encoding: utf-8s1 = '查看系统's2 = u'内所有安装'print s1print s2print s1.decode('utf-8') + s2# print s1 + s2 # this line will raise error]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>python</tag>
         <tag>autopep8</tag>
@@ -1280,13 +1507,16 @@
     <url>%2F2016%2F11%2F28%2Frails-%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[根据request的format参数来确定返回值类型，代码如下： 1234567respond_to do |format| format.html format.csv do headers['Content-Disposition'] = "attachment; filename='filename.csv'" headers['Content-Type'] ||= 'text/csv' endend 链接地址： 1&lt;%= link_to('Download Link', &#123;:action =&gt; :download, :format =&gt; :csv&#125;) %&gt; 添加CSV模板文件，命名为&lt;action_name&gt;.csv.erb]]></content>
       <tags>
-        <tag>rails</tag>
+        <tag>Rails</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Python 字符编码理解]]></title>
     <url>%2F2016%2F11%2F28%2FPython-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%90%86%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[base: https://segmentfault.com/a/1190000007594453#articleHeader6 python获取默认编码12import sysprint(sys.getdefaultencoding()) python3默认使用utf-8 python2中默认使用ascii python2中的字符类型先插一张图讲解下python的类型 归类 python2中主要有两种字符串，一种为unicode，一种为str； unicode编码类，也就是以u开头的字符串，比如u’你好’，这类字符串使用unicode编码； unicode本身为将全世界所有语言统一的一套编码方案，由于存在很大的资源浪费，所有编码时并不一定会使用unicode str的实现方式有utf-8，ascii等，这些都是unicode的具体实现方式。 unicode字符串通过encode函数转换为str，str通过decode转换为unicode UnicodeEncodeError和UnicodeDecodeError 在进行同时包含 str 类型和 unicode 类型的字符串操作时，Python2 一律都把 str 解码（decode）成 unicode 再运算，这时就很容易出现 UnicodeDecodeError。 例子1123456&gt;&gt;&gt; s = '你好' # str 类型, utf-8 编码&gt;&gt;&gt; u = u'世界' # unicode 类型&gt;&gt;&gt; s + u # 会进行隐式转换，即 s.decode('ascii') + uTraceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;UnicodeDecodeError: 'ascii' codec can't decode byte 0xe4 in position 0: ordinal not in range(128) 出错的原因是： 同时对str和unicode字符串进行操作，python会将str转换为unicode； 由于python2默认使用ascii进行编码，而s是使用utf-8进行编码的，所以在将s转换为unicode时，默认使用ascii转换，此时会失败； 修改为s.decode(&#39;utf-8&#39;) + u就不会报错了 我的理解 unicode是全世界统一的字符串编码，由于存在资源浪费，所以python使用str作为具体使用的字符串编码； 当我们在python中定义一个字符串时，python会自动处理将其进行编码，如中文处理为utf-8的str对象； 但是str对象中不包含编码信息，所以python2会自动以ascii处理str对象； 即使我们在python源文件中定义了默认的编码方式为utf-8，python解释器也会照样使用ascii为默认编码encode/decode编码方式第四点观点通过以下测试文件验证：1234567891011#!/usr/bin/env python# encoding: utf-8s1 = '查看系统's2 = u'内所有安装'print s1print s2print s1.decode('utf-8') + s2print s1 + s2 # this line will raise error]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>python</tag>
       </tags>
@@ -1295,6 +1525,9 @@
     <title><![CDATA[Elixir Introduction]]></title>
     <url>%2F2016%2F11%2F27%2FElixir-introduction%2F</url>
     <content type="text"><![CDATA[InstallationGo to Elixir to get the download introducton. Install Elixir on Ubunturun commands:1234wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb &amp;&amp; sudo dpkg -i erlang-solutions_1.0_all.debsudo apt-get updatesudo apt-get install esl-erlangsudo apt-get install elixir Verify installation into interactive command line by iex command: 12345$ iexErlang/OTP 19 [erts-8.1] [source-e7be63d] [64-bit] [smp:2:2] [async-threads:10] [hipe] [kernel-poll:false]Interactive Elixir (1.3.4) - press Ctrl+C to exit (type h() ENTER for help)iex(1)&gt; quit by double ctrl - c12345Interactive Elixir (1.3.4) - press Ctrl+C to exit (type h() ENTER for help)iex(1)&gt;BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution^C% The first program There’re 2 type of suffix of elixir source file *.ex: will be compiled *.exs: used to as test file source file hello.exs, content like below 1IO.puts 'Hello, world!' run command elixir hello.exs and get the output 12$ elixir hello.exsHello, world! 模式匹配赋值 Elixir可以找到一种方式让等号的左边等于右边，则执行成功 所以赋值语句并不是其他语言的赋值那样，例子如下:123456iex(1)&gt; a = 11iex(2)&gt; 1 = a1iex(3)&gt; 2 = a** (MatchError) no match of right hand side value: 1 用_（下划线）忽略匹配值下划线是特殊通配符，声称“我可以接受任何值” 在匹配过程中，变量一旦被绑定为某一个值，该值在匹配其余部分的时候就会保持不变 强制让变量的已有值参与匹配，可使用^（脱字节）前缀]]></content>
+      <categories>
+        <category>Elixir</category>
+      </categories>
       <tags>
         <tag>elixir</tag>
       </tags>
@@ -1304,9 +1537,9 @@
     <url>%2F2016%2F11%2F27%2Fnose%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[安装使用pip进行安装pip install nose 基本用法&amp;举例nose会自动识别源文件，目录或包中的测试用例。任何符合正则表达式(?:^|[b_.-])[Tt]est的类、函数、文件或目录，以及TestCase的子类都会被识别并执行。 测试文件及目录格式 目录格式如下 12345$ tree.├── main.py└── test └──test.py main.py内容如下： 123456789#!/usr/bin/env python# encoding: utf-8def Testfun(): """docstring for Testfun""" a = 1 b = 2 assert a == b main.py内容如下： 123456#!/usr/bin/env python# encoding: utf-8import nosenose.main() nose用法 在test目录下执行nosetests 在根目录下执行python main.py 得到的输出结果均为：123456789101112131415F======================================================================FAIL: docstring for Testfun----------------------------------------------------------------------Traceback (most recent call last): File "/usr/local/lib/python2.7/dist-packages/nose/case.py", line 197, in runTest self.test(*self.arg) File "/home/yarving/workspace/nose_demo/test/test.py", line 9, in Testfun assert a == bAssertionError----------------------------------------------------------------------Ran 1 test in 0.003sFAILED (failures=1)]]></content>
       <tags>
-        <tag>python</tag>
-        <tag>nose</tag>
-        <tag>教程</tag>
+        <tag>Python</tag>
+        <tag>Test</tag>
+        <tag>Nose</tag>
       </tags>
   </entry>
   <entry>
@@ -1322,7 +1555,7 @@
     <url>%2F2016%2F11%2F22%2FPython-Process-Bar%2F</url>
     <content type="text"><![CDATA[Based on: http://blog.ihipop.info/2010/10/1736.html Use ‘\r’123456789101112131415161718192021#!/usr/bin/env python# encoding: utf-8from __future__ import divisionimport sysimport timedef main(): """main function""" j = '#' for i in range(1, 61): j += '#' status_bar = str((i * 60) / 100) + '% | ' + j + '-&gt;' + '\r' sys.stdout.write(status_bar) sys.stdout.flush() time.sleep(1)if __name__ == '__main__': main() Use ‘\b’1234567891011121314151617181920"""This is a demo of using \b to show process bar"""#!/usr/bin/env python# encoding: utf-8from __future__ import divisionimport sysimport timedef main(): """main function""" for i in range(1, 61): status_bar = '#-&gt;\b\b' sys.stdout.write(status_bar) sys.stdout.flush() time.sleep(1)if __name__ == '__main__': main() Use ‘processbar’123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171"""This is the official demo of progerssbarTo install progressbar, `pip install progressbar`The Github is: https://github.com/niltonvolpato/python-progressbarAs I'm using python 2.7, to make this example runnable, I've removed some examples.Please check the original file on:https://github.com/niltonvolpato/python-progressbar/blob/master/examples.py"""#!/usr/bin/python# -*- coding: utf-8 -*-import sysimport timefrom progressbar import AnimatedMarker, Bar, BouncingBar, Counter, ETA, \ FileTransferSpeed, FormatLabel, Percentage, \ ProgressBar, ReverseBar, RotatingMarker, \ SimpleProgress, Timerexamples = []def example(fn): try: name = 'Example %d' % int(fn.__name__[7:]) except: name = fn.__name__ def wrapped(): try: sys.stdout.write('Running: %s\n' % name) fn() sys.stdout.write('\n') except KeyboardInterrupt: sys.stdout.write('\nSkipping example.\n\n') examples.append(wrapped) return wrapped@exampledef example0(): pbar = ProgressBar(widgets=[Percentage(), Bar()], maxval=300).start() for i in range(300): time.sleep(0.01) pbar.update(i+1) pbar.finish()@exampledef example1(): widgets = ['Test: ', Percentage(), ' ', Bar(marker=RotatingMarker()), ' ', ETA(), ' ', FileTransferSpeed()] pbar = ProgressBar(widgets=widgets, maxval=10000000).start() for i in range(1000000): # do something pbar.update(10*i+1) pbar.finish()@exampledef example2(): class CrazyFileTransferSpeed(FileTransferSpeed): """It's bigger between 45 and 80 percent.""" def update(self, pbar): if 45 &lt; pbar.percentage() &lt; 80: return 'Bigger Now ' + FileTransferSpeed.update(self,pbar) else: return FileTransferSpeed.update(self,pbar) widgets = [CrazyFileTransferSpeed(),' &lt;&lt;&lt;', Bar(), '&gt;&gt;&gt; ', Percentage(),' ', ETA()] pbar = ProgressBar(widgets=widgets, maxval=10000000) # maybe do something pbar.start() for i in range(2000000): # do something pbar.update(5*i+1) pbar.finish()@exampledef example3(): widgets = [Bar('&gt;'), ' ', ETA(), ' ', ReverseBar('&lt;')] pbar = ProgressBar(widgets=widgets, maxval=10000000).start() for i in range(1000000): # do something pbar.update(10*i+1) pbar.finish()@exampledef example4(): widgets = ['Test: ', Percentage(), ' ', Bar(marker='0',left='[',right=']'), ' ', ETA(), ' ', FileTransferSpeed()] pbar = ProgressBar(widgets=widgets, maxval=500) pbar.start() for i in range(100,500+1,50): time.sleep(0.2) pbar.update(i) pbar.finish()@exampledef example5(): pbar = ProgressBar(widgets=[SimpleProgress()], maxval=17).start() for i in range(17): time.sleep(0.2) pbar.update(i + 1) pbar.finish()@exampledef example6(): pbar = ProgressBar().start() for i in range(100): time.sleep(0.01) pbar.update(i + 1) pbar.finish()@exampledef example7(): pbar = ProgressBar() # Progressbar can guess maxval automatically. for i in pbar(range(80)): time.sleep(0.01)@exampledef example8(): pbar = ProgressBar(maxval=80) # Progressbar can't guess maxval. for i in pbar((i for i in range(80))): time.sleep(0.01)@exampledef example9(): pbar = ProgressBar(widgets=['Working: ', AnimatedMarker()]) for i in pbar((i for i in range(50))): time.sleep(.08)@exampledef example10(): widgets = ['Processed: ', Counter(), ' lines (', Timer(), ')'] pbar = ProgressBar(widgets=widgets) for i in pbar((i for i in range(150))): time.sleep(0.1)@exampledef example11(): widgets = [FormatLabel('Processed: %(value)d lines (in: %(elapsed)s)')] pbar = ProgressBar(widgets=widgets) for i in pbar((i for i in range(150))): time.sleep(0.1)@exampledef example12(): widgets = ['Balloon: ', AnimatedMarker(markers='.oO@* ')] pbar = ProgressBar(widgets=widgets) for i in pbar((i for i in range(24))): time.sleep(0.3)@exampledef example16(): widgets = [FormatLabel('Bouncer: value %(value)d - '), BouncingBar()] pbar = ProgressBar(widgets=widgets) for i in pbar((i for i in range(180))): time.sleep(0.05)@exampledef example17(): widgets = [FormatLabel('Animated Bouncer: value %(value)d - '), BouncingBar(marker=RotatingMarker())] pbar = ProgressBar(widgets=widgets) for i in pbar((i for i in range(180))): time.sleep(0.05)if __name__ == '__main__': try: for example in examples: example() except KeyboardInterrupt: sys.stdout.write('\nQuitting examples.\n')]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -1346,8 +1579,8 @@
     <url>%2F2016%2F11%2F20%2Fscrapy-crawl-bestcbooks-com%2F</url>
     <content type="text"><![CDATA[Goals and designGoalsBestCBooks is a good website offers plenty PDF books about computer science.I want to get all the books download link and password, as they’re stored in Baidu Disk. References &amp; Result Scrapy Document Project on Github Design As I want to get all the books, so I need to get books by catagery, so I need to crawl all the catagory links; Get the book link from the catagory link; Get the book store link(on pan.baidu.com) and it’s password How to doCreate a scrapy project Install scrapy: 1pip install scrapy Create the scrapy project: 12345678$ scrapy startproject tutorialNew Scrapy project 'tutorial', using template directory '/usr/local/lib/python2.7/dist-packages/scrapy/templates/project', created in: /tmp/tutorialYou can start your first spider with: cd tutorial scrapy genspider example example.com Crawl the catagory page Create a spider named bestcbooks.py, the full path is:tutorial/spiders/bestcbooks.pyThe project structure like below: 12345678910111213$ cd /tmp/tutorial ; tree.├── scrapy.cfg└── tutorial ├── __init__.py ├── items.py ├── pipelines.py ├── settings.py └── spiders ├── bestcbooks.py └── __init__.py2 directories, 7 files edit the bestcbooks.py content as below: 1234567891011121314151617181920212223242526#!/usr/bin/env python# encoding: utf-8from urlparse import urljoinfrom scrapy import Spider, Requestfrom tutorial.items import CatagoryItems, BookPageItems, BookItemsclass DmozSpider(Spider): name = 'bestcbooks' allowed_domains = ['bestcbooks.com'] start_urls = [ 'http://bestcbooks.com/' ] meta = &#123;'cookiejar': 1&#125; headers = &#123; 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Accept-Language': 'en-US,en;q=0.8,zh;q=0.6,zh-CN;q=0.4,zh-TW;q=0.2', 'Connection': 'keep-alive', 'Connection-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36' &#125; Edit tutorial/items.py like blow, which is used to store the datas we get 12345678910111213141516171819202122232425262728293031# -*- coding: utf-8 -*-# Define here the models for your scraped items## See documentation in:# http://doc.scrapy.org/en/latest/topics/items.htmlfrom scrapy import Item, Fieldclass BestCBookItems(Item): # define the fields for your item here like: name = Field() url = Field()class CatagoryItems(Item): catagory = Field() url = Field()class BookPageItems(Item): name = Field() url = Field()class BookItems(Item): name = Field() link = Field() password = Field() orig_url = Field() Crawl the catagory pages AnalysisUse Google Chrome inspect the catagory link, get the xpathSo the xpath for it is: (&#39;//ul[@id=&quot;category-list&quot;]/li&#39;) Implement the codeThen add a parse method(default parse method for scrapy) in the bestcbooks.py 123456789101112131415def parse(self, response): """docstring for parse""" filename = response.url.split('/')[-2] with open(filename, 'wb') as f: f.write(response.body) for sel in response.xpath('//ul[@id="category-list"]/li'): name = sel.xpath('a/text()').extract()[0] url = urljoin(response.url, sel.xpath('a/@href').extract()[0]) yield Request(url, callback=self.parse_catagory_page) item = CatagoryItems() item['url'] = url item['catagory'] = name The parse_catagory_page is used for parse catagory page defined below Crawl the book pages AnalysisThe book link’s xpath is: (//div[@class=&quot;categorywell&quot;]/h4) Implement the codeLet’s implement the parse_catagory_page method like below 1234567891011def parse_catagory_page(self, response): """Parse catagory page""" for sel in response.xpath('//div[@class="categorywell"]/h4'): name = sel.xpath('a/text()').extract()[0] url = urljoin(response.url, sel.xpath('a/@href').extract()[0]) yield Request(url, callback=self.parse_book_page) item = BookPageItems() item['url'] = url item['name'] = name The parse_book_page will implement below Crawl the book info AnalysisThe book detail xpath is: (&#39;//h1[@class=&quot;entry-title&quot;]/text()&#39;) Implement the codeLet’s implement the method parse_book_page: 123456789101112131415161718def parse_book_page(self, response): """parse detail book page""" orig_url = response.url name = response.xpath('//h1[@class="entry-title"]/text()').extract() for sel in response.xpath('//blockquote'): link = sel.xpath('p/a/@href').extract() try: password = sel.xpath('p/text()').extract()[-1].split()[-1][-4:] except: password = "" item = BookItems() item['name'] = name item['link'] = link item['password'] = password item['orig_url'] = orig_url yield item How to runStart scrapyI use this command to start scrapy, and the result will store in items.json1scrapy crawl bestcbooks -o items.json Check the resultContent in items.json is the result of the book’s download link and the password]]></content>
       <categories>
-        <category>python</category>
-        <category>scrapy</category>
+        <category>Python</category>
+        <category>Scrapy</category>
       </categories>
       <tags>
         <tag>python</tag>

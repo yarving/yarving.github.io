@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yarving.historytale.com/"/>
-  <updated>2018-09-10T03:18:27.141Z</updated>
-  <id>http://yarving.historytale.com/</id>
+  <link href="http://yarving.github.io/"/>
+  <updated>2019-05-28T23:39:20.579Z</updated>
+  <id>http://yarving.github.io/</id>
   
   <author>
     <name>Yarving Liu</name>
@@ -17,11 +17,285 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>诗歌（一）</title>
+    <link href="http://yarving.github.io/2019/05/29/%E8%AF%97%E6%AD%8C%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yarving.github.io/2019/05/29/诗歌（一）/</id>
+    <published>2019-05-28T23:37:39.000Z</published>
+    <updated>2019-05-28T23:39:20.579Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;唐诗绝句&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Enhancing Your Blog With Advanced Features</title>
+    <link href="http://yarving.github.io/2018/12/10/Enhancing-Your-Blog-with-Advanced-Features/"/>
+    <id>http://yarving.github.io/2018/12/10/Enhancing-Your-Blog-with-Advanced-Features/</id>
+    <published>2018-12-10T07:23:59.000Z</published>
+    <updated>2019-05-03T12:31:18.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1544376383-f6418ae57526?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1353&amp;amp;q=80&quot; alt=&quot;Photo by Sergo Karakozov on Unsplash&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+    
+      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
+    
+      <category term="Django by Example" scheme="http://yarving.github.io/categories/Python/Django/Django-by-Example/"/>
+    
+    
+      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《水浒传》略读</title>
+    <link href="http://yarving.github.io/2018/12/09/%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
+    <id>http://yarving.github.io/2018/12/09/《水浒传》略读/</id>
+    <published>2018-12-09T10:11:57.000Z</published>
+    <updated>2019-05-03T12:31:18.457Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://5b0988e595225.cdn.sohucs.com/images/20171108/4fa26b7401194a7eba286c409a51369b.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Book" scheme="http://yarving.github.io/categories/Book/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Building a Blog Application</title>
+    <link href="http://yarving.github.io/2018/12/09/Building-a-Blog-Application/"/>
+    <id>http://yarving.github.io/2018/12/09/Building-a-Blog-Application/</id>
+    <published>2018-12-09T06:46:07.000Z</published>
+    <updated>2019-05-03T12:31:18.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1544204887-54d4723924d0?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;Photo by Kevin Bosc on Unsplash&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+    
+      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
+    
+      <category term="Django by Example" scheme="http://yarving.github.io/categories/Python/Django/Django-by-Example/"/>
+    
+    
+      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知乎周刊——我，一个人生活</title>
+    <link href="http://yarving.github.io/2018/12/08/%E7%9F%A5%E4%B9%8E%E5%91%A8%E5%88%8A%E2%80%94%E2%80%94%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+    <id>http://yarving.github.io/2018/12/08/知乎周刊——一个人生活/</id>
+    <published>2018-12-08T12:23:09.000Z</published>
+    <updated>2019-05-03T12:31:18.457Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1393&amp;amp;q=80&quot; alt=&quot;Photo by Simon Migaj on Unsplash&quot;&gt;&lt;/p&gt;
+&lt;p&gt;《知乎周刊》是知乎将分散在各处的文章进行重新呈现，与阅读者分享使用技能的一套书。这篇文章是我阅读《知乎周刊——我，一个人生活》的笔记。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Book" scheme="http://yarving.github.io/categories/Book/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>每日分享（三）</title>
+    <link href="http://yarving.github.io/2018/10/19/daily-sharing-3/"/>
+    <id>http://yarving.github.io/2018/10/19/daily-sharing-3/</id>
+    <published>2018-10-19T14:45:50.000Z</published>
+    <updated>2019-05-03T12:31:18.420Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本期内容有 【好文记录】【python】 【酷站分享】&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>每日分享（二）</title>
+    <link href="http://yarving.github.io/2018/10/13/daily-sharing-2/"/>
+    <id>http://yarving.github.io/2018/10/13/daily-sharing-2/</id>
+    <published>2018-10-12T16:37:22.000Z</published>
+    <updated>2019-05-03T12:31:18.420Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1539813310611-ed86c61f1850?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=d8c719876cfdbca137472910222a5884&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>每日分享（一）</title>
+    <link href="http://yarving.github.io/2018/10/09/daily-sharing-1/"/>
+    <id>http://yarving.github.io/2018/10/09/daily-sharing-1/</id>
+    <published>2018-10-09T09:18:05.000Z</published>
+    <updated>2019-05-03T12:31:18.420Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=e458810828203a759112bd315f60fc9b&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="sharing" scheme="http://yarving.github.io/categories/sharing/"/>
+    
+    
+      <category term="request" scheme="http://yarving.github.io/tags/request/"/>
+    
+      <category term="matplotlib" scheme="http://yarving.github.io/tags/matplotlib/"/>
+    
+      <category term="scrapy" scheme="http://yarving.github.io/tags/scrapy/"/>
+    
+      <category term="twisted" scheme="http://yarving.github.io/tags/twisted/"/>
+    
+      <category term="GUI" scheme="http://yarving.github.io/tags/GUI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Movie: Qi Yue Yu an Sheng</title>
+    <link href="http://yarving.github.io/2018/10/06/movie-qi-yue-yu-an-sheng/"/>
+    <id>http://yarving.github.io/2018/10/06/movie-qi-yue-yu-an-sheng/</id>
+    <published>2018-10-06T13:55:11.000Z</published>
+    <updated>2019-05-03T12:31:18.448Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://n.sinaimg.cn/ent/transform/20160810/sAWS-fxutfpk5118743.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最开始知道《七月与安生》这不电影是金马奖上的&lt;strong&gt;双黄蛋&lt;/strong&gt;。冯导戏剧性的念出周冬雨和马思纯的名字，为当天的颁奖制造了一些小高潮。&lt;/p&gt;
+&lt;p&gt;然后在《我是演员》里看到了两个演员重现了其中的一个场景。所以在今天没事的时候就看了下。&lt;/p&gt;
+&lt;p&gt;其实我对这种青春电影并不怎么感兴趣，看了之后也证明内容确实不是我感兴趣的（虽然有泪点）。&lt;/p&gt;
+&lt;p&gt;不过还是有些点可以说道说道。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电影" scheme="http://yarving.github.io/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+    
+      <category term="七月与安生" scheme="http://yarving.github.io/tags/%E4%B8%83%E6%9C%88%E4%B8%8E%E5%AE%89%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PEP 440 Summary</title>
+    <link href="http://yarving.github.io/2018/10/06/PEP-440-summary/"/>
+    <id>http://yarving.github.io/2018/10/06/PEP-440-summary/</id>
+    <published>2018-10-06T01:35:22.000Z</published>
+    <updated>2019-05-03T12:31:18.400Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+    
+    
+      <category term="PEP" scheme="http://yarving.github.io/tags/PEP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Release Python Package to PyPI</title>
+    <link href="http://yarving.github.io/2018/10/04/release-python-package-to-PyPI/"/>
+    <id>http://yarving.github.io/2018/10/04/release-python-package-to-PyPI/</id>
+    <published>2018-10-04T14:57:46.000Z</published>
+    <updated>2019-05-03T12:31:18.453Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平常用&lt;code&gt;pip&lt;/code&gt;安装各种python包或应用程序，近期也把自己开发的一个工具发布到了PyPI（Python Package Index）上了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1538728306279-c4afd8ddbe49?ixlib=rb-0.3.5&amp;amp;s=292e8439c1c0f489a2dc6dd4445b960a&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=554&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+    
+      <category term="PyPI" scheme="http://yarving.github.io/categories/Python/PyPI/"/>
+    
+    
+      <category term="PyPI" scheme="http://yarving.github.io/tags/PyPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读笔记（一）</title>
+    <link href="http://yarving.github.io/2018/09/22/reading-log-1/"/>
+    <id>http://yarving.github.io/2018/09/22/reading-log-1/</id>
+    <published>2018-09-22T07:49:42.000Z</published>
+    <updated>2019-05-03T12:31:18.452Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533563697671-dc05a2cd7b01?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=7de5096acfe18605d66332b1b64ff9dd&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yarving.github.io/categories/reading/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>韭菜的自我修养</title>
+    <link href="http://yarving.github.io/2018/09/18/jiucaideziwoxiuyang/"/>
+    <id>http://yarving.github.io/2018/09/18/jiucaideziwoxiuyang/</id>
+    <published>2018-09-18T12:19:32.000Z</published>
+    <updated>2019-05-03T12:31:18.447Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img14.360buyimg.com/n1/jfs/t24868/31/1079083678/460298/66ec5052/5b87d146Nc9fa1014.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这是我买的李笑来的书。我没关注过他的录音事件，不做评论。就事论事的说，他的书和思考方式是我一直向往并且试图学习的。&lt;/p&gt;
+&lt;p&gt;这本书是我第二次阅读后觉得有用的摘录。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yarving.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="投资" scheme="http://yarving.github.io/tags/%E6%8A%95%E8%B5%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django Cheat Sheet</title>
-    <link href="http://yarving.historytale.com/2018/09/04/django-settings-and-requirements-best-practice/"/>
-    <id>http://yarving.historytale.com/2018/09/04/django-settings-and-requirements-best-practice/</id>
+    <link href="http://yarving.github.io/2018/09/04/django-settings-and-requirements-best-practice/"/>
+    <id>http://yarving.github.io/2018/09/04/django-settings-and-requirements-best-practice/</id>
     <published>2018-09-04T10:03:42.000Z</published>
-    <updated>2018-09-10T03:18:27.141Z</updated>
+    <updated>2019-05-03T12:31:18.428Z</updated>
     
     <summary type="html">
     
@@ -30,19 +304,21 @@
     
     </summary>
     
-      <category term="Django" scheme="http://yarving.historytale.com/categories/Django/"/>
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+    
+      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
     
     
-      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
     
-      <category term="best practice" scheme="http://yarving.historytale.com/tags/best-practice/"/>
+      <category term="best practice" scheme="http://yarving.github.io/tags/best-practice/"/>
     
   </entry>
   
   <entry>
     <title>Powerful Utilities Introduced by Learning Bootstrap</title>
-    <link href="http://yarving.historytale.com/2018/08/31/learning-bootstrap-utilities/"/>
-    <id>http://yarving.historytale.com/2018/08/31/learning-bootstrap-utilities/</id>
+    <link href="http://yarving.github.io/2018/08/31/learning-bootstrap-utilities/"/>
+    <id>http://yarving.github.io/2018/08/31/learning-bootstrap-utilities/</id>
     <published>2018-08-31T11:10:08.000Z</published>
     <updated>2018-09-10T03:18:27.141Z</updated>
     
@@ -53,17 +329,17 @@
     
     </summary>
     
-      <category term="bootstrap" scheme="http://yarving.historytale.com/categories/bootstrap/"/>
+      <category term="bootstrap" scheme="http://yarving.github.io/categories/bootstrap/"/>
     
     
   </entry>
   
   <entry>
     <title>Afternerd Python Part(3)</title>
-    <link href="http://yarving.historytale.com/2018/08/29/afternerd-python-3/"/>
-    <id>http://yarving.historytale.com/2018/08/29/afternerd-python-3/</id>
+    <link href="http://yarving.github.io/2018/08/29/afternerd-python-3/"/>
+    <id>http://yarving.github.io/2018/08/29/afternerd-python-3/</id>
     <published>2018-08-29T02:35:30.000Z</published>
-    <updated>2018-09-10T03:18:27.140Z</updated>
+    <updated>2019-05-03T12:31:18.417Z</updated>
     
     <summary type="html">
     
@@ -71,23 +347,23 @@
     
     </summary>
     
-      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
     
-      <category term="algorithm" scheme="http://yarving.historytale.com/tags/algorithm/"/>
+      <category term="algorithm" scheme="http://yarving.github.io/tags/algorithm/"/>
     
-      <category term="balanced tree" scheme="http://yarving.historytale.com/tags/balanced-tree/"/>
+      <category term="balanced tree" scheme="http://yarving.github.io/tags/balanced-tree/"/>
     
-      <category term="interview" scheme="http://yarving.historytale.com/tags/interview/"/>
+      <category term="interview" scheme="http://yarving.github.io/tags/interview/"/>
     
   </entry>
   
   <entry>
     <title>Afternerd Python Part(2)</title>
-    <link href="http://yarving.historytale.com/2018/08/28/afternerd-python-2/"/>
-    <id>http://yarving.historytale.com/2018/08/28/afternerd-python-2/</id>
+    <link href="http://yarving.github.io/2018/08/28/afternerd-python-2/"/>
+    <id>http://yarving.github.io/2018/08/28/afternerd-python-2/</id>
     <published>2018-08-28T14:35:30.000Z</published>
-    <updated>2018-09-10T03:18:27.140Z</updated>
+    <updated>2019-05-03T12:31:18.417Z</updated>
     
     <summary type="html">
     
@@ -95,27 +371,27 @@
     
     </summary>
     
-      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
     
-      <category term="string" scheme="http://yarving.historytale.com/tags/string/"/>
+      <category term="string" scheme="http://yarving.github.io/tags/string/"/>
     
-      <category term="list" scheme="http://yarving.historytale.com/tags/list/"/>
+      <category term="list" scheme="http://yarving.github.io/tags/list/"/>
     
-      <category term="tuple" scheme="http://yarving.historytale.com/tags/tuple/"/>
+      <category term="tuple" scheme="http://yarving.github.io/tags/tuple/"/>
     
-      <category term="timeit" scheme="http://yarving.historytale.com/tags/timeit/"/>
+      <category term="timeit" scheme="http://yarving.github.io/tags/timeit/"/>
     
-      <category term="copy" scheme="http://yarving.historytale.com/tags/copy/"/>
+      <category term="copy" scheme="http://yarving.github.io/tags/copy/"/>
     
   </entry>
   
   <entry>
     <title>Afternerd Python Part(1)</title>
-    <link href="http://yarving.historytale.com/2018/08/25/afternerd-python/"/>
-    <id>http://yarving.historytale.com/2018/08/25/afternerd-python/</id>
+    <link href="http://yarving.github.io/2018/08/25/afternerd-python/"/>
+    <id>http://yarving.github.io/2018/08/25/afternerd-python/</id>
     <published>2018-08-25T14:35:30.000Z</published>
-    <updated>2018-08-25T15:14:21.384Z</updated>
+    <updated>2019-05-03T12:31:18.418Z</updated>
     
     <summary type="html">
     
@@ -123,27 +399,27 @@
     
     </summary>
     
-      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
     
-      <category term="lambda" scheme="http://yarving.historytale.com/tags/lambda/"/>
+      <category term="lambda" scheme="http://yarving.github.io/tags/lambda/"/>
     
-      <category term="enumerate" scheme="http://yarving.historytale.com/tags/enumerate/"/>
+      <category term="enumerate" scheme="http://yarving.github.io/tags/enumerate/"/>
     
-      <category term="sort" scheme="http://yarving.historytale.com/tags/sort/"/>
+      <category term="sort" scheme="http://yarving.github.io/tags/sort/"/>
     
-      <category term="append" scheme="http://yarving.historytale.com/tags/append/"/>
+      <category term="append" scheme="http://yarving.github.io/tags/append/"/>
     
-      <category term="extend" scheme="http://yarving.historytale.com/tags/extend/"/>
+      <category term="extend" scheme="http://yarving.github.io/tags/extend/"/>
     
   </entry>
   
   <entry>
     <title>Django Views</title>
-    <link href="http://yarving.historytale.com/2018/08/16/django-views/"/>
-    <id>http://yarving.historytale.com/2018/08/16/django-views/</id>
+    <link href="http://yarving.github.io/2018/08/16/django-views/"/>
+    <id>http://yarving.github.io/2018/08/16/django-views/</id>
     <published>2018-08-16T15:36:05.000Z</published>
-    <updated>2018-08-25T14:33:46.736Z</updated>
+    <updated>2019-05-03T12:31:18.434Z</updated>
     
     <summary type="html">
     
@@ -156,25 +432,31 @@
     
     </summary>
     
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
+      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
     
-      <category term="view" scheme="http://yarving.historytale.com/tags/view/"/>
+      <category term="View" scheme="http://yarving.github.io/categories/Python/Django/View/"/>
     
-      <category term="FBV" scheme="http://yarving.historytale.com/tags/FBV/"/>
     
-      <category term="CBV" scheme="http://yarving.historytale.com/tags/CBV/"/>
+      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
     
-      <category term="GCBV" scheme="http://yarving.historytale.com/tags/GCBV/"/>
+      <category term="view" scheme="http://yarving.github.io/tags/view/"/>
+    
+      <category term="FBV" scheme="http://yarving.github.io/tags/FBV/"/>
+    
+      <category term="CBV" scheme="http://yarving.github.io/tags/CBV/"/>
+    
+      <category term="GCBV" scheme="http://yarving.github.io/tags/GCBV/"/>
     
   </entry>
   
   <entry>
     <title>Django Unit Test</title>
-    <link href="http://yarving.historytale.com/2018/08/15/django-unit-test/"/>
-    <id>http://yarving.historytale.com/2018/08/15/django-unit-test/</id>
+    <link href="http://yarving.github.io/2018/08/15/django-unit-test/"/>
+    <id>http://yarving.github.io/2018/08/15/django-unit-test/</id>
     <published>2018-08-15T08:03:42.000Z</published>
-    <updated>2018-08-25T14:33:46.735Z</updated>
+    <updated>2019-05-03T12:31:18.431Z</updated>
     
     <summary type="html">
     
@@ -182,327 +464,12 @@
     
     </summary>
     
+      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-  </entry>
-  
-  <entry>
-    <title>守住舌尖上的幸福</title>
-    <link href="http://yarving.historytale.com/2018/08/15/food-security/"/>
-    <id>http://yarving.historytale.com/2018/08/15/food-security/</id>
-    <published>2018-08-15T05:42:38.000Z</published>
-    <updated>2018-08-25T14:33:46.736Z</updated>
+      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
     
-    <summary type="html">
+      <category term="Test" scheme="http://yarving.github.io/categories/Python/Django/Test/"/>
     
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=8a5e4cac8bcaf69ffaf5d3b1c2b063e4&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1050&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;“民以食为天”，食品安全问题，贯穿食品生产和消费的始终，不仅是每一个生产经营者必须坚守的红线，同时也直接关系到千家万户的身心健康，是人民群众舌尖上幸福的保证。中国是食品生产和消费大国，食品安全不仅关系人民福祉，也是经济能否健康运行的重要体现。食品安全问题，作为全社会所共同关注的焦点，必须常抓不懈，丝毫不能放松。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="时评" scheme="http://yarving.historytale.com/categories/%E6%97%B6%E8%AF%84/"/>
-    
-    
-      <category term="食品安全" scheme="http://yarving.historytale.com/tags/%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Ignore Template for Python</title>
-    <link href="http://yarving.historytale.com/2018/08/14/Git-ignore-template-for-python/"/>
-    <id>http://yarving.historytale.com/2018/08/14/Git-ignore-template-for-python/</id>
-    <published>2018-08-13T16:31:12.000Z</published>
-    <updated>2018-08-25T14:33:46.732Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*NOFTn8SjSB2CBJhYuTlMfQ.png&quot; alt=&quot;ignore&quot;&gt;&lt;/p&gt;
-&lt;p&gt;How to write a &lt;code&gt;.gitignore&lt;/code&gt; file for python projects?&lt;/p&gt;
-&lt;p&gt;Most beginners will write it manually with project increase, and without the sense to classify the ignore file content.&lt;/p&gt;
-&lt;p&gt;I found a Git repository contains all the ignore file templates for most programming languages.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://yarving.historytale.com/categories/Git/"/>
-    
-    
-      <category term="Git" scheme="http://yarving.historytale.com/tags/Git/"/>
-    
-      <category term="Python" scheme="http://yarving.historytale.com/tags/Python/"/>
-    
-      <category term="ignore" scheme="http://yarving.historytale.com/tags/ignore/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flake8 With Django</title>
-    <link href="http://yarving.historytale.com/2018/08/14/Flake8-with-Django/"/>
-    <id>http://yarving.historytale.com/2018/08/14/Flake8-with-Django/</id>
-    <published>2018-08-13T16:12:51.000Z</published>
-    <updated>2018-08-25T14:33:46.732Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1534132213569-2df727a2ae6b?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=00e6e9cd291238830a034bb06d8bc076&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I’m working on an Django project. I want to add flake8 to check my django codes today, and make code changes must be checked before commit.&lt;/p&gt;
-&lt;p&gt;Here’s what I did.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Flake8" scheme="http://yarving.historytale.com/categories/Flake8/"/>
-    
-    
-      <category term="Git" scheme="http://yarving.historytale.com/tags/Git/"/>
-    
-      <category term="Flake8" scheme="http://yarving.historytale.com/tags/Flake8/"/>
-    
-      <category term="Django" scheme="http://yarving.historytale.com/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Deploy Without Password</title>
-    <link href="http://yarving.historytale.com/2018/08/14/hexo-deploy-without-password/"/>
-    <id>http://yarving.historytale.com/2018/08/14/hexo-deploy-without-password/</id>
-    <published>2018-08-13T16:00:13.000Z</published>
-    <updated>2018-08-25T14:33:46.737Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1491131346874-e9854a44e6ff?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=b3b3c3ab4861e4f0408cfa6989017c39&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;This articles talks about how to deploy hexo blog to hexo page services without enter username and password.&lt;/p&gt;
-&lt;p&gt;The key process is to config hexo &lt;code&gt;_config.yml&lt;/code&gt;, and change the &lt;code&gt;deploy&lt;/code&gt; segement.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: git@github.com:username/repository-name.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;For more details, step below:&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yarving.historytale.com/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://yarving.historytale.com/tags/hexo/"/>
-    
-      <category term="GitHub" scheme="http://yarving.historytale.com/tags/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django Form Api</title>
-    <link href="http://yarving.historytale.com/2018/08/11/django-form-api/"/>
-    <id>http://yarving.historytale.com/2018/08/11/django-form-api/</id>
-    <published>2018-08-11T15:33:03.000Z</published>
-    <updated>2018-08-25T14:33:46.734Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533836683024-78f6568c4ce1?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=3f585c56d6f2c1ee7ed2737b519f58f4&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1351&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>斐波拉契O(1)算法</title>
-    <link href="http://yarving.historytale.com/2018/08/11/interger-formular-for-fibonacci-numbers/"/>
-    <id>http://yarving.historytale.com/2018/08/11/interger-formular-for-fibonacci-numbers/</id>
-    <published>2018-08-11T15:12:16.000Z</published>
-    <updated>2018-08-25T14:33:46.737Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1530271745054-d98684de65d7?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=ef9369f848266afaab8f477a29f6c66c&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1353&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;第n个斐波拉契数的O(1)算法&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(n)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &amp;lt;&amp;lt; n*(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;+n)) // ((&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*n) - (&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;lt;&amp;lt; n) - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;amp; ((&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;lt;&amp;lt; n) - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yarving.historytale.com/categories/algorithm/"/>
-    
-      <category term="fibonacci" scheme="http://yarving.historytale.com/categories/algorithm/fibonacci/"/>
-    
-    
-      <category term="algorithm" scheme="http://yarving.historytale.com/tags/algorithm/"/>
-    
-      <category term="fibonacci" scheme="http://yarving.historytale.com/tags/fibonacci/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Render Template in Django</title>
-    <link href="http://yarving.historytale.com/2018/08/10/render-template-in-django/"/>
-    <id>http://yarving.historytale.com/2018/08/10/render-template-in-django/</id>
-    <published>2018-08-10T03:31:13.000Z</published>
-    <updated>2018-08-25T14:33:46.739Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533737181121-ae845505976e?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=1ea3573c278bf3979183a7e0f738adb7&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在网页设计中，要为元素制定class，id等元素，方便css做呈现。使用django forms去生成表单时，如何为form表单的每个field设置相应的元素呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="django" scheme="http://yarving.historytale.com/categories/django/"/>
-    
-      <category term="template" scheme="http://yarving.historytale.com/categories/django/template/"/>
-    
-    
-      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
-    
-      <category term="template" scheme="http://yarving.historytale.com/tags/template/"/>
-    
-      <category term="django-widget-tweaks" scheme="http://yarving.historytale.com/tags/django-widget-tweaks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python CSV 模块的用法</title>
-    <link href="http://yarving.historytale.com/2018/08/08/python-csv-module/"/>
-    <id>http://yarving.historytale.com/2018/08/08/python-csv-module/</id>
-    <published>2018-08-07T23:36:54.000Z</published>
-    <updated>2018-08-25T14:33:46.739Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q3/CSV-Import/import-csv-files-header@2x.png&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;python csv module的用法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://yarving.historytale.com/categories/python/"/>
-    
-      <category term="csv" scheme="http://yarving.historytale.com/categories/python/csv/"/>
-    
-    
-      <category term="python" scheme="http://yarving.historytale.com/tags/python/"/>
-    
-      <category term="csv" scheme="http://yarving.historytale.com/tags/csv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django Tips（二）</title>
-    <link href="http://yarving.historytale.com/2018/08/07/django-tips-2/"/>
-    <id>http://yarving.historytale.com/2018/08/07/django-tips-2/</id>
-    <published>2018-08-07T05:34:57.000Z</published>
-    <updated>2018-08-25T14:33:46.735Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533597062066-93ac9883597f?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=d68d4c28c71438a63060b383c2535e32&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1029&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;本文内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在model里使用PK或ID&lt;/li&gt;
-&lt;li&gt;Django模板里设置默认值&lt;/li&gt;
-&lt;li&gt;debug技巧&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="django" scheme="http://yarving.historytale.com/categories/django/"/>
-    
-    
-      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
-    
-      <category term="tips" scheme="http://yarving.historytale.com/tags/tips/"/>
-    
-      <category term="templates" scheme="http://yarving.historytale.com/tags/templates/"/>
-    
-      <category term="pdb" scheme="http://yarving.historytale.com/tags/pdb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django-Tips（一）</title>
-    <link href="http://yarving.historytale.com/2018/08/06/django-tips/"/>
-    <id>http://yarving.historytale.com/2018/08/06/django-tips/</id>
-    <published>2018-08-06T15:32:43.000Z</published>
-    <updated>2018-08-25T14:33:46.735Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=66bef43351b3fe01a5b3b41f9d7d3a64&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;本文内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在数据库中保存一条记录&lt;/li&gt;
-&lt;li&gt;在shell中查看django settings的配置&lt;/li&gt;
-&lt;li&gt;配置template目录&lt;/li&gt;
-&lt;li&gt;配置static目录&lt;/li&gt;
-&lt;li&gt;在template文件中使用static文件&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="django" scheme="http://yarving.historytale.com/categories/django/"/>
-    
-    
-      <category term="django" scheme="http://yarving.historytale.com/tags/django/"/>
-    
-      <category term="tips" scheme="http://yarving.historytale.com/tags/tips/"/>
-    
-      <category term="templates" scheme="http://yarving.historytale.com/tags/templates/"/>
-    
-      <category term="model" scheme="http://yarving.historytale.com/tags/model/"/>
-    
-      <category term="static" scheme="http://yarving.historytale.com/tags/static/"/>
-    
-      <category term="settings.py" scheme="http://yarving.historytale.com/tags/settings-py/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Selenium: Fill in Input Tags</title>
-    <link href="http://yarving.historytale.com/2018/08/03/selenium-fill-in-input-tags/"/>
-    <id>http://yarving.historytale.com/2018/08/03/selenium-fill-in-input-tags/</id>
-    <published>2018-08-03T12:35:14.000Z</published>
-    <updated>2018-08-25T14:33:46.739Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用Selenium测试时，需要模拟很多对网页的操作。我整理了一些用到过的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何安装POSTGRE SQL</title>
-    <link href="http://yarving.historytale.com/2018/08/02/postgre-sql-install/"/>
-    <id>http://yarving.historytale.com/2018/08/02/postgre-sql-install/</id>
-    <published>2018-08-02T14:10:52.000Z</published>
-    <updated>2018-08-25T14:33:46.738Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=cdc4d332eab7ae54a6449ef4918730f5&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如何在多种不同的操作系统下安装POSTGRE SQL&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="postgre sql" scheme="http://yarving.historytale.com/tags/postgre-sql/"/>
-    
-      <category term="install" scheme="http://yarving.historytale.com/tags/install/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>POSTGRE SQL 初见</title>
-    <link href="http://yarving.historytale.com/2018/08/01/first-glance-postgre-sql/"/>
-    <id>http://yarving.historytale.com/2018/08/01/first-glance-postgre-sql/</id>
-    <published>2018-08-01T15:49:02.000Z</published>
-    <updated>2018-08-25T14:33:46.736Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=8b209b87443cca9d7d140ec0dd49fe21&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;前段时间我已经在Linux上安装好了POSTGRE SQL，但没有来得及了解。今天整理了一些入门的命令，这也是和其他数据库不同的地方。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="POSTGRE" scheme="http://yarving.historytale.com/categories/POSTGRE/"/>
-    
-    
-      <category term="POSTGRE" scheme="http://yarving.historytale.com/tags/POSTGRE/"/>
     
   </entry>
   
