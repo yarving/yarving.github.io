@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yarving.github.io/"/>
-  <updated>2019-05-28T23:39:20.579Z</updated>
+  <updated>2019-07-18T09:17:33.389Z</updated>
   <id>http://yarving.github.io/</id>
   
   <author>
@@ -17,196 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>诗歌（一）</title>
-    <link href="http://yarving.github.io/2019/05/29/%E8%AF%97%E6%AD%8C%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://yarving.github.io/2019/05/29/诗歌（一）/</id>
-    <published>2019-05-28T23:37:39.000Z</published>
-    <updated>2019-05-28T23:39:20.579Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;唐诗绝句&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Enhancing Your Blog With Advanced Features</title>
-    <link href="http://yarving.github.io/2018/12/10/Enhancing-Your-Blog-with-Advanced-Features/"/>
-    <id>http://yarving.github.io/2018/12/10/Enhancing-Your-Blog-with-Advanced-Features/</id>
-    <published>2018-12-10T07:23:59.000Z</published>
-    <updated>2019-05-03T12:31:18.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1544376383-f6418ae57526?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1353&amp;amp;q=80&quot; alt=&quot;Photo by Sergo Karakozov on Unsplash&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
-    
-      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
-    
-      <category term="Django by Example" scheme="http://yarving.github.io/categories/Python/Django/Django-by-Example/"/>
-    
-    
-      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《水浒传》略读</title>
-    <link href="http://yarving.github.io/2018/12/09/%E3%80%8A%E6%B0%B4%E6%B5%92%E4%BC%A0%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
-    <id>http://yarving.github.io/2018/12/09/《水浒传》略读/</id>
-    <published>2018-12-09T10:11:57.000Z</published>
-    <updated>2019-05-03T12:31:18.457Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://5b0988e595225.cdn.sohucs.com/images/20171108/4fa26b7401194a7eba286c409a51369b.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Book" scheme="http://yarving.github.io/categories/Book/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Building a Blog Application</title>
-    <link href="http://yarving.github.io/2018/12/09/Building-a-Blog-Application/"/>
-    <id>http://yarving.github.io/2018/12/09/Building-a-Blog-Application/</id>
-    <published>2018-12-09T06:46:07.000Z</published>
-    <updated>2019-05-03T12:31:18.387Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1544204887-54d4723924d0?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;Photo by Kevin Bosc on Unsplash&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
-    
-      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
-    
-      <category term="Django by Example" scheme="http://yarving.github.io/categories/Python/Django/Django-by-Example/"/>
-    
-    
-      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>知乎周刊——我，一个人生活</title>
-    <link href="http://yarving.github.io/2018/12/08/%E7%9F%A5%E4%B9%8E%E5%91%A8%E5%88%8A%E2%80%94%E2%80%94%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
-    <id>http://yarving.github.io/2018/12/08/知乎周刊——一个人生活/</id>
-    <published>2018-12-08T12:23:09.000Z</published>
-    <updated>2019-05-03T12:31:18.457Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1393&amp;amp;q=80&quot; alt=&quot;Photo by Simon Migaj on Unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;《知乎周刊》是知乎将分散在各处的文章进行重新呈现，与阅读者分享使用技能的一套书。这篇文章是我阅读《知乎周刊——我，一个人生活》的笔记。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Book" scheme="http://yarving.github.io/categories/Book/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>每日分享（三）</title>
-    <link href="http://yarving.github.io/2018/10/19/daily-sharing-3/"/>
-    <id>http://yarving.github.io/2018/10/19/daily-sharing-3/</id>
-    <published>2018-10-19T14:45:50.000Z</published>
-    <updated>2019-05-03T12:31:18.420Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本期内容有 【好文记录】【python】 【酷站分享】&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>每日分享（二）</title>
-    <link href="http://yarving.github.io/2018/10/13/daily-sharing-2/"/>
-    <id>http://yarving.github.io/2018/10/13/daily-sharing-2/</id>
-    <published>2018-10-12T16:37:22.000Z</published>
-    <updated>2019-05-03T12:31:18.420Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1539813310611-ed86c61f1850?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=d8c719876cfdbca137472910222a5884&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>每日分享（一）</title>
-    <link href="http://yarving.github.io/2018/10/09/daily-sharing-1/"/>
-    <id>http://yarving.github.io/2018/10/09/daily-sharing-1/</id>
-    <published>2018-10-09T09:18:05.000Z</published>
-    <updated>2019-05-03T12:31:18.420Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=e458810828203a759112bd315f60fc9b&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="sharing" scheme="http://yarving.github.io/categories/sharing/"/>
-    
-    
-      <category term="request" scheme="http://yarving.github.io/tags/request/"/>
-    
-      <category term="matplotlib" scheme="http://yarving.github.io/tags/matplotlib/"/>
-    
-      <category term="scrapy" scheme="http://yarving.github.io/tags/scrapy/"/>
-    
-      <category term="twisted" scheme="http://yarving.github.io/tags/twisted/"/>
-    
-      <category term="GUI" scheme="http://yarving.github.io/tags/GUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Movie: Qi Yue Yu an Sheng</title>
-    <link href="http://yarving.github.io/2018/10/06/movie-qi-yue-yu-an-sheng/"/>
-    <id>http://yarving.github.io/2018/10/06/movie-qi-yue-yu-an-sheng/</id>
-    <published>2018-10-06T13:55:11.000Z</published>
-    <updated>2019-05-03T12:31:18.448Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://n.sinaimg.cn/ent/transform/20160810/sAWS-fxutfpk5118743.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最开始知道《七月与安生》这不电影是金马奖上的&lt;strong&gt;双黄蛋&lt;/strong&gt;。冯导戏剧性的念出周冬雨和马思纯的名字，为当天的颁奖制造了一些小高潮。&lt;/p&gt;
-&lt;p&gt;然后在《我是演员》里看到了两个演员重现了其中的一个场景。所以在今天没事的时候就看了下。&lt;/p&gt;
-&lt;p&gt;其实我对这种青春电影并不怎么感兴趣，看了之后也证明内容确实不是我感兴趣的（虽然有泪点）。&lt;/p&gt;
-&lt;p&gt;不过还是有些点可以说道说道。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电影" scheme="http://yarving.github.io/categories/%E7%94%B5%E5%BD%B1/"/>
-    
-    
-      <category term="七月与安生" scheme="http://yarving.github.io/tags/%E4%B8%83%E6%9C%88%E4%B8%8E%E5%AE%89%E7%94%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PEP 440 Summary</title>
-    <link href="http://yarving.github.io/2018/10/06/PEP-440-summary/"/>
-    <id>http://yarving.github.io/2018/10/06/PEP-440-summary/</id>
-    <published>2018-10-06T01:35:22.000Z</published>
-    <updated>2019-05-03T12:31:18.400Z</updated>
+    <title>类比推理知识累计</title>
+    <link href="http://yarving.github.io/2019/07/18/%E7%B1%BB%E6%AF%94%E6%8E%A8%E7%90%86%E7%9F%A5%E8%AF%86%E7%B4%AF%E8%AE%A1/"/>
+    <id>http://yarving.github.io/2019/07/18/类比推理知识累计/</id>
+    <published>2019-07-18T08:57:46.000Z</published>
+    <updated>2019-07-18T09:17:33.389Z</updated>
     
     <summary type="html">
     
@@ -220,256 +35,458 @@
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+      <category term="行测" scheme="http://yarving.github.io/categories/%E8%A1%8C%E6%B5%8B/"/>
     
     
-      <category term="PEP" scheme="http://yarving.github.io/tags/PEP/"/>
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Release Python Package to PyPI</title>
-    <link href="http://yarving.github.io/2018/10/04/release-python-package-to-PyPI/"/>
-    <id>http://yarving.github.io/2018/10/04/release-python-package-to-PyPI/</id>
-    <published>2018-10-04T14:57:46.000Z</published>
-    <updated>2019-05-03T12:31:18.453Z</updated>
+    <title>申论 - 社会议题</title>
+    <link href="http://yarving.github.io/2019/07/08/%E7%94%B3%E8%AE%BA-%E7%A4%BE%E4%BC%9A%E8%AE%AE%E9%A2%98/"/>
+    <id>http://yarving.github.io/2019/07/08/申论-社会议题/</id>
+    <published>2019-07-08T10:25:46.000Z</published>
+    <updated>2019-07-18T08:57:28.314Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;平常用&lt;code&gt;pip&lt;/code&gt;安装各种python包或应用程序，近期也把自己开发的一个工具发布到了PyPI（Python Package Index）上了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1538728306279-c4afd8ddbe49?ixlib=rb-0.3.5&amp;amp;s=292e8439c1c0f489a2dc6dd4445b960a&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=554&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-      <category term="PyPI" scheme="http://yarving.github.io/categories/Python/PyPI/"/>
-    
-    
-      <category term="PyPI" scheme="http://yarving.github.io/tags/PyPI/"/>
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
-    <title>阅读笔记（一）</title>
-    <link href="http://yarving.github.io/2018/09/22/reading-log-1/"/>
-    <id>http://yarving.github.io/2018/09/22/reading-log-1/</id>
-    <published>2018-09-22T07:49:42.000Z</published>
-    <updated>2019-05-03T12:31:18.452Z</updated>
+    <title>行测思维</title>
+    <link href="http://yarving.github.io/2019/07/07/%E8%A1%8C%E6%B5%8B%E6%80%9D%E7%BB%B4/"/>
+    <id>http://yarving.github.io/2019/07/07/行测思维/</id>
+    <published>2019-07-07T01:37:35.000Z</published>
+    <updated>2019-07-18T08:57:28.317Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1533563697671-dc05a2cd7b01?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=7de5096acfe18605d66332b1b64ff9dd&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
     
     </summary>
     
-      <category term="reading" scheme="http://yarving.github.io/categories/reading/"/>
     
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
-    <title>韭菜的自我修养</title>
-    <link href="http://yarving.github.io/2018/09/18/jiucaideziwoxiuyang/"/>
-    <id>http://yarving.github.io/2018/09/18/jiucaideziwoxiuyang/</id>
-    <published>2018-09-18T12:19:32.000Z</published>
-    <updated>2019-05-03T12:31:18.447Z</updated>
+    <title>申论概括总结</title>
+    <link href="http://yarving.github.io/2019/07/07/%E7%94%B3%E8%AE%BA%E6%A6%82%E6%8B%AC%E6%80%BB%E7%BB%93/"/>
+    <id>http://yarving.github.io/2019/07/07/申论概括总结/</id>
+    <published>2019-07-07T01:36:13.000Z</published>
+    <updated>2019-07-18T08:57:28.315Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://img14.360buyimg.com/n1/jfs/t24868/31/1079083678/460298/66ec5052/5b87d146Nc9fa1014.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这是我买的李笑来的书。我没关注过他的录音事件，不做评论。就事论事的说，他的书和思考方式是我一直向往并且试图学习的。&lt;/p&gt;
-&lt;p&gt;这本书是我第二次阅读后觉得有用的摘录。&lt;/p&gt;
+      &lt;p&gt;归纳概括为按关键词给分，因此，要学会一体化表述：主体+问题+影响等。&lt;/p&gt;
+&lt;p&gt;有具体问题，则写具体问题，防止空洞。&lt;/p&gt;
+&lt;p&gt;要点训练：刻意训练，提升最快，最科学。拆开学，精准化，攻坚克难。&lt;/p&gt;
     
     </summary>
     
-      <category term="笔记" scheme="http://yarving.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-    
-      <category term="投资" scheme="http://yarving.github.io/tags/%E6%8A%95%E8%B5%84/"/>
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
-    <title>Django Cheat Sheet</title>
-    <link href="http://yarving.github.io/2018/09/04/django-settings-and-requirements-best-practice/"/>
-    <id>http://yarving.github.io/2018/09/04/django-settings-and-requirements-best-practice/</id>
-    <published>2018-09-04T10:03:42.000Z</published>
-    <updated>2019-05-03T12:31:18.428Z</updated>
+    <title>图形推理技巧</title>
+    <link href="http://yarving.github.io/2019/07/07/%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yarving.github.io/2019/07/07/图形推理技巧/</id>
+    <published>2019-07-07T01:35:29.000Z</published>
+    <updated>2019-07-18T08:57:28.313Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;摘录自《Two Scopes of Django》一书。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1535807485722-6810baaaf271?ixlib=rb-0.3.5&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;s=f769ef8f407bd238555b1612bb96133e&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1894&amp;amp;q=80&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
-    
-    
-      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
-    
-      <category term="best practice" scheme="http://yarving.github.io/tags/best-practice/"/>
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Powerful Utilities Introduced by Learning Bootstrap</title>
-    <link href="http://yarving.github.io/2018/08/31/learning-bootstrap-utilities/"/>
-    <id>http://yarving.github.io/2018/08/31/learning-bootstrap-utilities/</id>
-    <published>2018-08-31T11:10:08.000Z</published>
-    <updated>2018-09-10T03:18:27.141Z</updated>
+    <title>最少多少人 最多多少人的考法</title>
+    <link href="http://yarving.github.io/2019/07/07/%E6%9C%80%E5%B0%91%E5%A4%9A%E5%B0%91%E4%BA%BA-%E6%9C%80%E5%A4%9A%E5%A4%9A%E5%B0%91%E4%BA%BA%E7%9A%84%E8%80%83%E6%B3%95/"/>
+    <id>http://yarving.github.io/2019/07/07/最少多少人-最多多少人的考法/</id>
+    <published>2019-07-07T01:26:32.000Z</published>
+    <updated>2019-07-18T08:57:28.313Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://www.packtpub.com/sites/default/files/1822_1844OS_Learning%20Twitter%20Bootstrap_cov_0.jpg&quot; alt=&quot;Learning Bootstrap&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I’ve spent half a day to read the 《Learning Bootstrap》, found a chapter introduce powerful Bootstrap utilites, so I paste them here as a quick reference.&lt;/p&gt;
+      &lt;p&gt;如：1个深圳人，2个南方人，3个北方人，3个从事客运工作，4个从事货运工作。&lt;/p&gt;
     
     </summary>
     
-      <category term="bootstrap" scheme="http://yarving.github.io/categories/bootstrap/"/>
     
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Afternerd Python Part(3)</title>
-    <link href="http://yarving.github.io/2018/08/29/afternerd-python-3/"/>
-    <id>http://yarving.github.io/2018/08/29/afternerd-python-3/</id>
-    <published>2018-08-29T02:35:30.000Z</published>
-    <updated>2019-05-03T12:31:18.417Z</updated>
+    <title>申论 - 中心思想概括训练</title>
+    <link href="http://yarving.github.io/2019/06/25/%E7%94%B3%E8%AE%BA-%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3%E6%A6%82%E6%8B%AC%E8%AE%AD%E7%BB%83/"/>
+    <id>http://yarving.github.io/2019/06/25/申论-中心思想概括训练/</id>
+    <published>2019-06-25T12:57:28.000Z</published>
+    <updated>2019-07-18T08:57:28.314Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;This article is about python programming skills from &lt;a href=&quot;https://www.afternerd.com/blog/category/programming/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;afternerd&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;中心思想概括训练方法： 根据内容反推标题。&lt;/p&gt;
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+      <category term="花木君" scheme="http://yarving.github.io/categories/%E8%8A%B1%E6%9C%A8%E5%90%9B/"/>
     
     
-      <category term="algorithm" scheme="http://yarving.github.io/tags/algorithm/"/>
-    
-      <category term="balanced tree" scheme="http://yarving.github.io/tags/balanced-tree/"/>
-    
-      <category term="interview" scheme="http://yarving.github.io/tags/interview/"/>
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
-    <title>Afternerd Python Part(2)</title>
-    <link href="http://yarving.github.io/2018/08/28/afternerd-python-2/"/>
-    <id>http://yarving.github.io/2018/08/28/afternerd-python-2/</id>
-    <published>2018-08-28T14:35:30.000Z</published>
-    <updated>2019-05-03T12:31:18.417Z</updated>
+    <title>行测 - 图形推理</title>
+    <link href="http://yarving.github.io/2019/06/25/%E8%A1%8C%E6%B5%8B-%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86/"/>
+    <id>http://yarving.github.io/2019/06/25/行测-图形推理/</id>
+    <published>2019-06-25T12:50:52.000Z</published>
+    <updated>2019-07-18T08:57:28.316Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;This article is about python programming skills from &lt;a href=&quot;https://www.afternerd.com/blog/category/programming/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;afternerd&lt;/a&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;是什么&quot;&gt;&lt;a href=&quot;#是什么&quot; class=&quot;headerlink&quot; title=&quot;是什么&quot;&gt;&lt;/a&gt;是什么&lt;/h1&gt;&lt;p&gt;观察图形规律，题目形式 + 考点。&lt;/p&gt;
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-    
-      <category term="string" scheme="http://yarving.github.io/tags/string/"/>
-    
-      <category term="list" scheme="http://yarving.github.io/tags/list/"/>
-    
-      <category term="tuple" scheme="http://yarving.github.io/tags/tuple/"/>
-    
-      <category term="timeit" scheme="http://yarving.github.io/tags/timeit/"/>
-    
-      <category term="copy" scheme="http://yarving.github.io/tags/copy/"/>
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
-    <title>Afternerd Python Part(1)</title>
-    <link href="http://yarving.github.io/2018/08/25/afternerd-python/"/>
-    <id>http://yarving.github.io/2018/08/25/afternerd-python/</id>
-    <published>2018-08-25T14:35:30.000Z</published>
-    <updated>2019-05-03T12:31:18.418Z</updated>
+    <title>如何阅读材料</title>
+    <link href="http://yarving.github.io/2019/06/24/%E7%94%B3%E8%AE%BA%20-%20%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%9D%90%E6%96%99/"/>
+    <id>http://yarving.github.io/2019/06/24/申论 - 如何阅读材料/</id>
+    <published>2019-06-24T05:14:14.000Z</published>
+    <updated>2019-07-18T08:57:28.314Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;This article is about python programming skills from &lt;a href=&quot;https://www.afternerd.com/blog/category/programming/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;afternerd&lt;/a&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;申论材料阅读&quot;&gt;&lt;a href=&quot;#申论材料阅读&quot; class=&quot;headerlink&quot; title=&quot;申论材料阅读&quot;&gt;&lt;/a&gt;申论材料阅读&lt;/h1&gt;&lt;p&gt;如何找核心内容：关注开头和结尾，重点找总结性语句。&lt;/p&gt;
+&lt;p&gt;阅读理解能力：从材料中获取信息、分析信息、提炼思想的能力。&lt;br&gt;要求&lt;strong&gt;读懂材料&lt;/strong&gt;，并&lt;strong&gt;准确表达题目所要求的内容。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
+      <category term="花木君" scheme="http://yarving.github.io/categories/%E8%8A%B1%E6%9C%A8%E5%90%9B/"/>
     
     
-      <category term="lambda" scheme="http://yarving.github.io/tags/lambda/"/>
-    
-      <category term="enumerate" scheme="http://yarving.github.io/tags/enumerate/"/>
-    
-      <category term="sort" scheme="http://yarving.github.io/tags/sort/"/>
-    
-      <category term="append" scheme="http://yarving.github.io/tags/append/"/>
-    
-      <category term="extend" scheme="http://yarving.github.io/tags/extend/"/>
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
-    <title>Django Views</title>
-    <link href="http://yarving.github.io/2018/08/16/django-views/"/>
-    <id>http://yarving.github.io/2018/08/16/django-views/</id>
-    <published>2018-08-16T15:36:05.000Z</published>
-    <updated>2019-05-03T12:31:18.434Z</updated>
+    <title>日积月累（一）</title>
+    <link href="http://yarving.github.io/2019/06/23/%E6%97%A5%E7%A7%AF%E6%9C%88%E7%B4%AF%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yarving.github.io/2019/06/23/日积月累（一）/</id>
+    <published>2019-06-23T02:20:57.000Z</published>
+    <updated>2019-07-18T08:57:28.313Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;In django, there’re three terms about views. They’re:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Function-Based Views (FBV)&lt;/li&gt;
-&lt;li&gt;Class-Based Views (CBV)&lt;/li&gt;
-&lt;li&gt;Generic Class-Based Views (GCBV)&lt;/li&gt;
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="花木君" scheme="http://yarving.github.io/categories/%E8%8A%B1%E6%9C%A8%E5%90%9B/"/>
+    
+    
+      <category term="素材" scheme="http://yarving.github.io/tags/%E7%B4%A0%E6%9D%90/"/>
+    
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>申论起步</title>
+    <link href="http://yarving.github.io/2019/06/23/%E7%94%B3%E8%AE%BA%E8%B5%B7%E6%AD%A5/"/>
+    <id>http://yarving.github.io/2019/06/23/申论起步/</id>
+    <published>2019-06-23T02:14:14.000Z</published>
+    <updated>2019-07-18T08:57:28.315Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;申论是什么&quot;&gt;&lt;a href=&quot;#申论是什么&quot; class=&quot;headerlink&quot; title=&quot;申论是什么&quot;&gt;&lt;/a&gt;申论是什么&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;考试科目&lt;/li&gt;
+&lt;li&gt;涵盖思维、题型、表达三部分&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
-    
-      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
-    
-      <category term="View" scheme="http://yarving.github.io/categories/Python/Django/View/"/>
+      <category term="花木君" scheme="http://yarving.github.io/categories/%E8%8A%B1%E6%9C%A8%E5%90%9B/"/>
     
     
-      <category term="django" scheme="http://yarving.github.io/tags/django/"/>
-    
-      <category term="view" scheme="http://yarving.github.io/tags/view/"/>
-    
-      <category term="FBV" scheme="http://yarving.github.io/tags/FBV/"/>
-    
-      <category term="CBV" scheme="http://yarving.github.io/tags/CBV/"/>
-    
-      <category term="GCBV" scheme="http://yarving.github.io/tags/GCBV/"/>
+      <category term="申论" scheme="http://yarving.github.io/tags/%E7%94%B3%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
-    <title>Django Unit Test</title>
-    <link href="http://yarving.github.io/2018/08/15/django-unit-test/"/>
-    <id>http://yarving.github.io/2018/08/15/django-unit-test/</id>
-    <published>2018-08-15T08:03:42.000Z</published>
-    <updated>2019-05-03T12:31:18.431Z</updated>
+    <title>素材（五）</title>
+    <link href="http://yarving.github.io/2019/06/21/%E7%B4%A0%E6%9D%90%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+    <id>http://yarving.github.io/2019/06/21/素材（五）/</id>
+    <published>2019-06-20T22:08:04.000Z</published>
+    <updated>2019-07-18T08:57:28.315Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Below is a collection of django unit test cases.&lt;/p&gt;
+      &lt;ol&gt;
+&lt;li&gt;坚定文化自信，建设社会主义文化强国。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
-      <category term="Python" scheme="http://yarving.github.io/categories/Python/"/>
     
-      <category term="Django" scheme="http://yarving.github.io/categories/Python/Django/"/>
+      <category term="素材" scheme="http://yarving.github.io/tags/%E7%B4%A0%E6%9D%90/"/>
     
-      <category term="Test" scheme="http://yarving.github.io/categories/Python/Django/Test/"/>
+  </entry>
+  
+  <entry>
+    <title>行测 - 资料分析</title>
+    <link href="http://yarving.github.io/2019/06/18/%E8%A1%8C%E6%B5%8B-%E8%B5%84%E6%96%99%E5%88%86%E6%9E%90/"/>
+    <id>http://yarving.github.io/2019/06/18/行测-资料分析/</id>
+    <published>2019-06-18T13:16:37.000Z</published>
+    <updated>2019-07-18T08:57:28.317Z</updated>
     
+    <summary type="html">
+    
+      &lt;h1 id=&quot;读材料&quot;&gt;&lt;a href=&quot;#读材料&quot; class=&quot;headerlink&quot; title=&quot;读材料&quot;&gt;&lt;/a&gt;读材料&lt;/h1&gt;&lt;p&gt;关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;时间&lt;/li&gt;
+&lt;li&gt;段落结构&lt;/li&gt;
+&lt;li&gt;快速看主体并进行标注&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;能不用尺子类小工具就别用，免得浪费时间。但是可以直接出答案的小技巧可以用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三家分晋</title>
+    <link href="http://yarving.github.io/2019/06/18/%E4%B8%89%E5%AE%B6%E5%88%86%E6%99%8B/"/>
+    <id>http://yarving.github.io/2019/06/18/三家分晋/</id>
+    <published>2019-06-18T13:13:30.000Z</published>
+    <updated>2019-06-18T13:14:38.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分封制的弊端：环绕并非团结。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="封建百战" scheme="http://yarving.github.io/categories/%E5%B0%81%E5%BB%BA%E7%99%BE%E6%88%98/"/>
+    
+    
+      <category term="读书笔记" scheme="http://yarving.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人民时评：新建造，挺起发展的脊梁</title>
+    <link href="http://yarving.github.io/2019/06/14/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84%EF%BC%9A5G%EF%BC%8C%E6%89%93%E5%BC%80%E5%B7%A8%E5%A4%A7%E5%8F%91%E5%B1%95%E7%A9%BA%E9%97%B4/"/>
+    <id>http://yarving.github.io/2019/06/14/人民时评：5G，打开巨大发展空间/</id>
+    <published>2019-06-13T21:42:40.000Z</published>
+    <updated>2019-06-16T15:26:38.943Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;作为全面构筑经济社会数字化转型的关键基础设施，5G将推动传统行业转型、数字经济创新&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;正是在领先技术的支持下，加上全球最大的用户规模、巨大的4G网络、丰富的移动互联网应用等明显优势，5G牌照的发放可谓瓜熟蒂落&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中国的5G牌照发放，既让国内亿万消费者共享5G发展成果，也是外资企业参与中国5G市场、分享中国发展成果的机会&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="人民时评" scheme="http://yarving.github.io/tags/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>行测 - 词语</title>
+    <link href="http://yarving.github.io/2019/06/12/%E8%A1%8C%E6%B5%8B-%E8%AF%8D%E8%AF%AD/"/>
+    <id>http://yarving.github.io/2019/06/12/行测-词语/</id>
+    <published>2019-06-12T13:17:35.000Z</published>
+    <updated>2019-06-18T13:18:22.384Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;易混淆关联词&quot;&gt;&lt;a href=&quot;#易混淆关联词&quot; class=&quot;headerlink&quot; title=&quot;易混淆关联词&quot;&gt;&lt;/a&gt;易混淆关联词&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;[ ] 要打印更多关联词并学习&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2. 中小学数理知识回顾</title>
+    <link href="http://yarving.github.io/2019/06/12/%E8%A1%8C%E6%B5%8B%20-%20%E4%B8%AD%E5%B0%8F%E5%AD%A6%E6%95%B0%E7%90%86%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/"/>
+    <id>http://yarving.github.io/2019/06/12/行测 - 中小学数理知识回顾/</id>
+    <published>2019-06-12T05:34:51.000Z</published>
+    <updated>2019-06-16T07:49:28.353Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;增长量、增长率，同比-环比&quot;&gt;&lt;a href=&quot;#增长量、增长率，同比-环比&quot; class=&quot;headerlink&quot; title=&quot;增长量、增长率，同比/环比&quot;&gt;&lt;/a&gt;增长量、增长率，同比/环比&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;基期&lt;/code&gt;： 被比较的量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;现期&lt;/code&gt;： 用来比较的量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;增长量 = 现期 - 基期&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;增长率 = 增长量 / 基期 = ( 现期 - 基期) / 基期&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;同比&lt;/code&gt;： 基期为上一个时间段的同期，如去年同月&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;环比&lt;/code&gt;： 比上个时间段，如上个月&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;问法&lt;/th&gt;
+&lt;th&gt;现期&lt;/th&gt;
+&lt;th&gt;基期&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;今年&lt;/code&gt;比&lt;code&gt;去年&lt;/code&gt;多多少&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;今年&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;去年&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;去年&lt;/code&gt;比&lt;code&gt;今年&lt;/code&gt;少多少&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;去年&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;今年&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="行测" scheme="http://yarving.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人民时评：景区可限流，旅游业当升级</title>
+    <link href="http://yarving.github.io/2019/06/12/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84%EF%BC%9A%E6%99%AF%E5%8C%BA%E5%8F%AF%E9%99%90%E6%B5%81%EF%BC%8C%E6%97%85%E6%B8%B8%E4%B8%9A%E5%BD%93%E5%8D%87%E7%BA%A7/"/>
+    <id>http://yarving.github.io/2019/06/12/人民时评：景区可限流，旅游业当升级/</id>
+    <published>2019-06-11T21:25:40.000Z</published>
+    <updated>2019-06-16T15:26:38.946Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;只有让服务的意识更强一些，创新的脚步更快一些，供给的力度更大一些，才能更好满足公众的需要&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="人民时评" scheme="http://yarving.github.io/tags/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>素材（四）</title>
+    <link href="http://yarving.github.io/2019/06/11/%E7%B4%A0%E6%9D%90%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>http://yarving.github.io/2019/06/11/素材（四）/</id>
+    <published>2019-06-10T22:08:04.000Z</published>
+    <updated>2019-06-11T23:23:16.607Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;开展主题教育四个迫切：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;用习近平新时代中国特色社会主义思想武装全党的迫切需要&lt;/li&gt;
+&lt;li&gt;推进新时代党的建设的迫切需要&lt;/li&gt;
+&lt;li&gt;保持党同人民群众血肉联系的迫切需要&lt;/li&gt;
+&lt;li&gt;实现党的十九大确定的目标任务的迫切需要&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="素材" scheme="http://yarving.github.io/tags/%E7%B4%A0%E6%9D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人民时评：让预付消费更安心</title>
+    <link href="http://yarving.github.io/2019/06/11/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84%EF%BC%9A%E8%AE%A9%E9%A2%84%E4%BB%98%E6%B6%88%E8%B4%B9%E6%9B%B4%E5%AE%89%E5%BF%83/"/>
+    <id>http://yarving.github.io/2019/06/11/人民时评：让预付消费更安心/</id>
+    <published>2019-06-10T21:03:40.000Z</published>
+    <updated>2019-06-16T15:26:38.949Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;预付卡一定程度上承载着消费者对于商家的信任，如果辜负了这份信任，商家就应承担相应的不利后果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有必要在市场监管、商务、公安等部门之间实现信息共享，让守信者畅通无阻，让失信者寸步难行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今天，中国已成为全球第二大消费市场，未来拥有无穷潜力。在激发市场活力、挖掘消费潜力的过程中，预付消费完全可以发挥更大作用&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="人民时评" scheme="http://yarving.github.io/tags/%E4%BA%BA%E6%B0%91%E6%97%B6%E8%AF%84/"/>
     
   </entry>
   

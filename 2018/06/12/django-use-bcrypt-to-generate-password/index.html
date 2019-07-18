@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -174,7 +174,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -184,7 +184,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -330,20 +330,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/12/django-use-bcrypt-to-generate-password/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -411,14 +411,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
 
                 
                 
@@ -499,13 +499,13 @@
 <p>但是<strong>提前优化是万恶之源</strong>，我没有决定中途改换技术方案，而是等待下一版再更改为更专业的方案。</p>
 <p>创建路由、视图、表单、模板等过程都比较简单，就不在赘述了，着重讲下如何将明文密码进行加密的过程。</p>
 <h1 id="下载bcrypt"><a href="#下载bcrypt" class="headerlink" title="下载bcrypt"></a>下载bcrypt</h1><p>Python 版的 bcrypt 的 <a href="https://pypi.org/project/bcrypt/" target="_blank" rel="noopener">网站</a>，安装命令：<code>pip install bcrypt</code></p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>接下来，在form的 <code>clean_password()</code> 函数里，返回加密后的字符串。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bcrypt</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SignUpForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    password1 = forms.CharField(</span><br><span class="line">        required=<span class="keyword">True</span>,</span><br><span class="line">        widget=forms.PasswordInput(attrs=&#123;<span class="string">'placeholder'</span>: <span class="string">'输入密码'</span>, <span class="string">'class'</span>: <span class="string">'input pass'</span>&#125;)</span><br><span class="line">    )</span><br><span class="line">    password2 = forms.CharField(</span><br><span class="line">        required=<span class="keyword">True</span>,</span><br><span class="line">        widget=forms.PasswordInput(attrs=&#123;<span class="string">'placeholder'</span>: <span class="string">'再次输入密码'</span>, <span class="string">'class'</span>: <span class="string">'input pass'</span>&#125;)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_password2</span><span class="params">(self)</span>:</span></span><br><span class="line">        cleaned_data =  super(SignUpForm, self).clean()</span><br><span class="line">        password2 = cleaned_data.get(<span class="string">'password2'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> bcrypt.hashpw(password2, bcrypt.gensalt())</span><br></pre></td></tr></table></figure></p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>接下来，在form的 <code>clean_password()</code> 函数里，返回加密后的字符串。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bcrypt</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SignUpForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    password1 = forms.CharField(</span><br><span class="line">        required=<span class="literal">True</span>,</span><br><span class="line">        widget=forms.PasswordInput(attrs=&#123;<span class="string">'placeholder'</span>: <span class="string">'输入密码'</span>, <span class="string">'class'</span>: <span class="string">'input pass'</span>&#125;)</span><br><span class="line">    )</span><br><span class="line">    password2 = forms.CharField(</span><br><span class="line">        required=<span class="literal">True</span>,</span><br><span class="line">        widget=forms.PasswordInput(attrs=&#123;<span class="string">'placeholder'</span>: <span class="string">'再次输入密码'</span>, <span class="string">'class'</span>: <span class="string">'input pass'</span>&#125;)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_password2</span><span class="params">(self)</span>:</span></span><br><span class="line">        cleaned_data =  super(SignUpForm, self).clean()</span><br><span class="line">        password2 = cleaned_data.get(<span class="string">'password2'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> bcrypt.hashpw(password2, bcrypt.gensalt())</span><br></pre></td></tr></table></figure></p>
 <p>在views里取值时用<code>form.cleaned_data[&#39;password2&#39;]</code>即可取到加密后的字符串，验证功能在需求部分已经做过介绍，不需要django这部分负责。</p>
 <h1 id="排坑"><a href="#排坑" class="headerlink" title="排坑"></a>排坑</h1><p>我的django是基于python3的，在python2里测试生成加密字符串的过程没有问题，但是在python3会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unicode-objects must be encoded before hashing</span><br></pre></td></tr></table></figure></p>
 <p>查找了下原因，是因为python3里，字符串有<code>str</code>和<code>bytes</code>两种形态，所以需要改成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcrypt.hashpw(password2.encode(<span class="string">'utf-8'</span>), bcrypt.gensalt()).decode(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>另外，bcrypt有多种标准，我们需要的是<code>2a</code>，所以还要改成：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcrypt.hashpw(password2.encode(<span class="string">'utf-8'</span>), bcrypt.gensalt(prefix=<span class="string">b'2a'</span>)).decode(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>这样就得到正确结果了。</p>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://oo746vdmm.bkt.clouddn.com/18-6-12/31509462.jpg" alt=""></p>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://oo746vdmm.bkt.clouddn.com/18-6-12/31509462.jpg" alt></p>
 <p>可以看到password的值已经是bcrypt加密后的字符串了。</p>
 <h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><ul>
 <li><a href="https://www.dailycred.com/article/bcrypt-calculator" target="_blank" rel="noopener">2a版本的bcrypt生成和验证</a></li>
@@ -633,7 +633,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
             
@@ -648,7 +648,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">162</span>
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -769,7 +769,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -984,7 +990,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">101</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1073,7 +1097,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">220k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -1082,14 +1106,14 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">4:10</span>
   
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

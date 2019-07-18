@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -174,7 +174,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -184,7 +184,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -330,20 +330,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/22/django-two-ways-register-apps-in-admin/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -411,21 +411,21 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/Admin/" itemprop="url" rel="index"><span itemprop="name">Admin</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/Admin/" itemprop="url" rel="index"><span itemprop="name">Admin</span></a></span>
 
                 
                 
@@ -498,7 +498,7 @@
       
 
       
-        <p><img src="https://images.unsplash.com/photo-1479920252409-6e3d8e8d4866?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=7335ddddbdb2e401ce4f50507524d900&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt=""><br>Apps想要要Django的Admin里显示，需要注册至admin里。Django提供了两种方法</p>
+        <p><img src="https://images.unsplash.com/photo-1479920252409-6e3d8e8d4866?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=7335ddddbdb2e401ce4f50507524d900&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt><br>Apps想要要Django的Admin里显示，需要注册至admin里。Django提供了两种方法</p>
 <a id="more"></a>
 <h1 id="通用注册方法"><a href="#通用注册方法" class="headerlink" title="通用注册方法"></a>通用注册方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin   <span class="comment"># import admin</span></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Blog       <span class="comment"># import a model</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define model administration</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display=(<span class="string">'id'</span>, <span class="string">'caption'</span>, <span class="string">'author'</span>, <span class="string">'publish_time'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># register it in admin</span></span><br><span class="line">admin.site.register(Blog, BlogAdmin)</span><br></pre></td></tr></table></figure>
 <h1 id="Django-gt-1-7"><a href="#Django-gt-1-7" class="headerlink" title="Django &gt;= 1.7"></a>Django &gt;= 1.7</h1><p>当模型很多时，上述方法的代码就会显得不是很整齐了，Django 1.7开始提供了装饰器进行注册。</p>
@@ -628,7 +628,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
             
@@ -643,7 +643,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">162</span>
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -764,7 +764,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -979,7 +985,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">101</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1068,7 +1092,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">220k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -1077,14 +1101,14 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">4:10</span>
   
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

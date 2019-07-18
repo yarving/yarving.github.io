@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="是什么观察图形规律，题目形式 + 考点。">
+<meta name="keywords" content="行测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行测 - 图形推理">
+<meta property="og:url" content="http://yarving.github.io/2019/06/25/行测-图形推理/index.html">
+<meta property="og:site_name" content="MX space">
+<meta property="og:description" content="是什么观察图形规律，题目形式 + 考点。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-18T08:57:28.316Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="行测 - 图形推理">
+<meta name="twitter:description" content="是什么观察图形规律，题目形式 + 考点。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="MX space" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://yarving.github.io/2019/06/25/行测-图形推理/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>行测 - 图形推理 | MX space</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MX space</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2019/06/25/行测-图形推理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">行测 - 图形推理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-25 20:50:52" itemprop="dateCreated datePublished" datetime="2019-06-25T20:50:52+08:00">2019-06-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 16:57:28" itemprop="dateModified" datetime="2019-07-18T16:57:28+08:00">2019-07-18</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/25/行测-图形推理/" class="leancloud_visitors" data-flag-title="行测 - 图形推理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>观察图形规律，题目形式 + 考点。</p>
+<a id="more"></a>
+<p>题目形式有：一串型，三三型，九宫格型，分类型，一四型（空间展开）</p>
+<p>题目形式不太重要，只要记忆下九宫格型的考法：<strong>横向三三，纵向三三，米字型，S型</strong></p>
+<p>九宫格考法，如果是横、纵向三三型考法，可以跳过第二行，结合选项进行排除。</p>
+<blockquote>
+<p>结合选项：</p>
+<ol>
+<li>验证规律</li>
+<li>找突破口</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>理解并熟记常见考法</p>
+</blockquote>
+<h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><p>大考点有：</p>
+<ul>
+<li>（元素相同）动态位置叠加：转动，旋转，翻转</li>
+<li>（元素相似）叠加和遍历</li>
+<li>（元素凌乱）属性和数数</li>
+<li>（相对位置明显）静态位置关系：相交、相离等</li>
+<li>（立体图）空间重构</li>
+</ul>
+<h1 id="动态位置变化"><a href="#动态位置变化" class="headerlink" title="动态位置变化"></a>动态位置变化</h1><p>元素相同，只是相对位置有变化。大小和形状不变</p>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p>要找准<strong>方向</strong>和<strong>距离</strong>。</p>
+<ul>
+<li>方向：上，下，左，右，循环，折返，顺时针，逆时针</li>
+<li>距离：等距，规律递增、递减</li>
+</ul>
+<p>观察距离要遵循就近原则和平均原则：</p>
+<ul>
+<li>就近原则：往近的方向走</li>
+<li>平均原则：多个元素时，步数差异小</li>
+</ul>
+<p>元素有可能比较细腻，如有时候会考察横线和竖线的走向。</p>
+<h2 id="旋转和翻转"><a href="#旋转和翻转" class="headerlink" title="旋转和翻转"></a>旋转和翻转</h2><ul>
+<li>时钟法：区分旋转和翻转，如果是旋转，则顺、逆时针方向不变</li>
+<li>箭头法：判断旋转方向和角度</li>
+</ul>
+<p>由于有时会结合其他考点一起考，所以基本思路是：</p>
+<ol>
+<li>分开分步分析</li>
+<li>结合选项运用排除法，排除错误答案和错误思路。</li>
+</ol>
+<blockquote>
+<p>结合选项时，如果已经排除两个错误答案，那就在剩下的两个候选项中观察不同之处，再进行分析排除，可以加快做题速度。</p>
+</blockquote>
+<p>旋转还有个特性：</p>
+<ul>
+<li>横轴对称：左右翻转</li>
+<li>数轴对称：上下翻转</li>
+</ul>
+<h1 id="静态位置关系"><a href="#静态位置关系" class="headerlink" title="静态位置关系"></a>静态位置关系</h1><p>元素一般不同，但<strong>相对位置</strong>明显。</p>
+<h2 id="点的静态位置"><a href="#点的静态位置" class="headerlink" title="点的静态位置"></a>点的静态位置</h2><p>了解常见考法并快速作答：</p>
+<ol>
+<li>位于若干个图形的重叠区域内；</li>
+<li>点与线的相对关系：两端、平行；</li>
+<li>点在十六宫格中：不出现在同一个位置；</li>
+<li>点及变异点的相邻、相隔（还考察距离）；</li>
+<li>点的图形中的相邻、相隔（还考察距离）；</li>
+<li>十六宫格中，不同类型的点的出现位置：有些只在外围出现，有些只在对角线上出现，有些只在中心区域出现。</li>
+</ol>
+<p>习题考法总结，点的位置：</p>
+<ul>
+<li>对角线 vs 四边位置；</li>
+<li>交点 vs 线段中；</li>
+<li>长边 vs 短边；</li>
+<li>重心上方 vs 重心下方；</li>
+<li>连通区域 vs 非连通区域</li>
+</ul>
+<h2 id="线的静态位置"><a href="#线的静态位置" class="headerlink" title="线的静态位置"></a>线的静态位置</h2><ol>
+<li>平行；</li>
+<li>相交；</li>
+<li>垂直——相交的特殊情况</li>
+</ol>
+<blockquote>
+<p>注意：立体图形在非空间重构考法中，都要看作是平面图形，不要想象出立体图形来。</p>
+</blockquote>
+<h2 id="复杂图形的静态位置"><a href="#复杂图形的静态位置" class="headerlink" title="复杂图形的静态位置"></a>复杂图形的静态位置</h2><h3 id="相离"><a href="#相离" class="headerlink" title="相离"></a>相离</h3><p>上下相离，左右相离。</p>
+<p>同时可能结合线段的区直性、行列数来考察。</p>
+<h3 id="相切"><a href="#相切" class="headerlink" title="相切"></a>相切</h3><p>相切：只有一个节点的相切，法线垂直。</p>
+<p>另外有可能考相接，相接有点接和线接两种形式：</p>
+<ul>
+<li>点接：考察点接个数</li>
+<li>线接：完全重合线接 vs 非完全重合线接； 线接条数</li>
+</ul>
+<h3 id="相交"><a href="#相交" class="headerlink" title="相交"></a>相交</h3><p>相交还有可能考察：</p>
+<ul>
+<li>形状：是否和大图形一样</li>
+<li>面积：相交区域所占面积明显大于 vs 小于其他区域</li>
+</ul>
+<p>考点：点交、线交、交点数量。</p>
+<h3 id="内接"><a href="#内接" class="headerlink" title="内接"></a>内接</h3><p>同外接的考察点。</p>
+<h3 id="包含"><a href="#包含" class="headerlink" title="包含"></a>包含</h3><ul>
+<li>内外图形的区直性：曲包直 vs 直包曲</li>
+<li>几重包含：一重 vs 二重 vs 多重</li>
+</ul>
+<h1 id="叠加"><a href="#叠加" class="headerlink" title="叠加"></a>叠加</h1><p>特征：<em>元素相似</em></p>
+<h2 id="完整叠加"><a href="#完整叠加" class="headerlink" title="完整叠加"></a>完整叠加</h2><p>叠加的位置有可能不同：靠上、靠下、从中心位置；<br>叠加的过程可能和动态位置变化结合，如结合翻转。</p>
+<h2 id="不完整叠加"><a href="#不完整叠加" class="headerlink" title="不完整叠加"></a>不完整叠加</h2><p>去同存异、去异存同。</p>
+<h2 id="黑白叠加"><a href="#黑白叠加" class="headerlink" title="黑白叠加"></a>黑白叠加</h2><ul>
+<li>考法一：黑黑得白，白白得黑等只有两种逻辑关系；</li>
+<li>考法二：黑+白=？，黑+黑=？，白+黑=？，白+白=？</li>
+</ul>
+<h2 id="米格叠加"><a href="#米格叠加" class="headerlink" title="米格叠加"></a>米格叠加</h2><ul>
+<li>从行看</li>
+<li>从列看</li>
+<li>米字型看</li>
+<li>S型看</li>
+</ul>
+<h2 id="任性叠加"><a href="#任性叠加" class="headerlink" title="任性叠加"></a>任性叠加</h2><p>仔细观察规律</p>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><h1 id="属性和数数"><a href="#属性和数数" class="headerlink" title="属性和数数"></a>属性和数数</h1><p>数量关系有：</p>
+<ul>
+<li>递增、递减</li>
+<li>同样的数量</li>
+<li>乱序，但所有数字都有（1,3,5,4,2）</li>
+<li>有和差关系</li>
+<li>数量对称（1,2,4,2,1）</li>
+</ul>
+<h2 id="数点"><a href="#数点" class="headerlink" title="数点"></a>数点</h2><p>点的类型有：</p>
+<ul>
+<li>切点： 直曲切点、曲曲切点</li>
+<li>交点： 十字交叉点、直曲交点、曲曲交点</li>
+<li>端点</li>
+</ul>
+<p>考法有：</p>
+<ol>
+<li>只数十字交叉点</li>
+<li>只数直线和曲线的交点</li>
+<li>数1和2</li>
+<li>只数切点</li>
+<li>交点+切点</li>
+</ol>
+<p>特殊点：</p>
+<ul>
+<li>线段出头数</li>
+<li>黑白点：黑白分开数</li>
+</ul>
+<h2 id="曲直性-amp-数线"><a href="#曲直性-amp-数线" class="headerlink" title="曲直性&amp;数线"></a>曲直性&amp;数线</h2><p>观察图形构成特点：全曲、全直、有曲有直；</p>
+<p>考察的三种形式：</p>
+<ul>
+<li>全曲或全直</li>
+<li>直线、曲线、曲直间隔排列</li>
+<li>直曲间隔排列</li>
+</ul>
+<h3 id="数线"><a href="#数线" class="headerlink" title="数线"></a>数线</h3><p>有直有曲，数曲居多，但不限于，还有：</p>
+<ol>
+<li>只数曲线</li>
+<li>只数直线</li>
+<li>曲线和直线都数</li>
+</ol>
+<blockquote>
+<p>内外型：内外分开数</p>
+</blockquote>
+<h2 id="封闭性和数面"><a href="#封闭性和数面" class="headerlink" title="封闭性和数面"></a>封闭性和数面</h2><p>图形特点：封闭、开放、半开半闭</p>
+<p>考法：</p>
+<ul>
+<li>全开放/全封闭（常考）</li>
+<li>开放/封闭间隔排列</li>
+<li>封闭、开放、半开半闭循环排列</li>
+</ul>
+<blockquote>
+<p>非线段构成图形一般不靠点、线、角</p>
+</blockquote>
+<h2 id="数部分和元素"><a href="#数部分和元素" class="headerlink" title="数部分和元素"></a>数部分和元素</h2><ul>
+<li>部分：无公共点（不相连）</li>
+<li>元素：构成图形相对独立，有清晰界限，但可相连</li>
+</ul>
+<p>单一元素图群的考法： 数出数量，观察规律</p>
+<ul>
+<li>当出现两种元素时，优先分开数；</li>
+<li>出现两种以上元素时，优先先看元素种类，然后一起数数量，然后再分开数排除错误答案；</li>
+</ul>
+<p>元素换算考法： 换算后数量呈递增、递减规律</p>
+<h2 id="对称性和数对称轴"><a href="#对称性和数对称轴" class="headerlink" title="对称性和数对称轴"></a>对称性和数对称轴</h2><p>图形类型：</p>
+<ul>
+<li>中心对称：园、菱形、平行四边形</li>
+<li>轴对称：横轴、竖轴、斜轴，五角星</li>
+<li>即中心对称又轴对称</li>
+</ul>
+<p>数对称轴：先类型后数量</p>
+<ul>
+<li>不同类型间隔排列</li>
+<li>对称轴数量关系（递增等）</li>
+</ul>
+<p>冷门考法： 内外形中，外层对称轴和内层对称轴之间的关系。有时候还需要和数点面等结合起来。</p>
+<p>所有图形都有对称性，考虑数边。</p>
+<p>对称轴的数量别搞错，矩形类有4个对称轴（× +）</p>
+<h2 id="数笔画"><a href="#数笔画" class="headerlink" title="数笔画"></a>数笔画</h2><p>笔画数 = 奇点数量/2（当奇点为0时，笔画数为1）</p>
+<p>要熟记的点：</p>
+<ul>
+<li>典型奇点： 端点、丁型交点；</li>
+<li>典型偶点： 十字型交点，角；</li>
+<li>典型一笔画： 五角星</li>
+<li>典型两笔画： 日及其变形</li>
+<li>典型三笔画： 田及其变形</li>
+</ul>
+<p>观察到上述典型图形和其他线索时，就考虑到一笔画考点，多笔画通常不超过3笔。</p>
+<h1 id="空间重构（六面体）"><a href="#空间重构（六面体）" class="headerlink" title="空间重构（六面体）"></a>空间重构（六面体）</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li>向内折，折完后外表面能看到图案</li>
+<li>展开图呈Z字型的能折成六面体，4+1+1的Z字型才可以；</li>
+<li>呈90度夹角的面可旋转，相邻两条边重合，图案也会变化；”4”的图形可平移至另一端</li>
+<li>展开图中向对面在立体图中只能出现一次（用数字进行标注）；</li>
+</ol>
+<h2 id="搞定六面体的技巧"><a href="#搞定六面体的技巧" class="headerlink" title="搞定六面体的技巧"></a>搞定六面体的技巧</h2><ol>
+<li>相对面不能相邻；</li>
+<li>时钟法：（可利用90度夹角）相邻三个面在立体图和展开图中方向一致；</li>
+<li>公共边法：相邻两个面公共边两侧的图形相对位置一致，可找箭头型的图形为突破口哦；</li>
+<li>橡皮法：准备正方体，练习以下。</li>
+</ol>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol>
+<li>什么样的图形能折成六面体纸盒子；</li>
+<li>转动、移动面，寻找相对面、相邻面；</li>
+<li>快速排除相对面相邻的错误答案；</li>
+<li>时钟法、公共边法、橡皮法寻找正确答案、排除错误答案。</li>
+</ol>
+<h2 id="立体图形特殊考点"><a href="#立体图形特殊考点" class="headerlink" title="立体图形特殊考点"></a>立体图形特殊考点</h2><h3 id="三视图"><a href="#三视图" class="headerlink" title="三视图"></a>三视图</h3><p>主视图、俯视图、侧视图。</p>
+<p>看不到的平面可以用虚线表示。</p>
+<h3 id="截面视图"><a href="#截面视图" class="headerlink" title="截面视图"></a>截面视图</h3><p>别无他法，惟有多做题累积不同的切法。</p>
+<h3 id="实物重组"><a href="#实物重组" class="headerlink" title="实物重组"></a>实物重组</h3><p>缺什么就补什么，结合选项做。</p>
+<h1 id="平面图形特殊考点"><a href="#平面图形特殊考点" class="headerlink" title="平面图形特殊考点"></a>平面图形特殊考点</h1><h2 id="重心"><a href="#重心" class="headerlink" title="重心"></a>重心</h2><p>一般为三三型，重心分别上、中、下。</p>
+<p>重心题型要秒杀。</p>
+<h2 id="凹凸性"><a href="#凹凸性" class="headerlink" title="凹凸性"></a>凹凸性</h2><p>当找不到其他思路时，考虑下这个考法</p>
+<h2 id="意指图形"><a href="#意指图形" class="headerlink" title="意指图形"></a>意指图形</h2><p>有特殊含义，如亲子图形、球类运动、实物</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>做其他省份的题目了解下，如有1,2,3,4,5或ABCDE对折后形成的对称图形。</p>
+<p>要思维开阔。</p>
+<h1 id="做题记录"><a href="#做题记录" class="headerlink" title="做题记录"></a>做题记录</h1><ul>
+<li>看到有可能是一笔画的优先筛查一遍一笔画规律</li>
+<li>图形点交有可能结合交点数量一起考</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Yarving Liu</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yarving.github.io/2019/06/25/行测-图形推理/" title="行测 - 图形推理">http://yarving.github.io/2019/06/25/行测-图形推理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/行测/" rel="tag"># 行测</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/申论 - 如何阅读材料/" rel="next" title="如何阅读材料">
+                <i class="fa fa-chevron-left"></i> 如何阅读材料
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/25/申论-中心思想概括训练/" rel="prev" title="申论 - 中心思想概括训练">
+                申论 - 中心思想概括训练 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
+            
+              <p class="site-author-name" itemprop="name">Yarving Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">204</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yarving" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yarving@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#是什么"><span class="nav-number">1.</span> <span class="nav-text">是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#考点"><span class="nav-number">1.1.</span> <span class="nav-text">考点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态位置变化"><span class="nav-number">2.</span> <span class="nav-text">动态位置变化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动"><span class="nav-number">2.1.</span> <span class="nav-text">移动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转和翻转"><span class="nav-number">2.2.</span> <span class="nav-text">旋转和翻转</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态位置关系"><span class="nav-number">3.</span> <span class="nav-text">静态位置关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#点的静态位置"><span class="nav-number">3.1.</span> <span class="nav-text">点的静态位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线的静态位置"><span class="nav-number">3.2.</span> <span class="nav-text">线的静态位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂图形的静态位置"><span class="nav-number">3.3.</span> <span class="nav-text">复杂图形的静态位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相离"><span class="nav-number">3.3.1.</span> <span class="nav-text">相离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相切"><span class="nav-number">3.3.2.</span> <span class="nav-text">相切</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相交"><span class="nav-number">3.3.3.</span> <span class="nav-text">相交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内接"><span class="nav-number">3.3.4.</span> <span class="nav-text">内接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含"><span class="nav-number">3.3.5.</span> <span class="nav-text">包含</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#叠加"><span class="nav-number">4.</span> <span class="nav-text">叠加</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整叠加"><span class="nav-number">4.1.</span> <span class="nav-text">完整叠加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不完整叠加"><span class="nav-number">4.2.</span> <span class="nav-text">不完整叠加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑白叠加"><span class="nav-number">4.3.</span> <span class="nav-text">黑白叠加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#米格叠加"><span class="nav-number">4.4.</span> <span class="nav-text">米格叠加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任性叠加"><span class="nav-number">4.5.</span> <span class="nav-text">任性叠加</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历"><span class="nav-number">5.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性和数数"><span class="nav-number">6.</span> <span class="nav-text">属性和数数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数点"><span class="nav-number">6.1.</span> <span class="nav-text">数点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曲直性-amp-数线"><span class="nav-number">6.2.</span> <span class="nav-text">曲直性&amp;数线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数线"><span class="nav-number">6.2.1.</span> <span class="nav-text">数线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封闭性和数面"><span class="nav-number">6.3.</span> <span class="nav-text">封闭性和数面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数部分和元素"><span class="nav-number">6.4.</span> <span class="nav-text">数部分和元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称性和数对称轴"><span class="nav-number">6.5.</span> <span class="nav-text">对称性和数对称轴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数笔画"><span class="nav-number">6.6.</span> <span class="nav-text">数笔画</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空间重构（六面体）"><span class="nav-number">7.</span> <span class="nav-text">空间重构（六面体）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">7.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搞定六面体的技巧"><span class="nav-number">7.2.</span> <span class="nav-text">搞定六面体的技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要求"><span class="nav-number">7.3.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立体图形特殊考点"><span class="nav-number">7.4.</span> <span class="nav-text">立体图形特殊考点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三视图"><span class="nav-number">7.4.1.</span> <span class="nav-text">三视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截面视图"><span class="nav-number">7.4.2.</span> <span class="nav-text">截面视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实物重组"><span class="nav-number">7.4.3.</span> <span class="nav-text">实物重组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平面图形特殊考点"><span class="nav-number">8.</span> <span class="nav-text">平面图形特殊考点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重心"><span class="nav-number">8.1.</span> <span class="nav-text">重心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凹凸性"><span class="nav-number">8.2.</span> <span class="nav-text">凹凸性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意指图形"><span class="nav-number">8.3.</span> <span class="nav-text">意指图形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">8.4.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#做题记录"><span class="nav-number">9.</span> <span class="nav-text">做题记录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yarving Liu</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">275k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">4:10</span>
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("C7TURJJ9MzJz4LgFlfki9JgC-gzGzoHsz", "KjmedhPH78qYNquptzbt1me0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.2.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
+
+</body>
+</html>

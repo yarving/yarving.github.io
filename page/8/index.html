@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -165,11 +165,9 @@
   </style>
 </noscript>
 
-<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
-<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -180,7 +178,7 @@
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -326,20 +324,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/12/django-coding-style/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/08/07/django-tips-2/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -350,8 +348,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/12/django-coding-style/" itemprop="url">
-                  Django Coding Style
+                <a class="post-title-link" href="/2018/08/07/django-tips-2/" itemprop="url">
+                  Django Tips（二）
                 </a>
               
             
@@ -377,7 +375,7 @@
                 
               
 
-              <time title="创建时间：2018-06-12 19:26:34" itemprop="dateCreated datePublished" datetime="2018-06-12T19:26:34+08:00">2018-06-12</time>
+              <time title="创建时间：2018-08-07 13:34:57" itemprop="dateCreated datePublished" datetime="2018-08-07T13:34:57+08:00">2018-08-07</time>
             
 
             
@@ -411,14 +409,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
 
                 
                 
@@ -432,7 +430,7 @@
 
           
           
-             <span id="/2018/06/12/django-coding-style/" class="leancloud_visitors" data-flag-title="Django Coding Style">
+             <span id="/2018/08/07/django-tips-2/" class="leancloud_visitors" data-flag-title="Django Tips（二）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,7 +455,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6k</span>
+                <span title="本文字数">588</span>
               
 
               
@@ -471,7 +469,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -492,10 +490,16 @@
 
       
         
-          <p>编写Django中的代码时，请遵循下列编码风格</p>
+          <p><img src="https://images.unsplash.com/photo-1533597062066-93ac9883597f?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=d68d4c28c71438a63060b383c2535e32&amp;auto=format&amp;fit=crop&amp;w=1029&amp;q=80" alt="unsplash"></p>
+<p>本文内容：</p>
+<ul>
+<li>在model里使用PK或ID</li>
+<li>Django模板里设置默认值</li>
+<li>debug技巧</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/django-coding-style/#更多" rel="contents">
+            <a class="btn" href="/2018/08/07/django-tips-2/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -546,20 +550,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/12/django-use-bcrypt-to-generate-password/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/08/06/django-tips/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -570,8 +574,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/12/django-use-bcrypt-to-generate-password/" itemprop="url">
-                  Django使用bcrypt生成密码
+                <a class="post-title-link" href="/2018/08/06/django-tips/" itemprop="url">
+                  Django-Tips（一）
                 </a>
               
             
@@ -597,7 +601,7 @@
                 
               
 
-              <time title="创建时间：2018-06-12 17:13:53" itemprop="dateCreated datePublished" datetime="2018-06-12T17:13:53+08:00">2018-06-12</time>
+              <time title="创建时间：2018-08-06 23:32:43" itemprop="dateCreated datePublished" datetime="2018-08-06T23:32:43+08:00">2018-08-06</time>
             
 
             
@@ -631,14 +635,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
 
                 
                 
@@ -652,7 +656,7 @@
 
           
           
-             <span id="/2018/06/12/django-use-bcrypt-to-generate-password/" class="leancloud_visitors" data-flag-title="Django使用bcrypt生成密码">
+             <span id="/2018/08/06/django-tips/" class="leancloud_visitors" data-flag-title="Django-Tips（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -712,12 +716,18 @@
 
       
         
-          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>需要设计一个系统（采用Django），专门管理另一个系统的用户。用户登录在另一个系统中进行，那边的密码采用bcrypt进行校验，所以Django系统中密码保存也要用bcrypt加密保存。</p>
-<p>而Django虽然自带的User中提供了Password功能（输入明文、自动生成加密字符串），但是model中却并不提供一个所谓的PasswordField。</p>
-<p>因此，需求就是<strong>如何在自己实现的注册功能中，将明文密码用bcrypt加密保存</strong></p>
+          <p><img src="https://images.unsplash.com/photo-1533529318682-0c3e2fc1e225?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=66bef43351b3fe01a5b3b41f9d7d3a64&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="unsplash"></p>
+<p>本文内容：</p>
+<ul>
+<li>在数据库中保存一条记录</li>
+<li>在shell中查看django settings的配置</li>
+<li>配置template目录</li>
+<li>配置static目录</li>
+<li>在template文件中使用static文件</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/django-use-bcrypt-to-generate-password/#更多" rel="contents">
+            <a class="btn" href="/2018/08/06/django-tips/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -768,20 +778,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/12/learn-python-the-hard-way/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/08/03/selenium-fill-in-input-tags/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -792,8 +802,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/12/learn-python-the-hard-way/" itemprop="url">
-                  Learn Python the Hard Way
+                <a class="post-title-link" href="/2018/08/03/selenium-fill-in-input-tags/" itemprop="url">
+                  Selenium: Fill in Input Tags
                 </a>
               
             
@@ -819,7 +829,7 @@
                 
               
 
-              <time title="创建时间：2018-06-12 09:18:18" itemprop="dateCreated datePublished" datetime="2018-06-12T09:18:18+08:00">2018-06-12</time>
+              <time title="创建时间：2018-08-03 20:35:14" itemprop="dateCreated datePublished" datetime="2018-08-03T20:35:14+08:00">2018-08-03</time>
             
 
             
@@ -836,30 +846,12 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-03 20:31:18" itemprop="dateModified" datetime="2019-05-03T20:31:18+08:00">2019-05-03</time>
+                <time title="修改时间：2018-08-25 22:33:46" itemprop="dateModified" datetime="2018-08-25T22:33:46+08:00">2018-08-25</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -867,7 +859,7 @@
 
           
           
-             <span id="/2018/06/12/learn-python-the-hard-way/" class="leancloud_visitors" data-flag-title="Learn Python the Hard Way">
+             <span id="/2018/08/03/selenium-fill-in-input-tags/" class="leancloud_visitors" data-flag-title="Selenium: Fill in Input Tags">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -892,7 +884,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">353</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -927,10 +919,10 @@
 
       
         
-          <p><img src="https://cfvod.kaltura.com/p/1926081/sp/192608100/thumbnail/entry_id/0_n64gjymf/version/100002/width/560/height/400" alt="Learn Python The Hard Way"></p>
+          <p>使用Selenium测试时，需要模拟很多对网页的操作。我整理了一些用到过的。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/learn-python-the-hard-way/#更多" rel="contents">
+            <a class="btn" href="/2018/08/03/selenium-fill-in-input-tags/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -981,20 +973,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/07/poem20180607/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/08/02/postgre-sql-install/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -1005,8 +997,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/07/poem20180607/" itemprop="url">
-                  诗词（一）李清照七首
+                <a class="post-title-link" href="/2018/08/02/postgre-sql-install/" itemprop="url">
+                  如何安装POSTGRE SQL
                 </a>
               
             
@@ -1032,7 +1024,7 @@
                 
               
 
-              <time title="创建时间：2018-06-07 15:36:29" itemprop="dateCreated datePublished" datetime="2018-06-07T15:36:29+08:00">2018-06-07</time>
+              <time title="创建时间：2018-08-02 22:10:52" itemprop="dateCreated datePublished" datetime="2018-08-02T22:10:52+08:00">2018-08-02</time>
             
 
             
@@ -1049,30 +1041,12 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-15 00:08:33" itemprop="dateModified" datetime="2018-06-15T00:08:33+08:00">2018-06-15</time>
+                <time title="修改时间：2018-08-25 22:33:46" itemprop="dateModified" datetime="2018-08-25T22:33:46+08:00">2018-08-25</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/诗词/" itemprop="url" rel="index"><span itemprop="name">诗词</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1080,7 +1054,7 @@
 
           
           
-             <span id="/2018/06/07/poem20180607/" class="leancloud_visitors" data-flag-title="诗词（一）李清照七首">
+             <span id="/2018/08/02/postgre-sql-install/" class="leancloud_visitors" data-flag-title="如何安装POSTGRE SQL">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1105,7 +1079,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">505</span>
+                <span title="本文字数">240</span>
               
 
               
@@ -1140,10 +1114,11 @@
 
       
         
-          <p><img src="http://www.zc532.com/info/uploads/allimg/160417/1409495461-0.jpg" alt=""></p>
+          <p><img src="https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=cdc4d332eab7ae54a6449ef4918730f5&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="unsplash"></p>
+<p>如何在多种不同的操作系统下安装POSTGRE SQL</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/07/poem20180607/#更多" rel="contents">
+            <a class="btn" href="/2018/08/02/postgre-sql-install/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1194,20 +1169,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/07/unbroken/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/08/01/first-glance-postgre-sql/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -1218,8 +1193,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/07/unbroken/" itemprop="url">
-                  Unbroken
+                <a class="post-title-link" href="/2018/08/01/first-glance-postgre-sql/" itemprop="url">
+                  POSTGRE SQL 初见
                 </a>
               
             
@@ -1245,7 +1220,7 @@
                 
               
 
-              <time title="创建时间：2018-06-07 09:28:46" itemprop="dateCreated datePublished" datetime="2018-06-07T09:28:46+08:00">2018-06-07</time>
+              <time title="创建时间：2018-08-01 23:49:02" itemprop="dateCreated datePublished" datetime="2018-08-01T23:49:02+08:00">2018-08-01</time>
             
 
             
@@ -1262,12 +1237,30 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-15 00:08:33" itemprop="dateModified" datetime="2018-06-15T00:08:33+08:00">2018-06-15</time>
+                <time title="修改时间：2018-08-25 22:33:46" itemprop="dateModified" datetime="2018-08-25T22:33:46+08:00">2018-08-25</time>
               
             
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POSTGRE/" itemprop="url" rel="index"><span itemprop="name">POSTGRE</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1275,7 +1268,7 @@
 
           
           
-             <span id="/2018/06/07/unbroken/" class="leancloud_visitors" data-flag-title="Unbroken">
+             <span id="/2018/08/01/first-glance-postgre-sql/" class="leancloud_visitors" data-flag-title="POSTGRE SQL 初见">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1300,7 +1293,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.4k</span>
+                <span title="本文字数">891</span>
               
 
               
@@ -1314,7 +1307,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -1335,12 +1328,11 @@
 
       
         
-          <iframe width="560" height="315" src="https://www.youtube.com/watch?v=26U_seo0a1g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<p><a href="https://v.qq.com/x/page/a0346ctbk24.html" target="_blank" rel="noopener">腾讯视频</a></p>
+          <p><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=8b209b87443cca9d7d140ec0dd49fe21&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="unsplash"></p>
+<p>前段时间我已经在Linux上安装好了POSTGRE SQL，但没有来得及了解。今天整理了一些入门的命令，这也是和其他数据库不同的地方。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/07/unbroken/#更多" rel="contents">
+            <a class="btn" href="/2018/08/01/first-glance-postgre-sql/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1391,20 +1383,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/06/django-verify-password/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/30/linux-schedule-poweroff/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -1415,8 +1407,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/06/django-verify-password/" itemprop="url">
-                  Django Verify Password
+                <a class="post-title-link" href="/2018/07/30/linux-schedule-poweroff/" itemprop="url">
+                  Linux定时关机
                 </a>
               
             
@@ -1442,7 +1434,7 @@
                 
               
 
-              <time title="创建时间：2018-06-06 17:10:09" itemprop="dateCreated datePublished" datetime="2018-06-06T17:10:09+08:00">2018-06-06</time>
+              <time title="创建时间：2018-07-30 14:28:08" itemprop="dateCreated datePublished" datetime="2018-07-30T14:28:08+08:00">2018-07-30</time>
             
 
             
@@ -1459,7 +1451,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-03 20:31:18" itemprop="dateModified" datetime="2019-05-03T20:31:18+08:00">2019-05-03</time>
+                <time title="修改时间：2018-08-25 22:33:46" itemprop="dateModified" datetime="2018-08-25T22:33:46+08:00">2018-08-25</time>
               
             
           </span>
@@ -1476,14 +1468,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/poweroff/" itemprop="url" rel="index"><span itemprop="name">poweroff</span></a></span>
 
                 
                 
@@ -1497,7 +1489,7 @@
 
           
           
-             <span id="/2018/06/06/django-verify-password/" class="leancloud_visitors" data-flag-title="Django Verify Password">
+             <span id="/2018/07/30/linux-schedule-poweroff/" class="leancloud_visitors" data-flag-title="Linux定时关机">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1522,7 +1514,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">217</span>
+                <span title="本文字数">108</span>
               
 
               
@@ -1557,10 +1549,11 @@
 
       
         
-          <p>I’ve make a design about user register, need to verify user’s password and confirm password are equal.<br>When reading this <a href="https://github.com/luhuisicnu/The-Flask-Mega-Tutorial-zh/blob/master/docs/%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%9A%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.md" target="_blank" rel="noopener">The-Flask-Mega-Tutorial-zh</a>, I found a better way to handle this situation.</p>
+          <p><img src="https://images.unsplash.com/photo-1490724500206-cd5482e02b9e?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=83bd7dba05b764446d3ef6b57f12a57f&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="unsplash"></p>
+<p>linux通过命令行定时关机</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/06/django-verify-password/#更多" rel="contents">
+            <a class="btn" href="/2018/07/30/linux-schedule-poweroff/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1611,20 +1604,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/06/zjyl-yysjyghzlsw/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/30/python-builtin-str/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -1635,8 +1628,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/06/zjyl-yysjyghzlsw/" itemprop="url">
-                  要有世界眼光和战略思维
+                <a class="post-title-link" href="/2018/07/30/python-builtin-str/" itemprop="url">
+                  Python 的Str
                 </a>
               
             
@@ -1662,436 +1655,7 @@
                 
               
 
-              <time title="创建时间：2018-06-06 16:19:55" itemprop="dateCreated datePublished" datetime="2018-06-06T16:19:55+08:00">2018-06-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-15 00:08:33" itemprop="dateModified" datetime="2018-06-15T00:08:33+08:00">2018-06-15</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/之江新语/" itemprop="url" rel="index"><span itemprop="name">之江新语</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/06/zjyl-yysjyghzlsw/" class="leancloud_visitors" data-flag-title="要有世界眼光和战略思维">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">961</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://img.gmw.cn/imgtopics/30088.files/images/banner.jpg" alt="之江新语"></p>
-
-        <div id="aplayer-PvQlvJKJ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-PvQlvJKJ"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "要有世界眼光和战略思维",
-              author: "之江新语",
-              url: "http://flv1.gmw.cn/gmw/videoroot/2015-07-17/1437103443731.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/06/zjyl-yysjyghzlsw/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/06/30-Amazing-Vue-js-Open-Source-Projects-for-the-Past-Year-v-2018/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MX space">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/06/30-Amazing-Vue-js-Open-Source-Projects-for-the-Past-Year-v-2018/" itemprop="url">
-                  30 Amazing Vue.js Open Source Projects for the Past Year (v.2018)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-06 09:36:13" itemprop="dateCreated datePublished" datetime="2018-06-06T09:36:13+08:00">2018-06-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-14 10:28:01" itemprop="dateModified" datetime="2018-07-14T10:28:01+08:00">2018-07-14</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/06/30-Amazing-Vue-js-Open-Source-Projects-for-the-Past-Year-v-2018/" class="leancloud_visitors" data-flag-title="30 Amazing Vue.js Open Source Projects for the Past Year (v.2018)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>如果想提高Vue开发技术，那么花些时间来玩一下Vue.js开源项目是很值得的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/06/30-Amazing-Vue-js-Open-Source-Projects-for-the-Past-Year-v-2018/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/05/python-sum-map-filter-reduce/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MX space">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/05/python-sum-map-filter-reduce/" itemprop="url">
-                  Python的sum、map、filter和reduce
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-05 16:09:44" itemprop="dateCreated datePublished" datetime="2018-06-05T16:09:44+08:00">2018-06-05</time>
+              <time title="创建时间：2018-07-30 10:36:17" itemprop="dateCreated datePublished" datetime="2018-07-30T10:36:17+08:00">2018-07-30</time>
             
 
             
@@ -2125,7 +1689,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/builtin/" itemprop="url" rel="index"><span itemprop="name">builtin</span></a></span>
 
                 
                 
@@ -2139,7 +1710,7 @@
 
           
           
-             <span id="/2018/06/05/python-sum-map-filter-reduce/" class="leancloud_visitors" data-flag-title="Python的sum、map、filter和reduce">
+             <span id="/2018/07/30/python-builtin-str/" class="leancloud_visitors" data-flag-title="Python 的Str">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2164,7 +1735,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">6.4k</span>
               
 
               
@@ -2178,7 +1749,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -2199,10 +1770,11 @@
 
       
         
-          <p>最近在看《Think Python》（英文版），看到了讲解<code>map</code>, <code>reduce</code>, <code>filter</code>等函数，觉得讲解的思路特别好。所以，我加上了自己的理解，写了本篇文章。</p>
+          <p><img src="https://images.unsplash.com/photo-1493275396257-7df0f22e0c88?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=86265f685da989d6426e28402dd18d74&amp;auto=format&amp;fit=crop&amp;w=1351&amp;q=80" alt="unsplash"></p>
+<p>整理了python的str的各种methods.</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/05/python-sum-map-filter-reduce/#更多" rel="contents">
+            <a class="btn" href="/2018/07/30/python-builtin-str/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2253,20 +1825,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/06/04/14-most-famous-python-libraries-and-framework/">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/29/how-to-writing-docstring/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -2277,8 +1849,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/04/14-most-famous-python-libraries-and-framework/" itemprop="url">
-                  14 Most Famous Python Libraries and Framework
+                <a class="post-title-link" href="/2018/07/29/how-to-writing-docstring/" itemprop="url">
+                  How to Writing Docstring
                 </a>
               
             
@@ -2304,7 +1876,7 @@
                 
               
 
-              <time title="创建时间：2018-06-04 11:51:45" itemprop="dateCreated datePublished" datetime="2018-06-04T11:51:45+08:00">2018-06-04</time>
+              <time title="创建时间：2018-07-29 23:35:35" itemprop="dateCreated datePublished" datetime="2018-07-29T23:35:35+08:00">2018-07-29</time>
             
 
             
@@ -2338,7 +1910,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Docstring/" itemprop="url" rel="index"><span itemprop="name">Docstring</span></a></span>
 
                 
                 
@@ -2352,7 +1931,7 @@
 
           
           
-             <span id="/2018/06/04/14-most-famous-python-libraries-and-framework/" class="leancloud_visitors" data-flag-title="14 Most Famous Python Libraries and Framework">
+             <span id="/2018/07/29/how-to-writing-docstring/" class="leancloud_visitors" data-flag-title="How to Writing Docstring">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2377,7 +1956,221 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">339</span>
+                <span title="本文字数">2.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://images.unsplash.com/photo-1494707924465-e1426acb48cb?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=d7cac606b3752d340f2c342f32536727&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80" alt></p>
+<p>在python中，如何写好docstring也是个值得学习的东西。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/29/how-to-writing-docstring/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/29/commenting-serves-what/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/29/commenting-serves-what/" itemprop="url">
+                  注释的目的
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-29 23:19:30" itemprop="dateCreated datePublished" datetime="2018-07-29T23:19:30+08:00">2018-07-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-03 20:31:18" itemprop="dateModified" datetime="2019-05-03T20:31:18+08:00">2019-05-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/07/29/commenting-serves-what/" class="leancloud_visitors" data-flag-title="注释的目的">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">531</span>
               
 
               
@@ -2412,15 +2205,198 @@
 
       
         
-          <p><img src="https://freepythontips.files.wordpress.com/2018/06/intro.jpg?w=825&amp;h=510&amp;crop=1" alt=""><br>This article is from <a href="https://pythontips.com/2018/06/03/top-14-most-famous-python-libraries-frameworks/" target="_blank" rel="noopener">Python Tips</a></p>
-<p>I added this to my todo list, and will create a tutorial based on these libraries and frameworks later.</p>
+          <p><img src="https://files.realpython.com/media/Documenting-Python-Code_Watermarked.0b26408a1b7f.jpg" alt="Real Python"></p>
+<p>编程语言中的注释有许多用途。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/04/14-most-famous-python-libraries-and-framework/#更多" rel="contents">
+            <a class="btn" href="/2018/07/29/commenting-serves-what/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/27/baotuquan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/27/baotuquan/" itemprop="url">
+                  Baotuquan
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-27 23:02:28 / 修改时间：23:05:02" itemprop="dateCreated datePublished" datetime="2018-07-27T23:02:28+08:00">2018-07-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/07/27/baotuquan/" class="leancloud_visitors" data-flag-title="Baotuquan">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">492</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>千佛山，大明湖和趵突泉，是济南的三大名胜，我们只讲趵突泉。</p>
+<p>在西门外的桥上，便看见一溪活水，清浅，鲜洁，由南向北流着。这就是由趵突泉流出来的。设若没有这泉，济南定会失去了一半的美。……</p>
+<p>泉太好了。泉池是差不多见方的，三个泉口偏西，北边便是条小溪，流向西门去。看那三个大泉，一年四季，昼夜不停，老那么翻滚。你立定呆呆的看三分钟，你便觉出自然的伟大，使你再不敢正眼去看。永远那么纯洁，永远那么活泼，永远那么鲜明，冒，冒，冒，永不疲乏，永不退缩，只有自然有这样的力量！冬天更好，泉上起了一片热气，白而轻软在深绿的长的水藻上飘荡着，不由你不想起一种似乎神秘的境界。</p>
+<p>池边还有小泉呢：有的像大鱼吐水，极轻快地上来一串水泡；有的像一串明珠，走到中途又歪下去，真像一串珍珠在水里斜放着；有的半天才上来一个水泡，大、扁一点，慢慢的，有姿态的，摇动上来，碎了；看，又来了一个！有的好几串小碎珠一齐挤上来，象一朵攒得很整齐的珠花，雪白。有的……这比那大泉还更有味。新近为增加河水的水量，又下了六根铁管，作成六个泉眼，水也流得很旺，但是我是爱原来的那三个。</p>
+<p>看完了泉，再往北走，经过一些货摊，便出了北门。</p>
+
+          
         
       
     </div>
@@ -2461,7 +2437,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2491,7 +2467,7 @@
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
             
@@ -2506,7 +2482,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">162</span>
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2627,7 +2603,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2842,7 +2824,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">101</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2915,7 +2915,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">220k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -2924,14 +2924,14 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">4:10</span>
   
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

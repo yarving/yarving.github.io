@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -174,7 +174,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -184,7 +184,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -330,20 +330,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/07/29/how-to-writing-docstring/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -411,14 +411,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Docstring/" itemprop="url" rel="index"><span itemprop="name">Docstring</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Docstring/" itemprop="url" rel="index"><span itemprop="name">Docstring</span></a></span>
 
                 
                 
@@ -491,7 +491,7 @@
       
 
       
-        <p><img src="https://images.unsplash.com/photo-1494707924465-e1426acb48cb?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=d7cac606b3752d340f2c342f32536727&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80" alt=""></p>
+        <p><img src="https://images.unsplash.com/photo-1494707924465-e1426acb48cb?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=d7cac606b3752d340f2c342f32536727&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80" alt></p>
 <p>在python中，如何写好docstring也是个值得学习的东西。</p>
 <a id="more"></a>
 <h1 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h1><p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""This is a quick summary line used as a description of the object."""</span></span><br></pre></td></tr></table></figure></p>
@@ -508,7 +508,7 @@
 <li>Package and Module Docstring</li>
 <li>Scrip Docstring</li>
 </ul>
-<h2 id="Class-Docstring"><a href="#Class-Docstring" class="headerlink" title="Class Docstring"></a>Class Docstring</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    A class used to represent an Animal</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    ...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Attributes</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    says_str : str</span></span><br><span class="line"><span class="string">        a formatted string to print out what the animal says</span></span><br><span class="line"><span class="string">    name : str</span></span><br><span class="line"><span class="string">        the name of the animal</span></span><br><span class="line"><span class="string">    sound : str</span></span><br><span class="line"><span class="string">        the sound that the animal makes</span></span><br><span class="line"><span class="string">    num_legs : int</span></span><br><span class="line"><span class="string">        the number of legs the animal has (default 4)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Methods</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    says(sound=None)</span></span><br><span class="line"><span class="string">        Prints the animals name and what sound it makes</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    says_str = <span class="string">"A &#123;name&#125; says &#123;sound&#125;"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sound, num_legs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        name : str</span></span><br><span class="line"><span class="string">            The name of the animal</span></span><br><span class="line"><span class="string">        sound : str</span></span><br><span class="line"><span class="string">            The sound the animal makes</span></span><br><span class="line"><span class="string">        num_legs : int, optional</span></span><br><span class="line"><span class="string">            The number of legs the animal (default is 4)</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sound = sound</span><br><span class="line">        self.num_legs = num_legs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">says</span><span class="params">(self, sound=None)</span>:</span></span><br><span class="line">        <span class="string">"""Prints what the animals name is and what sound it makes.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        If the argument `sound` isn't passed in, the default Animal</span></span><br><span class="line"><span class="string">        sound is used.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        sound : str, optional</span></span><br><span class="line"><span class="string">            The sound the animal makes (default is None)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Raises</span></span><br><span class="line"><span class="string">        ------</span></span><br><span class="line"><span class="string">        NotImplementedError</span></span><br><span class="line"><span class="string">            If no sound is set for the animal or passed in as a</span></span><br><span class="line"><span class="string">            parameter.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> self.sound <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> sound <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> NotImplementedError(<span class="string">"Silent Animals are not supported!"</span>)</span><br><span class="line"></span><br><span class="line">        out_sound = self.sound <span class="keyword">if</span> sound <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> sound</span><br><span class="line">        print(self.says_str.format(name=self.name, sound=out_sound))</span><br></pre></td></tr></table></figure>
+<h2 id="Class-Docstring"><a href="#Class-Docstring" class="headerlink" title="Class Docstring"></a>Class Docstring</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    A class used to represent an Animal</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    ...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Attributes</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    says_str : str</span></span><br><span class="line"><span class="string">        a formatted string to print out what the animal says</span></span><br><span class="line"><span class="string">    name : str</span></span><br><span class="line"><span class="string">        the name of the animal</span></span><br><span class="line"><span class="string">    sound : str</span></span><br><span class="line"><span class="string">        the sound that the animal makes</span></span><br><span class="line"><span class="string">    num_legs : int</span></span><br><span class="line"><span class="string">        the number of legs the animal has (default 4)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Methods</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    says(sound=None)</span></span><br><span class="line"><span class="string">        Prints the animals name and what sound it makes</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    says_str = <span class="string">"A &#123;name&#125; says &#123;sound&#125;"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sound, num_legs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        name : str</span></span><br><span class="line"><span class="string">            The name of the animal</span></span><br><span class="line"><span class="string">        sound : str</span></span><br><span class="line"><span class="string">            The sound the animal makes</span></span><br><span class="line"><span class="string">        num_legs : int, optional</span></span><br><span class="line"><span class="string">            The number of legs the animal (default is 4)</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sound = sound</span><br><span class="line">        self.num_legs = num_legs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">says</span><span class="params">(self, sound=None)</span>:</span></span><br><span class="line">        <span class="string">"""Prints what the animals name is and what sound it makes.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        If the argument `sound` isn't passed in, the default Animal</span></span><br><span class="line"><span class="string">        sound is used.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        sound : str, optional</span></span><br><span class="line"><span class="string">            The sound the animal makes (default is None)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Raises</span></span><br><span class="line"><span class="string">        ------</span></span><br><span class="line"><span class="string">        NotImplementedError</span></span><br><span class="line"><span class="string">            If no sound is set for the animal or passed in as a</span></span><br><span class="line"><span class="string">            parameter.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> self.sound <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> sound <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> NotImplementedError(<span class="string">"Silent Animals are not supported!"</span>)</span><br><span class="line"></span><br><span class="line">        out_sound = self.sound <span class="keyword">if</span> sound <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">else</span> sound</span><br><span class="line">        print(self.says_str.format(name=self.name, sound=out_sound))</span><br></pre></td></tr></table></figure>
 <p>应包含如下信息：</p>
 <ul>
 <li>简短描述类的目的和行为</li>
@@ -643,7 +643,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
             
@@ -658,7 +658,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">162</span>
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -779,7 +779,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -994,7 +1000,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">101</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1083,7 +1107,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">220k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -1092,14 +1116,14 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">4:10</span>
   
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

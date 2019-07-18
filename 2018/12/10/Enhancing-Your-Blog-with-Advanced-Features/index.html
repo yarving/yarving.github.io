@@ -9,7 +9,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -171,7 +171,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -181,7 +181,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -327,20 +327,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2018/12/10/Enhancing-Your-Blog-with-Advanced-Features/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yarving Liu">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="MX space">
     </span>
 
@@ -408,21 +408,21 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/Django-by-Example/" itemprop="url" rel="index"><span itemprop="name">Django by Example</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/Django/Django-by-Example/" itemprop="url" rel="index"><span itemprop="name">Django by Example</span></a></span>
 
                 
                 
@@ -504,11 +504,11 @@
 </ul>
 <h2 id="ModelForm"><a href="#ModelForm" class="headerlink" title="ModelForm"></a>ModelForm</h2><p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Comment</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Comment</span><br><span class="line">        fields = (<span class="string">'name'</span>, <span class="string">'email'</span>, <span class="string">'body'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>ModelForm在View中可以直接保存，不用经过转化为Model的步骤。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_detail</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        form = CommentForm(request.POST)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            form.save()</span><br><span class="line">            <span class="comment"># comment = form.save(commit=False)</span></span><br><span class="line">            <span class="comment"># comment.save()</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="Form-1"><a href="#Form-1" class="headerlink" title="Form"></a>Form</h2><p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EmailPostForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    name = forms.CharField(max_length=<span class="number">25</span>)</span><br><span class="line">    email = forms.EmailField()</span><br><span class="line">    to = forms.EmailField()</span><br><span class="line">    comments = forms.CharField(required=<span class="keyword">False</span>, widget=forms.Textarea)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Form-1"><a href="#Form-1" class="headerlink" title="Form"></a>Form</h2><p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EmailPostForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    name = forms.CharField(max_length=<span class="number">25</span>)</span><br><span class="line">    email = forms.EmailField()</span><br><span class="line">    to = forms.EmailField()</span><br><span class="line">    comments = forms.CharField(required=<span class="literal">False</span>, widget=forms.Textarea)</span><br></pre></td></tr></table></figure></p>
 <p>每个Field都有一个默认的widget，CharField默认的render为<code>&lt;input type=&quot;text&quot;&gt;</code>，<code>comment</code>制定了Textarea，则会被render为textarea。</p>
 <p>在view中用form接收post或get方法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_share</span><span class="params">(request, post_id)</span>:</span></span><br><span class="line">    post = get_object_or_404(Post, id=post_id)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        form = EmailPostForm(request.POST)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            cd = form.cleaned_data</span><br><span class="line">            <span class="comment"># ...</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = EmailPostForm()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'blog/post/share.html'</span>, &#123;<span class="string">'post'</span>: post, <span class="string">'form'</span>: form&#125;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h1><p>发送邮件需要现在项目的settings.py里定义email的设置，以QQ邮箱的配置为例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Email</span></span><br><span class="line">EMAIL_HOST = <span class="string">'smtp.qq.com'</span></span><br><span class="line">EMAIL_HOST_USER = <span class="string">'yarving@qq.com'</span></span><br><span class="line">EMAIL_HOST_PASSWORD = <span class="string">'secret-key'</span></span><br><span class="line">EMAIL_PORT = <span class="number">465</span></span><br><span class="line">EMAIL_USE_SSL = <span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
-<p>发送邮件的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.core.mail <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line">send_mail(<span class="string">'subject'</span>, <span class="string">'email body'</span>, <span class="string">'sender@email.com'</span>, [<span class="string">'reciver-address@email.com'</span>], fail_silently=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h1><p>发送邮件需要现在项目的settings.py里定义email的设置，以QQ邮箱的配置为例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Email</span></span><br><span class="line">EMAIL_HOST = <span class="string">'smtp.qq.com'</span></span><br><span class="line">EMAIL_HOST_USER = <span class="string">'yarving@qq.com'</span></span><br><span class="line">EMAIL_HOST_PASSWORD = <span class="string">'secret-key'</span></span><br><span class="line">EMAIL_PORT = <span class="number">465</span></span><br><span class="line">EMAIL_USE_SSL = <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<p>发送邮件的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.core.mail <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line">send_mail(<span class="string">'subject'</span>, <span class="string">'email body'</span>, <span class="string">'sender@email.com'</span>, [<span class="string">'reciver-address@email.com'</span>], fail_silently=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></p>
 <h1 id="拼凑完整URL"><a href="#拼凑完整URL" class="headerlink" title="拼凑完整URL"></a>拼凑完整URL</h1><p>Django的<code>request.build_absolute_uri()</code>方法可以拼凑出完整的url，包含http schema和hostname。</p>
 <p>示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_share</span><span class="params">(request, post_id)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    psot_url = request.build_absolute_uri(post.get_absolute_url())</span><br></pre></td></tr></table></figure></p>
 <p>在model中reverse url的示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.core.urlresolvers <span class="keyword">import</span> reverse</span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_absolute_url</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> reverse(<span class="string">'blog:post_detail'</span>, args=[self.publish.year, self.publish.slug])</span><br></pre></td></tr></table></figure></p>
@@ -535,7 +535,7 @@
 <p>可以进行如下操作：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post.tags.add(<span class="string">'music'</span>, <span class="string">'jazz'</span>, <span class="string">'django'</span>)</span><br><span class="line">post.tags.all()</span><br><span class="line">post.tags.remove(<span class="string">'music'</span>)</span><br></pre></td></tr></table></figure></p>
 <h1 id="Queryset"><a href="#Queryset" class="headerlink" title="Queryset"></a>Queryset</h1><h2 id="values-list"><a href="#values-list" class="headerlink" title="values_list()"></a>values_list()</h2><p>函数原型：<code>values_list(*fields, flat=False, named=False)</code></p>
 <p><a href="https://docs.djangoproject.com/en/2.1/ref/models/querysets/#values-list" target="_blank" rel="noopener">API链接</a></p>
-<p>可以将值传递为列表，示例用法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">psot_tags_ids = post.tags.values_list(<span class="string">'id'</span>, flat=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment"># return flat list like [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure></p>
+<p>可以将值传递为列表，示例用法如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">psot_tags_ids = post.tags.values_list(<span class="string">'id'</span>, flat=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># return flat list like [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="annotate"><a href="#annotate" class="headerlink" title="annotate"></a>annotate</h2><p>示例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">posts.annotate(same_tags=Count(<span class="string">'tags'</span>)).order_by(<span class="string">'-same_tags'</span>, <span class="string">'-publish'</span>)[:<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
 <p>用QuerySet查询集的方式一直比较低端，只会使用filter/Q函数/exclude等方式来查询，数据量比较小的时候还可以，但是如果数据量很大，而且查询比较复杂，那么如果还是使用多个filter进行查询效率就会很低。</p>
 <p>提高查询数据库效率的方案有两种：</p>
@@ -603,8 +603,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/29/诗歌（一）/" rel="prev" title="诗歌（一）">
-                诗歌（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/23/中国社会各阶级的分析/" rel="prev" title="中国社会各阶级的分析">
+                中国社会各阶级的分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -666,7 +666,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
             
@@ -681,7 +681,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">162</span>
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -802,7 +802,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1017,7 +1023,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">101</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1106,7 +1130,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">220k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -1115,14 +1139,14 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:20</span>
+    <span title="站点阅读时长">4:10</span>
   
 </div>
 
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

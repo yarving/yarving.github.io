@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="读材料关注：  时间 段落结构 快速看主体并进行标注  能不用尺子类小工具就别用，免得浪费时间。但是可以直接出答案的小技巧可以用。">
+<meta name="keywords" content="行测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行测 - 资料分析">
+<meta property="og:url" content="http://yarving.github.io/2019/06/18/行测-资料分析/index.html">
+<meta property="og:site_name" content="MX space">
+<meta property="og:description" content="读材料关注：  时间 段落结构 快速看主体并进行标注  能不用尺子类小工具就别用，免得浪费时间。但是可以直接出答案的小技巧可以用。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-18T08:57:28.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="行测 - 资料分析">
+<meta name="twitter:description" content="读材料关注：  时间 段落结构 快速看主体并进行标注  能不用尺子类小工具就别用，免得浪费时间。但是可以直接出答案的小技巧可以用。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="MX space" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://yarving.github.io/2019/06/18/行测-资料分析/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>行测 - 资料分析 | MX space</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MX space</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yarving.github.io/2019/06/18/行测-资料分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yarving Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MX space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">行测 - 资料分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-18 21:16:37" itemprop="dateCreated datePublished" datetime="2019-06-18T21:16:37+08:00">2019-06-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 16:57:28" itemprop="dateModified" datetime="2019-07-18T16:57:28+08:00">2019-07-18</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/18/行测-资料分析/" class="leancloud_visitors" data-flag-title="行测 - 资料分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="读材料"><a href="#读材料" class="headerlink" title="读材料"></a>读材料</h1><p>关注：</p>
+<ul>
+<li>时间</li>
+<li>段落结构</li>
+<li>快速看主体并进行标注</li>
+</ul>
+<p>能不用尺子类小工具就别用，免得浪费时间。但是可以直接出答案的小技巧可以用。</p>
+<a id="more"></a>
+<h1 id="直接查找法"><a href="#直接查找法" class="headerlink" title="直接查找法"></a>直接查找法</h1><p>每年必考（2-3个），送分题。</p>
+<p>考法：</p>
+<ul>
+<li>直接查找</li>
+<li>查找比较：简单的加减运算</li>
+<li>作为某一个选项</li>
+</ul>
+<h1 id="直除法"><a href="#直除法" class="headerlink" title="直除法"></a>直除法</h1><ol>
+<li>当选项的首位各不相同：采用首数法，直接取首位数字；</li>
+<li>当选项相差大于10%：截取2位数字进行运算；</li>
+<li>当选项相差大于10%：截取3位数字进行运算；</li>
+</ol>
+<h1 id="分数大小快速比较"><a href="#分数大小快速比较" class="headerlink" title="分数大小快速比较"></a>分数大小快速比较</h1><h2 id="插值法"><a href="#插值法" class="headerlink" title="插值法"></a>插值法</h2><p>如果A和C不好比较，寻找中间值B，使得A&gt;B,B&gt;C，则可以得到A &gt; C。</p>
+<p>如1/8和9/110的比较，可以找到1/10，可以满足1/8 &gt; 1/10，而1/10 &gt; 9/110，所以1/8 &gt; 9/110</p>
+<p>插值法可以在比较题型中使用，也可以在计算题型中使用。</p>
+<p>如果有A，很容易得到A与另一个值B的关系，结合选项可以快速得到答案。如8500/24821 &lt; 850/34000 = 25%</p>
+<h2 id="分数特性比较"><a href="#分数特性比较" class="headerlink" title="分数特性比较"></a>分数特性比较</h2><p>两个分数的比较：</p>
+<ul>
+<li>分子大，分母小的大；</li>
+<li>分子同，分母大的小；</li>
+<li>分母同，分子大的大；</li>
+<li>有明显比例关系，则同时对分子分母进行放大</li>
+</ul>
+<h2 id="化同法"><a href="#化同法" class="headerlink" title="化同法"></a>化同法</h2><p>当分子分母同大或同小时，无法用分数特性进行比较，可以对小分数（指分子分母同小的分数）进行放大，使得两个分数的分子或分母相近：</p>
+<ul>
+<li>出现<strong>分子大分母小</strong>的情况，直接判定；</li>
+<li>否则，看分子分母相对变化；</li>
+<li>再否则，用差分法判定；</li>
+<li>再否则，反面思考，可以用1减去分数得到补分数进行判定，大小方向相反。</li>
+</ul>
+<p>401/250 -&gt; 8020/5000，比8023/3963要小。</p>
+<p>173/36253 -&gt; 173/362 &gt; 50%；1162/303529 -&gt; 1162/3035 &lt; 50%；故前者大。</p>
+<h2 id="差分法"><a href="#差分法" class="headerlink" title="差分法"></a>差分法</h2><p>使用情况：<strong>当分子分母同大同小，且两个分数的分子或分母相差不大。</strong></p>
+<ul>
+<li>大分数：分子分母同大的分数；</li>
+<li>小分数：分子分母同小的分数。</li>
+</ul>
+<p>计算过程：</p>
+<ol>
+<li>(大分子-小分子)/(大分母-小分母) = 差分数</li>
+<li>用差分数代替大分数，和小分数进行比较</li>
+</ol>
+<blockquote>
+<p>做练习题的时候不要图快，要把每个步骤做到位：</p>
+<ol>
+<li>读材料，勾画重点：读段落，标注时间、主体；</li>
+<li>读题目，判断题型，结合选项，心里得到解法和估算位数（根据选项差距判断精确度）</li>
+<li>从材料中提取数据，注意不要找错或写错了，还有单位也不要搞错了。</li>
+<li>计算得到答案。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>写字的时候，不该有弧形的地方不能有弧形。</p>
+</blockquote>
+<blockquote>
+<p>写字的时候，写慢点，把每一个笔画都做到位，现在的肌肉记忆是错的。</p>
+</blockquote>
+<h1 id="增长量-M"><a href="#增长量-M" class="headerlink" title="增长量(M)"></a>增长量(M)</h1><p>M = (A - B) = (A * x%)/(1 + x%)</p>
+<p>若1/n=x%，则M = (1 + n)</p>
+<p>误差分析：</p>
+<ul>
+<li>若1/n &gt; x%，相当于放大了增长率，则增长量小于计算出来的值；</li>
+<li>若1/n &lt; x%，相当于缩小了增长率，则增长量大于计算出来的值；<br>以x=33.8%为例，1/3=33.3%，小于实际增长率，取值要大于计算出来的A/4。</li>
+<li>适当使用夹逼</li>
+</ul>
+<p>八字方针：<strong>缩小取大，放大取小</strong></p>
+<p>常见n：</p>
+<ul>
+<li>50% = 1/2</li>
+<li>33.3% = 1/3</li>
+<li>25% = 1/4</li>
+<li>20% = 1/5</li>
+<li>16.7% = 1/6</li>
+<li>14.3% = 1/7</li>
+<li>12.5% = 1/8</li>
+<li>11.1% = 1/9</li>
+<li>10% = 1/10</li>
+<li>9% = 1/11</li>
+<li>8.3% = 1/12</li>
+<li>7.6% = 1/13</li>
+<li>7.1% = 1/14</li>
+<li>6.6% = 1/15</li>
+<li>6.2% = 1/15</li>
+<li>5.8% = 1/17</li>
+<li>5.5% = 1/18</li>
+<li>5.2% = 1/19</li>
+<li>5% = 1/20</li>
+</ul>
+<h1 id="间隔增长率"><a href="#间隔增长率" class="headerlink" title="间隔增长率"></a>间隔增长率</h1><p>r% = a% + b% + a%*b%</p>
+<p>间隔增长率只和两年的增长率有关，计算过程中要注意正负号，增长为+，减少为-</p>
+<h1 id="比重"><a href="#比重" class="headerlink" title="比重"></a>比重</h1><ul>
+<li>整体A，比上期增长a%</li>
+<li>部分B，比上期增长b%</li>
+<li>现期部分占整体比重：B/A</li>
+<li>基期部分占整体比重：B(1+a%)/A(1+b%)</li>
+<li>两期比重之差：(B/A)*((b% - a%)/(1 + b%))</li>
+<li>两期比重增长率：(b%-a%)/(1 + a%)</li>
+</ul>
+<h2 id="考法1-只求增长或下降"><a href="#考法1-只求增长或下降" class="headerlink" title="考法1. 只求增长或下降"></a>考法1. 只求增长或下降</h2><p>找到部分b%和a%</p>
+<ul>
+<li>若b &gt; a, 则增长</li>
+<li>若b &lt; a, 则下降</li>
+<li>若b = a, 则不变</li>
+</ul>
+<p>否则下降</p>
+<h2 id="考法2-求增长或下降的具体数值"><a href="#考法2-求增长或下降的具体数值" class="headerlink" title="考法2. 求增长或下降的具体数值"></a>考法2. 求增长或下降的具体数值</h2><ol>
+<li>计算(b - a)</li>
+<li>计算B/A</li>
+<li>两者想成</li>
+</ol>
+<h2 id="考法3：-求平均数"><a href="#考法3：-求平均数" class="headerlink" title="考法3： 求平均数"></a>考法3： 求平均数</h2><ul>
+<li>B为总量， b%为总量增长率</li>
+<li>A为总数， a%为总数增长率</li>
+</ul>
+<p>一般考平均数的数的增长率，答案一般接近但小于<code>b% - a%</code>，但是要看a%的增长或下降。</p>
+<p>求比重/平均数的增长率注意的两个点：</p>
+<ul>
+<li>别混淆A和B的含义；</li>
+<li>尽量别动比抄数据，在试题本上勾画出相应数据基本可以口算得出答案。</li>
+</ul>
+<h1 id="年均"><a href="#年均" class="headerlink" title="年均"></a>年均</h1><h2 id="增长量"><a href="#增长量" class="headerlink" title="增长量"></a>增长量</h2><p>年均增长量 = 总增长量/年份差 = (A - B)/(n - m)</p>
+<h2 id="如何选取年份差"><a href="#如何选取年份差" class="headerlink" title="如何选取年份差"></a>如何选取年份差</h2><ul>
+<li>一般而言都是结束年份减去开始年份；</li>
+<li>若问“十二五”期间，因此年份差为5，需要将开始年份往前推一年；</li>
+<li>题目中点名了要多少年，如“2000-2012年这13年间”，初期数值要为1999年；</li>
+<li>平均每年较上年，如问”2012-2016年平均每年较上年……”，则初期为2011年。</li>
+</ul>
+<h2 id="增长率"><a href="#增长率" class="headerlink" title="增长率"></a>增长率</h2><p>x% = (A/B)开n次根 - 1</p>
+<h3 id="公式1"><a href="#公式1" class="headerlink" title="公式1"></a>公式1</h3><p>速求公式（看选项）：</p>
+<ul>
+<li>若增长率 &lt; 5%，代入数值使得<code>1 + nx &lt; A/B</code></li>
+<li>若增长率 &gt; 5%，代入数值使得<code>1 + nx + n(n-1)x^2/2 &lt; A/B</code></li>
+<li>代入时，若代入的x大于A/B，则实际值肯定比x小</li>
+</ul>
+<h3 id="公式2"><a href="#公式2" class="headerlink" title="公式2"></a>公式2</h3><p>若已知每年增长率为x1，x2，……。xn，则计算出 <code>x% = (x1 + x2 + ... + xn) / n</code>的值，只要年增长率不是完全相等，则正确答案小于 x%</p>
+<p>考法：</p>
+<ul>
+<li>如果比较同样年份差的不同量的年均增长率，仅需比较末期/基期（A/B)</li>
+</ul>
+<h1 id="混合模型"><a href="#混合模型" class="headerlink" title="混合模型"></a>混合模型</h1><p>给出部分或整体的增速，要求整体或部分的增速。</p>
+<p><strong>关键点在于：整体的增速介于两个部分增速之间</strong></p>
+<h2 id="简单考法"><a href="#简单考法" class="headerlink" title="简单考法"></a>简单考法</h2><ul>
+<li>给定两个部分： 整体增速介于两个增长率之间；</li>
+<li>若为三个或更多个部分，则介于最大增速和最小增速之间</li>
+<li>给定一个整体一个部分： 当整体大于给定的部分，则另一个部分大于整体；否则小于。</li>
+</ul>
+<p>要注意各种变形：</p>
+<ul>
+<li><code>1～6月</code>为<code>1~5月</code> + <code>6月</code></li>
+<li><code>进出口 = 进口 + 出口</code></li>
+<li><code>顺差 = 出口 - 进口</code> -&gt; <code>出口 = 顺差 + 进口</code></li>
+<li><code>逆差 = 进口 - 出口</code> -&gt; <code>进口 = 逆差 + 出口</code></li>
+</ul>
+<h2 id="稍难考法"><a href="#稍难考法" class="headerlink" title="稍难考法"></a>稍难考法</h2><p>若选项不友好，则需要求出两个部分的增长率的平均值，正确的增长率介于平均值和更大基期增长率之间。</p>
+<h2 id="做题步骤"><a href="#做题步骤" class="headerlink" title="做题步骤"></a>做题步骤</h2><ol>
+<li>判断考察点，如果为简单考法，则直接标注数据，心算得到答案。</li>
+<li>否则找到或求出两个基期，然后排除得到正确的混合增长率</li>
+</ol>
+<h1 id="速算模型"><a href="#速算模型" class="headerlink" title="速算模型"></a>速算模型</h1><h2 id="基期速算模型"><a href="#基期速算模型" class="headerlink" title="基期速算模型"></a>基期速算模型</h2><p>如果增长率和整数能口算计算，则可用如下方法，比直除法更快：</p>
+<ol>
+<li>假设一个整数a，使得<code>a + ax &lt; A</code>，若大于等于A，则可排除所有 &gt;= a的选项；</li>
+<li>计算b, 使得<code>b = a + （A - a）</code>;</li>
+<li>正确答案介于a和b之间。</li>
+</ol>
+<p>前提：<strong>假设值和增长率能口算</strong>，计算过程：</p>
+<ol>
+<li>代入假设值；</li>
+<li>加上与现期的差值，得到新值；</li>
+<li>答案介于假设值和新值之间。</li>
+</ol>
+<h2 id="基期差速算模型（必须掌握）"><a href="#基期差速算模型（必须掌握）" class="headerlink" title="基期差速算模型（必须掌握）"></a>基期差速算模型（必须掌握）</h2><p>一正一负，负前则大，负后则小</p>
+<ul>
+<li>A/(1-a) - B/(1+b) &gt; A - B</li>
+<li>A/(1+a) - B/(1-b) &lt; A - B</li>
+</ul>
+<p>同正同负，当a大b时，同正则大，同负则小</p>
+<ul>
+<li>A/(1+a) - B/(1+b) &lt; A - B</li>
+<li>A/(1-a) - B/(1-b) &gt; A - B</li>
+</ul>
+<blockquote>
+<p>看的时候可以证明下，加深理解。</p>
+</blockquote>
+<p>还有个技巧，基期差不等于现期差，如果有个值等于现期差，可以快速排除。</p>
+<p>如果不能得到唯一的答案，需要结合误差分析Aa +、- Bb来做估算。</p>
+<ul>
+<li>A/(1+a) 约等于 A - Aa</li>
+<li>A/(1-a) 约等于 A + Aa</li>
+</ul>
+<h2 id="混合速算模型"><a href="#混合速算模型" class="headerlink" title="混合速算模型"></a>混合速算模型</h2><p>(A + B) / (C + D) 介于A/C和B/D之间。</p>
+<p>例：(5180+6570)/(597+688)，其中5180/6570=8.x，6570/688=9.x，<strong>结合选项</strong>，仅有整数9符合。</p>
+<h1 id="三个高频公式"><a href="#三个高频公式" class="headerlink" title="三个高频公式"></a>三个高频公式</h1><h2 id="增长量的计算"><a href="#增长量的计算" class="headerlink" title="增长量的计算"></a>增长量的计算</h2><p>用n代替</p>
+<h2 id="平均数增长率"><a href="#平均数增长率" class="headerlink" title="平均数增长率"></a>平均数增长率</h2><p>判定总数的增长率b，和增量的增长率a，即可。</p>
+<p><code>(b% - a%)/(1 + a%)</code></p>
+<h2 id="间隔增长率-1"><a href="#间隔增长率-1" class="headerlink" title="间隔增长率"></a>间隔增长率</h2><p>r% = a% + b% + a%b%</p>
+<h1 id="三个口诀"><a href="#三个口诀" class="headerlink" title="三个口诀"></a>三个口诀</h1><p>在脑海中计算，别用笔写，只用笔勾画。</p>
+<h2 id="两期比重升降判定"><a href="#两期比重升降判定" class="headerlink" title="两期比重升降判定"></a>两期比重升降判定</h2><ul>
+<li>b大就升（b为正数）</li>
+<li>数值优先蒙最小（时间紧的情况）</li>
+</ul>
+<p><code>(B/A) * (b% - a%) / (1 + b%)</code></p>
+<h2 id="混合增长"><a href="#混合增长" class="headerlink" title="混合增长"></a>混合增长</h2><p>整体介于部分，偏向基期大的增长率</p>
+<h2 id="增长量的比较"><a href="#增长量的比较" class="headerlink" title="增长量的比较"></a>增长量的比较</h2><p>已知现期量和增长率，比较增长量：<strong>大大则大，小小则小，一大一小看乘积</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Yarving Liu</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yarving.github.io/2019/06/18/行测-资料分析/" title="行测 - 资料分析">http://yarving.github.io/2019/06/18/行测-资料分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/行测/" rel="tag"># 行测</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/18/三家分晋/" rel="next" title="三家分晋">
+                <i class="fa fa-chevron-left"></i> 三家分晋
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/21/素材（五）/" rel="prev" title="素材（五）">
+                素材（五） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yarving Liu">
+            
+              <p class="site-author-name" itemprop="name">Yarving Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">204</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">110</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yarving" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yarving@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#读材料"><span class="nav-number">1.</span> <span class="nav-text">读材料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接查找法"><span class="nav-number">2.</span> <span class="nav-text">直接查找法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直除法"><span class="nav-number">3.</span> <span class="nav-text">直除法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分数大小快速比较"><span class="nav-number">4.</span> <span class="nav-text">分数大小快速比较</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值法"><span class="nav-number">4.1.</span> <span class="nav-text">插值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分数特性比较"><span class="nav-number">4.2.</span> <span class="nav-text">分数特性比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#化同法"><span class="nav-number">4.3.</span> <span class="nav-text">化同法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差分法"><span class="nav-number">4.4.</span> <span class="nav-text">差分法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#增长量-M"><span class="nav-number">5.</span> <span class="nav-text">增长量(M)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#间隔增长率"><span class="nav-number">6.</span> <span class="nav-text">间隔增长率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比重"><span class="nav-number">7.</span> <span class="nav-text">比重</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#考法1-只求增长或下降"><span class="nav-number">7.1.</span> <span class="nav-text">考法1. 只求增长或下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考法2-求增长或下降的具体数值"><span class="nav-number">7.2.</span> <span class="nav-text">考法2. 求增长或下降的具体数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考法3：-求平均数"><span class="nav-number">7.3.</span> <span class="nav-text">考法3： 求平均数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#年均"><span class="nav-number">8.</span> <span class="nav-text">年均</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增长量"><span class="nav-number">8.1.</span> <span class="nav-text">增长量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选取年份差"><span class="nav-number">8.2.</span> <span class="nav-text">如何选取年份差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增长率"><span class="nav-number">8.3.</span> <span class="nav-text">增长率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#公式1"><span class="nav-number">8.3.1.</span> <span class="nav-text">公式1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公式2"><span class="nav-number">8.3.2.</span> <span class="nav-text">公式2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#混合模型"><span class="nav-number">9.</span> <span class="nav-text">混合模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单考法"><span class="nav-number">9.1.</span> <span class="nav-text">简单考法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稍难考法"><span class="nav-number">9.2.</span> <span class="nav-text">稍难考法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#做题步骤"><span class="nav-number">9.3.</span> <span class="nav-text">做题步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#速算模型"><span class="nav-number">10.</span> <span class="nav-text">速算模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基期速算模型"><span class="nav-number">10.1.</span> <span class="nav-text">基期速算模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基期差速算模型（必须掌握）"><span class="nav-number">10.2.</span> <span class="nav-text">基期差速算模型（必须掌握）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合速算模型"><span class="nav-number">10.3.</span> <span class="nav-text">混合速算模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三个高频公式"><span class="nav-number">11.</span> <span class="nav-text">三个高频公式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增长量的计算"><span class="nav-number">11.1.</span> <span class="nav-text">增长量的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平均数增长率"><span class="nav-number">11.2.</span> <span class="nav-text">平均数增长率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#间隔增长率-1"><span class="nav-number">11.3.</span> <span class="nav-text">间隔增长率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三个口诀"><span class="nav-number">12.</span> <span class="nav-text">三个口诀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两期比重升降判定"><span class="nav-number">12.1.</span> <span class="nav-text">两期比重升降判定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合增长"><span class="nav-number">12.2.</span> <span class="nav-text">混合增长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增长量的比较"><span class="nav-number">12.3.</span> <span class="nav-text">增长量的比较</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yarving Liu</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">275k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">4:10</span>
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("C7TURJJ9MzJz4LgFlfki9JgC-gzGzoHsz", "KjmedhPH78qYNquptzbt1me0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.2.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script>
+
+
+</body>
+</html>
